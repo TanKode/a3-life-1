@@ -1,0 +1,105 @@
+/*
+	File: fn_varToStr.sqf
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	Takes the long-name (variable) and returns a display name for our
+	virtual item.
+*/
+private["_var"];
+_var = [_this,0,"",[""]] call BIS_fnc_param;
+if(_var == "") exitWith {""};
+
+switch (_var) do
+{
+	//Virtual Inventory Items
+	case "bambusfarm_inv_oilu": {(localize "STR_Item_OilU")};
+	case "bambusfarm_inv_oilp": {(localize "STR_Item_OilP")};
+	case "bambusfarm_inv_heroinu": {(localize "STR_Item_HeroinU")};
+	case "bambusfarm_inv_heroinp": {(localize "STR_Item_HeroinP")};
+	case "bambusfarm_inv_cannabis": {(localize "STR_Item_Cannabis")};
+	case "bambusfarm_inv_marijuana": {(localize "STR_Item_Marijuana")};
+	case "bambusfarm_inv_apple": {(localize "STR_Item_Apple")};
+	case "bambusfarm_inv_rabbit": {(localize "STR_Item_RabbitMeat")};
+	case "bambusfarm_inv_salema": {(localize "STR_Item_SalemaMeat")};
+	case "bambusfarm_inv_ornate": {(localize "STR_Item_OrnateMeat")};
+	case "bambusfarm_inv_mackerel": {(localize "STR_Item_MackerelMeat")};
+	case "bambusfarm_inv_tuna": {(localize "STR_Item_TunaMeat")};
+	case "bambusfarm_inv_mullet": {(localize "STR_Item_MulletMeat")};
+	case "bambusfarm_inv_catshark": {(localize "STR_Item_CatSharkMeat")};
+	case "bambusfarm_inv_turtle": {(localize "STR_Item_TurtleMeat")};
+	case "bambusfarm_inv_fishingpoles": {(localize "STR_Item_FishingPole")};
+	case "bambusfarm_inv_water": {(localize "STR_Item_WaterBottle")};
+	case "bambusfarm_inv_coffee": {(localize "STR_Item_Coffee")};
+	case "bambusfarm_inv_turtlesoup": {(localize "STR_Item_TurtleSoup")};
+	case "bambusfarm_inv_donuts": {(localize "STR_Item_Donuts")};
+	case "bambusfarm_inv_fuelE": {(localize "STR_Item_FuelE")};
+	case "bambusfarm_inv_fuelF": {(localize "STR_Item_FuelF")};
+	case "bambusfarm_inv_pickaxe": {(localize "STR_Item_Pickaxe")};
+	case "bambusfarm_inv_copperore": {(localize "STR_Item_CopperOre")};
+	case "bambusfarm_inv_ironore": {(localize "STR_Item_IronOre")};
+	case "bambusfarm_inv_ironr": {(localize "STR_Item_IronIngot")};
+	case "bambusfarm_inv_copperr": {(localize "STR_Item_CopperIngot")};
+	case "bambusfarm_inv_sand": {(localize "STR_Item_Sand")};
+	case "bambusfarm_inv_salt": {(localize "STR_Item_Salt")};
+	case "bambusfarm_inv_saltr": {(localize "STR_Item_SaltR")};
+	case "bambusfarm_inv_glass": {(localize "STR_Item_Glass")};
+	case "bambusfarm_inv_diamond": {(localize "STR_Item_DiamondU")};
+	case "bambusfarm_inv_diamondr": {(localize "STR_Item_DiamondC")};
+	case "bambusfarm_inv_tbacon": {(localize "STR_Item_TBacon")};
+	case "bambusfarm_inv_redgull": {(localize "STR_Item_RedGull")};
+	case "bambusfarm_inv_lockpick": {(localize "STR_Item_Lockpick")};
+	case "bambusfarm_inv_peach": {(localize "STR_Item_Peach")};
+	case "bambusfarm_inv_coke": {(localize "STR_Item_CocaineU")};
+	case "bambusfarm_inv_cokep": {(localize "STR_Item_CocaineP")};
+	case "bambusfarm_inv_spikeStrip": {(localize "STR_Item_SpikeStrip")};
+	case "bambusfarm_inv_rock": {(localize "STR_Item_Rock")};
+	case "bambusfarm_inv_cement": {(localize "STR_Item_CementBag")};
+	case "bambusfarm_inv_goldbar": {(localize "STR_Item_GoldBar")};
+	case "bambusfarm_inv_blastingcharge": {(localize "STR_Item_BCharge")};
+	case "bambusfarm_inv_boltcutter": {(localize "STR_Item_BCutter")};
+	case "bambusfarm_inv_defusekit": {(localize "STR_Item_DefuseKit")};
+	case "bambusfarm_inv_storagesmall": {(localize "STR_Item_StorageBS")};
+	case "bambusfarm_inv_storagebig": {(localize "STR_Item_StorageBL")};
+
+
+	case "bambusfarm_inv_aktie_FUX": {"FUX Aktie(n)"};
+	case "bambusfarm_inv_aktie_windoof": {"Windoof Aktie(n)"};
+	case "bambusfarm_inv_aktie_doller": {"EUR/USD Aktie(n)"};
+	case "bambusfarm_inv_aktie_oel": {"Oel Aktie(n)"};
+	case "bambusfarm_inv_aktie_linux": {"Linux Aktie(n)"};
+	case "bambusfarm_inv_aktie_gold": {"Gold Aktie(n)"};
+	case "bambusfarm_inv_aktie_kupfer": {"Kupfer Aktie(n)"};
+	case "bambusfarm_inv_aktie_facebak": {"Facebak Aktie(n)"};
+	case "bambusfarm_inv_aktie_altis": {"Altis Aktie(n)"};
+	case "bambusfarm_inv_aktie_stratis": {"Stratis Aktie(n)"};
+	case "bambusfarm_inv_handcuffs": {"Handfesseln"};
+	case "bambusfarm_inv_Platzhalter": {"---Platzhalter---"};
+	case "bambusfarm_inv_Schere": {"Schere"};
+	case "bambusfarm_inv_laptop": {"Laptop"};
+	
+	//License Block
+	case "license_civ_driver": {(localize "STR_License_Driver")};
+	case "license_civ_air": {(localize "STR_License_Pilot")};
+	case "license_civ_heroin": {(localize "STR_License_Heroin")};
+	case "license_civ_oil": {(localize "STR_License_Oil")};
+	case "license_civ_dive": {(localize "STR_License_Diving")};
+	case "license_civ_boat": {(localize "STR_License_Boat")};
+	case "license_civ_gun": {(localize "STR_License_Firearm")};
+	case "license_cop_air": {(localize "STR_License_Pilot")};
+	case "license_cop_swat": {(localize "STR_License_Swat")};
+	case "license_cop_cg": {(localize "STR_License_CG")};
+	case "license_civ_rebel": {(localize "STR_License_Rebel")};
+	case "license_civ_truck": {(localize "STR_License_Truck")};
+	case "license_civ_diamond": {(localize "STR_License_Diamond")};
+	case "license_civ_copper": {(localize "STR_license_copper")};
+	case "license_civ_iron": {(localize "STR_License_Iron")};
+	case "license_civ_sand": {(localize "STR_License_Sand")};
+	case "license_civ_salt": {(localize "STR_License_Salt")};
+	case "license_civ_coke": {(localize "STR_License_Cocaine")};
+	case "license_civ_marijuana": {(localize "STR_License_Marijuana")};
+	case "license_civ_cement": {(localize "STR_License_Cement")};
+	case "license_med_air": {(localize "STR_License_Pilot")};
+	case "license_civ_home": {(localize "STR_License_Home")};
+	case "license_med_ADAC": {"Zivilpolizei"};
+};

@@ -1,0 +1,8 @@
+0: Arma3Log-Admins
+1: Arma3Log-Cops
+2: Arma3Log-Money
+3: Arma3Log-Zivilisten
+4: Arma3Log-Nachrichten
+5: Arma3Log-Sonstiges
+
+[[format ["0|Admin %1 hat MAPICONS angemacht... Idiot. Bei der Position %2",player getVariable["realname",name player],getPosATL player]],"Arma3Log",false,false] call life_fnc_MP

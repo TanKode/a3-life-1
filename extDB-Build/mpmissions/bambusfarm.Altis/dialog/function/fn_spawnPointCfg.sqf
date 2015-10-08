@@ -1,0 +1,72 @@
+#include <macro.h>
+/*
+	File: fn_spawnPointCfg.sqf
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	Master configuration for available spawn points depending on the units side.
+	
+	Return:
+	[Spawn Marker,Spawn Name,Image Path]
+*/
+private["_side","_return"];
+_side = [_this,0,civilian,[civilian]] call BIS_fnc_param;
+_coplevel = call bambusfarm_coplevel;
+//Spawn Marker, Spawn Name, PathToImage
+switch (_side) do
+{
+	case west:
+	{
+		_return = [
+			["cop_spawn_1","Kavala HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+			["cop_spawn_2","Pyrgos HQ","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
+			["cop_spawn_3","Athira HQ","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"],
+			["cop_spawn_2_1_4","Air HQ","\a3\ui_f\data\map\Markers\NATO\b_air.paa"],
+			["cop_spawn_5","HW Patrol","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"],
+			["cop_spawn_10","Autobahn","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"],
+			["cop_spawn_8","Kuestenwache","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"],
+			["cop_spawn_9","Checkpoint Bravo","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"],
+			["Spawn_cop_Rodopoli_1","Grenzwache Rodopoli","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
+		];
+	};
+	
+	case civilian:
+	{
+		_return = [
+			["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+			["civ_spawn_2","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+			["civ_spawn_3","Athira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+			["civ_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+		];
+		
+		if(count bambusfarm_houses > 0) then {
+			{
+				_pos = call compile format["%1",_x select 0];
+				_house = nearestBuilding _pos;
+				_houseName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
+				
+				_return pushBack [format["house_%1",_house getVariable "uid"],_houseName,"\a3\ui_f\data\map\MapControl\lighthouse_ca.paa"];
+			} foreach bambusfarm_houses;
+		};
+
+		if(license_civ_rebel && playerSide == civilian) then
+		{
+			_return = _return + [
+				["reb_spawn_2","Rebelenlager Frini","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+				["reb_spawn_4","Rebelenflughafen","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+				["reb_spawn_7","Rebeleninsel","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+				["reb_spawn_8","Rebelenlager Selakano","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+			];
+		};
+	};
+	
+	case independent: {
+		_return = [
+			["medic_spawn_1","Kavala Hospital","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+			["medic_spawn_2","Athira Regional","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+			["medic_spawn_3","Pygros Hospital","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
+		];
+	};
+};
+
+_return;

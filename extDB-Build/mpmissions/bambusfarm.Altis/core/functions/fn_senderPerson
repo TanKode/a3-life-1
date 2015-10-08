@@ -1,0 +1,27 @@
+private["_unit"];
+_unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+if(isNull _unit) exitWith {};
+if(player distance _unit > 7) exitWith {hint "Du musst dich näher an die Person stellen!"};
+//if(!([false,"sender",1] call bambusfarm_fnc_handleInv)) exitWith {};
+closeDialog 0;
+if(!(_unit isKindOf "Man")) exitWith {hint "Was willst du hier?"}; 
+
+bambusfarm_action_inUse = true;
+sleep 4;
+bambusfarm_action_inUse = false;
+titleText["Du hast einen Sender an den gesuchten angebracht.","PLAIN"];
+
+[_unit] spawn {
+    _veh = _this select 0;
+    _markerName = format["%1_gpstracker",_veh];
+    _marker = createMarkerLocal [_markerName, visiblePosition _veh];
+    _marker setMarkerColorLocal "ColorRed";
+    _marker setMarkerTypeLocal "Mil_dot";
+    _marker setMarkerTextLocal "GPS Tracker "+getText(configFile >> "CfgVehicles" >> typeof _veh >> "displayName");
+    _marker setMarkerPosLocal getPos _veh;
+    while {true} do {
+        if(not alive _veh) exitWith {deleteMarkerLocal _markerName;};
+        _marker setMarkerPosLocal getPos _veh;
+        sleep 0.5;
+    };
+};​

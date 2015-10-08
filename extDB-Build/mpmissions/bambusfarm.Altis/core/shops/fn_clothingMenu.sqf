@@ -1,0 +1,218 @@
+/*
+    File: fn_clothingMenu.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Opens and initializes the clothing store menu.
+    Started clean, finished messy.
+*/
+#include <macro.h>
+private["_list","_clothes","_pic","_filter"];
+createDialog "bambusfarm_Clothing";
+disableSerialization;
+
+//Cop / Civ Pre Check
+if((_this select 3) in ["bruce","dive","reb","kart"] && playerSide != civilian) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
+if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
+if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
+if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hint localize "STR_Shop_NotaDive"; closeDialog 0;};
+
+bambusfarm_clothing_store = _this select 3;
+
+//License Check?
+_var = [bambusfarm_clothing_store,0] call bambusfarm_fnc_licenseType;
+if(_var select 0 != "") then
+{
+    if(!(missionNamespace getVariable (_var select 0))) exitWith {hint format[localize "STR_Shop_YouNeed",[_var select 0] call bambusfarm_fnc_varToStr]; closeDialog 0;};
+};
+
+// :::...:::.... Clothing NEU?! ....:::...::: \\
+_pos = [1000,1000,10000];
+_oldDir = getDir player;
+_oldPos = visiblePositionASL player;
+_testLogic = "Logic" createVehicleLocal _pos;
+_testLogic setPosATL _pos;
+_ut1 = "UserTexture10m_F" createVehicleLocal (_testLogic modelToWorld [0,5,10]);
+_ut1 attachTo [_testLogic,[0,5,5]];
+_ut1 setDir 0;
+_ut4 = "UserTexture10m_F" createVehicleLocal (_testLogic modelToWorld [0,-5,10]);
+_ut4 attachTo [_testLogic,[0,-5,5]];
+_ut4 setDir 180;
+_ut2 = "UserTexture10m_F" createVehicleLocal (_testLogic modelToWorld [5,0,10]);
+_ut2 attachTo [_testLogic,[5,0,5]];
+_ut2 setDir (getDir _testLogic) + 90;
+_ut3 = "UserTexture10m_F" createVehicleLocal (_testLogic modelToWorld [-5,0,10]);
+_ut3 attachTo [_testLogic,[-5,0,5]];
+_ut3 setDir (getDir _testLogic) - 90;
+_ut5 = "UserTexture10m_F" createVehicleLocal (_testLogic modelToWorld [0,0,10]);
+_ut5 attachTo [_testLogic,[0,0,0]];
+_ut5 setObjectTexture [0,"a3\map_data\gdt_concrete_co.paa"];
+detach _ut5;
+_ut5 setVectorDirAndUp [[0,0,-.33],[0,.33,0]];
+_light = "#lightpoint" createVehicleLocal [1000,1000,10000];   
+_light setLightBrightness 1;  
+_light setLightAmbient [1.0, 1.0, 1.0];
+_light lightAttachObject [_ut1, [0,0,10]];
+
+{if(_x != player) then {_x hideObject true;};} foreach playableUnits;
+
+{
+    _x setObjectTexture [0,"#(argb,8,8,3)color(0,0,0,1)"];
+} foreach [_ut1,_ut2,_ut3,_ut4];
+
+player attachTo [_testLogic,[0,0,0]];
+player switchMove "";
+// :::...:::.... Clothing NEU?! ....:::...::: \\
+
+//initialize camera view
+bambusfarm_shop_cam = "CAMERA" camCreate getPos player;
+showCinemaBorder false;
+bambusfarm_shop_cam cameraEffect ["Internal", "Back"];
+bambusfarm_shop_cam camSetTarget (player modelToWorld [0,0,1]);
+bambusfarm_shop_cam camSetPos (player modelToWorld [1,4,2]);
+bambusfarm_shop_cam camSetFOV .33;
+bambusfarm_shop_cam camSetFocus [50, 0];
+bambusfarm_shop_cam camCommit 0;
+bambusfarm_cMenu_lock = false;
+
+if(isNull (findDisplay 3100)) exitWith {};
+_list = (findDisplay 3100) displayCtrl 3101;
+_filter = (findDisplay 3100) displayCtrl 3105;
+lbClear _filter;
+lbClear _list;
+
+_filter lbAdd localize "STR_Shop_UI_Clothing";
+_filter lbAdd localize "STR_Shop_UI_Hats";
+_filter lbAdd localize "STR_Shop_UI_Glasses";
+_filter lbAdd localize "STR_Shop_UI_Vests";
+_filter lbAdd localize "STR_Shop_UI_Backpack";
+
+_filter lbSetCurSel 0;
+
+bambusfarm_oldClothes = uniform player;
+bambusfarm_olduniformItems = uniformItems player;
+bambusfarm_oldBackpack = backpack player;
+bambusfarm_oldVest = vest player;
+bambusfarm_oldVestItems = vestItems player;
+bambusfarm_oldBackpackItems = backpackItems player;
+bambusfarm_oldGlasses = goggles player;
+bambusfarm_oldHat = headgear player;
+
+waitUntil {isNull (findDisplay 3100)};
+
+// :::...:::.... Clothing NEU?! ....:::...::: \\
+{if(_x != player) then {_x hideObject false;};} foreach playableUnits;
+detach player;
+player setPosASL _oldPos;
+player setDir _oldDir;
+{deleteVehicle _x;} foreach [_testLogic,_ut1,_ut2,_ut3,_ut4,_ut5,_light];
+// :::...:::.... Clothing NEU?! ....:::...::: \\
+
+bambusfarm_shop_cam cameraEffect ["TERMINATE","BACK"];
+camDestroy bambusfarm_shop_cam;
+bambusfarm_clothing_filter = 0;
+
+if(isNil "bambusfarm_clothesPurchased") exitWith
+{
+    bambusfarm_clothing_purchase = [-1,-1,-1,-1,-1];
+    if(bambusfarm_oldClothes != "") then {player addUniform bambusfarm_oldClothes;} else {removeUniform player};
+    if(bambusfarm_oldHat != "") then {player addHeadgear bambusfarm_oldHat} else {removeHeadgear player;};
+    if(bambusfarm_oldGlasses != "") then {player addGoggles bambusfarm_oldGlasses;} else {removeGoggles player};
+    if(backpack player != "") then
+    {
+        if(bambusfarm_oldBackpack == "") then
+        {
+            removeBackpack player;
+        }
+            else
+        {
+            removeBackpack player;
+            player addBackpack bambusfarm_oldBackpack;
+            clearAllItemsFromBackpack player;
+            if(count bambusfarm_oldBackpackItems > 0) then
+            {
+                {
+                    [_x,true,true] call bambusfarm_fnc_handleItem;
+                } foreach bambusfarm_oldBackpackItems;
+            };
+        };
+    };
+    
+    if(count bambusfarm_oldUniformItems > 0) then
+    {
+        {[_x,true,false,false,true] call bambusfarm_fnc_handleItem;} foreach bambusfarm_oldUniformItems;
+    };
+    
+    if(vest player != "") then
+    {
+        if(bambusfarm_oldVest == "") then
+        {
+            removeVest player;
+        }
+            else
+        {
+            player addVest bambusfarm_oldVest;
+            if(count bambusfarm_oldVestItems > 0) then
+            {
+                {[_x,true,false,false,true] call bambusfarm_fnc_handleItem;} foreach bambusfarm_oldVestItems;
+            };
+        };
+    };
+};
+bambusfarm_clothesPurchased = nil;
+
+//Check uniform purchase.
+if((bambusfarm_clothing_purchase select 0) == -1) then
+{
+    if(bambusfarm_oldClothes != uniform player) then {player addUniform bambusfarm_oldClothes;};
+};
+//Check hat
+if((bambusfarm_clothing_purchase select 1) == -1) then
+{
+    if(bambusfarm_oldHat != headgear player) then {if(bambusfarm_oldHat == "") then {removeHeadGear player;} else {player addHeadGear bambusfarm_oldHat;};};
+};
+//Check glasses
+if((bambusfarm_clothing_purchase select 2) == -1) then
+{
+    if(bambusfarm_oldGlasses != goggles player) then
+    {
+        if(bambusfarm_oldGlasses == "") then
+        {
+            removeGoggles player;
+        }
+            else
+        {
+            player addGoggles bambusfarm_oldGlasses;
+        };
+    };
+};
+//Check Vest
+if((bambusfarm_clothing_purchase select 3) == -1) then
+{
+    if(bambusfarm_oldVest != vest player) then
+    {
+        if(bambusfarm_oldVest == "") then {removeVest player;} else
+        {
+            player addVest bambusfarm_oldVest;
+            {[_x,true,false,false,true] call bambusfarm_fnc_handleItem;} foreach bambusfarm_oldVestItems;
+        };
+    };
+};
+
+//Check Backpack
+if((bambusfarm_clothing_purchase select 4) == -1) then
+{
+    if(bambusfarm_oldBackpack != backpack player) then
+    {
+        if(bambusfarm_oldBackpack == "") then {removeBackpack player;} else
+        {
+            removeBackpack player;
+            player addBackpack bambusfarm_oldBackpack;
+            {[_x,true,true] call bambusfarm_fnc_handleItem;} foreach bambusfarm_oldBackpackItems;
+        };
+    };
+};
+
+bambusfarm_clothing_purchase = [-1,-1,-1,-1,-1];
+
+[] call bambusfarm_fnc_saveGear;
