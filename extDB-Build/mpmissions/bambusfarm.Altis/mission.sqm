@@ -2300,7 +2300,7 @@ class Mission
 				};
 				class Item8
 				{
-					position[]={14321.738,18.088726,17435.627};
+					position[]={14325.608,18.4179,17426.377};
 					azimut=-207.63084;
 					special="NONE";
 					id=103;
@@ -31401,6 +31401,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_CashDesk_F";
 			skill=0.60000002;
+			text="Dealer_3";
 			init="removeAllWeapons this; this allowDamage false; this enableSimulation false; this addAction[""Drug Dealer"",bambusfarm_fnc_virt_menu,""heroin"",0,false,false,"""",' vehicle player == player && player distance _target < 5 && playerSide == civilian ']; this addAction[""Question Dealer"",bambusfarm_fnc_questionDealer,"""",0,false,false,"""",' vehicle player == player && player distance _target < 5 && playerSide == west && !bambusfarm_action_inUse '];";
 		};
 		class Item2548
@@ -31861,6 +31862,7 @@ class Mission
 			vehicle="Land_TableDesk_F";
 			leader=1;
 			skill=0.60000002;
+			text="Dealer_1";
 			init="removeAllWeapons this; this allowDamage false; this enableSimulation false; this addAction[""Drug Dealer"",bambusfarm_fnc_virt_menu,""heroin"",0,false,false,"""",' vehicle player == player && player distance _target < 5 && playerSide == civilian ']; this addAction[""Question Dealer"",bambusfarm_fnc_questionDealer,"""",0,false,false,"""",' vehicle player == player && player distance _target < 5 && playerSide == west && !bambusfarm_action_inUse '];";
 		};
 		class Item2587
@@ -46324,7 +46326,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=321;
+		items=309;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -48803,117 +48805,10 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlue";
 		};
-		class Item309
-		{
-			position[]={4870.5049,336.65994,21907.865};
-			name="capture_label_2";
-			text="Kokain Cartel";
-			type="hd_flag";
-			colorName="ColorRed";
-			angle=-350.99701;
-		};
-		class Item310
-		{
-			position[]={4869.4873,336.84415,21908.59};
-			name="capture_area_2";
-			text="Illegal area";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			a=50;
-			b=50;
-		};
-		class Item311
-		{
-			position[]={4935.4697,339.38785,21889.129};
-			name="veh_sp_54";
-			type="Empty";
-			angle=120;
-		};
-		class Item312
-		{
-			position[]={11202.161,182.41,8717.7695};
-			name="capture_label_1";
-			text="Arms Dealer";
-			type="hd_flag";
-			colorName="ColorRed";
-		};
-		class Item313
-		{
-			position[]={11202.138,182.41,8717.1973};
-			name="capture_area_1";
-			text="Illegal area";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			a=50;
-			b=50;
-		};
-		class Item314
-		{
-			position[]={11214.824,178.50533,8633.4414};
-			name="veh_sp_58";
-			type="Empty";
-			angle=245.806;
-		};
-		class Item315
-		{
-			position[]={21996.693,28.352285,21052.029};
-			name="capture_label_4";
-			text="Heroin Cartel";
-			type="hd_flag";
-			colorName="ColorRed";
-			angle=-350.99701;
-		};
-		class Item316
-		{
-			position[]={21995.719,28.333988,21052.93};
-			name="capture_area_4";
-			text="Illegal area";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			a=50;
-			b=50;
-		};
-		class Item317
-		{
-			position[]={22060.518,37.244843,21095.68};
-			name="veh_sp_56";
-			type="Empty";
-			angle=65;
-		};
-		class Item318
-		{
-			position[]={20224.598,47.13879,8915.3184};
-			name="capture_label_3";
-			text="Meth Cartel";
-			type="hd_flag";
-			colorName="ColorRed";
-			angle=-350.99701;
-		};
-		class Item319
-		{
-			position[]={20223.623,47.208485,8916.082};
-			name="capture_area_3";
-			text="Illegal area";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			a=50;
-			b=50;
-		};
-		class Item320
-		{
-			position[]={20219.629,44.217159,8849.2656};
-			name="veh_sp_60";
-			type="Empty";
-			angle=220;
-		};
 	};
 	class Sensors
 	{
-		items=15;
+		items=11;
 		class Item0
 		{
 			position[]={14656.693,17.91,16778.084};
@@ -49106,70 +49001,6 @@ class Mission
 			age="UNKNOWN";
 			expCond="this && (local player) && (vehicle player in thisList)";
 			expActiv="hint ""Sie befinden sich in einem Sicherheitsberreich der Polizei/Militär und des Altis Staatsgefängnis. Bitte verlassen sie diesen Berreich unverzüglich!!! Achtung Schusswaffengebrauch!!!""";
-			class Effects
-			{
-			};
-		};
-		class Item11
-		{
-			position[]={4869.4619,336.93668,21908.779};
-			activationBy="CIV";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			text="Capture Base 2";
-			name="capture_2";
-			expCond="player in (list capture_2)";
-			expActiv="[2] call bambusfarm_fnc_toggleCaptureUI;";
-			expDesactiv="[0] call bambusfarm_fnc_toggleCaptureUI;";
-			class Effects
-			{
-			};
-		};
-		class Item12
-		{
-			position[]={11202.305,182.41,8717.2939};
-			activationBy="CIV";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			text="Capture Base 1";
-			name="capture_1";
-			expCond="player in (list capture_1)";
-			expActiv="[1] call bambusfarm_fnc_toggleCaptureUI;";
-			expDesactiv="[0] call bambusfarm_fnc_toggleCaptureUI;";
-			class Effects
-			{
-			};
-		};
-		class Item13
-		{
-			position[]={21995.65,28.332605,21052.943};
-			activationBy="CIV";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			text="Capture Base 4";
-			name="capture_4";
-			expCond="player in (list capture_4)";
-			expActiv="[4] call bambusfarm_fnc_toggleCaptureUI;";
-			expDesactiv="[0] call bambusfarm_fnc_toggleCaptureUI;";
-			class Effects
-			{
-			};
-		};
-		class Item14
-		{
-			position[]={20223.555,47.216564,8916.2324};
-			activationBy="CIV";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			text="Capture Base 3";
-			name="capture_3";
-			expCond="player in (list capture_3)";
-			expActiv="[3] call bambusfarm_fnc_toggleCaptureUI;";
-			expDesactiv="[0] call bambusfarm_fnc_toggleCaptureUI;";
 			class Effects
 			{
 			};

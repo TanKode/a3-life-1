@@ -193,20 +193,3 @@ CREATE TABLE IF NOT EXISTS `levelsys` (
 `donatorlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
 PRIMARY KEY (`playerid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Table structure for zones
--- ----------------------------
-DROP TABLE IF EXISTS `zones`;
-CREATE TABLE `zones` (
-  `list` text NOT NULL,
-  `id` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of zones
--- ----------------------------
-INSERT INTO `zones` VALUES ('[["Angefochten","Waffenhaendler",0],["Angefochten","Kokain Cartel",0],["Angefochten","Meth Cartel",0],["Angefochten","Heroin Cartel",0]]', '1');
-
-
