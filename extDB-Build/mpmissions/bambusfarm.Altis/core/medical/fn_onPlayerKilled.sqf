@@ -11,7 +11,7 @@ disableSerialization;
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _killer = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
 
-if(playerside != independent)then{ [] spawn bambusfarm_fnc_DelGWH; };
+//if(playerside != independent)then{ [] spawn bambusfarm_fnc_DelGWH; };
 
 //Set some vars
 _unit setVariable["Revive",FALSE,TRUE]; //Set the corpse to a revivable state.

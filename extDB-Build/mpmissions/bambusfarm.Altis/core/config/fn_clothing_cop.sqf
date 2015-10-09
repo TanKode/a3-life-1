@@ -19,8 +19,8 @@ switch (_filter) do
 	//Uniforms
 	case 0:
 	{
-		["U_C_Poloshirt_blue","Streife",250 * DonatorBuyChange],
-		["U_B_CTRG_1","Normal",250 * DonatorBuyChange]
+		_ret set[count _ret,["U_Rangemaster","Streife",50 * DonatorBuyChange]];
+		_ret set[count _ret,["U_B_CTRG_1","Streife",50 * DonatorBuyChange]];
 	};
 
 	//Hats

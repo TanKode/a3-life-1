@@ -27,6 +27,8 @@ corpseRemovalMaxTime = 9999;
 #include "dialog\MasterHandler.h"
 #include "core\pmenu\messages.hpp"
 #include "AS_AdminMenu\spectating.hpp"
+#include "infiSTAR_AdminMenu.hpp"
+#include "CfgRemoteExec.hpp"
 
 class RscTitles
 {
