@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	fn_equipGear.sqf
 	Author: Keine Ahnung.. Bohemia Wiki+SQF? o.O
@@ -12,7 +13,7 @@ _type = [_this,1,"",[""]] call BIS_fnc_param;
 if(playerSide == west) then {
 	switch(_type) do {
 		//1
-		if( (call bambusfarm_coplevel) == 1) then
+		if(__GETC__(bambusfarm_coplevel) == 1) then
         {
 			case "U_Rangemaster":{
 				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_1.jpg";
@@ -20,7 +21,7 @@ if(playerSide == west) then {
 			};
 		};
 		//2
-		if( (call bambusfarm_coplevel) == 2) then
+		if(__GETC__(bambusfarm_coplevel) == 2) then
         {
 			case "U_Rangemaster":{
 				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_2.jpg";
@@ -28,7 +29,7 @@ if(playerSide == west) then {
 			};
 		};
 		//3
-		if( (call bambusfarm_coplevel) == 3) then
+		if(__GETC__(bambusfarm_coplevel) == 3) then
         {
 			case "U_Rangemaster":{
 				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_3.jpg";
@@ -36,7 +37,7 @@ if(playerSide == west) then {
 			};
 		};
 		//4
-		if( (call bambusfarm_coplevel) == 4) then
+		if(__GETC__(bambusfarm_coplevel) == 4) then
         {
 			case "U_Rangemaster":{
 				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_4.jpg";
@@ -44,7 +45,7 @@ if(playerSide == west) then {
 			};
 		};
 		//5
-		if( (call bambusfarm_coplevel) == 5) then
+		if(__GETC__(bambusfarm_coplevel) == 5) then
         {
 			case "U_Rangemaster":{
 				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_5.jpg";
@@ -52,7 +53,7 @@ if(playerSide == west) then {
 			};
 		};
 		//6
-		if( (call bambusfarm_coplevel) == 6) then
+		if(__GETC__(bambusfarm_coplevel) == 6) then
         {
 			case "U_Rangemaster":{
 				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_6.jpg";
@@ -60,7 +61,7 @@ if(playerSide == west) then {
 			};
 		};
 		//7
-		if( (call bambusfarm_coplevel) == 7) then
+		if(__GETC__(bambusfarm_coplevel) == 7) then
         {
 			case "U_Rangemaster":{
 				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_7.jpg";
@@ -68,13 +69,19 @@ if(playerSide == west) then {
 			};
 		};
 		//8
-		if( (call bambusfarm_coplevel) == 8) then
+		if(__GETC__(bambusfarm_coplevel) == 8) then
         {
 			case "U_Rangemaster":{
 				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_8.jpg";
 				_unit setObjectTextureGlobal [0,_path];
 			};
 		};
+
+		//All
+		case "U_B_CTRG_1" : {
+				_path = "bambusfarm\Texturen\Polizei\Kleidung\polizei.paa";
+				_unit setObjectTextureGlobal [0,_path];
+		}
 	};
 	
 	if(backpack player != "") then {(unitBackpack player) setObjectTextureGlobal [0,""];};

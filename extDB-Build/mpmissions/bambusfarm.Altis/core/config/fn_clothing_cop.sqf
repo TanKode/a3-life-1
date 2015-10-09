@@ -19,20 +19,8 @@ switch (_filter) do
 	//Uniforms
 	case 0:
 	{
-		if(__GETC__(bambusfarm_coplevel) < 3) then
-		{
-			_ret set[count _ret,["U_Rangemaster","Rekrut/Streife",0]];
-		};
-		if(__GETC__(bambusfarm_coplevel) >= 5) then
-		{
-			_ret set[count _ret,["U_B_SpecopsUniform_sgg","Hauptkommisar",0]];
-		};
-		if(__GETC__(bambusfarm_coplevel) >= 7) then
-		{
-			_ret set[count _ret,["U_B_SpecopsUniform_sgg","Polizeikleidung",0]];
-			_ret set[count _ret,["U_B_CombatUniform_mcam_vest","FBI",0]];
-			_ret set[count _ret,["U_B_CombatUniform_mcam_worn","DEA",0]];
-		};
+		["U_C_Poloshirt_blue","Streife",250 * DonatorBuyChange],
+		["U_B_CTRG_1","Normal",250 * DonatorBuyChange]
 	};
 
 	//Hats

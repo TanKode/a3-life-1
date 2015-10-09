@@ -128,8 +128,8 @@ if(_gather == "peach") then
     };
     if(bambusfarm_skillPeach > 1249) then
     {
-       	_val = [6,7] call BIS_fnc_selectRandom;
-       	_count = "6-7";
+       	_val = [5,6,7,8] call BIS_fnc_selectRandom;
+       	_count = "5-8";
        	_lvl = 5;
        	_lcap = 1250;
        	_karma = 5;
