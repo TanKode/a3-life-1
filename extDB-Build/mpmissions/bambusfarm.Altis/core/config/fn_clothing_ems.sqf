@@ -18,7 +18,8 @@ switch (_filter) do
 	case 0:
 	{
 		[
-			["U_I_HeliPilotCoveralls","Rettungsdienst Uniform",850 * DonatorBuyChange]
+			["U_Rangemaster","Rettungsdienst Uniform",850 * DonatorBuyChange],
+			["U_C_WorkerCoveralls","ADAC",850 * DonatorBuyChange]
 		];
 	};
 
