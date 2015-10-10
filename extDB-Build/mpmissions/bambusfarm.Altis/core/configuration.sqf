@@ -88,7 +88,7 @@ life_carryWeight = 0; //Represents the players current inventory weight (MUST ST
 
 /*
 *****************************
-****** bambusfarm Variables *******
+****** life Variables *******
 *****************************
 */
 life_net_dropped = false;

@@ -15,7 +15,7 @@ class Socket_Reciever
 
 class life_Client_Core
 {
-	tag = "bambusfarm";
+	tag = "life";
 	
 	class Master_Directory
 	{
@@ -477,19 +477,19 @@ class life_Client_Core
 	};
 };
 
-class bambusfarm
+class life
 {
-	tag = "bambusfarm";
+	tag = "life";
 
 	class Scripts
 	{
-		file = "bambusfarm";
+		file = "life";
 		class equipGear {};
 	};
 /*
 	class fuelstations
 	{
-		file = "bambusfarm\fuelstations\script";
+		file = "life\fuelstations\script";
 		class fuelStationAddAction {};
 		class fuelStationFill {};
 		class fuelStationMenu {};

@@ -1,7 +1,7 @@
 /*
       Created by Mokomoko
       Date: 04.08.2014
-      Related Forum Post: http://www.altisbambusfarmrpg.com/topic/4812-tutorial-how-to-increase-the-fuel-usage/
+      Related Forum Post: http://www.altisliferpg.com/topic/4812-tutorial-how-to-increase-the-fuel-usage/
 */
 
 private["_vehicleToFuel","_velocityOfVehicle","_fuelConsumption"];

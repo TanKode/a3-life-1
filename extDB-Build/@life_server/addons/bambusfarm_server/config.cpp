@@ -55,7 +55,7 @@ class CfgFunctions
 	
 	class life_System
 	{
-		tag = "bambusfarm";
+		tag = "life";
 		class Wanted_Sys
 		{
 			file = "\life_server\Functions\WantedSystem";
@@ -153,9 +153,9 @@ class CfgFunctions
 			class SAH_Transaction {};
 		};
 
-        class bambusfarm
+        class life
         {
-        	file = "\life_server\Functions\bambusfarm";
+        	file = "\life_server\Functions\life";
 				class insertSkillSys {};
 				class removeSkillSys {};
 				class insertKarma {};

@@ -1,5 +1,5 @@
 //::::::::::::  ::::::::::::\\
-//	Filename: core/bambusfarm/fn_life_DelGWH.sqf
+//	Filename: core/life/fn_life_DelGWH.sqf
 //	Author: Distrikt41 - Dscha
 //
 //	Beschreibung: Wenn tot, dann alles ablegen und Lootkiste erzeugen. (Hfftl. Anti-Dupe)

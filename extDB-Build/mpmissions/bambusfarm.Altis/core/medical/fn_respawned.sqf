@@ -22,7 +22,7 @@ player setVariable["Revive",nil,TRUE];
 player setVariable["name",nil,TRUE];
 player setVariable["Reviving",nil,TRUE];
 
-//Load gear for a 'new bambusfarm'
+//Load gear for a 'new life'
 switch(playerSide) do
 {
 	case west: {

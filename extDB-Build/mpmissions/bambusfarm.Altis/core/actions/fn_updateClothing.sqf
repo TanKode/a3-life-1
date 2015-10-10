@@ -18,7 +18,7 @@ switch(true) do
 	{
 		if( (call life_coplevel) > 4) then
 		{
-			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Polizei\Kleidung\cop_captain.jpg"];
+			player setObjectTextureGlobal  [0, "life\Texturen\Polizei\Kleidung\cop_captain.jpg"];
 		};
 
 		if(backpack player != "") then {(unitBackpack player) setObjectTextureGlobal [0,""];};
@@ -28,7 +28,7 @@ switch(true) do
 	{
 		if( (call life_coplevel) > 6) then
 		{
-			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Polizei\Kleidung\uniform_FBI.jpg"];
+			player setObjectTextureGlobal  [0, "life\Texturen\Polizei\Kleidung\uniform_FBI.jpg"];
 		};
 
 		if(backpack player != "") then {(unitBackpack player) setObjectTextureGlobal [0,""];};
@@ -38,7 +38,7 @@ switch(true) do
 	{
 		if( (call life_coplevel) > 6) then
 		{
-			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Polizei\Kleidung\uniform_DEA.jpg"];
+			player setObjectTextureGlobal  [0, "life\Texturen\Polizei\Kleidung\uniform_DEA.jpg"];
 		};
 
 		if(backpack player != "") then {(unitBackpack player) setObjectTextureGlobal [0,""];};
@@ -48,7 +48,7 @@ switch(true) do
 	{
 		if( (call life_coplevel) == 6) then
 		{
-			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Polizei\Kleidung\cop_sergeant.jpg"];
+			player setObjectTextureGlobal  [0, "life\Texturen\Polizei\Kleidung\cop_sergeant.jpg"];
 		};
 
 		if(backpack player != "") then {(unitBackpack player) setObjectTextureGlobal [0,""];};

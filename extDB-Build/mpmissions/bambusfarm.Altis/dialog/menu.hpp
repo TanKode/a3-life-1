@@ -9,7 +9,7 @@ class life_menu
 		class pictureLogo: life_RscPicture
         {
         	idc = 1200;
-        	text = "bambusfarm\Texturen\logo.jpg";
+        	text = "life\Texturen\logo.jpg";
         	x = 0.65;
         	y = 0.36;
         	w = 0.175;

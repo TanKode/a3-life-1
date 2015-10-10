@@ -1,6 +1,6 @@
 /*
 
-	Author bambusfarm
+	Author life
 	Inits the Messages System with For Each player on Server etc...
 	Asking for Messages from others and bla
 

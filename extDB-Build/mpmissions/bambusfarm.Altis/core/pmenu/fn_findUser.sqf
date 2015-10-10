@@ -1,6 +1,6 @@
 /*
 
-	Author bambusfarm
+	Author life
 	Gets the user from the RSC edit and the messages bla...
 
 */

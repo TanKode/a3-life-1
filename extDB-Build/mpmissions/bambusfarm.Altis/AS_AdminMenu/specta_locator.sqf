@@ -1,5 +1,5 @@
 
-	private ["_color","_shape","_Type","_timer","_bambusfarm","_position","_weight","_vol","_rub","_size","_PS","_unit", "_unitPos"];
+	private ["_color","_shape","_Type","_timer","_life","_position","_weight","_vol","_rub","_size","_PS","_unit", "_unitPos"];
 	
 	//_unit = _this select 0;
 	//_PS = _this select 1;
@@ -8,7 +8,7 @@
 	//_shape = "\A3\data_f\ParticleEffects\Universal\smoke.p3d";
 	
 	//_timer = 0.01;
-	//_bambusfarm = 2.5;
+	//_life = 2.5;
 	//_position = [0, 0, 2.5];
 	//_weight = 7.5;
 	//_vol = 10;
@@ -62,7 +62,7 @@
 						"",
 						"billboard",
 						1, //_timer,
-						0.15, //_bambusfarm,
+						0.15, //_life,
 						[0,0,2], //_position,
 						[0,0,0], 
 						1,
@@ -78,7 +78,7 @@
 						"",
 						_unitPos
 					];
-					//_s setParticleParams[_part, "", "billboard", 1, _bambusfarmTime, [0, 0, 2], [0,0,0], 1, 1, 0.784, 0.1, [_size, _size*0.66], [_color, _color, _color, _color, _color], [1], 10.0, 0.0, "", "", vehicle _u];
+					//_s setParticleParams[_part, "", "billboard", 1, _lifeTime, [0, 0, 2], [0,0,0], 1, 1, 0.784, 0.1, [_size, _size*0.66], [_color, _color, _color, _color, _color], [1], 10.0, 0.0, "", "", vehicle _u];
 					_PS setDropInterval 0.05;
 				}
 				else

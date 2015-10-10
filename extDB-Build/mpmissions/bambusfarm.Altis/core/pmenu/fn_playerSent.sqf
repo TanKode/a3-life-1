@@ -1,6 +1,6 @@
 /*
 
-	Author bambusfarm
+	Author life
 	Triggers if player sends the message from the new message system to another player...
 
 */

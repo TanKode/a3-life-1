@@ -1,5 +1,5 @@
 
-	private ["_color","_shape","_Type","_timer","_bambusfarm","_position","_weight","_vol","_rub","_size","_PS","_unit", "_unitPos"];
+	private ["_color","_shape","_Type","_timer","_life","_position","_weight","_vol","_rub","_size","_PS","_unit", "_unitPos"];
 	
 	//_unit = _this select 0;
 	//_PS = _this select 1;
@@ -8,7 +8,7 @@
 	_shape = "\A3\data_f\ParticleEffects\Universal\smoke.p3d";
 	
 	//_timer = 0.01;
-	//_bambusfarm = 2.5;
+	//_life = 2.5;
 	//_position = [0, 0, 2.5];
 	//_weight = 7.5;
 	//_vol = 10;
@@ -60,7 +60,7 @@
 						"",
 						"billboard",
 						0.01, //_timer,
-						2.5, //_bambusfarm,
+						2.5, //_life,
 						[0,0,2.5], //_position,
 						[0, 0, 0], 
 						0,

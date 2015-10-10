@@ -1,6 +1,6 @@
 /*
 
-	Author bambusfarm
+	Author life
 	Player select another message and ... it appears!!! WTF IS THIS MAGIC O_O?
 
 */

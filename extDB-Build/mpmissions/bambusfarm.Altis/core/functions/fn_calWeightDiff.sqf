@@ -4,7 +4,7 @@
 	
 	Description:
 	Calculates weight differences in the _cWeight (current Weight) against the _mWeight (Max Weight)
-	Multiple purpose system for this bambusfarm mission.
+	Multiple purpose system for this life mission.
 */
 private["_item","_value","_cWeight","_mWeight","_sum","_weight"];
 _item = [_this,0,"",[""]] call BIS_fnc_param;

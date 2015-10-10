@@ -1,6 +1,6 @@
 /*
 
-	Author bambusfarm
+	Author life
 	Get the position of the Marker and set it on the map for a few seconds!? maybe... 20?
 
 */

@@ -612,7 +612,7 @@ switch (_type) do
 	case "ToggleTags": 
 	{
 	/*
-		_bambusfarmTime = 0.25;
+		_lifeTime = 0.25;
 		_dropPeriod = 0.05;
 		
 		_part = "\a3\data_f\cl_water.p3d";
@@ -636,7 +636,7 @@ switch (_type) do
 
 				_colorB = [_color select 0, _color select 1, _color select 2, 0];
 
-				_s setParticleParams[_part, "", "billboard", 1, _bambusfarmTime, [0, 0, 2], [0,0,0], 1, 1, 0.784, 0.1, [_size, _size*0.66], [_color, _color, _color, _color, _color], [1], 10.0, 0.0, "", "", vehicle _u];
+				_s setParticleParams[_part, "", "billboard", 1, _lifeTime, [0, 0, 2], [0,0,0], 1, 1, 0.784, 0.1, [_size, _size*0.66], [_color, _color, _color, _color, _color], [1], 10.0, 0.0, "", "", vehicle _u];
 				_s setDropInterval _dropPeriod;
 			}		
 			else

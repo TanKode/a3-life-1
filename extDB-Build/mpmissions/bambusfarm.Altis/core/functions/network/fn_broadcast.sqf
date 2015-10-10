@@ -3,7 +3,7 @@
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
-	Broadcast system used in the bambusfarm mission for multi-notification purposes.
+	Broadcast system used in the life mission for multi-notification purposes.
 */
 private["_type","_message"];
 _type = [_this,0,0,[[],0]] call BIS_fnc_param;

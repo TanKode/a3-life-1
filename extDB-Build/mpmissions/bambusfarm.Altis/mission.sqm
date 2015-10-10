@@ -242,7 +242,7 @@ class Mission
 	randomSeed=2004553;
 	class Intel
 	{
-		briefingName="Altis life RPG by Bambusfarm Community";
+		briefingName="Altis life RPG by life Community";
 		overviewText="Altis Life RPG 3.1.4.8";
 		startWeather=0.039999999;
 		startWind=0.29999998;
@@ -3386,7 +3386,7 @@ class Mission
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;    this addAction[format[""%1 (%2€)"",[""license_med_air""]   call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];   this addAction[""Kleidung"",life_fnc_clothingMenu,""med""]; this addAction[""Sani Shop"",life_fnc_weaponShopMenu,""med_basic""];    this addAction[""Vehicle Shop"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_1"",""med"",""Kavala Hosptial""]];    this addAction[""Helicopter Shop"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_air_3"",""med"",""Kavala Hosptial""]];   this addAction[""Car Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;     createDialog ""life_impound_menu"";   disableSerialization;     ctrlSetText[2802,""Garage wird geoeffnet....""];   life_garage_sp = ""med_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent'];    this addAction[""Helicopter Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;     createDialog ""life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Garage wird geoeffnet....""];     life_garage_sp = ""medic_air_3""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];    this addAction[""Einparken"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];    this setObjectTexture [0,""bambusfarm\Texturen\Medic\Kleidung\med_uniform.jpg""];  ";
+					init="this enableSimulation false;  this allowDamage false;    this addAction[format[""%1 (%2€)"",[""license_med_air""]   call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];   this addAction[""Kleidung"",life_fnc_clothingMenu,""med""]; this addAction[""Sani Shop"",life_fnc_weaponShopMenu,""med_basic""];    this addAction[""Vehicle Shop"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_1"",""med"",""Kavala Hosptial""]];    this addAction[""Helicopter Shop"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_air_3"",""med"",""Kavala Hosptial""]];   this addAction[""Car Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;     createDialog ""life_impound_menu"";   disableSerialization;     ctrlSetText[2802,""Garage wird geoeffnet....""];   life_garage_sp = ""med_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent'];    this addAction[""Helicopter Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;     createDialog ""life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Garage wird geoeffnet....""];     life_garage_sp = ""medic_air_3""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];    this addAction[""Einparken"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];    this setObjectTexture [0,""life\Texturen\Medic\Kleidung\med_uniform.jpg""];  ";
 				};
 				class Item3
 				{
@@ -12624,7 +12624,7 @@ class Mission
 			vehicle="SignAd_Sponsor_F";
 			leader=1;
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this setObjectTexture [0, ""bambusfarm\Texturen\30.jpg""]";
+			init="this allowDamage false; this enableSimulation false; this setObjectTexture [0, ""life\Texturen\30.jpg""]";
 		};
 		class Item749
 		{
@@ -12759,7 +12759,7 @@ class Mission
 			side="EMPTY";
 			vehicle="UserTexture10m_F";
 			skill=0.60000002;
-			init="[this, -90,0] call BIS_fnc_setPitchBank; this allowDamage false; this setObjectTexture [0,""bambusfarm\Texturen\zebrastreifen.paa""]";
+			init="[this, -90,0] call BIS_fnc_setPitchBank; this allowDamage false; this setObjectTexture [0,""life\Texturen\zebrastreifen.paa""]";
 		};
 		class Item762
 		{
@@ -12890,7 +12890,7 @@ class Mission
 			side="EMPTY";
 			vehicle="UserTexture10m_F";
 			skill=0.60000002;
-			init="[this, -90,0] call BIS_fnc_setPitchBank; this allowDamage false; this setObjectTexture [0,""bambusfarm\Texturen\zebrastreifen.paa""]";
+			init="[this, -90,0] call BIS_fnc_setPitchBank; this allowDamage false; this setObjectTexture [0,""life\Texturen\zebrastreifen.paa""]";
 		};
 		class Item775
 		{
@@ -13253,7 +13253,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item811
 		{
@@ -13264,7 +13264,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item812
 		{
@@ -13286,7 +13286,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item814
 		{
@@ -13297,7 +13297,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item815
 		{
@@ -13308,7 +13308,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item816
 		{
@@ -13330,7 +13330,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item818
 		{
@@ -13341,7 +13341,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item819
 		{
@@ -13352,7 +13352,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item820
 		{
@@ -13363,7 +13363,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item821
 		{
@@ -13385,7 +13385,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item823
 		{
@@ -13396,7 +13396,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item824
 		{
@@ -13571,7 +13571,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item840
 		{
@@ -13582,7 +13582,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item841
 		{
@@ -13593,7 +13593,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item842
 		{
@@ -13604,7 +13604,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item843
 		{
@@ -13615,7 +13615,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item844
 		{
@@ -13625,7 +13625,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item845
 		{
@@ -13636,7 +13636,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item846
 		{
@@ -13646,7 +13646,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item847
 		{
@@ -13656,7 +13656,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item848
 		{
@@ -13666,7 +13666,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item849
 		{
@@ -16253,7 +16253,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1087
 		{
@@ -16337,7 +16337,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1095
 		{
@@ -16348,7 +16348,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1096
 		{
@@ -16359,7 +16359,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1097
 		{
@@ -16380,7 +16380,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1099
 		{
@@ -16691,7 +16691,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_CampingChair_V2_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1128
 		{
@@ -16713,7 +16713,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_CampingChair_V2_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1130
 		{
@@ -16724,7 +16724,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_CampingChair_V2_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1131
 		{
@@ -16779,7 +16779,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1136
 		{
@@ -16801,7 +16801,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1138
 		{
@@ -16812,7 +16812,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1139
 		{
@@ -16823,7 +16823,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1140
 		{
@@ -16834,7 +16834,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1141
 		{
@@ -16845,7 +16845,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1142
 		{
@@ -16856,7 +16856,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1143
 		{
@@ -18356,7 +18356,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item1283
 		{
@@ -26917,7 +26917,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2115
 		{
@@ -26928,7 +26928,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2116
 		{
@@ -26939,7 +26939,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2117
 		{
@@ -26950,7 +26950,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2118
 		{
@@ -26961,7 +26961,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2119
 		{
@@ -26972,7 +26972,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2120
 		{
@@ -27014,7 +27014,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2124
 		{
@@ -27025,7 +27025,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2125
 		{
@@ -27036,7 +27036,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2126
 		{
@@ -27047,7 +27047,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2127
 		{
@@ -27058,7 +27058,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2128
 		{
@@ -27069,7 +27069,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2129
 		{
@@ -27236,7 +27236,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2146
 		{
@@ -27247,7 +27247,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2147
 		{
@@ -27269,7 +27269,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2149
 		{
@@ -27280,7 +27280,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_ChairWood_F";
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2150
 		{
@@ -27323,7 +27323,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2154
 		{
@@ -27334,7 +27334,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2155
 		{
@@ -27345,7 +27345,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2156
 		{
@@ -27356,7 +27356,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2157
 		{
@@ -27367,7 +27367,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2158
 		{
@@ -27378,7 +27378,7 @@ class Mission
 			vehicle="Land_ChairWood_F";
 			leader=1;
 			skill=0.60000002;
-			init="this addAction[""Hinsetzen"",""bambusfarm\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
+			init="this addAction[""Hinsetzen"",""life\Modifikation\sitdown.sqf""];this allowDamage false;this enableSimulation false;this allowDamage false;this enableSimulation false;";
 		};
 		class Item2159
 		{

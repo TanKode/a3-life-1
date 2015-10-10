@@ -5,39 +5,39 @@
 life_firstSpawn = true;
 life_session_completed = false;
 private["_handle","_timeStamp"];
-//["Setting up Server","Creating Risk-Your-bambusfarm essential event handlers to operation."] call TON_fnc_showMsg;
+//["Setting up Server","Creating Risk-Your-life essential event handlers to operation."] call TON_fnc_showMsg;
 0 cutFadeOut 9999999;
 _timeStamp = diag_tickTime;
 diag_log "------------------------------------------------------------------------------------------------------";
-diag_log "--------------------------------- Starting Altis bambusfarm Client Init ----------------------------------";
+diag_log "--------------------------------- Starting Altis life Client Init ----------------------------------";
 diag_log "------------------------------------------------------------------------------------------------------";
 waitUntil {!isNull player && player == player}; //Wait till the player is ready
 //Setup initial client core functions
-diag_log "::Risk-Your-bambusfarm:: Initialization Variables";
+diag_log "::Risk-Your-life:: Initialization Variables";
 [] call compile PreprocessFileLineNumbers "core\configuration.sqf";
-//["::Risk-Your-bambusfarm::"," Variables initialized"] call TON_fnc_showMsg;
+//["::Risk-Your-life::"," Variables initialized"] call TON_fnc_showMsg;
 0 cutFadeOut 9999999;
-diag_log "::Risk-Your-bambusfarm:: Variables initialized";
-diag_log "::Risk-Your-bambusfarm:: Setting up Eventhandlers";
+diag_log "::Risk-Your-life:: Variables initialized";
+diag_log "::Risk-Your-life:: Setting up Eventhandlers";
 [] call life_fnc_setupEVH;
-//["::Risk-Your-bambusfarm::"," Setting up Eventhandlers"] call TON_fnc_showMsg;
+//["::Risk-Your-life::"," Setting up Eventhandlers"] call TON_fnc_showMsg;
 0 cutFadeOut 9999999;
-diag_log "::Risk-Your-bambusfarm:: Eventhandlers completed";
-diag_log "::Risk-Your-bambusfarm:: Setting up user actions";
+diag_log "::Risk-Your-life:: Eventhandlers completed";
+diag_log "::Risk-Your-life:: Setting up user actions";
 [] call life_fnc_setupActions;
-diag_log "::Risk-Your-bambusfarm:: User actions completed";
-diag_log "::Risk-Your-bambusfarm:: Waiting for server functions to transfer..";
-//["::Bambusfarm Community::"," Waiting for server functions to transfer.."] call TON_fnc_showMsg;
+diag_log "::Risk-Your-life:: User actions completed";
+diag_log "::Risk-Your-life:: Waiting for server functions to transfer..";
+//["::life Community::"," Waiting for server functions to transfer.."] call TON_fnc_showMsg;
 0 cutFadeOut 9999999;
 waitUntil {(!isNil {TON_fnc_clientGangLeader})};
-diag_log "::Bambusfarm Community:: Received server functions.";
-//["::Bambusfarm Community::"," Received server functions."] call TON_fnc_showMsg;
+diag_log "::life Community:: Received server functions.";
+//["::life Community::"," Received server functions."] call TON_fnc_showMsg;
 0 cutFadeOut 9999999;
-diag_log "::Bambusfarm Community:: Waiting for the server to be ready..";
+diag_log "::life Community:: Waiting for the server to be ready..";
 waitUntil{!isNil "life_server_isReady"};
 /*waitUntil{(life_server_isReady OR !isNil "life_server_extDB2_notLoaded")};
 if(!isNil "life_server_extDB2_notLoaded") exitWith {
-	diag_log "::Bambusfarm Community:: Server did not load extDB";
+	diag_log "::life Community:: Server did not load extDB";
 	999999 cutText ["The server-side extension extDB was not loaded into the engine, report this to the server admin.","BLACK FADED"];
 	999999 cutFadeOut 99999999;
 };*/
@@ -46,7 +46,7 @@ waitUntil {life_session_completed};
 //["::Client::"," We are almost Done."] call TON_fnc_showMsg;
 0 cutFadeOut 9999999;
 
-//diag_log "::bambusfarm Client:: Group Base Execution";
+//diag_log "::life Client:: Group Base Execution";
 [] spawn life_fnc_escInterupt;
 
 switch (playerSide) do
@@ -83,7 +83,7 @@ diag_log "Display 46 Found";
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
 player addRating 99999999;
 diag_log "------------------------------------------------------------------------------------------------------";
-diag_log format["                End of Altis bambusfarm Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
+diag_log format["                End of Altis life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "------------------------------------------------------------------------------------------------------";
 life_sidechat = true;
 [[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;

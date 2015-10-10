@@ -16,7 +16,7 @@ if(playerSide == west) then {
 		if(__GETC__(life_coplevel) == 1) then
         {
 			case "U_Rangemaster":{
-				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_1.jpg";
+				_path = "life\Texturen\Polizei\Kleidung\cop_1.jpg";
 				_unit setObjectTextureGlobal [0,_path];
 			};
 		};
@@ -24,7 +24,7 @@ if(playerSide == west) then {
 		if(__GETC__(life_coplevel) == 2) then
         {
 			case "U_Rangemaster":{
-				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_2.jpg";
+				_path = "life\Texturen\Polizei\Kleidung\cop_2.jpg";
 				_unit setObjectTextureGlobal [0,_path];
 			};
 		};
@@ -32,7 +32,7 @@ if(playerSide == west) then {
 		if(__GETC__(life_coplevel) == 3) then
         {
 			case "U_Rangemaster":{
-				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_3.jpg";
+				_path = "life\Texturen\Polizei\Kleidung\cop_3.jpg";
 				_unit setObjectTextureGlobal [0,_path];
 			};
 		};
@@ -40,7 +40,7 @@ if(playerSide == west) then {
 		if(__GETC__(life_coplevel) == 4) then
         {
 			case "U_Rangemaster":{
-				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_4.jpg";
+				_path = "life\Texturen\Polizei\Kleidung\cop_4.jpg";
 				_unit setObjectTextureGlobal [0,_path];
 			};
 		};
@@ -48,7 +48,7 @@ if(playerSide == west) then {
 		if(__GETC__(life_coplevel) == 5) then
         {
 			case "U_Rangemaster":{
-				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_5.jpg";
+				_path = "life\Texturen\Polizei\Kleidung\cop_5.jpg";
 				_unit setObjectTextureGlobal [0,_path];
 			};
 		};
@@ -56,7 +56,7 @@ if(playerSide == west) then {
 		if(__GETC__(life_coplevel) == 6) then
         {
 			case "U_Rangemaster":{
-				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_6.jpg";
+				_path = "life\Texturen\Polizei\Kleidung\cop_6.jpg";
 				_unit setObjectTextureGlobal [0,_path];
 			};
 		};
@@ -64,7 +64,7 @@ if(playerSide == west) then {
 		if(__GETC__(life_coplevel) == 7) then
         {
 			case "U_Rangemaster":{
-				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_7.jpg";
+				_path = "life\Texturen\Polizei\Kleidung\cop_7.jpg";
 				_unit setObjectTextureGlobal [0,_path];
 			};
 		};
@@ -72,14 +72,14 @@ if(playerSide == west) then {
 		if(__GETC__(life_coplevel) == 8) then
         {
 			case "U_Rangemaster":{
-				_path = "bambusfarm\Texturen\Polizei\Kleidung\cop_8.jpg";
+				_path = "life\Texturen\Polizei\Kleidung\cop_8.jpg";
 				_unit setObjectTextureGlobal [0,_path];
 			};
 		};
 
 		//All
 		case "U_B_CTRG_1" : {
-				_path = "bambusfarm\Texturen\Polizei\Kleidung\polizei.paa";
+				_path = "life\Texturen\Polizei\Kleidung\polizei.paa";
 				_unit setObjectTextureGlobal [0,_path];
 		}
 	};
@@ -91,11 +91,11 @@ if(playerSide == west) then {
 if(playerSide == independent) then {
 	switch(_type) do {
 		case "U_Rangemaster" : {
-			_path = "bambusfarm\Texturen\Medic\Kleidung\med_uniform.jpg";
+			_path = "life\Texturen\Medic\Kleidung\med_uniform.jpg";
 			_unit setObjectTextureGlobal [0,_path];
 		};
 		case "U_C_WorkerCoveralls" : {
-			_path = "bambusfarm\Texturen\ADAC\Kleidung\adac.jpg";
+			_path = "life\Texturen\ADAC\Kleidung\adac.jpg";
 			_unit setObjectTextureGlobal [0,_path];
 		};
 	};
@@ -107,24 +107,24 @@ if(playerSide == civilian) then {
 	switch(_type) do {
 		//1
 		case "U_C_Poloshirt_blue":{
-			_path = "bambusfarm\Texturen\Zivilisten\Adidas_Abklatsch.jpg";
+			_path = "life\Texturen\Zivilisten\Adidas_Abklatsch.jpg";
 			_unit setObjectTextureGlobal [0,_path];
 		};
 		//2
 		case "U_C_Poloshirt_burgundy":{
-			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Zivilisten\Adidas_Abklatsch_Drache.jpg"];
+			player setObjectTextureGlobal  [0, "life\Texturen\Zivilisten\Adidas_Abklatsch_Drache.jpg"];
 		};
 		//3
 		case "U_C_Poloshirt_redwhite":{
-			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Zivilisten\Hello_Kitty.jpg"];
+			player setObjectTextureGlobal  [0, "life\Texturen\Zivilisten\Hello_Kitty.jpg"];
 		};
 		//4
 		case "U_C_Poloshirt_stripped":{
-			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Zivilisten\My_Pony.jpg"];
+			player setObjectTextureGlobal  [0, "life\Texturen\Zivilisten\My_Pony.jpg"];
 		};
 		//5
 		case "U_C_Poloshirt_tricolour":{
-			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Zivilisten\Puma_Abklatsch.jpg"];
+			player setObjectTextureGlobal  [0, "life\Texturen\Zivilisten\Puma_Abklatsch.jpg"];
 		};
 
 	};

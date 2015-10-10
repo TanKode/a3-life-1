@@ -1,6 +1,6 @@
 /*
 
-	Author bambusfarm
+	Author life
 	Script extract name of reciever and if its not reciever exit..
 
 */

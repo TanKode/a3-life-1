@@ -1,5 +1,5 @@
 //::::::::::::  ::::::::::::\\
-//	Filename: bambusfarm/fn_life_KillMalus.sqf
+//	Filename: life/fn_life_KillMalus.sqf
 //	Author: Distrikt41 - Dscha
 //
 //	Beschreibung: Zieht Skillpunkte bei Spielern ab, die jemanden erschossen haben.

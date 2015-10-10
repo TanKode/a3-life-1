@@ -2,5 +2,5 @@
 save = true;
 
 if (save) then {
-[] execVM "bambusfarm\fn_autoSave.sqf";
+[] execVM "life\fn_autoSave.sqf";
 };

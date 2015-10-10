@@ -28,19 +28,19 @@ player addRating 9999999;
 // Intro Scripts
  if((getPos player) distance (getMarkerPos "civ_spawn_1") < 500) then
  {
- [] execVM "bambusfarm\Kavala.sqf";
+ [] execVM "life\Kavala.sqf";
  };
  if((getPos player) distance (getMarkerPos "civ_spawn_2") < 500) then
  {
- [] execVM "bambusfarm\Pyrgos.sqf";
+ [] execVM "life\Pyrgos.sqf";
  };
  if((getPos player) distance (getMarkerPos "civ_spawn_3") < 500) then
  {
- [] execVM "bambusfarm\Athira.sqf";
+ [] execVM "life\Athira.sqf";
  };
  if((getPos player) distance (getMarkerPos "civ_spawn_4") < 500) then
  {
- [] execVM "bambusfarm\Sofia.sqf";
+ [] execVM "life\Sofia.sqf";
  };
 
  [player, uniform player] call life_fnc_equipGear;

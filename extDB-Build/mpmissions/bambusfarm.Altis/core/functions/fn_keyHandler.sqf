@@ -330,7 +330,7 @@ switch (_code) do
 							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};
 						systemChat localize "STR_MISC_VehUnlock";
-						hint composeText [ image "bambusfarm\Texturen\unlock.paa", " Du hast dein Fahrzeug entsperrt." ];
+						hint composeText [ image "life\Texturen\unlock.paa", " Du hast dein Fahrzeug entsperrt." ];
 						[player, "unlock", 25] call life_fnc_globalSound;
 					} else {
 						if(local _veh) then {
@@ -339,7 +339,7 @@ switch (_code) do
 							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};	
 						systemChat localize "STR_MISC_VehLock";
-						hint composeText [ image "bambusfarm\Texturen\lock.paa", " Du hast dein Fahrzeug zugesperrt." ];
+						hint composeText [ image "life\Texturen\lock.paa", " Du hast dein Fahrzeug zugesperrt." ];
 						[player, "lock", 25] call life_fnc_globalSound;
 					};
 				};

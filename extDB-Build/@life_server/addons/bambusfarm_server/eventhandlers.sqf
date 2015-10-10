@@ -4,7 +4,7 @@
 	@file Author: TAW_Tonic
 	@file edit: 4/14/2013
 	Copyright © 2013 Bryan Boardwine, All rights reserved
-	See http://armafiles.info/bambusfarm/list.txt for servers that are permitted to use this code.
+	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 */
 
 if(!isServer) exitWith {};

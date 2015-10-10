@@ -6,7 +6,7 @@
 	Does something with inserting... Don't have time for
 	descriptions... Need to write it...
 */
-private["_uid","_name","_side","_money","_bank","_licenses","_handler","_thread","_queryResult","_query","_alias","_querySkill","_quebambusfarmevel"];
+private["_uid","_name","_side","_money","_bank","_licenses","_handler","_thread","_queryResult","_query","_alias","_querySkill","_queryLevel"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _money = [_this,2,0,[""]] call BIS_fnc_param;
@@ -39,9 +39,9 @@ waitUntil{sleep (random 0.3); !DB_Async_Active};
 [_querySkill,1] call DB_fnc_asyncCall;
 //SKILLSYS ENDE
 
-_quebambusfarmevel = format["INSERT INTO levelsys (playerid) VALUES ('%1')",_uid];
+_queryLevel = format["INSERT INTO levelsys (playerid) VALUES ('%1')",_uid];
 waitUntil{sleep (random 0.3); !DB_Async_Active};
-[_quebambusfarmevel,1] call DB_fnc_asyncCall;
+[_queryLevel,1] call DB_fnc_asyncCall;
 
 //Clense and prepare some information.
 _name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.

@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "scriptedFSM.cfg, bambusfarm Steuern FSM">*/
+/*%FSM<COMPILE "scriptedFSM.cfg, life Steuern FSM">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Main_Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Main Init"};
@@ -22,7 +22,7 @@ window[] = {2,-1,-1,-1,-1,844,26,1466,26,3,1241};
 *//*%FSM</HEAD>*/
 class FSM
 {
-        fsmName = "bambusfarm Steuern FSM";
+        fsmName = "life Steuern FSM";
         class States
         {
                 /*%FSM<STATE "Main_Init">*/

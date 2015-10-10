@@ -1,5 +1,5 @@
 //::::::::::::  ::::::::::::\\
-//	Filename: core/bambusfarm/fn_life_KSys.sqf
+//	Filename: core/life/fn_life_KSys.sqf
 //	Author: Distrikt41 - Dscha
 //
 //	Beschreibung: Karma is a bi...

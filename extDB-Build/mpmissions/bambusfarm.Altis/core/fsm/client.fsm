@@ -22,7 +22,7 @@ window[] = {2,-1,-1,-1,-1,731,66,1998,66,3,644};
 *//*%FSM</HEAD>*/
 class FSM
 {
-  fsmName = "bambusfarm Client FSM";
+  fsmName = "life Client FSM";
   class States
   {
     /*%FSM<STATE "Main_Init">*/

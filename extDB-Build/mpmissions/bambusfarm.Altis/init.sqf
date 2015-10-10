@@ -11,9 +11,9 @@ enableSaving[false,false];
 life_versionInfo = "Altis life RPG v3.1.4.8";
 [] execVM "briefing.sqf"; //Load Briefing
 [] execVM "KRON_Strings.sqf";
-[] execVM "bambusfarm\init.sqf";
+[] execVM "life\init.sqf";
 //[] execVM "scripts\fn_robShopInit.sqf";
-//[] execVM "bambusfarm\fuelstations\init_fuelstations.sqf";
+//[] execVM "life\fuelstations\init_fuelstations.sqf";
 
 
 StartProgress = true;

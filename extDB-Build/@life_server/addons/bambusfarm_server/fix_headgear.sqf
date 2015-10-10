@@ -1,7 +1,7 @@
 /*
 	File: randomize_civ1.sqf
 	Author: pettka
-	Modified by Tonic for Altis bambusfarm.
+	Modified by Tonic for Altis life.
 
 	Description:
 	Randomizes a headgear form _headgear array and puts it to civilian's headgear slot upon startup of mission.

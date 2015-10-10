@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="Altis bambusfarm RPG">
+<Project name="Altis life RPG">
 	<Package name="Shop_Names">
 		<Key ID="STR_Shops_Market">
 			<Original>Altis Market</Original>

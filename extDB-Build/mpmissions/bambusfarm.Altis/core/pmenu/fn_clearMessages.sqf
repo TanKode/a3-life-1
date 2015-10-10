@@ -1,6 +1,6 @@
 /*
 
-	Author bambusfarm
+	Author life
 	Clears the Messages fo the player... cant read the old messages again..
 
 */
