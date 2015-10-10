@@ -1,6 +1,6 @@
 class bambusfarm_taxiMenu {
 
-	idd = 679905443;
+	idd = TaxiMenu;
 	movingEnable = false;
 	enableSimulation = true;
 	

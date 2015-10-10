@@ -22,7 +22,7 @@
 any=[
     [
         ["Willkommen auf dem Altis Life Server","<t align = 'center' size = '0.7'>%1</t><br/>"],
-        ["RISK YOUR LIFE","<t align = 'center' size ='1'>%1</t><br/>"],
+        ["Bambusfarm","<t align = 'center' size ='1'>%1</t><br/>"],
         ["Server Restarts: 00:00, 06:00, 12:00, 18:00","<t align = 'center' size = '0.7'>%1</t><br/>"]
     ]
 ] spawn BIS_fnc_typeText;
