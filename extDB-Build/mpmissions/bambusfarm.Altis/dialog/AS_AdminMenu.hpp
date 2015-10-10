@@ -8,7 +8,7 @@ class AS_menu
 	class controlsBackground {};
 	
 	class controls {
-		class RscText_1000: bambusfarm_RscText
+		class RscText_1000: life_RscText
 		{
 			idc = -1;
 			x = 0.257133 * safezoneW + safezoneX;
@@ -17,7 +17,7 @@ class AS_menu
 			h = 0.550092 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
 		};
-		class RscText_1001: bambusfarm_RscText
+		class RscText_1001: life_RscText
 		{
 			idc = -1;
 			x = 0.257133 * safezoneW + safezoneX;
@@ -26,7 +26,7 @@ class AS_menu
 			h = 0.0286047 * safezoneH;
 			colorBackground[] = {0,0.26,0.6,1};
 		};
-		class RscText_1002: bambusfarm_RscText
+		class RscText_1002: life_RscText
 		{
 			idc = -1;
 			text = "ARMA-SERVICES.DE | ADVANCED ADMIN PANEL"; //--- ToDo: Localize;
@@ -35,7 +35,7 @@ class AS_menu
 			w = 0.242867 * safezoneW;
 			h = 0.0330055 * safezoneH;
 		};
-		class RscListbox_1500: bambusfarm_RscListbox
+		class RscListbox_1500: life_RscListbox
 		{
 			idc = 16001;
 			x = 0.263205 * safezoneW + safezoneX;
@@ -43,9 +43,9 @@ class AS_menu
 			w = 0.170007 * safezoneW;
 			h = 0.484081 * safezoneH;
 			sizeEx = 0.025;
-			onLBDblClick = "[3] spawn bambusfarm_fnc_ASreceiver;";
+			onLBDblClick = "[3] spawn life_fnc_ASreceiver;";
 		};
-		class RscText_1003: bambusfarm_RscText
+		class RscText_1003: life_RscText
 		{
 			idc = -1;
 			text = "CONNECTED PLAYERS"; //--- ToDo: Localize;
@@ -54,7 +54,7 @@ class AS_menu
 			w = 0.242867 * safezoneW;
 			h = 0.0330055 * safezoneH;
 		};
-		class RscText_1004: bambusfarm_RscText
+		class RscText_1004: life_RscText
 		{
 			idc = -1;
 			text = "AVAILABLE ACTIONS"; //--- ToDo: Localize;
@@ -63,7 +63,7 @@ class AS_menu
 			w = 0.242867 * safezoneW;
 			h = 0.0330055 * safezoneH;
 		};
-		class RscListbox_1501: bambusfarm_RscListbox
+		class RscListbox_1501: life_RscListbox
 		{
 			idc = 16002;
 			x = 0.445355 * safezoneW + safezoneX;
@@ -71,9 +71,9 @@ class AS_menu
 			w = 0.285369 * safezoneW;
 			h = 0.484081 * safezoneH;
 			sizeEx = 0.04;
-			onLBDblClick = "[] spawn bambusfarm_fnc_execute;";
+			onLBDblClick = "[] spawn life_fnc_execute;";
 		};
-		class RscButtonMenu_2400: bambusfarm_RscButtonMenu
+		class RscButtonMenu_2400: life_RscButtonMenu
 		{
 			idc = -1;
 			text = "CLOSE THIS DISPLAY"; //--- ToDo: Localize;

@@ -12,8 +12,8 @@ _data =  lbText [_control, _index];
 if (_index == -1) exitwith {};
 if ((_index == 0) && (_data == (localize "STR_messaging_none"))) exitwith {};
 
-_message = bambusfarm_messages select _index;
-_pos = bambusfarm_positions select _index;
+_message = life_messages select _index;
+_pos = life_positions select _index;
 
 disableSerialization;
 _display = findDisplay 10000;
@@ -25,7 +25,7 @@ _display = findDisplay 10000;
 _control_ch =  cbChecked (_display displayCtrl 2800);
 
 if ( (count _pos)>1 ) then {
-	[_data, _pos] spawn bambusfarm_fnc_getMessagePos;
+	[_data, _pos] spawn life_fnc_getMessagePos;
 	hintsilent parseText format ["%1<t color='#CD2B2B'> %2 </t>%3", (localize"STR_messaging_helps_m7"),_data,(localize "STR_messaging_helps_m8")];	
 	(_display displayCtrl 2800) cbSetChecked true;
 } else {

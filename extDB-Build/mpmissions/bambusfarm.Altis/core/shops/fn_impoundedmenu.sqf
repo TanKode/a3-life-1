@@ -2,8 +2,8 @@ private["_display","_cars","_name","_pic","_color","_text","_price"];
 
 if(!dialog) then
 {
-    if(!(createDialog "bambusfarm_impounded_menu")) exitWith {};
-    bambusfarm_impound_yard = _this select 3;
+    if(!(createDialog "life_impounded_menu")) exitWith {};
+    life_impound_yard = _this select 3;
 };
 disableSerialization;
 
@@ -12,14 +12,14 @@ if(isNull _display) exitWith {};
 _cars = _display displayCtrl 28010;
 lbClear _cars;
 
-for "_i" from 0 to (count bambusfarm_impoundedvehicles)-1 do
+for "_i" from 0 to (count life_impoundedvehicles)-1 do
 {
-    _veh = bambusfarm_impoundedvehicles select _i;
+    _veh = life_impoundedvehicles select _i;
     if(_veh distance impound_obj < 50) then
     {
-        _price = [_veh] call bambusfarm_fnc_Configuration_Price;
+        _price = [_veh] call life_fnc_Configuration_Price;
     
-        if(_price > bambusfarm_TASCHENGELD) then
+        if(_price > life_TASCHENGELD) then
         {
             _price = _price + 200;
         };

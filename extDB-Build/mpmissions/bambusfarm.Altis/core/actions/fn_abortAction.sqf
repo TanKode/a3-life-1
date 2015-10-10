@@ -1,17 +1,17 @@
 
 [] call SOCK_fnc_updateRequest;
-[] call bambusfarm_fnc_saveGear;
+[] call life_fnc_saveGear;
 ["1"] call SOCK_fnc_syncData;
 disableSerialization;
-bambusfarm_tagson = !true;
+life_tagson = !true;
 player allowDamage false;
 disableUserInput true;
 showChat false;
 hintSilent "";
-[bambusfarm_ID_PlayerTags,"onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+[life_ID_PlayerTags,"onEachFrame"] call BIS_fnc_removeStackedEventHandler;
 1 fadeRadio 0;
 1 fadeSpeech 0;
-[] spawn bambusfarm_fnc_hudUpdate;
+[] spawn life_fnc_hudUpdate;
 //playSound "endscreen";
 
 _introCam = "camera" camCreate (player modelToWorldVisual [-5,0,1.85]);
@@ -50,13 +50,13 @@ _name = name player;
 8
 ] spawn BIS_fnc_dynamicText;
 
-if(!bambusfarm_is_arrested) then {
+if(!life_is_arrested) then {
 player setPos (getMarkerPos "abort");
 };
 sleep 6;
 0 fadeRadio 1;
 0 fadeSpeech 1;
-[[player],"TON_fnc_cleanupRequest",false,false] spawn bambusfarm_fnc_MP;
+[[player],"TON_fnc_cleanupRequest",false,false] spawn life_fnc_MP;
 showChat true;
 disableUserInput false;
 ["",0,0.2,10,0,0,8] spawn BIS_fnc_dynamicText;

@@ -8,10 +8,10 @@
 private["_shop"];
 _shop = _this select 3;
 if(isNil {_shop}) exitWith {};
-bambusfarm_virt_shop = _this select 3;
-bambusfarm_shop_type = _shop;
-bambusfarm_shop_npc = _this select 0;
+life_virt_shop = _this select 3;
+life_shop_type = _shop;
+life_shop_npc = _this select 0;
 if(_shop == "cop" && playerSide != west) exitWith {hint localize "STR_NOTF_NotACop"};
 createDialog "shops_menu";
 
-[] call bambusfarm_fnc_virt_update;
+[] call life_fnc_virt_update;

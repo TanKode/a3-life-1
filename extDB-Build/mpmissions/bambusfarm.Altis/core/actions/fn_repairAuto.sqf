@@ -16,11 +16,11 @@ hint "Dieses mal ist das Reparieren gratis!";
 };
 
 if(_AufsHaus > 20) then {
-	[bambusfarm_BANK] call bambusfarm_fnc_numberText;
+	[life_BANK] call life_fnc_numberText;
 	_extra = random(1250);
 	_kosten = 1250 + _extra;
-	if(_kosten > bambusfarm_BANK) exitWith {hint "Du hast nicht genug Geld auf deinen Konto!"};
-	_gesamt = bambusfarm_BANK - _kosten;
-	hint format["Das hat dich %1 € gekostet!",_kosten call bambusfarm_fnc_numberText];
+	if(_kosten > life_BANK) exitWith {hint "Du hast nicht genug Geld auf deinen Konto!"};
+	_gesamt = life_BANK - _kosten;
+	hint format["Das hat dich %1 € gekostet!",_kosten call life_fnc_numberText];
 	_nearestVehicle setDamage 0;
 };

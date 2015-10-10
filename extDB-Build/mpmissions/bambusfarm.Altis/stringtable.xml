@@ -2865,7 +2865,7 @@
 			<Portuguese>Sua aeronave está reparada e com o tanque cheio!</Portuguese>
 		</Key>
 	</Package>
-	<Package name="bambusfarm_Items">
+	<Package name="life_Items">
 		<Key ID="STR_Item_Cannabis">
 			<Original>Cannabis</Original>
 			<German>Kannabis</German>
@@ -3357,7 +3357,7 @@
 			<Portuguese>Spike Strip</Portuguese>
 		</Key>
 	</Package>
-	<Package name="bambusfarm_License">
+	<Package name="life_License">
 		<Key ID="STR_License_Driver">
 			<Original>Driver License</Original>
 			<German>Führerschein</German>

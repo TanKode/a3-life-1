@@ -9,7 +9,7 @@
 private["_unit","_corpse"];
 _unit = _this select 0;
 _corpse = _this select 1;
-bambusfarm_corpse = _corpse;
+life_corpse = _corpse;
 
 //Comment this code out if you want them to keep the weapon on the ground.
 private["_containers"];
@@ -26,7 +26,7 @@ _unit setVariable["realname",profileName,true]; //Reset the players name.
 _unit addRating 9999999999999999; //Set our rating to a high value, this is for a ARMA engine thing.
 player playMoveNow "amovppnemstpsraswrfldnon";
 
-[] call bambusfarm_fnc_setupActions;
-[[_unit,bambusfarm_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn bambusfarm_fnc_MP;
-player enableFatigue (__GETC__(bambusfarm_enableFatigue));
-[player, uniform player] call bambusfarm_fnc_equipGear;
+[] call life_fnc_setupActions;
+[[_unit,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
+player enableFatigue (__GETC__(life_enableFatigue));
+[player, uniform player] call life_fnc_equipGear;

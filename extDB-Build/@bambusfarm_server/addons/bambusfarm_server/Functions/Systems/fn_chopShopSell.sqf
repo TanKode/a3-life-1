@@ -14,7 +14,7 @@ _cash = [_this,3,0,[0]] call BIS_fnc_param;
 //Error checks
 if(isNull _vehicle OR isNull _unit) exitWith 
 {
-	[["bambusfarm_action_inUse",false],"bambusfarm_fnc_netSetVar",nil,false] spawn bambusfarm_fnc_MP;
+	[["life_action_inUse",false],"life_fnc_netSetVar",nil,false] spawn life_fnc_MP;
 };
 
 _displayName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
@@ -31,6 +31,6 @@ if(count _dbInfo > 0) then {
 };
 
 deleteVehicle _vehicle;
-[["bambusfarm_action_inUse",false],"bambusfarm_fnc_netSetVar",_unit,false] spawn bambusfarm_fnc_MP;
-[["bambusfarm_TASCHENGELD",_cash],"bambusfarm_fnc_netSetVar",_unit,false] spawn bambusfarm_fnc_MP;
-[[2,format[(localize "STR_NOTF_ChopSoldCar"),_displayName,[_price] call bambusfarm_fnc_numberText]],"bambusfarm_fnc_broadcast",_unit,false] spawn bambusfarm_fnc_MP;
+[["life_action_inUse",false],"life_fnc_netSetVar",_unit,false] spawn life_fnc_MP;
+[["life_TASCHENGELD",_cash],"life_fnc_netSetVar",_unit,false] spawn life_fnc_MP;
+[[2,format[(localize "STR_NOTF_ChopSoldCar"),_displayName,[_price] call life_fnc_numberText]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;

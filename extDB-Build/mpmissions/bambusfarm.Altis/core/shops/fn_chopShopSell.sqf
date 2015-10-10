@@ -11,12 +11,12 @@ _control = ((findDisplay 39400) displayCtrl 39402);
 _price = _control lbValue (lbCurSel _control);
 _vehicle = _control lbData (lbCurSel _control);
 _vehicle = call compile format["%1", _vehicle];
-_nearVehicles = nearestObjects [getMarkerPos bambusfarm_chopShop,["Car","Truck"],25];
+_nearVehicles = nearestObjects [getMarkerPos life_chopShop,["Car","Truck"],25];
 _vehicle = _nearVehicles select _vehicle;
 if(isNull _vehicle) exitWith {};
 
 hint localize "STR_Shop_ChopShopSelling";
-bambusfarm_action_inUse = true;
-_price2 = bambusfarm_TASCHENGELD + _price;
-[[player,_vehicle,_price,_price2],"TON_fnc_chopShopSell",false,false] spawn bambusfarm_fnc_MP;
+life_action_inUse = true;
+_price2 = life_TASCHENGELD + _price;
+[[player,_vehicle,_price,_price2],"TON_fnc_chopShopSell",false,false] spawn life_fnc_MP;
 closeDialog 0;

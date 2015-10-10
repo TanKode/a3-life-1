@@ -19,5 +19,5 @@ if(_trueorfalse) then {
 } else {
 	_vehicle setVariable["lights",TRUE,TRUE];
 	_vehicle animate ["BeaconsStart", 1];
-	[[_vehicle,0.22],"bambusfarm_fnc_medicLights",true,false] spawn bambusfarm_fnc_mp;
+	[[_vehicle,0.22],"life_fnc_medicLights",true,false] spawn life_fnc_mp;
 };

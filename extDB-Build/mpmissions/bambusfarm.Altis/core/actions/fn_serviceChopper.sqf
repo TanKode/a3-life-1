@@ -7,15 +7,15 @@
 */
 disableSerialization;
 private["_search","_ui","_progress","_cP","_pgText","_title"];
-if(bambusfarm_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
+if(life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
 _search = nearestObjects[getPos air_sp, ["Air"],5];
 if(count _search == 0) exitWith {hint localize "STR_Service_Chopper_NoAir"};
-if(bambusfarm_TASCHENGELD < 1000) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
-bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD - 1000;
-bambusfarm_action_inUse = true;
+if(life_TASCHENGELD < 1000) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
+life_TASCHENGELD = life_TASCHENGELD - 1000;
+life_action_inUse = true;
 _title = localize "STR_Service_Chopper_Servicing";
-5 cutRsc ["bambusfarm_progress","PLAIN"];
-_ui = uiNameSpace getVariable "bambusfarm_progress";
+5 cutRsc ["life_progress","PLAIN"];
+_ui = uiNameSpace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format["%2 (1%1)...","%",_title];
@@ -31,10 +31,10 @@ while {true} do
 	if(_cP >= 1) exitWith {};
 };
 
-if(!alive (_search select 0) || (_search select 0) distance air_sp > 10) exitWith {bambusfarm_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
+if(!alive (_search select 0) || (_search select 0) distance air_sp > 10) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
 if(!local (_search select 0)) then
 {
-	[[(_search select 0),1],"bambusfarm_fnc_setFuel",(_search select 0),false] spawn bambusfarm_fnc_MP;
+	[[(_search select 0),1],"life_fnc_setFuel",(_search select 0),false] spawn life_fnc_MP;
 }
 	else
 {
@@ -44,4 +44,4 @@ if(!local (_search select 0)) then
 
 5 cutText ["","PLAIN"];
 titleText [localize "STR_Service_Chopper_Done","PLAIN"];
-bambusfarm_action_inUse = false;
+life_action_inUse = false;

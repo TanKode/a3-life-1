@@ -31,33 +31,33 @@ _side = _display displayCtrl 2971;
 _tags = _display displayCtrl 2970;
 _objs = _display displayCtrl 2972;
 
-if(isNil "bambusfarm_tagson") then {
-	bambusfarm_sidechat = true;
-	bambusfarm_tagson = true;
-	bambusfarm_revealObjects = true;
+if(isNil "life_tagson") then {
+	life_sidechat = true;
+	life_tagson = true;
+	life_revealObjects = true;
 };
 
-if(bambusfarm_revealObjects) then {
+if(life_revealObjects) then {
 	_objs ctrlSetTextColor [0,1,0,1];
 	_objs ctrlSetText "ON";
-	_objs buttonSetAction "[bambusfarm_ID_RevealObjects,""onEachFrame""] call BIS_fnc_removeStackedEventHandler; bambusfarm_revealObjects = false; [] call bambusfarm_fnc_settingsMenu;";
+	_objs buttonSetAction "[life_ID_RevealObjects,""onEachFrame""] call BIS_fnc_removeStackedEventHandler; life_revealObjects = false; [] call life_fnc_settingsMenu;";
 } else {
 	_objs ctrlSetTextColor [1,0,0,1];
 	_objs ctrlSetText "OFF";
-	_objs buttonSetAction "bambusfarm_ID_RevealObjects = [""bambusfarm_RevealObjects"",""onEachFrame"",""bambusfarm_fnc_revealObjects""] call BIS_fnc_addStackedEventHandler; bambusfarm_revealObjects = true; [] call bambusfarm_fnc_settingsMenu;";
+	_objs buttonSetAction "life_ID_RevealObjects = [""life_RevealObjects"",""onEachFrame"",""life_fnc_revealObjects""] call BIS_fnc_addStackedEventHandler; life_revealObjects = true; [] call life_fnc_settingsMenu;";
 };
 
-if(bambusfarm_tagson) then {
+if(life_tagson) then {
 	_tags ctrlSetTextColor [0,1,0,1];
 	_tags ctrlSetText "ON";
-	_tags buttonSetAction "[bambusfarm_ID_PlayerTags,""onEachFrame""] call BIS_fnc_removeStackedEventHandler; bambusfarm_tagson = false; [] call bambusfarm_fnc_settingsMenu;";
+	_tags buttonSetAction "[life_ID_PlayerTags,""onEachFrame""] call BIS_fnc_removeStackedEventHandler; life_tagson = false; [] call life_fnc_settingsMenu;";
 } else {
 	_tags ctrlSetTextColor [1,0,0,1];
 	_tags ctrlSetText "OFF";
-	_tags buttonSetAction "bambusfarm_ID_PlayerTags = [""bambusfarm_PlayerTags"",""onEachFrame"",""bambusfarm_fnc_playerTags""] call BIS_fnc_addStackedEventHandler; bambusfarm_tagson = true; [] call bambusfarm_fnc_settingsMenu;";
+	_tags buttonSetAction "life_ID_PlayerTags = [""life_PlayerTags"",""onEachFrame"",""life_fnc_playerTags""] call BIS_fnc_addStackedEventHandler; life_tagson = true; [] call life_fnc_settingsMenu;";
 };
 
-if(bambusfarm_sidechat) then {
+if(life_sidechat) then {
 	_side ctrlSetTextColor [0,1,0,1];
 	_side ctrlSetText "ON";
 } else {

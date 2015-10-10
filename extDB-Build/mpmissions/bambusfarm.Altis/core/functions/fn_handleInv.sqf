@@ -11,26 +11,26 @@ _item = [_this,1,"",[""]] call BIS_fnc_param; //The item we are using to add or 
 _num = [_this,2,0,[0]] call BIS_fnc_param; //Number of items to add or remove.
 if(_item == "" OR _num == 0) exitWith {false};
 
-_var = [_item,0] call bambusfarm_fnc_varHandle;
+_var = [_item,0] call life_fnc_varHandle;
 if(_math) then
 {
-	_diff = [_item,_num,bambusfarm_carryWeight,bambusfarm_maxWeight] call bambusfarm_fnc_calWeightDiff;
+	_diff = [_item,_num,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 	_num = _diff;
 	if(_num <= 0) exitWith {false};
 };
-_weight = ([_item] call bambusfarm_fnc_itemWeight) * _num;
+_weight = ([_item] call life_fnc_itemWeight) * _num;
 _value = missionNamespace getVariable _var;
 
 if(_math) then
 {
 	//Lets add!
-	if((bambusfarm_carryWeight + _weight) <= bambusfarm_maxWeight) then
+	if((life_carryWeight + _weight) <= life_maxWeight) then
 	{
 		missionNamespace setVariable[_var,(_value + _num)];
 		
 		if((missionNamespace getVariable _var) > _value) then
 		{
-			bambusfarm_carryWeight = bambusfarm_carryWeight + _weight;
+			life_carryWeight = life_carryWeight + _weight;
 			_return = true;
 		}
 			else
@@ -56,7 +56,7 @@ if(_math) then
 		
 		if((missionNamespace getVariable _var) < _value) then
 		{
-			bambusfarm_carryWeight = bambusfarm_carryWeight - _weight;
+			life_carryWeight = life_carryWeight - _weight;
 			_return = true;
 		}
 			else

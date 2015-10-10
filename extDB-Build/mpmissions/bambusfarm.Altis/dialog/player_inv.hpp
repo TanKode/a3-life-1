@@ -8,7 +8,7 @@ class playerSettings {
 	
 	class controlsBackground {
 	
-	class bambusfarm_RscTitleBackground:bambusfarm_RscText {
+	class life_RscTitleBackground:life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.1;
@@ -17,7 +17,7 @@ class playerSettings {
 			h = (1 / 25);
 		};
 		
-		class MainBackground:bambusfarm_RscText {
+		class MainBackground:life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.1;
@@ -26,7 +26,7 @@ class playerSettings {
 			h = 0.6 - (22 / 250);
 		};
 		
-		class Title : bambusfarm_RscTitle {
+		class Title : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
 			text = "$STR_PM_Title";
@@ -36,7 +36,7 @@ class playerSettings {
 			h = (1 / 25);
 		};
 		
-		class moneyStatusInfo : bambusfarm_RscStructuredText
+		class moneyStatusInfo : life_RscStructuredText
 		{
 			idc = 2015;
 			sizeEx = 0.020;
@@ -55,7 +55,7 @@ class playerSettings {
 	
 	class controls {
 		
-		class itemHeader : bambusfarm_RscText
+		class itemHeader : life_RscText
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -66,7 +66,7 @@ class playerSettings {
 			w = 0.275; h = 0.04;
 		};
 		
-		class licenseHeader : bambusfarm_RscText
+		class licenseHeader : life_RscText
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -77,7 +77,7 @@ class playerSettings {
 			w = 0.275; h = 0.04;
 		};
 		
-		class moneySHeader : bambusfarm_RscText
+		class moneySHeader : life_RscText
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -88,7 +88,7 @@ class playerSettings {
 			w = 0.219; h = 0.04;
 		};
 	
-		class itemList : bambusfarm_RscListBox
+		class itemList : life_RscListBox
 		{
 			idc = item_list;
 			sizeEx = 0.030;
@@ -97,7 +97,7 @@ class playerSettings {
 			w = 0.275; h = 0.3;
 		};
 		
-		class moneyEdit : bambusfarm_RscEdit
+		class moneyEdit : life_RscEdit
 		{
 			idc = 2018;
 			
@@ -107,7 +107,7 @@ class playerSettings {
 			w = 0.18; h = 0.03;
 		};
 		
-		class NearPlayers : bambusfarm_RscCombo
+		class NearPlayers : life_RscCombo
 		{
 			idc = 2022;
 		
@@ -115,18 +115,18 @@ class playerSettings {
 			w = 0.18; h = 0.03;
 		};
 		
-		class moneyDrop : bambusfarm_RscButtonMenu
+		class moneyDrop : life_RscButtonMenu
 		{
 			idc = 2001;
 			text = "$STR_Global_Give";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_giveMoney";
+			onButtonClick = "[] call life_fnc_giveMoney";
 			sizeEx = 0.025;
 			x = 0.135; y = 0.50;
 			w = 0.13; h = 0.036;
 		};
 		
-		class itemEdit : bambusfarm_RscEdit {
+		class itemEdit : life_RscEdit {
 		
 		idc = item_edit;
 		
@@ -136,7 +136,7 @@ class playerSettings {
 		w = 0.275; h = 0.03;
 		
 		};
-		class iNearPlayers : bambusfarm_RscCombo
+		class iNearPlayers : life_RscCombo
 		{
 			idc = 2023;
 			
@@ -145,7 +145,7 @@ class playerSettings {
 		};
 		/*
 		Disabled till it can be redone
-		class moneyInput: bambusfarm_RscCombo {
+		class moneyInput: life_RscCombo {
 			
 			idc = money_value;
 			
@@ -154,12 +154,12 @@ class playerSettings {
 		};
 		*/
 		
-		class DropButton : bambusfarm_RscButtonMenu {
+		class DropButton : life_RscButtonMenu {
 			
 			idc = 2002;
 			text = "$STR_Global_Give";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_giveItem;";
+			onButtonClick = "[] call life_fnc_giveItem;";
 			
 			x = 0.765;
 			y = 0.70;
@@ -168,11 +168,11 @@ class playerSettings {
 			
 		};
 		
-		class UseButton : bambusfarm_RscButtonMenu {
+		class UseButton : life_RscButtonMenu {
 			
 			text = "$STR_Global_Use";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_useItem;";
+			onButtonClick = "[] call life_fnc_useItem;";
 			
 			x = 0.62;
 			y = 0.70;
@@ -181,11 +181,11 @@ class playerSettings {
 			
 		};
 		
-		class RemoveButton : bambusfarm_RscButtonMenu {
+		class RemoveButton : life_RscButtonMenu {
 			
 			text = "$STR_Global_Remove";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_removeItem;";
+			onButtonClick = "[] call life_fnc_removeItem;";
 			
 			x = 0.475;
 			y = 0.70;
@@ -194,11 +194,11 @@ class playerSettings {
 			
 		};
 
-		class ProfButton : bambusfarm_RscButtonMenu {
+		class ProfButton : life_RscButtonMenu {
 
             text = "Sonstiges";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-            onButtonClick = "createDialog ""bambusfarm_menu"";";
+            onButtonClick = "createDialog ""life_menu"";";
             x = 0.11;
             y = 0.70;
             w = (5.75 / 40);
@@ -207,7 +207,7 @@ class playerSettings {
         };
 		/*
 		Disabled till it can be redone
-		class DropcButton : bambusfarm_RscButtonMenu {
+		class DropcButton : life_RscButtonMenu {
 
 			text = "Drop Money";
 			onButtonClick = "[] execVM 'player_system\money_fnc.sqf'";
@@ -218,7 +218,7 @@ class playerSettings {
 		};
 		*/
 		
-		class ButtonClose : bambusfarm_RscButtonMenu {
+		class ButtonClose : life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "$STR_Global_Close";
@@ -229,27 +229,27 @@ class playerSettings {
 			h = (1 / 25);
 		};
 		
-		class ButtonSettings : bambusfarm_RscButtonMenu {
+		class ButtonSettings : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Settings";
-			onButtonClick = "[] call bambusfarm_fnc_settingsMenu;";
+			onButtonClick = "[] call life_fnc_settingsMenu;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class ButtonMyGang : bambusfarm_RscButtonMenu {
+		class ButtonMyGang : life_RscButtonMenu {
 			idc = 2011;
 			text = "$STR_PM_MyGang";
-			onButtonClick = "if(isNil ""bambusfarm_action_gangInUse"") then {if(isNil {(group player) getVariable ""gang_owner""}) then {createDialog ""bambusfarm_Create_Gang_Diag"";} else {[] spawn bambusfarm_fnc_gangMenu;};};";
+			onButtonClick = "if(isNil ""life_action_gangInUse"") then {if(isNil {(group player) getVariable ""gang_owner""}) then {createDialog ""life_Create_Gang_Diag"";} else {[] spawn life_fnc_gangMenu;};};";
 			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class Licenses_Menu : bambusfarm_RscControlsGroup
+		class Licenses_Menu : life_RscControlsGroup
 		{
 			idc = -1;
 			w = 0.28;
@@ -259,7 +259,7 @@ class playerSettings {
 			
 			class Controls
 			{
-				class bambusfarm_Licenses : bambusfarm_RscStructuredText
+				class life_Licenses : life_RscStructuredText
 				{
 					idc = 2014;
 					sizeEx = 0.020;
@@ -271,37 +271,37 @@ class playerSettings {
 			};
 		};
 	
-		class ButtonKeys : bambusfarm_RscButtonMenu {
+		class ButtonKeys : life_RscButtonMenu {
 			idc = 2013;
 			text = "$STR_PM_KeyChain";
-			onButtonClick = "createDialog ""bambusfarm_key_management"";";
+			onButtonClick = "createDialog ""life_key_management"";";
 			x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class ButtonCell : bambusfarm_RscButtonMenu {
+		class ButtonCell : life_RscButtonMenu {
 			idc = 2014;
 			text = "$STR_PM_CellPhone";
-			onButtonClick = "[] spawn bambusfarm_fnc_openMessages;";
+			onButtonClick = "[] spawn life_fnc_openMessages;";
 			x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class ButtonAdminMenu : bambusfarm_RscButtonMenu {
+		class ButtonAdminMenu : life_RscButtonMenu {
 			idc = 2021;
 			text = "$STR_PM_AdminMenu";
-			onButtonClick = "createDialog ""bambusfarm_admin_menu"";";
+			onButtonClick = "createDialog ""life_admin_menu"";";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.805;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class ButtonSyncData : bambusfarm_RscButtonMenu {
+		class ButtonSyncData : life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "$STR_PM_SyncData";
@@ -312,10 +312,10 @@ class playerSettings {
 			h = (1 / 25);
 		};
 
-		class ButtonPlaceables : bambusfarm_RscButtonMenu {
+		class ButtonPlaceables : life_RscButtonMenu {
 			idc = 20003; //NOTE: Possibly 40003? Had repear instance of this with that idc
 			text = "Platzierbar"; //<----- TO:DO LOCALIZE POLICE SIDE
-			onButtonClick = "[] spawn bambusfarm_fnc_placeablesMenu; closeDialog 0;";
+			onButtonClick = "[] spawn life_fnc_placeablesMenu; closeDialog 0;";
 			//x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.801;
@@ -323,11 +323,11 @@ class playerSettings {
 			h = (1 / 25);
 		};
 
-		class _btn_taxi: bambusfarm_RscButtonMenu
+		class _btn_taxi: life_RscButtonMenu
 		{
 			idc = -1;
 			text = "Taxi";
-			onButtonClick = "closeDialog 0; createDialog ""bambusfarm_taxiMenu"";";
+			onButtonClick = "closeDialog 0; createDialog ""life_taxiMenu"";";
 			x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH)); 
 			y = 0.805; 
 			w = (6.25 / 40); 
@@ -335,10 +335,10 @@ class playerSettings {
 
 		};
 
-		class ButtonGangList : bambusfarm_RscButtonMenu {
+		class ButtonGangList : life_RscButtonMenu {
 			idc = 2012;
 			text = "$STR_PM_WantedList";
-			onButtonClick = "[] call bambusfarm_fnc_wantedMenu";
+			onButtonClick = "[] call life_fnc_wantedMenu";
 			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);

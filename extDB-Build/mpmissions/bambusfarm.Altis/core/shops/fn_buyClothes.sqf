@@ -14,11 +14,11 @@ _price = 0;
 	{
 		_price = _price + _x;
 	};
-} foreach bambusfarm_clothing_purchase;
+} foreach life_clothing_purchase;
 
-if(_price > bambusfarm_TASCHENGELD) exitWith {titleText[localize "STR_Shop_NotEnoughClothes","PLAIN"];};
-bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD - _price;
+if(_price > life_TASCHENGELD) exitWith {titleText[localize "STR_Shop_NotEnoughClothes","PLAIN"];};
+life_TASCHENGELD = life_TASCHENGELD - _price;
 
-bambusfarm_clothesPurchased = true;
+life_clothesPurchased = true;
 closeDialog 0;
-[player, uniform player] call bambusfarm_fnc_equipGear;
+[player, uniform player] call life_fnc_equipGear;

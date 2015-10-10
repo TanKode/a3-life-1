@@ -30,8 +30,8 @@ diag_log format["Result: %1",_queryResult];
 diag_log "------------------------------------------------";
 
 //Double check to make sure the client isn't in the database...
-if(typeName _queryResult == "STRING") exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call bambusfarm_fnc_MP;}; //There was an entry!
-if(count _queryResult != 0) exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call bambusfarm_fnc_MP;};
+if(typeName _queryResult == "STRING") exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;}; //There was an entry!
+if(count _queryResult != 0) exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;};
 
 //SKILLSYS
 _querySkill = format["INSERT INTO skillsys (playerid) VALUES ('%1')",_uid];
@@ -59,4 +59,4 @@ _query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, co
 ];
 waitUntil {!DB_Async_Active};
 [_query,1] call DB_fnc_asyncCall;
-[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call bambusfarm_fnc_MP;
+[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;

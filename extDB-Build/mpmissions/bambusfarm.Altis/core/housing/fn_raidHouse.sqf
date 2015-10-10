@@ -11,16 +11,16 @@ if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
 if(isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
 
 _uid = (_house getVariable "house_owner") select 0;
-if(!([_uid] call bambusfarm_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
+if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
 _houseInv = _house getVariable ["Trunk",[[],0]];
 if(_houseInv isEqualTo [[],0]) exitWith {hint localize "STR_House_Raid_Nothing"};
-bambusfarm_action_inUse = true;
+life_action_inUse = true;
 
 //Setup the progress bar
 disableSerialization;
 _title = localize "STR_House_Raid_Searching";
-5 cutRsc ["bambusfarm_progress","PLAIN"];
-_ui = uiNamespace getVariable "bambusfarm_progress";
+5 cutRsc ["life_progress","PLAIN"];
+_ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format["%2 (1%1)...","%",_title];
@@ -32,8 +32,8 @@ while {true} do
 {
 	sleep 0.26;
 	if(isNull _ui) then {
-		5 cutRsc ["bambusfarm_progress","PLAIN"];
-		_ui = uiNamespace getVariable "bambusfarm_progress";
+		5 cutRsc ["life_progress","PLAIN"];
+		_ui = uiNamespace getVariable "life_progress";
 	};
 	_cP = _cP + _cpRate;
 	_progressBar progressSetPosition _cP;
@@ -44,9 +44,9 @@ while {true} do
 
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
-if(player distance _house > 13) exitWith {bambusfarm_action_inUse = false; titleText[localize "STR_House_Raid_TooFar","PLAIN"]};
-if(!alive player) exitWith {bambusfarm_action_inUse = false;};
-bambusfarm_action_inUse = false;
+if(player distance _house > 13) exitWith {life_action_inUse = false; titleText[localize "STR_House_Raid_TooFar","PLAIN"]};
+if(!alive player) exitWith {life_action_inUse = false;};
+life_action_inUse = false;
 
 _houseInvData = _houseInv select 0;
 _houseInvVal = _houseInv select 1;
@@ -55,23 +55,23 @@ _value = 0;
 	_var = _x select 0;
 	_val = _x select 1;
 	
-	_index = [_var,bambusfarm_illegal_items] call TON_fnc_index;
+	_index = [_var,life_illegal_items] call TON_fnc_index;
 	if(_index != -1) then {
 		_vIndex = [_var,sell_array] call TON_fnc_index;
 		if(_vIndex != -1) then {
 			_houseInvData set[_forEachIndex,-1];
 			_houseInvData = _houseInvData - [-1];
-			_houseInvVal = _houseInvVal - (([_var] call bambusfarm_fnc_itemWeight) * _val);
+			_houseInvVal = _houseInvVal - (([_var] call life_fnc_itemWeight) * _val);
 			_value = _value + (_val * ((sell_array select _vIndex) select 1));
 		};
 	};
 } foreach (_houseInv select 0);
 
 if(_value > 0) then {
-	[[0,"STR_House_Raid_Successful",true,[[_value] call bambusfarm_fnc_numberText]],"bambusfarm_fnc_broadcast",true,false] spawn bambusfarm_fnc_MP;
-	bambusfarm_BANK = bambusfarm_BANK + _value;
+	[[0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	life_BANK = life_BANK + _value;
 	_house setVariable["Trunk",[_houseInvData,_houseInvVal],true];
-	[[_house],"TON_fnc_updateHouseTrunk",false,false] spawn bambusfarm_fnc_MP;
+	[[_house],"TON_fnc_updateHouseTrunk",false,false] spawn life_fnc_MP;
 } else {
 	hint localize "STR_House_Raid_NoIllegal";
 };

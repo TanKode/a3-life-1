@@ -25,21 +25,21 @@ if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(play
 	true;
 };
 
-if(bambusfarm_action_inUse) exitWith {
-	if(!bambusfarm_interrupted && _code in _interruptionKeys) then {bambusfarm_interrupted = true;};
+if(life_action_inUse) exitWith {
+	if(!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true;};
 	_handled;
 };
 
 //Hotfix for Interaction key not being able to be bound on some operation systems.
 if(count (actionKeys "User10") != 0 && {(inputAction "User10" > 0)}) exitWith {
 	//Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
-	if(!bambusfarm_action_inUse) then {
+	if(!life_action_inUse) then {
 		[] spawn 
 		{
 			private["_handle"];
-			_handle = [] spawn bambusfarm_fnc_actionKeyHandler;
+			_handle = [] spawn life_fnc_actionKeyHandler;
 			waitUntil {scriptDone _handle};
-			bambusfarm_action_inUse = false;
+			life_action_inUse = false;
 		};
 	};
 	true;
@@ -51,10 +51,10 @@ switch (_code) do
 	case 57:
 	{
 		if(isNil "jumpActionTime") then {jumpActionTime = 0;};
-		if(_shift && {animationState player != "AovrPercMrunSrasWrflDf"} && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2} && {!bambusfarm_is_arrested} && {(velocity player) select 2 < 2.5} && {time - jumpActionTime > 1.5}) then {
+		if(_shift && {animationState player != "AovrPercMrunSrasWrflDf"} && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2} && {!life_is_arrested} && {(velocity player) select 2 < 2.5} && {time - jumpActionTime > 1.5}) then {
 			jumpActionTime = time; //Update the time.
-			[player,true] spawn bambusfarm_fnc_jumpFnc; //Local execution
-			[[player,false],"bambusfarm_fnc_jumpFnc",nil,FALSE] call bambusfarm_fnc_MP; //Global execution
+			[player,true] spawn life_fnc_jumpFnc; //Local execution
+			[[player,false],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP; //Global execution
 			_handled = true;
 		};
 	};
@@ -64,25 +64,25 @@ switch (_code) do
 	{
 		switch (playerSide) do 
 		{
-			case west: {if(!visibleMap) then {[] spawn bambusfarm_fnc_copMarkers;}};
-			case independent: {if(!visibleMap) then {[] spawn bambusfarm_fnc_medicMarkers;}};
-			case civilian: {if(!visibleMap) then {[] spawn bambusfarm_fnc_helitaxi;}};
+			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;}};
+			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
+			case civilian: {if(!visibleMap) then {[] spawn life_fnc_helitaxi;}};
 		};
-		[] spawn bambusfarm_fnc_playerMarker;
+		[] spawn life_fnc_playerMarker;
 	};
 	
 	//Holster / recall weapon.
 	case 35:
 	{
 		if(_shift && !_ctrlKey && currentWeapon player != "") then {
-			bambusfarm_curWep_h = currentWeapon player;
+			life_curWep_h = currentWeapon player;
 			player action ["SwitchWeapon", player, player, 100];
 			player switchcamera cameraView;
 		};
 		
-		if(!_shift && _ctrlKey && !isNil "bambusfarm_curWep_h" && {(bambusfarm_curWep_h != "")}) then {
-			if(bambusfarm_curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
-				player selectWeapon bambusfarm_curWep_h;
+		if(!_shift && _ctrlKey && !isNil "life_curWep_h" && {(life_curWep_h != "")}) then {
+			if(life_curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
+				player selectWeapon life_curWep_h;
 			};
 		};
 	};
@@ -90,13 +90,13 @@ switch (_code) do
 	//Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
 	case _interactionKey:
 	{
-		if(!bambusfarm_action_inUse) then {
+		if(!life_action_inUse) then {
 			[] spawn 
 			{
 				private["_handle"];
-				_handle = [] spawn bambusfarm_fnc_actionKeyHandler;
+				_handle = [] spawn life_fnc_actionKeyHandler;
 				waitUntil {scriptDone _handle};
-				bambusfarm_action_inUse = false;
+				life_action_inUse = false;
 			};
 		};
 	};
@@ -108,17 +108,17 @@ switch (_code) do
     			case 0: {hintSilent "Ohrstoepsel 90%"; 1 fadeSound 0.1; player setVariable ["Earplugs", 10]; };
     			case 10: {hintSilent "Ohrstoepsel 60%"; 1 fadeSound 0.4; player setVariable ["Earplugs", 40]; };
     			case 40: {hintSilent "Ohrstoepsel 30%"; 1 fadeSound 0.7; player setVariable ["Earplugs", 70]; };
-    			case 70: {hintSilent "Ohrstoepsel entfernt"; 1 fadeSound 1; [player, "earplug", 25] call bambusfarm_fnc_globalSound; player setVariable ["Earplugs", 0]; };
+    			case 70: {hintSilent "Ohrstoepsel entfernt"; 1 fadeSound 1; [player, "earplug", 25] call life_fnc_globalSound; player setVariable ["Earplugs", 0]; };
     		};
     };
 
     case 47: //space key Colocar piezas barrera
     {
       	if (playerSide == west) then {
-        	[] spawn bambusfarm_fnc_placeablesPlaceComplete;
+        	[] spawn life_fnc_placeablesPlaceComplete;
         };
      	if(_shift && (playerSide == west)) then {
-     		[] spawn bambusfarm_fnc_placeableCancel;
+     		[] spawn life_fnc_placeableCancel;
      	};
     };
 
@@ -128,7 +128,7 @@ switch (_code) do
 		if(_shift) then {_handled = true;};
 		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
 		{
-			[] call bambusfarm_fnc_restrainAction;
+			[] call life_fnc_restrainAction;
 		};
 	};
 	
@@ -138,9 +138,9 @@ switch (_code) do
 		if(_shift) then {_handled = true;};
 		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then
 		{
-			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !bambusfarm_knockout && !(player getVariable["restrained",false]) && !bambusfarm_istazed) then
+			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !life_istazed) then
 			{
-				[cursorTarget] spawn bambusfarm_fnc_knockoutAction;
+				[cursorTarget] spawn life_fnc_knockoutAction;
 			};
 		};
 	};
@@ -152,18 +152,18 @@ switch (_code) do
 		{
 			if(vehicle player != player && alive vehicle player) then
 			{
-				if((vehicle player) in bambusfarm_vehicles) then
+				if((vehicle player) in life_vehicles) then
 				{
-					[vehicle player] call bambusfarm_fnc_openInventory;
+					[vehicle player] call life_fnc_openInventory;
 				};
 			}
 				else
 			{
 				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship" OR cursorTarget isKindOf "House_F") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
 				{
-					if(cursorTarget in bambusfarm_vehicles OR {!(cursorTarget getVariable ["locked",true])}) then
+					if(cursorTarget in life_vehicles OR {!(cursorTarget getVariable ["locked",true])}) then
 					{
-						[cursorTarget] call bambusfarm_fnc_openInventory;
+						[cursorTarget] call life_fnc_openInventory;
 					};
 				};
 			};
@@ -181,15 +181,15 @@ switch (_code) do
                 {
                     if(playerSide == west) then
                     {
-                        [_veh] call bambusfarm_fnc_sirenLights;
+                        [_veh] call life_fnc_sirenLights;
                     };
                     if(playerSide == independent) then
                     {
-                        [_veh] call bambusfarm_fnc_medicSirenLights;
+                        [_veh] call life_fnc_medicSirenLights;
                     };
-                    if(__GETC__(bambusfarm_coplevel) == 12) then
+                    if(__GETC__(life_coplevel) == 12) then
                     {
-                    	[_veh] call bambusfarm_fnc_sirenLights;
+                    	[_veh] call life_fnc_sirenLights;
                     };
 
                 };
@@ -197,27 +197,27 @@ switch (_code) do
             _handled = true;
         };
 		
-		if(!_alt && !_ctrlKey) then { [] call bambusfarm_fnc_radar; };
+		if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
 	};
 	//Y Player Menu
 	case 21:
 	{
 		if(!_alt && !_ctrlKey && !dialog) then
 		{
-			[] call bambusfarm_fnc_p_openMenu;
+			[] call life_fnc_p_openMenu;
 		};
 	};
 	
 	//F Key
 	case 33:
 	{
-		if(playerSide in [west,independent] && vehicle player != player && !bambusfarm_siren_active && ((driver vehicle player) == player)) then
+		if(playerSide in [west,independent] && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
 		{
 			[] spawn
 			{
-				bambusfarm_siren_active = true;
+				life_siren_active = true;
 				sleep 4.7;
-				bambusfarm_siren_active = false;
+				life_siren_active = false;
 			};
 			_veh = vehicle player;
 			if(isNil {_veh getVariable "siren"}) then {_veh setVariable["siren",false,true];};
@@ -231,12 +231,12 @@ switch (_code) do
 				titleText [localize "STR_MISC_SirensON","PLAIN"];
 				_veh setVariable["siren",true,true];
 				if(playerSide == west) then {
-					[[_veh],"bambusfarm_fnc_copSiren",nil,true] spawn bambusfarm_fnc_MP;
+					[[_veh],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
 				};
 				if(playerSide == independent) then
 				{
 					//I do not have a custom sound for this and I really don't want to go digging for one, when you have a sound uncomment this and change medicSiren.sqf in the medical folder.
-					[[_veh],"bambusfarm_fnc_medicSiren",nil,true] spawn bambusfarm_fnc_MP;
+					[[_veh],"life_fnc_medicSiren",nil,true] spawn life_fnc_MP;
 				};
 			};
 		};
@@ -246,13 +246,13 @@ switch (_code) do
     case 24:
 	{
 		if (!_shift && !_alt && !_ctrlKey) then {
-			[] call bambusfarm_fnc_Opener;
+			[] call life_fnc_Opener;
 		};
 	};
 
 	case 60:
 	{
-		closeDialog 0;[] spawn bambusfarm_fnc_openMenu;
+		closeDialog 0;[] spawn life_fnc_openMenu;
 	};
 	
 	//surrender... shift + g
@@ -260,14 +260,14 @@ switch (_code) do
 	{
 		if(_alt) then {_handled = true;};
 		if (!_shift && _alt && !_ctrlKey) then {
-			if (vehicle player == player && !(player getVariable ["restrained", false]) && (animationState player) != "Incapacitated" && !bambusfarm_istazed) then
+			if (vehicle player == player && !(player getVariable ["restrained", false]) && (animationState player) != "Incapacitated" && !life_istazed) then
 			{
 				if (player getVariable ["surrender", false]) then
 				{
 					player setVariable ["surrender", false, true];
 				} else
 				{
-					[] spawn bambusfarm_fnc_surrender;
+					[] spawn life_fnc_surrender;
 				};
 			};
 		};
@@ -278,20 +278,20 @@ switch (_code) do
     case 16:
 
     {
-        if((!bambusfarm_action_inUse) && (vehicle player == player) ) then
+        if((!life_action_inUse) && (vehicle player == player) ) then
         {
             {
-                _str = [_x] call bambusfarm_fnc_varToStr;
+                _str = [_x] call life_fnc_varToStr;
                 _val = missionNameSpace getVariable _x;
                 if(_val > 0 ) then
                 {
                     if( _str == "Spitzhacke" || _str == "pickaxe" ) then
                     {
-                        [] call bambusfarm_fnc_pickAxeUse;
-                        waitUntil {bambusfarm_fnc_pickAxeUse};
+                        [] call life_fnc_pickAxeUse;
+                        waitUntil {life_fnc_pickAxeUse};
                     };
                 };
-            } foreach bambusfarm_inv_items;
+            } foreach life_inv_items;
         }
     };
 
@@ -306,8 +306,8 @@ switch (_code) do
 			};
 			
 			if(_veh isKindOf "House_F" && playerSide == civilian) then {
-				if(_veh in bambusfarm_vehicles && player distance _veh < 8) then {
-					_door = [_veh] call bambusfarm_fnc_nearestDoor;
+				if(_veh in life_vehicles && player distance _veh < 8) then {
+					_door = [_veh] call life_fnc_nearestDoor;
 					if(_door == 0) exitWith {hint localize "STR_House_Door_NotNear"};
 					_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
 					if(_locked == 0) then {
@@ -322,25 +322,25 @@ switch (_code) do
 				};
 			} else {
 				_locked = locked _veh;
-				if(_veh in bambusfarm_vehicles && player distance _veh < 8) then {
+				if(_veh in life_vehicles && player distance _veh < 8) then {
 					if(_locked == 2) then {
 						if(local _veh) then {
 							_veh lock 0;
 						} else {
-							[[_veh,0],"bambusfarm_fnc_lockVehicle",_veh,false] spawn bambusfarm_fnc_MP;
+							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};
 						systemChat localize "STR_MISC_VehUnlock";
 						hint composeText [ image "bambusfarm\Texturen\unlock.paa", " Du hast dein Fahrzeug entsperrt." ];
-						[player, "unlock", 25] call bambusfarm_fnc_globalSound;
+						[player, "unlock", 25] call life_fnc_globalSound;
 					} else {
 						if(local _veh) then {
 							_veh lock 2;
 						} else {
-							[[_veh,2],"bambusfarm_fnc_lockVehicle",_veh,false] spawn bambusfarm_fnc_MP;
+							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};	
 						systemChat localize "STR_MISC_VehLock";
 						hint composeText [ image "bambusfarm\Texturen\lock.paa", " Du hast dein Fahrzeug zugesperrt." ];
-						[player, "lock", 25] call bambusfarm_fnc_globalSound;
+						[player, "lock", 25] call life_fnc_globalSound;
 					};
 				};
 			};

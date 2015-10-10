@@ -1,11 +1,11 @@
-bambusfarm_fnc_sidechat =
+life_fnc_sidechat =
 compileFinal "
-	if(bambusfarm_sidechat) then {bambusfarm_sidechat = false;} else {bambusfarm_sidechat = true;};
-	[[player,bambusfarm_sidechat,playerSide],""TON_fnc_managesc"",false,false] spawn bambusfarm_fnc_MP;
-	[] call bambusfarm_fnc_settingsMenu;
+	if(life_sidechat) then {life_sidechat = false;} else {life_sidechat = true;};
+	[[player,life_sidechat,playerSide],""TON_fnc_managesc"",false,false] spawn life_fnc_MP;
+	[] call life_fnc_settingsMenu;
 ";
 
-publicVariable "bambusfarm_fnc_sidechat";
+publicVariable "life_fnc_sidechat";
 
 TON_fnc_index =
 compileFinal "
@@ -30,7 +30,7 @@ compileFinal "
 	if(isNull _ret) exitWith {};
 	if(isNil ""_ret"") exitWith {};
 	
-	[[bambusfarm_BANK,bambusfarm_TASCHENGELD,owner player,player],""bambusfarm_fnc_admininfo"",_ret,false] spawn bambusfarm_fnc_MP;
+	[[life_BANK,life_TASCHENGELD,owner player,player],""life_fnc_admininfo"",_ret,false] spawn life_fnc_MP;
 ";
 publicVariable "TON_fnc_player_query";
 
@@ -43,8 +43,8 @@ compileFinal "
 	_from = _this select 1;
 	if(!([str(_val)] call TON_fnc_isnumber)) exitWith {};
 	if(_from == """") exitWith {};
-	bambusfarm_BANK = bambusfarm_BANK + _val;
-	hint format[""%1 has wire transferred €%2 to you."",_from,[_val] call bambusfarm_fnc_numberText];
+	life_BANK = life_BANK + _val;
+	hint format[""%1 has wire transferred €%2 to you."",_from,[_val] call life_fnc_numberText];
 	
 ";
 publicVariable "TON_fnc_clientWireTransfer";
@@ -78,7 +78,7 @@ compileFinal "
 	if(isNil ""_unit"" OR isNil ""_group"") exitWith {};
 	if(player == _unit && (group player) == _group) then
 	{
-		bambusfarm_my_gang = ObjNull;
+		life_my_gang = ObjNull;
 		[player] joinSilent (createGroup civilian);
 		hint ""You have been kicked out of the gang."";
 		
@@ -93,12 +93,12 @@ compileFinal "
 	_unit = _this select 1;
 	_giver = _this select 2;
 	if(isNil ""_unit"" OR isNil ""_giver"") exitWith {};
-	if(player == _unit && !(_vehicle in bambusfarm_vehicles)) then
+	if(player == _unit && !(_vehicle in life_vehicles)) then
 	{
 		_name = getText(configFile >> ""CfgVehicles"" >> (typeOf _vehicle) >> ""displayName"");
 		hint format[""%1 has gave you keys for a %2"",_giver,_name];
-		bambusfarm_vehicles pushBack _vehicle;
-		[[getPlayerUID player,playerSide,_vehicle,1],""TON_fnc_keyManagement"",false,false] spawn bambusfarm_fnc_MP;
+		life_vehicles pushBack _vehicle;
+		[[getPlayerUID player,playerSide,_vehicle,1],""TON_fnc_keyManagement"",false,false] spawn life_fnc_MP;
 	};
 ";
 
@@ -138,8 +138,8 @@ private[""_msg"",""_to""];
 	_to = ""EMS Units"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3022,true];};
 		
-	[[_msg,name player,5],""TON_fnc_clientMessage"",independent,false] spawn bambusfarm_fnc_MP;
-	[] call bambusfarm_fnc_cellphone;
+	[[_msg,name player,5],""TON_fnc_clientMessage"",independent,false] spawn life_fnc_MP;
+	[] call life_fnc_cellphone;
 	hint format[""You have sent a message to all EMS Units."",_to,_msg];
 	ctrlShow[3022,true];
 ";
@@ -155,8 +155,8 @@ compileFinal "
 	if(isNil ""_to"") exitWith {ctrlShow[3015,true];};
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3015,true];};
 	
-	[[_msg,name player,0],""TON_fnc_clientMessage"",_to,false] spawn bambusfarm_fnc_MP;
-	[] call bambusfarm_fnc_cellphone;
+	[[_msg,name player,0],""TON_fnc_clientMessage"",_to,false] spawn life_fnc_MP;
+	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",name _to,_msg];
 	ctrlShow[3015,true];
 ";
@@ -169,8 +169,8 @@ compileFinal "
 	_to = ""The Police"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3016,true];};
 		
-	[[_msg,name player,1],""TON_fnc_clientMessage"",true,false] spawn bambusfarm_fnc_MP;
-	[] call bambusfarm_fnc_cellphone;
+	[[_msg,name player,1],""TON_fnc_clientMessage"",true,false] spawn life_fnc_MP;
+	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3016,true];
 ";
@@ -183,8 +183,8 @@ compileFinal "
 	_to = ""The Admins"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3017,true];};
 		
-	[[_msg,name player,2],""TON_fnc_clientMessage"",true,false] spawn bambusfarm_fnc_MP;
-	[] call bambusfarm_fnc_cellphone;
+	[[_msg,name player,2],""TON_fnc_clientMessage"",true,false] spawn life_fnc_MP;
+	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3017,true];
 ";
@@ -192,28 +192,28 @@ compileFinal "
 TON_fnc_cell_adminmsg =
 compileFinal "
 	if(isServer) exitWith {};
-	if((call bambusfarm_adminlevel) < 1) exitWith {hint ""You are not an admin!"";};
+	if((call life_adminlevel) < 1) exitWith {hint ""You are not an admin!"";};
 	private[""_msg"",""_to""];
 	_msg = ctrlText 3003;
 	_to = call compile format[""%1"",(lbData[3004,(lbCurSel 3004)])];
 	if(isNull _to) exitWith {};
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
 	
-	[[_msg,name player,3],""TON_fnc_clientMessage"",_to,false] spawn bambusfarm_fnc_MP;
-	[] call bambusfarm_fnc_cellphone;
+	[[_msg,name player,3],""TON_fnc_clientMessage"",_to,false] spawn life_fnc_MP;
+	[] call life_fnc_cellphone;
 	hint format[""Admin Message Sent To: %1 - Message: %2"",name _to,_msg];
 ";
 
 TON_fnc_cell_adminmsgall =
 compileFinal "
 	if(isServer) exitWith {};
-	if((call bambusfarm_adminlevel) < 1) exitWith {hint ""You are not an admin!"";};
+	if((call life_adminlevel) < 1) exitWith {hint ""You are not an admin!"";};
 	private[""_msg"",""_from""];
 	_msg = ctrlText 3003;
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
 	
-	[[_msg,name player,4],""TON_fnc_clientMessage"",true,false] spawn bambusfarm_fnc_MP;
-	[] call bambusfarm_fnc_cellphone;
+	[[_msg,name player,4],""TON_fnc_clientMessage"",true,false] spawn life_fnc_MP;
+	[] call life_fnc_cellphone;
 	hint format[""Admin Message Sent To All: %1"",_msg];
 ";
 
@@ -264,7 +264,7 @@ compileFinal "
 		
 		case 2 :
 		{
-			if((call bambusfarm_adminlevel) < 1) exitWith {};
+			if((call life_adminlevel) < 1) exitWith {};
 			private[""_message""];
 			_message = format[""???ADMIN REQUEST FROM %1: %2"",_from,_msg];
 			hint parseText format [""<t color='#ffcefe'><t size='2'><t align='center'>Admin Request<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>Admins<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
@@ -282,7 +282,7 @@ compileFinal "
 			
 			[""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
 			systemChat _message;
-			if((call bambusfarm_adminlevel) > 0) then {systemChat _admin;};
+			if((call life_adminlevel) > 0) then {systemChat _admin;};
 		};
 		
 		case 4 :
@@ -294,7 +294,7 @@ compileFinal "
 			
 			[""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
 			systemChat _message;
-			if((call bambusfarm_adminlevel) > 0) then {systemChat _admin;};
+			if((call life_adminlevel) > 0) then {systemChat _admin;};
 		};
 		
 		case 5: {

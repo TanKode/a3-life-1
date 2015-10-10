@@ -1,6 +1,6 @@
 //---- TODO: - Lizenzinfo Dialog
 
-//---- TODO: - Shops in den bambusfarm_server verlagern
+//---- TODO: - Shops in den life_server verlagern
     - Kleidung
     - Waffen
     - Cars

@@ -11,7 +11,7 @@ _level = 0;
 	if ((_x select 0) isEqualTo _pid) then {_level = _x select 1; _allowed = true;};
 } forEach AS_Allowed;
 
-if (_level < 1 OR !_allowed) exitWith {[[1,0],"bambusfarm_fnc_ASreceiver",_player,false] spawn bambusfarm_fnc_mp;};
+if (_level < 1 OR !_allowed) exitWith {[[1,0],"life_fnc_ASreceiver",_player,false] spawn life_fnc_mp;};
 
 _actions = [];
 {
@@ -22,5 +22,5 @@ _actions = [];
 	};
 } forEach AS_Actions;
 
-[[0,_actions],"bambusfarm_fnc_ASreceiver",_player,false] spawn bambusfarm_fnc_mp;
-[[1,_level],"bambusfarm_fnc_ASreceiver",_player,false] spawn bambusfarm_fnc_mp;
+[[0,_actions],"life_fnc_ASreceiver",_player,false] spawn life_fnc_mp;
+[[1,_level],"life_fnc_ASreceiver",_player,false] spawn life_fnc_mp;

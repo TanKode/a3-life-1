@@ -20,7 +20,7 @@ if(_isPack == 1) then {
 
 if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
 	_house = nearestBuilding (getPosATL player);
-	if(!(_house in bambusfarm_vehicles) && {(_house getVariable ["locked",false])}) then {
+	if(!(_house in life_vehicles) && {(_house getVariable ["locked",false])}) then {
 		hint localize "STR_House_ContainerDeny";
 		[] spawn {
 			waitUntil {!isNull (findDisplay 602)};
@@ -30,7 +30,7 @@ if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
 };
 
 if(_container isKindOf "LandVehicle" OR _container isKindOf "Ship" OR _container isKindOf "Air") exitWith {
-	if(!(_container in bambusfarm_vehicles) && {(locked _container) == 2}) exitWith {
+	if(!(_container in life_vehicles) && {(locked _container) == 2}) exitWith {
 		hint localize "STR_MISC_VehInventory";
 		[] spawn {
 			waitUntil {!isNull (findDisplay 602)};

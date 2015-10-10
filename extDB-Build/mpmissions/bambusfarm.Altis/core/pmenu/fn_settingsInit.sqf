@@ -17,7 +17,7 @@ tawvd_addon_disable = true;
 	{
 		_recorded = vehicle player;
 		if(vehicle player != _recorded OR !alive player) then {
-			[] call bambusfarm_fnc_updateViewDistance;
+			[] call life_fnc_updateViewDistance;
 		};
 		sleep 2.2;
 	};

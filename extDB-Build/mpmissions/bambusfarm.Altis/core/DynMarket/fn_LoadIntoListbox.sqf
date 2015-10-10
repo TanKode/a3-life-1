@@ -8,7 +8,7 @@
 #################################################################
 */
 
-if (isNil "DYNMARKET_prices") then {[[getPlayerUID player],"TON_fnc_playerLogged",false,false] spawn bambusfarm_fnc_MP;hint "Getting current prices from the server..";sleep 1;};
+if (isNil "DYNMARKET_prices") then {[[getPlayerUID player],"TON_fnc_playerLogged",false,false] spawn life_fnc_MP;hint "Getting current prices from the server..";sleep 1;};
 
 disableSerialization;
 _dialog = findDisplay 7100;
@@ -19,8 +19,8 @@ _blacklist =
 ];
 
 {
-	_itemdisplayname = [([(_x select 0),0] call bambusfarm_fnc_varHandle)] call bambusfarm_fnc_varToStr;
-	_itemIconPath = [_x select 0] call bambusfarm_fnc_DYNMARKET_getIcon;
+	_itemdisplayname = [([(_x select 0),0] call life_fnc_varHandle)] call life_fnc_varToStr;
+	_itemIconPath = [_x select 0] call life_fnc_DYNMARKET_getIcon;
 	if !(_x select 0 in _blacklist) then {
 		_listbox lbAdd format ["%1",_itemdisplayname];
 		_listbox lbSetData [(lbSize _listbox)-1,_x select 0];

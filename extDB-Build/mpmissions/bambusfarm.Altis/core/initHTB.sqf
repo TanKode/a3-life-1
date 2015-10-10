@@ -26,20 +26,20 @@ if(isNil "HackBankCam")	then {HackBankCam = 0;};
 	{
 	private["_dehack","_check"];
 	_check = 0;	
-	waitUntil{bambusfarm_ATMhacked == 1};
+	waitUntil{life_ATMhacked == 1};
 	
-		if(bambusfarm_ATMhacked == 1) then
+		if(life_ATMhacked == 1) then
 		{
 				_check = 1;	
 				hint format["Die Zentralbank wurde gehackt!! Aus Sicherheitsgründen sind alle Geldautomaten 15min nicht nutzbar!"];
 				_dehack = (60 * 15);
 				sleep _dehack;
-						bambusfarm_ATMhacked = 0;
-						publicVariable "bambusfarm_ATMhacked";
+						life_ATMhacked = 0;
+						publicVariable "life_ATMhacked";
 						HackBankCam = 0;
 
 		};	
-		if((bambusfarm_ATMhacked == 1) && (_check == 1)) then
+		if((life_ATMhacked == 1) && (_check == 1)) then
 		{
 			_check = 0;
 			hint format["Die Bank hat ihr bestes gegeben! Alle Geldautomaten sind wieder nutzbar!"];

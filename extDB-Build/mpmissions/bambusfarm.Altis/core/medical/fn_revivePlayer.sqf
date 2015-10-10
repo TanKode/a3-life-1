@@ -17,14 +17,14 @@ if(player distance _target > 5) exitWith {}; //Not close enough.
 //Fetch their name so we can shout it.
 _targetName = _target getVariable["name","Unknown"];
 _title = format[localize "STR_Medic_Progress",_targetName];
-bambusfarm_action_inUse = true; //Lockout the controls.
-[player, "revive", 25] call bambusfarm_fnc_globalSound;
+life_action_inUse = true; //Lockout the controls.
+[player, "revive", 25] call life_fnc_globalSound;
 
 _target setVariable["Reviving",player,TRUE];
 //Setup our progress bar
 disableSerialization;
-5 cutRsc ["bambusfarm_progress","PLAIN"];
-_ui = uiNamespace getVariable ["bambusfarm_progress",displayNull];
+5 cutRsc ["life_progress","PLAIN"];
+_ui = uiNamespace getVariable ["life_progress",displayNull];
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format["%2 (1%1)...","%",_title];
@@ -48,8 +48,8 @@ while {true} do
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
 	if(_cP >= 1 OR !alive player) exitWith {};
-	if(bambusfarm_istazed) exitWith {}; //Tazed
-	if(bambusfarm_interrupted) exitWith {};
+	if(life_istazed) exitWith {}; //Tazed
+	if(life_interrupted) exitWith {};
 	if((player getVariable["restrained",false])) exitWith {};
 	if(player distance _target > 4) exitWith {_badDistance = true;};
 	if(_target getVariable["Revive",FALSE]) exitWith {};
@@ -61,17 +61,17 @@ while {true} do
 player playActionNow "stop";
 if(_target getVariable ["Reviving",ObjNull] != player) exitWith {hint localize "STR_Medic_AlreadyReviving"};
 _target setVariable["Reviving",NIL,TRUE];
-if(!alive player OR bambusfarm_istazed) exitWith {bambusfarm_action_inUse = false;};
+if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
 if(_target getVariable["Revive",FALSE]) exitWith {hint localize "STR_Medic_RevivedRespawned"};
-if((player getVariable["restrained",false])) exitWith {bambusfarm_action_inUse = false;};
-if(!isNil "_badDistance") exitWith {titleText[localize "STR_Medic_TooFar","PLAIN"]; bambusfarm_action_inUse = false;};
-if(bambusfarm_interrupted) exitWith {bambusfarm_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; bambusfarm_action_inUse = false;};
+if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
+if(!isNil "_badDistance") exitWith {titleText[localize "STR_Medic_TooFar","PLAIN"]; life_action_inUse = false;};
+if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 
-bambusfarm_BANK = bambusfarm_BANK + (call bambusfarm_revive_fee);
-bambusfarm_action_inUse = false;
+life_BANK = life_BANK + (call life_revive_fee);
+life_action_inUse = false;
 _target setVariable["Revive",TRUE,TRUE];
-[[profileName],"bambusfarm_fnc_revived",_target,FALSE] spawn bambusfarm_fnc_MP;
-titleText[format[localize "STR_Medic_RevivePayReceive",_targetName,[(call bambusfarm_revive_fee)] call bambusfarm_fnc_numberText],"PLAIN"];
+[[profileName],"life_fnc_revived",_target,FALSE] spawn life_fnc_MP;
+titleText[format[localize "STR_Medic_RevivePayReceive",_targetName,[(call life_revive_fee)] call life_fnc_numberText],"PLAIN"];
 
 sleep 0.6;
 player reveal _target;

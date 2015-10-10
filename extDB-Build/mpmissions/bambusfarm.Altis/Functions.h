@@ -13,7 +13,7 @@ class Socket_Reciever
 	};
 };
 
-class bambusfarm_Client_Core
+class life_Client_Core
 {
 	tag = "bambusfarm";
 	

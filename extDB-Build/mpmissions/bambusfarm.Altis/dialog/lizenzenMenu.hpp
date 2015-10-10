@@ -1,12 +1,12 @@
-class bambusfarm_lizenzen_menu
+class life_lizenzen_menu
 {
 	idd = 2900;
-	name = "bambusfarm_lizenzen_menu";
+	name = "life_lizenzen_menu";
 	movingEnabled = false;
 	enableSimulation = true;
 
 	class controlsBackground {
-        class MainBackground: bambusfarm_RscText
+        class MainBackground: life_RscText
         {
         	idc = 1000;
         	x = 0.2;
@@ -19,7 +19,7 @@ class bambusfarm_lizenzen_menu
 
 	class controls
 	{
-        class Liste: bambusfarm_RscListbox
+        class Liste: life_RscListbox
         {
         	idc = 1500;
         	x = 0.225;
@@ -27,7 +27,7 @@ class bambusfarm_lizenzen_menu
         	w = 0.45;
         	h = 0.52;
         };
-        class closeButton: bambusfarm_RscButtonMenu
+        class closeButton: life_RscButtonMenu
         {
         	x = 0.55;
         	y = 0.78;

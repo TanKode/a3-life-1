@@ -16,16 +16,16 @@ if(_unit == player) exitWith {ctrlShow[2001,true];};
 if(isNull _unit) exitWith {ctrlShow[2001,true];};
 
 //A series of checks *ugh*
-if(!bambusfarm_use_atm) exitWith {hint "You recently robbed the bank! You can't give money away just yet.";ctrlShow[2001,true];};
+if(!life_use_atm) exitWith {hint "You recently robbed the bank! You can't give money away just yet.";ctrlShow[2001,true];};
 if(!([_amount] call TON_fnc_isnumber)) exitWith {hint "You didn't enter an actual number format.";ctrlShow[2001,true];};
 if(parseNumber(_amount) <= 0) exitWith {hint "You need to enter an actual amount you want to give.";ctrlShow[2001,true];};
-if(parseNumber(_amount) > bambusfarm_TASCHENGELD) exitWith {hint "You don't have that much to give!";ctrlShow[2001,true];};
+if(parseNumber(_amount) > life_TASCHENGELD) exitWith {hint "You don't have that much to give!";ctrlShow[2001,true];};
 if(isNull _unit) exitWith {ctrlShow[2001,true];};
 if(isNil "_unit") exitWith {ctrlShow[2001,true]; hint "The selected player is not within range";};
-hint format["You gave €%1 to %2",[(parseNumber(_amount))] call bambusfarm_fnc_numberText,_unit getVariable["realname",name _unit]];
-bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD - (parseNumber(_amount));
+hint format["You gave €%1 to %2",[(parseNumber(_amount))] call life_fnc_numberText,_unit getVariable["realname",name _unit]];
+life_TASCHENGELD = life_TASCHENGELD - (parseNumber(_amount));
 [0] call SOCK_fnc_updatePartial;
-[[_unit,_amount,player],"bambusfarm_fnc_receiveMoney",_unit,false] spawn bambusfarm_fnc_MP;
-[] call bambusfarm_fnc_p_updateMenu;
+[[_unit,_amount,player],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;
+[] call life_fnc_p_updateMenu;
 
 ctrlShow[2001,true];

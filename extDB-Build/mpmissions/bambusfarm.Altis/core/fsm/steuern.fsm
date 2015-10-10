@@ -57,7 +57,7 @@ class FSM
                 {
                         name = "Split";
                         itemno = 2;
-                        init = /*%FSM<STATEINIT""">*/"systemChat format[localize ""STR_FSM_Steuern"",(call bambusfarm_steuer_period)];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"systemChat format[localize ""STR_FSM_Steuern"",(call life_steuer_period)];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -68,7 +68,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Pay_me_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(time - _lastcheck) > ((call bambusfarm_steuer_period) * 60)"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(time - _lastcheck) > ((call life_steuer_period) * 60)"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -88,11 +88,11 @@ class FSM
                          "{" \n
                          "	if(playerSide == civilian OR playerSide == east OR playerSide == independent)then" \n
                          "	{" \n
-                         "		_price = (call bambusfarm_steuern);" \n
-                         "		[""LohnSucceeded"",[format[(""Du hast dein Gehalt %1€ erhalten""),[_price] call bambusfarm_fnc_numberText]]] call bis_fnc_showNotification;" \n
-                         "		bambusfarm_BANK = bambusfarm_BANK +  _price;" \n
-                         "		systemChat format[""Du hast Steuern in Höhe von %1 Riskos erhalten!"",[(call bambusfarm_steuern)] call bambusfarm_fnc_numberText];" \n
-                         "		[] call bambusfarm_fnc_updateRequest;" \n
+                         "		_price = (call life_steuern);" \n
+                         "		[""LohnSucceeded"",[format[(""Du hast dein Gehalt %1€ erhalten""),[_price] call life_fnc_numberText]]] call bis_fnc_showNotification;" \n
+                         "		life_BANK = life_BANK +  _price;" \n
+                         "		systemChat format[""Du hast Steuern in Höhe von %1 Riskos erhalten!"",[(call life_steuern)] call life_fnc_numberText];" \n
+                         "		[] call life_fnc_updateRequest;" \n
                          "	};" \n
                          "};" \n
                          "" \n

@@ -14,107 +14,107 @@ _unit = _this select 0;
 	
 	switch(_item) do
 	{
-		case "bambusfarm_inv_water":
+		case "life_inv_water":
 		{
 			if(_value > 0) then
 			{
-				_var = [_item,1] call bambusfarm_fnc_varHandle;
+				_var = [_item,1] call life_fnc_varHandle;
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_BottlePlastic_V1_F" createVehicle _pos;
 				//_obj setVariable["water",_value,true];
-				[[_obj],"bambusfarm_fnc_simDisable",nil,true] spawn bambusfarm_fnc_MP;
+				[[_obj],"life_fnc_simDisable",nil,true] spawn life_fnc_MP;
 				_obj setPos _pos;
 				_obj setVariable["item",[_var,_value],true];
 				missionNamespace setVariable[_x,0];
 			};
 		};
 		
-		case "bambusfarm_inv_tbacon":
+		case "life_inv_tbacon":
 		{
 			if(_value > 0) then
 			{
-				_var = [_item,1] call bambusfarm_fnc_varHandle;
+				_var = [_item,1] call life_fnc_varHandle;
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_TacticalBacon_F" createVehicle _pos;
-				[[_obj],"bambusfarm_fnc_simDisable",nil,true] spawn bambusfarm_fnc_MP;
+				[[_obj],"life_fnc_simDisable",nil,true] spawn life_fnc_MP;
 				_obj setPos _pos;
 				_obj setVariable["item",[_var,_value],true];
 				missionNamespace setVariable[_x,0];
 			};
 		};
 		
-		case "bambusfarm_inv_redgull":
+		case "life_inv_redgull":
 		{
 			if(_value > 0) then
 			{
-				_var = [_item,1] call bambusfarm_fnc_varHandle;
+				_var = [_item,1] call life_fnc_varHandle;
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_Can_V3_F" createVehicle _pos;
-				[[_obj],"bambusfarm_fnc_simDisable",nil,true] spawn bambusfarm_fnc_MP;
+				[[_obj],"life_fnc_simDisable",nil,true] spawn life_fnc_MP;
 				_obj setPos _pos;
 				_obj setVariable["item",[_var,_value],true];
 				missionNamespace setVariable[_x,0];
 			};
 		};
 		
-		case "bambusfarm_inv_fuelE":
+		case "life_inv_fuelE":
 		{
 			if(_value > 0) then
 			{
-				_var = [_item,1] call bambusfarm_fnc_varHandle;
+				_var = [_item,1] call life_fnc_varHandle;
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_CanisterFuel_F" createVehicle _pos;
-				[[_obj],"bambusfarm_fnc_simDisable",nil,true] spawn bambusfarm_fnc_MP;
+				[[_obj],"life_fnc_simDisable",nil,true] spawn life_fnc_MP;
 				_obj setPos _pos;
 				_obj setVariable["item",[_var,_value],true];
 				missionNamespace setVariable[_x,0];
 			};
 		};
 		
-		case "bambusfarm_inv_fuelF":
+		case "life_inv_fuelF":
 		{
 			if(_value > 0) then
 			{
-				_var = [_item,1] call bambusfarm_fnc_varHandle;
+				_var = [_item,1] call life_fnc_varHandle;
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_CanisterFuel_F" createVehicle _pos;
-				[[_obj],"bambusfarm_fnc_simDisable",nil,true] spawn bambusfarm_fnc_MP;
+				[[_obj],"life_fnc_simDisable",nil,true] spawn life_fnc_MP;
 				_obj setPos _pos;
 				_obj setVariable["item",[_var,_value],true];
 				missionNamespace setVariable[_x,0];
 			};
 		};
 		
-		case "bambusfarm_inv_coffee":
+		case "life_inv_coffee":
 		{
 			if (_value > 0) then
 			{
-				_var = [_item,1] call bambusfarm_fnc_varHandle;
+				_var = [_item,1] call life_fnc_varHandle;
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_Can_V3_F" createVehicle _pos;
-				[[_obj],"bambusfarm_fnc_simDisable",nil,true] spawn bambusfarm_fnc_MP;
+				[[_obj],"life_fnc_simDisable",nil,true] spawn life_fnc_MP;
 				_obj setPos _pos;
 				_obj setVariable["item",[_var,_value],true];
 				missionNamespace setVariable[_x,0];
 			};
 		};
 		
-		case "bambusfarm_TASCHENGELD":
+		case "life_TASCHENGELD":
 		{
-			if(bambusfarm_TASCHENGELD > 0) then
+			if(life_TASCHENGELD > 0) then
 			{
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_Money_F" createVehicle _pos;
 				_obj setVariable["item",["money",_value],true];
 				_obj setPos _pos;
-				[[_obj],"bambusfarm_fnc_simDisable",nil,true] spawn bambusfarm_fnc_MP;
+				[[_obj],"life_fnc_simDisable",nil,true] spawn life_fnc_MP;
 				missionNamespace setVariable[_x,0];
 			};
 		};
@@ -123,15 +123,15 @@ _unit = _this select 0;
 		{
 			if(_value > 0) then
 			{
-				_var = [_item,1] call bambusfarm_fnc_varHandle;
+				_var = [_item,1] call life_fnc_varHandle;
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_Suitcase_F" createVehicle _pos;
-				[[_obj],"bambusfarm_fnc_simDisable",nil,true] spawn bambusfarm_fnc_MP;
+				[[_obj],"life_fnc_simDisable",nil,true] spawn life_fnc_MP;
 				_obj setPos _pos;
 				_obj setVariable["item",[_var,_value],true];
 				missionNamespace setVariable[_x,0];
 			};
 		};
 	};
-} foreach (bambusfarm_inv_items + ["bambusfarm_TASCHENGELD"]);
+} foreach (life_inv_items + ["life_TASCHENGELD"]);

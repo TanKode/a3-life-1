@@ -39,27 +39,27 @@ removeHeadGear player;
 } foreach (assignedItems player);
 
 //Add the gear
-if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_vest != "") then {_handle = [_vest,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_vest != "") then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 {
-	_handle = [_x,true,false,false,false] spawn bambusfarm_fnc_handleItem;
+	_handle = [_x,true,false,false,false] spawn life_fnc_handleItem;
 	waitUntil {scriptDone _handle};
 } foreach _magazines;
 
-if(_primary != "") then {[_primary,true,false,false,false] spawn bambusfarm_fnc_handleItem;};
-if(_launcher != "") then {[_launcher,true,false,false,false] spawn bambusfarm_fnc_handleItem;};
-if(_handgun != "") then {[_handgun,true,false,false,false] spawn bambusfarm_fnc_handleItem;};
+if(_primary != "") then {[_primary,true,false,false,false] spawn life_fnc_handleItem;};
+if(_launcher != "") then {[_launcher,true,false,false,false] spawn life_fnc_handleItem;};
+if(_handgun != "") then {[_handgun,true,false,false,false] spawn life_fnc_handleItem;};
 
-{_handle = [_x,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
-{[_x,true,false,false,true] call bambusfarm_fnc_handleItem;} foreach (_uitems);
-{[_x,true,false,false,true] call bambusfarm_fnc_handleItem;} foreach (_vitems);
-{[_x,true,true,false,false] call bambusfarm_fnc_handleItem;} foreach (_bitems);
-{[_x,true,false,true,false] call bambusfarm_fnc_handleItem;} foreach (_primitems);
-{[_x,true,false,true,false] call bambusfarm_fnc_handleItem;} foreach (_secitems);
-{[_x,true,false,true,false] call bambusfarm_fnc_handleItem;} foreach (_handgunitems);
+{_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
+{[_x,true,false,false,true] call life_fnc_handleItem;} foreach (_uitems);
+{[_x,true,false,false,true] call life_fnc_handleItem;} foreach (_vitems);
+{[_x,true,true,false,false] call life_fnc_handleItem;} foreach (_bitems);
+{[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_primitems);
+{[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_secitems);
+{[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_handgunitems);
 
 if(_headgear != "") then {player addHeadGear _headgear};
 if(_goggles != "") then {player addGoggles _goggles};
 
-[player, uniform player] call bambusfarm_fnc_equipGear;
+[player, uniform player] call life_fnc_equipGear;

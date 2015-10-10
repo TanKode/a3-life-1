@@ -11,11 +11,11 @@ _total = [_this,1,"",["",0]] call BIS_fnc_param;
 
 if(_val == _total) then
 {
-	titleText[format[localize "STR_Cop_BountyRecieve",[_val] call bambusfarm_fnc_numberText],"PLAIN"];
+	titleText[format[localize "STR_Cop_BountyRecieve",[_val] call life_fnc_numberText],"PLAIN"];
 }
 	else
 {
-	titleText[format[localize "STR_Cop_BountyKill",[_val] call bambusfarm_fnc_numberText,[_total] call bambusfarm_fnc_numberText],"PLAIN"];
+	titleText[format[localize "STR_Cop_BountyKill",[_val] call life_fnc_numberText,[_total] call life_fnc_numberText],"PLAIN"];
 };
 
-bambusfarm_BANK = bambusfarm_BANK + _val;
+life_BANK = life_BANK + _val;

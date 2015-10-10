@@ -17,7 +17,7 @@
 private["_shop","_coplevel"];
 _shop = [_this,0,"",[""]] call BIS_fnc_param;
 if(_shop == "") exitWith {closeDialog 0}; //Bad shop type passed.
-_coplevel = call bambusfarm_coplevel;
+_coplevel = call life_coplevel;
 
 
 switch(_shop) do
@@ -26,7 +26,7 @@ switch(_shop) do
 	{
 		switch ( _coplevel ) do
 		{
-			//case (playerSide != west && !(__GETC__(bambusfarm_coplevel))): {"Du bist kein Polizist!"};
+			//case (playerSide != west && !(__GETC__(life_coplevel))): {"Du bist kein Polizist!"};
 			case (1):
 			{
 				["Anwärter",

@@ -6,7 +6,7 @@
 */
 private["_Base","_BaseType","_CargoType","_Compatible","_AnimationType"];
 
-if(call (bambusfarm_mediclevel) <= 0) exitWith {};
+if(call (life_mediclevel) <= 0) exitWith {};
 if(side player != INDEPENDENT) exitWith {};
 
 {

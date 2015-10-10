@@ -1,13 +1,13 @@
-class bambusfarm_car_Status {
+class life_car_Status {
 	idd = 3333;
-	name= "bambusfarm_car_status";
+	name= "life_car_status";
 	movingEnable = false;
 	enableSimulation = true;
 
 
 	class controlsBackground {
 
-		class Hull_Car_Pic: bambusfarm_RscPicture
+		class Hull_Car_Pic: life_RscPicture
 		{
 			idc = 3334;
 			text = "\A3\soft_f\Offroad_01\Data\UI\map_offroad_01_CA.paa";
@@ -16,7 +16,7 @@ class bambusfarm_car_Status {
 			w = 0.211406 * safezoneW;
 			h = 0.33 * safezoneH;
 		};
-		class WLF_Pic: bambusfarm_RscPicture
+		class WLF_Pic: life_RscPicture
 		{
 			idc = 3335;
 			text = "textures\tire_top.paa";
@@ -25,7 +25,7 @@ class bambusfarm_car_Status {
 			w = 0.0309375 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
-		class WBL_Pic: bambusfarm_RscPicture
+		class WBL_Pic: life_RscPicture
 		{
 			idc = 3336;
 			text = "textures\tire_top.paa";
@@ -34,7 +34,7 @@ class bambusfarm_car_Status {
 			w = 0.0309375 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
-		class WRF_Pic: bambusfarm_RscPicture
+		class WRF_Pic: life_RscPicture
 		{
 			idc = 3337;
 			text = "textures\tire_top.paa";
@@ -43,7 +43,7 @@ class bambusfarm_car_Status {
 			w = 0.0309375 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
-		class WBR_Pic: bambusfarm_RscPicture
+		class WBR_Pic: life_RscPicture
 		{
 			idc = 3338;
 			text = "textures\tire_top.paa";
@@ -52,7 +52,7 @@ class bambusfarm_car_Status {
 			w = 0.0309375 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
-		class Engine_Pic: bambusfarm_RscPicture
+		class Engine_Pic: life_RscPicture
 		{
 			idc = 3339;
 			text = "textures\car-engine.paa";
@@ -62,7 +62,7 @@ class bambusfarm_car_Status {
 			h = 0.055 * safezoneH;
 			colorBackground[] = {0,0,0,0};
 		};
-		class Fuel_Pic: bambusfarm_RscPicture
+		class Fuel_Pic: life_RscPicture
 		{
 			idc = 3340;
 			text = "textures\fuel_tank_.paa";
@@ -77,7 +77,7 @@ class bambusfarm_car_Status {
 	class controls {
 
 
-		class Hull: bambusfarm_RscButtonMenu
+		class Hull: life_RscButtonMenu
 		{
 			idc = 3341;
 			x = 0.45875 * safezoneW + safezoneX;
@@ -88,7 +88,7 @@ class bambusfarm_car_Status {
 			colorBackgroundFocused[] = {0,0,0,0};
 			colorFocused[] = {0,0,0,0};
 		};
-		class WLF: bambusfarm_RscButtonMenu
+		class WLF: life_RscButtonMenu
 		{
 			idc = 3342;
 			x = 0.448438 * safezoneW + safezoneX;
@@ -99,7 +99,7 @@ class bambusfarm_car_Status {
 			colorBackgroundFocused[] = {0,0,0,0};
 			colorFocused[] = {0,0,0,0};
 		};
-		class Engine: bambusfarm_RscButtonMenu
+		class Engine: life_RscButtonMenu
 		{
 			idc = 3343;
 			x = 0.474219 * safezoneW + safezoneX;
@@ -110,7 +110,7 @@ class bambusfarm_car_Status {
 			colorBackgroundFocused[] = {0,0,0,0};
 			colorFocused[] = {0,0,0,0};
 		};
-		class Fuel: bambusfarm_RscButtonMenu
+		class Fuel: life_RscButtonMenu
 		{
 			idc = 3344;
 			x = 0.463906 * safezoneW + safezoneX;
@@ -121,7 +121,7 @@ class bambusfarm_car_Status {
 			colorBackgroundFocused[] = {0,0,0,0};
 			colorFocused[] = {0,0,0,0};
 		};
-		class WBL: bambusfarm_RscButtonMenu
+		class WBL: life_RscButtonMenu
 		{
 			idc = 3345;
 			x = 0.448438 * safezoneW + safezoneX;
@@ -132,7 +132,7 @@ class bambusfarm_car_Status {
 			colorBackgroundFocused[] = {0,0,0,0};
 			colorFocused[] = {0,0,0,0};
 		};
-		class WRF: bambusfarm_RscButtonMenu
+		class WRF: life_RscButtonMenu
 		{
 			idc = 3346;
 			x = 0.525781 * safezoneW + safezoneX;
@@ -143,7 +143,7 @@ class bambusfarm_car_Status {
 			colorBackgroundFocused[] = {0,0,0,0};
 			colorFocused[] = {0,0,0,0};
 		};
-		class WBR: bambusfarm_RscButtonMenu
+		class WBR: life_RscButtonMenu
 		{
 			idc = 3347;
 			x = 0.525781 * safezoneW + safezoneX;

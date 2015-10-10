@@ -12,14 +12,14 @@ civ_spawn_3 = nearestObjects[getMarkerPos  "civ_spawn_3", ["Land_i_Shop_01_V1_F"
 civ_spawn_4 = nearestObjects[getMarkerPos  "civ_spawn_4", ["Land_i_Shop_01_V1_F","Land_i_Shop_02_V1_F","Land_i_Shop_03_V1_F","Land_i_Stone_HouseBig_V1_F"],250];
 waitUntil {!(isNull (findDisplay 46))};
 
-if(bambusfarm_is_arrested) then
+if(life_is_arrested) then
 {
-	bambusfarm_is_arrested = false;
-	[player,true] spawn bambusfarm_fnc_jail;
+	life_is_arrested = false;
+	[player,true] spawn life_fnc_jail;
 }
 	else
 {
-	[] call bambusfarm_fnc_spawnMenu;
+	[] call life_fnc_spawnMenu;
 	waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 	waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 };
@@ -43,4 +43,4 @@ player addRating 9999999;
  [] execVM "bambusfarm\Sofia.sqf";
  };
 
- [player, uniform player] call bambusfarm_fnc_equipGear;
+ [player, uniform player] call life_fnc_equipGear;

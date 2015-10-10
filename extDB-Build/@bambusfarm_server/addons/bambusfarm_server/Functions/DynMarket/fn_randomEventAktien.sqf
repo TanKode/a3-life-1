@@ -73,4 +73,4 @@ DYNMARKET_waitForEventAktien = true;
 
 sleep 2;
 
-[[0,_EventAktienMessage],"bambusfarm_fnc_broadcast",true,false] spawn bambusfarm_fnc_MP;
+[[0,_EventAktienMessage],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

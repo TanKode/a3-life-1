@@ -13,7 +13,7 @@ switch (_mode) do
 	};
 	case 2:
 	{
-		bambusfarm_BANK = bambusfarm_BANK + _info;
+		life_BANK = life_BANK + _info;
 		hint format ["An Admin has refunded you €%1",_info];
 	};
 	case 3:

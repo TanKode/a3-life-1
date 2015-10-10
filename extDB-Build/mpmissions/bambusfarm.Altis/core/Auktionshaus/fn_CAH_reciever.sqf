@@ -16,8 +16,8 @@ switch (_mode) do
 			von %4 gekauft",
 			(([_item] call VAS_fnc_fetchCfgDetails) select 1),_price,"€",name _seller
 		];
-		bambusfarm_BANK = bambusfarm_BANK - _price;
-		[_item,true] spawn bambusfarm_fnc_handleItem;
+		life_BANK = life_BANK - _price;
+		[_item,true] spawn life_fnc_handleItem;
 		closeDialog 0;
 	};
 	case 1:
@@ -29,7 +29,7 @@ switch (_mode) do
 			"%1 akzeptierte eines deiner Angebote, du erhälst<br/>
 			<t color='#228B22'>%3%2</t><br/>", name _seller,_price,"€"
 		];
-		bambusfarm_BANK = bambusfarm_BANK + _price;
+		life_BANK = life_BANK + _price;
 		_listings = profileNamespace getVariable "listings";
 		//_listings = _listings - (_info select 2);
 		_index = -1;

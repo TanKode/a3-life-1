@@ -17,11 +17,11 @@ _unit = player;
 
 if(isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
 
-_price = [_vehicle,__GETC__(bambusfarm_garage_sell)] call TON_fnc_index;
-if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(bambusfarm_garage_sell) select _price) select 1;};
+_price = [_vehicle,__GETC__(life_garage_sell)] call TON_fnc_index;
+if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_sell) select _price) select 1;};
 
-[[_vid,_pid,_price,player,bambusfarm_garage_type],"TON_fnc_vehicleDelete",false,false] spawn bambusfarm_fnc_MP;
-hint format[localize "STR_Garage_SoldCar",[_price] call bambusfarm_fnc_numberText];
-bambusfarm_BANK = bambusfarm_BANK + _price;
+[[_vid,_pid,_price,player,life_garage_type],"TON_fnc_vehicleDelete",false,false] spawn life_fnc_MP;
+hint format[localize "STR_Garage_SoldCar",[_price] call life_fnc_numberText];
+life_BANK = life_BANK + _price;
 
 closeDialog 0;

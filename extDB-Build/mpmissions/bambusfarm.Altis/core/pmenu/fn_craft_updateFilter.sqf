@@ -18,14 +18,14 @@ lbClear _inv;
 _struct = "";
 
 
-_config = [_itemFilter] call bambusfarm_fnc_craftCfg;
+_config = [_itemFilter] call life_fnc_craftCfg;
 {
 	if(_itemFilter == "item") then{
-		_str = [_x select 0] call bambusfarm_fnc_varToStr;
+		_str = [_x select 0] call life_fnc_varToStr;
 		_inv lbAdd format["%1",_str]; //add a gun to the listbox
 		_inv lbSetData[(lbSize _inv)-1,_x select 0]; //set the data of the gun
 	} else {
-		_itemInfo = [_x select 0] call bambusfarm_fnc_fetchCfgDetails;
+		_itemInfo = [_x select 0] call life_fnc_fetchCfgDetails;
 		_inv lbAdd format["%1",_itemInfo select 1]; //add a gun to the listbox
 		_inv lbSetData[(lbSize _inv)-1,_itemInfo select 0]; //set the data of the gun
 		_inv lbSetPicture[(lbSize _inv)-1,_itemInfo select 2];
@@ -36,7 +36,7 @@ _config = [_itemFilter] call bambusfarm_fnc_craftCfg;
 _inv lbSetCurSel 0;
 _item = lbData[669,(lbCurSel 669)];
 
-_config = [_itemFilter] call bambusfarm_fnc_craftCfg;
+_config = [_itemFilter] call life_fnc_craftCfg;
 {
 
 	if(_item == _x select 0)then
@@ -44,7 +44,7 @@ _config = [_itemFilter] call bambusfarm_fnc_craftCfg;
 		_matsNeed = _x select 1;
 		_invSize = count _matsNeed;
 		for [{_i = 0},{_i < _invSize - 1},{_i = _i + 2}] do {
-			_str = [_matsNeed select _i] call bambusfarm_fnc_varToStr;
+			_str = [_matsNeed select _i] call life_fnc_varToStr;
 			_matsNum = _matsNeed select _i+1;
 			_struct = _struct + format["%1x %2<br/>",_matsNum,_str];
 

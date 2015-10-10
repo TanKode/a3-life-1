@@ -16,7 +16,7 @@ switch(true) do
 {
 	case (playerSide == west && _uniform == "U_B_SpecopsUniform_sgg"):
 	{
-		if( (call bambusfarm_coplevel) > 4) then
+		if( (call life_coplevel) > 4) then
 		{
 			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Polizei\Kleidung\cop_captain.jpg"];
 		};
@@ -26,7 +26,7 @@ switch(true) do
 	////////////////
 	case (playerSide == west && _uniform == "U_B_CombatUniform_mcam_vest"):
 	{
-		if( (call bambusfarm_coplevel) > 6) then
+		if( (call life_coplevel) > 6) then
 		{
 			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Polizei\Kleidung\uniform_FBI.jpg"];
 		};
@@ -36,7 +36,7 @@ switch(true) do
 	
 	case (playerSide == west && _uniform == "U_B_CombatUniform_mcam_worn"):
 	{
-		if( (call bambusfarm_coplevel) > 6) then
+		if( (call life_coplevel) > 6) then
 		{
 			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Polizei\Kleidung\uniform_DEA.jpg"];
 		};
@@ -46,7 +46,7 @@ switch(true) do
 	
 	case (playerSide == west && _uniform == "U_B_SpecopsUniform_sgg"):
 	{
-		if( (call bambusfarm_coplevel) == 6) then
+		if( (call life_coplevel) == 6) then
 		{
 			player setObjectTextureGlobal  [0, "bambusfarm\Texturen\Polizei\Kleidung\cop_sergeant.jpg"];
 		};

@@ -1,5 +1,5 @@
 AH_loaded = false;
-[[0,player],"TON_fnc_SAH_reciever",false,false] spawn bambusfarm_fnc_mp;
+[[0,player],"TON_fnc_SAH_reciever",false,false] spawn life_fnc_mp;
 waitUntil {AH_loaded};
 waitUntil {createDialog "AH_buy";};
 disableSerialization;
@@ -23,7 +23,7 @@ _myListbox = _dialog displayCtrl 15101;
 	_pid = _curOffer select 0;
 	_item = _curOffer select 1;
 	_price = _curOffer select 2;
-	_seller = [_pid] call bambusfarm_fnc_CAH_getPlayerObj;
+	_seller = [_pid] call life_fnc_CAH_getPlayerObj;
 	_myListbox lbAdd format ["%3 für %2€ von %1",name _seller,_price call KK_fnc_intToString,([_item] call VAS_fnc_fetchCfgDetails) select 1];
 	_myListbox lbSetPicture [(lbSize _myListbox)-1, ([_item] call VAS_fnc_fetchCfgDetails select 2)];
 	_myListbox lbSetPictureColor [(lbSize _myListbox)-1, [1, 1, 1, 1]];

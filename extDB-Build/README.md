@@ -9,9 +9,9 @@ tbb.dll
 tbbmalloc.dll
 
 You can drag the extdb.dll to that folder as well or you can copy over @extdb over as a regular mod. If you choose to use @extdb as a regular mod your commandline will be:
--mod=@bambusfarm_server;@extdb
+-mod=@life_server;@extdb
 
-If you are not using @extdb as a mod and choose to drag extdb.dll into the main arma 3 server directory then you only need @bambusfarm_server in the commandline.
+If you are not using @extdb as a mod and choose to drag extdb.dll into the main arma 3 server directory then you only need @life_server in the commandline.
 
 For Linux
 

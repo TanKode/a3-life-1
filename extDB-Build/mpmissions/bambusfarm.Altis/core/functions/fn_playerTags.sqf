@@ -10,14 +10,14 @@ private["_ui","_units"];
 #define iconID 78000
 #define scale 0.8
 
-if(visibleMap OR {!alive player} OR {dialog} OR bambusfarm_isFlashed) exitWith {
+if(visibleMap OR {!alive player} OR {dialog} OR life_isFlashed) exitWith {
 	500 cutText["","PLAIN"];
 };
 
-_ui = uiNamespace getVariable ["bambusfarm_HUD_nameTags",displayNull];
+_ui = uiNamespace getVariable ["life_HUD_nameTags",displayNull];
 if(isNull _ui) then {
-	500 cutRsc["bambusfarm_HUD_nameTags","PLAIN"];
-	_ui = uiNamespace getVariable ["bambusfarm_HUD_nameTags",displayNull];
+	500 cutRsc["life_HUD_nameTags","PLAIN"];
+	_ui = uiNamespace getVariable ["life_HUD_nameTags",displayNull];
 };
 
 _units = nearestObjects[(visiblePosition player),["Man","Land_Pallet_MilBoxes_F","Land_Sink_F"],50];

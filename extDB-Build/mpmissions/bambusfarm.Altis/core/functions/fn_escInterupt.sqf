@@ -41,7 +41,7 @@
 
 _canUseControls = {
 	if(playerSide == west) exitWith {true};
-	if((player getVariable["restrained",FALSE]) OR (player getVariable["Escorting",FALSE]) OR (player getVariable["transporting",FALSE]) OR (bambusfarm_is_arrested) OR (bambusfarm_istazed)) then {false} else {true};
+	if((player getVariable["restrained",FALSE]) OR (player getVariable["Escorting",FALSE]) OR (player getVariable["transporting",FALSE]) OR (life_is_arrested) OR (life_istazed)) then {false} else {true};
 };
 
 while {true} do
@@ -50,9 +50,9 @@ while {true} do
 	_abortButton = (findDisplay 49) displayCtrl 104;
 	_abortButton ctrlSetEventHandler [
 	"ButtonClick",
-	"[] spawn bambusfarm_fnc_abortAction; (findDisplay 49) closeDisplay 2; true"
+	"[] spawn life_fnc_abortAction; (findDisplay 49) closeDisplay 2; true"
 	];
-	//_abortButton buttonSetAction "[[player],""TON_fnc_cleanupRequest"",false,false] spawn bambusfarm_fnc_MP";
+	//_abortButton buttonSetAction "[[player],""TON_fnc_cleanupRequest"",false,false] spawn life_fnc_MP";
 	_respawnButton = (findDisplay 49) displayCtrl 1010;
 	_fieldManual = (findDisplay 49) displayCtrl 122;
 	

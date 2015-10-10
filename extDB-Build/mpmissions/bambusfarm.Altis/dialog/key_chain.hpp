@@ -1,12 +1,12 @@
-class bambusfarm_key_management {
+class life_key_management {
 	idd = 2700;
-	name= "bambusfarm_key_chain";
+	name= "life_key_chain";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "[] spawn bambusfarm_fnc_keyMenu;";
+	onLoad = "[] spawn life_fnc_keyMenu;";
 	
 	class controlsBackground {
-		class bambusfarm_RscTitleBackground:bambusfarm_RscText {
+		class life_RscTitleBackground:life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.1;
@@ -15,7 +15,7 @@ class bambusfarm_key_management {
 			h = (1 / 25);
 		};
 		
-		class MainBackground:bambusfarm_RscText {
+		class MainBackground:life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.1;
@@ -28,7 +28,7 @@ class bambusfarm_key_management {
 	class controls {
 
 		
-		class Title : bambusfarm_RscTitle {
+		class Title : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
 			text = "$STR_Keys_Title";
@@ -38,7 +38,7 @@ class bambusfarm_key_management {
 			h = (1 / 25);
 		};
 		
-		class KeyChainList : bambusfarm_RscListBox
+		class KeyChainList : life_RscListBox
 		{
 			idc = 2701;
 			text = "";
@@ -48,7 +48,7 @@ class bambusfarm_key_management {
 			w = 0.56; h = 0.370;
 		};
 
-		class CloseButtonKey : bambusfarm_RscButtonMenu {
+		class CloseButtonKey : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
@@ -58,7 +58,7 @@ class bambusfarm_key_management {
 			h = (1 / 25);
 		};
 		
-		class NearPlayers : bambusfarm_RscCombo {
+		class NearPlayers : life_RscCombo {
 		
 		idc = 2702;
 		
@@ -67,21 +67,21 @@ class bambusfarm_key_management {
 		
 		};
 		
-		class DropKey : bambusfarm_RscButtonMenu {
+		class DropKey : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Keys_DropKey";
-			onButtonClick = "[] call bambusfarm_fnc_keyDrop";
+			onButtonClick = "[] call life_fnc_keyDrop";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class GiveKey : bambusfarm_RscButtonMenu {
+		class GiveKey : life_RscButtonMenu {
 			idc = 2703;
 			text = "$STR_Keys_GiveKey";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_keyGive";
+			onButtonClick = "[] call life_fnc_keyGive";
 			x = 0.32;
 			y = 0.69;
 			w = (6.25 / 40);

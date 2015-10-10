@@ -17,20 +17,20 @@ switch (_mode) do
 	{
 		tawvd_foot = round(_value);
 		ctrlSetText[2902,format["%1",round(_value)]];
-		[] call bambusfarm_fnc_updateViewDistance;
+		[] call life_fnc_updateViewDistance;
 	};
 	
 	case 1:
 	{
 		tawvd_car = round(_value);
 		ctrlSetText[2912,format["%1",round(_value)]];
-		[] call bambusfarm_fnc_updateViewDistance;
+		[] call life_fnc_updateViewDistance;
 	};
 	
 	case 2:
 	{
 		tawvd_air = round(_value);
 		ctrlSetText[2922,format["%1",round(_value)]];
-		[] call bambusfarm_fnc_updateViewDistance;
+		[] call life_fnc_updateViewDistance;
 	};
 };

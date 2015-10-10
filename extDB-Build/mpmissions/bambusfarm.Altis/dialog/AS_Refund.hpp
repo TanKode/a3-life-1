@@ -8,7 +8,7 @@ class AS_Refund
 	class controlsBackground {};
 	
 	class controls {
-		class RscText_1000: bambusfarm_RscText
+		class RscText_1000: life_RscText
 		{
 			idc = -1;
 			x = 0.366423 * safezoneW + safezoneX;
@@ -17,7 +17,7 @@ class AS_Refund
 			h = 0.0990166 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
 		};
-		class RscEdit_1400: bambusfarm_RscEdit
+		class RscEdit_1400: life_RscEdit
 		{
 			idc = 16101;
 			text = "";
@@ -26,7 +26,7 @@ class AS_Refund
 			w = 0.248939 * safezoneW;
 			h = 0.0220037 * safezoneH;
 		};
-		class RscButtonMenu_2400: bambusfarm_RscButtonMenu
+		class RscButtonMenu_2400: life_RscButtonMenu
 		{
 			idc = -1;
 			text = "REFUND CASH TO PLAYER"; //--- ToDo: Localize;
@@ -34,9 +34,9 @@ class AS_Refund
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.176078 * safezoneW;
 			h = 0.0220037 * safezoneH;
-			onButtonClick = "[] spawn bambusfarm_fnc_ASrefund;";
+			onButtonClick = "[] spawn life_fnc_ASrefund;";
 		};
-		class RscText_1001: bambusfarm_RscText
+		class RscText_1001: life_RscText
 		{
 			idc = -1;
 			x = 0.366423 * safezoneW + safezoneX;

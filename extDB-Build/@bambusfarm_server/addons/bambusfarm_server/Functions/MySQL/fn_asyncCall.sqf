@@ -16,7 +16,7 @@ _queryStmt = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,1,[0]] call BIS_fnc_param;
 _multiarr = [_this,2,false,[false]] call BIS_fnc_param;
 
-_key = "extDB2" callExtension format["%1:%2:%3",_mode,(call bambusfarm_sql_id), _queryStmt];
+_key = "extDB2" callExtension format["%1:%2:%3",_mode,(call life_sql_id), _queryStmt];
 
 if(_mode isEqualTo 1) exitWith {true};
 

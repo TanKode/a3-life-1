@@ -7,7 +7,7 @@ class TrunkMenu
 	
 	class controlsBackground
 	{
-		class RscTitleBackground : bambusfarm_RscText
+		class RscTitleBackground : life_RscText
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
@@ -17,7 +17,7 @@ class TrunkMenu
 			h = (1 / 25);
 		};
 		
-		class RscBackground : bambusfarm_RscText
+		class RscBackground : life_RscText
 		{
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
@@ -27,7 +27,7 @@ class TrunkMenu
 			h = 0.7 - (22 / 250);
 		};
 		
-		class RscTitleText : bambusfarm_RscTitle
+		class RscTitleText : life_RscTitle
 		{
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 3501;
@@ -45,7 +45,7 @@ class TrunkMenu
 			text = "";
 		};
 		
-		class RscTrunkText : bambusfarm_RscText
+		class RscTrunkText : life_RscText
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -56,7 +56,7 @@ class TrunkMenu
 			w = 0.3; h = 0.04;
 		};
 		
-		class RscPlayerText : bambusfarm_RscText
+		class RscPlayerText : life_RscText
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -70,7 +70,7 @@ class TrunkMenu
 	
 	class Controls
 	{
-		class TrunkGear : bambusfarm_RscListBox
+		class TrunkGear : life_RscListBox
 		{
 			idc = 3502;
 			text = "";
@@ -80,7 +80,7 @@ class TrunkMenu
 			w = 0.3; h = 0.42;
 		};
 		
-		class PlayerGear : bambusfarm_RscListBox
+		class PlayerGear : life_RscListBox
 		{
 			idc = 3503;
 			text = "";
@@ -90,7 +90,7 @@ class TrunkMenu
 			w = 0.3; h = 0.42;
 		};
 		
-		class TrunkEdit : bambusfarm_RscEdit
+		class TrunkEdit : life_RscEdit
 		{
 			idc = 3505;
 			text = "1";
@@ -99,7 +99,7 @@ class TrunkMenu
 			w = 0.3; h = 0.03;
 		};
 		
-		class PlayerEdit : bambusfarm_RscEdit
+		class PlayerEdit : life_RscEdit
 		{
 			idc = 3506;
 			text = "1";
@@ -108,29 +108,29 @@ class TrunkMenu
 			w = 0.3; h = 0.03;
 		};
 		
-		class TakeItem : bambusfarm_RscButtonMenu
+		class TakeItem : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Trunk_Take";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_vehTakeItem;";
+			onButtonClick = "[] call life_fnc_vehTakeItem;";
 			x = 0.19; y = 0.78;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class StoreItem : bambusfarm_RscButtonMenu
+		class StoreItem : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Trunk_Store";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_vehStoreItem;";
+			onButtonClick = "[] call life_fnc_vehStoreItem;";
 			x = 0.57; y = 0.78;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class ButtonClose : bambusfarm_RscButtonMenu {
+		class ButtonClose : life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "$STR_Global_Close";

@@ -1,11 +1,11 @@
-class bambusfarm_taxiMenu {
+class life_taxiMenu {
 
 	idd = TaxiMenu;
 	movingEnable = false;
 	enableSimulation = true;
 	
 	class controlsBackground {
-class _backgroundMain: bambusfarm_RscText
+class _backgroundMain: life_RscText
 {
 	idc = -1;
 	x = 0.298906 * safezoneW + safezoneX;
@@ -14,7 +14,7 @@ class _backgroundMain: bambusfarm_RscText
 	h = 0.143 * safezoneH;
 	colorBackground[] = {0,0,0,0.7};
 };
-class _taxiPic: bambusfarm_RscPicture
+class _taxiPic: life_RscPicture
 {
 	idc = -1;
 	text = "textures\Taxi.paa";
@@ -28,7 +28,7 @@ class _taxiPic: bambusfarm_RscPicture
 };
 	};
 	class controls {
-class _btn_Kavala: bambusfarm_RscButtonMenu
+class _btn_Kavala: life_RscButtonMenu
 {
 	idc = -1;
 	text = "Kavala"; //--- ToDo: Localize;
@@ -39,7 +39,7 @@ class _btn_Kavala: bambusfarm_RscButtonMenu
 	h = 0.033 * safezoneH;
 	colorBackground[] = {0,0,0,1};
 };
-class _btnAthira: bambusfarm_RscButtonMenu
+class _btnAthira: life_RscButtonMenu
 {
 	idc = -1;
 	text = "Athira"; //--- ToDo: Localize;
@@ -50,7 +50,7 @@ class _btnAthira: bambusfarm_RscButtonMenu
 	h = 0.033 * safezoneH;
 	colorBackground[] = {0,0,0,1};
 };
-class _btnSofia: bambusfarm_RscButtonMenu
+class _btnSofia: life_RscButtonMenu
 {
 	idc = -1;
 	text = "Sofia"; //--- ToDo: Localize;
@@ -61,7 +61,7 @@ class _btnSofia: bambusfarm_RscButtonMenu
 	h = 0.033 * safezoneH;
 	colorBackground[] = {0,0,0,1};
 };
-class _btnPyrgos: bambusfarm_RscButtonMenu
+class _btnPyrgos: life_RscButtonMenu
 {
 	idc = -1;
 	text = "Pyrgos"; //--- ToDo: Localize;

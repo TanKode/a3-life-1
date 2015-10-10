@@ -4,11 +4,11 @@ class fuelstation_Dialog {
 	movingEnable = false;
 	enableSimulation = true;
 	onLoad = "";
-	onKeyDown = "if ((_this select 1) == 1) then { closeDialog 0; bambusfarm_action_inUse = false; }";
+	onKeyDown = "if ((_this select 1) == 1) then { closeDialog 0; life_action_inUse = false; }";
 	
 	class controlsBackground
 	{
-		class bambusfarm_RscTitleBackground : bambusfarm_RscText
+		class life_RscTitleBackground : life_RscText
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
@@ -18,7 +18,7 @@ class fuelstation_Dialog {
 			h = (1 / 25);
 		};
 		
-		class MainBackground : bambusfarm_RscText
+		class MainBackground : life_RscText
 		{
 			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
@@ -28,7 +28,7 @@ class fuelstation_Dialog {
 			h = 0.5 - (22 / 250);
 		};
 		
-		class Title : bambusfarm_RscTitle
+		class Title : life_RscTitle
 		{
 			idc = 29001;
 			text = "Tankstelle";
@@ -38,7 +38,7 @@ class fuelstation_Dialog {
 			h = (1 / 25);
 		};
 		
-		class TextVehicleInfo : bambusfarm_RscText
+		class TextVehicleInfo : life_RscText
 		{
 			idc = -1;
 			text = "Fahrzeuge";
@@ -48,7 +48,7 @@ class fuelstation_Dialog {
 			h = (1 / 25);
 		};
 		
-		class TextFuelstationGas : bambusfarm_RscText
+		class TextFuelstationGas : life_RscText
 		{
 			idc = 29002;
 			text = "Gas Pump ($5.15 Litre)";
@@ -58,7 +58,7 @@ class fuelstation_Dialog {
 			h = (1 / 25);
 		};
 		
-		class AmountFitIn : bambusfarm_RscText
+		class AmountFitIn : life_RscText
 		{
 			idc = 29003;
 			text = "";
@@ -69,7 +69,7 @@ class fuelstation_Dialog {
 			w = 0.285; h = (1 / 25);
 		};
 		
-		class AmountCash : bambusfarm_RscText
+		class AmountCash : life_RscText
 		{
 			idc = 29004;
 			text = "";
@@ -84,24 +84,24 @@ class fuelstation_Dialog {
 	
 	class controls
 	{
-		class VehicleList : bambusfarm_RscListBox
+		class VehicleList : life_RscListBox
 		{
 			idc = 29011;
 			text = "";
 			sizeEx = 0.04;
 			colorBackground[] = {0.1,0.1,0.1,0.9};
-			onLBSelChanged = "[_this] call bambusfarm_fnc_fuelStationSelect;";
+			onLBSelChanged = "[_this] call life_fnc_fuelStationSelect;";
 			
 			//Position & height
 			x = 0.11; y = 0.402;
 			w = 0.485; h = 0.34;
 		};
 		
-		class sliderAmount : bambusfarm_RscXSliderH
+		class sliderAmount : life_RscXSliderH
 		{
 			idc = 29012;
 			text = "";
-			onSliderPosChanged = "[_this] call bambusfarm_fnc_fuelStationSliderChange;";
+			onSliderPosChanged = "[_this] call life_fnc_fuelStationSliderChange;";
 			tooltip = "Amount to be refueled";
 			x = 0.605;
 			y = 0.37 + (1 / 25);
@@ -110,12 +110,12 @@ class fuelstation_Dialog {
 			h = (1 / 25);
 		};
 		
-		class btnRefillVehicle : bambusfarm_RscButtonMenu
+		class btnRefillVehicle : life_RscButtonMenu
 		{
 			idc = 29021;
 			text = "refuel";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn bambusfarm_fnc_fuelstationFill;";
+			onButtonClick = "[] spawn life_fnc_fuelstationFill;";
 			
 			x = 0.605;
 			y = 0.74 - (1 / 25);
@@ -123,10 +123,10 @@ class fuelstation_Dialog {
 			h = (1 / 25);
 		};
 		
-		class ButtonClose : bambusfarm_RscButtonMenu {
+		class ButtonClose : life_RscButtonMenu {
 			idc = -1;
 			text = "Close";
-			onButtonClick = "closeDialog 0; bambusfarm_action_inUse = false;";
+			onButtonClick = "closeDialog 0; life_action_inUse = false;";
 			x = 0.1;
 			y = 0.80 - (1 / 25);
 			w = (6.25 / 40);

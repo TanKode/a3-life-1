@@ -14,15 +14,15 @@ switch (true) do
 {
 	case (_item == "water" or _item == "coffee"):
 	{
-		if(([false,_item,1] call bambusfarm_fnc_handleInv)) then
+		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
-			bambusfarm_thirst = 100;
+			life_thirst = 100;
 			player setFatigue 0;
 		};
 	};
 	
 	case (_item == "boltcutter"): {
-		[cursorTarget] spawn bambusfarm_fnc_boltcutter;
+		[cursorTarget] spawn life_fnc_boltcutter;
 		closeDialog 0;
 	};
 
@@ -41,39 +41,39 @@ switch (true) do
 		if(player distance _tablePos > 5) exitWith {hint "Du musst den Laptop an einem Tisch aufbauen!";};
 
 
-		if(!isNull bambusfarm_theLappi) exitWith {hint "Du kannst nur einen Laptop aufbauen!";};
-		if(([false,_item,1] call bambusfarm_fnc_handleInv)) then
+		if(!isNull life_theLappi) exitWith {hint "Du kannst nur einen Laptop aufbauen!";};
+		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
-			[] spawn bambusfarm_fnc_lappi;
+			[] spawn life_fnc_lappi;
 		};
 	};
 
 	case (_item == "blastingcharge"): {
 		player reveal fed_bank;
 		(group player) reveal fed_bank;
-		[cursorTarget] spawn bambusfarm_fnc_blastingCharge;
+		[cursorTarget] spawn life_fnc_blastingCharge;
 	};
 	
 	case (_item == "defusekit"): {
-		[cursorTarget] spawn bambusfarm_fnc_defuseKit;
+		[cursorTarget] spawn life_fnc_defuseKit;
 	};
 	
 	case (_item in ["storagesmall","storagebig"]): {
-		[_item] call bambusfarm_fnc_storageBox;
+		[_item] call life_fnc_storageBox;
 	};
 	
 	case (_item == "redgull"):
 	{
-		if(([false,_item,1] call bambusfarm_fnc_handleInv)) then
+		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
-			bambusfarm_thirst = 100;
+			life_thirst = 100;
 			player setFatigue 0;
 			[] spawn
 			{
-				bambusfarm_redgull_effect = time;
+				life_redgull_effect = time;
 				titleText[localize "STR_ISTR_RedGullEffect","PLAIN"];
 				player enableFatigue false;
-				waitUntil {!alive player OR ((time - bambusfarm_redgull_effect) > (3 * 60))};
+				waitUntil {!alive player OR ((time - life_redgull_effect) > (3 * 60))};
 				player enableFatigue true;
 			};
 		};
@@ -81,51 +81,51 @@ switch (true) do
 	
 	case (_item == "spikeStrip"):
 	{
-		if(!isNull bambusfarm_spikestrip) exitWith {hint localize "STR_ISTR_SpikesDeployment"};
-		if(([false,_item,1] call bambusfarm_fnc_handleInv)) then
+		if(!isNull life_spikestrip) exitWith {hint localize "STR_ISTR_SpikesDeployment"};
+		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
-			[] spawn bambusfarm_fnc_spikeStrip;
+			[] spawn life_fnc_spikeStrip;
 		};
 	};
 	
 	case (_item == "fuelF"):
 	{
 		if(vehicle player != player) exitWith {hint localize "STR_ISTR_RefuelInVehicle"};
-		[] spawn bambusfarm_fnc_jerryRefuel;
+		[] spawn life_fnc_jerryRefuel;
 	};
 	
 	case (_item in ["apple","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle","turtlesoup","donuts","tbacon","peach"]):
 	{
-		[_item] call bambusfarm_fnc_eatFood;
+		[_item] call life_fnc_eatFood;
 	};
 
 	case (_item == "pickaxe"):
 	{
-		[] spawn bambusfarm_fnc_pickAxeUse;
+		[] spawn life_fnc_pickAxeUse;
 	};
 
 	case (_item == "heroinp"):
     {
-     	if(([false,_item,1] call bambusfarm_fnc_handleInv)) then
+     	if(([false,_item,1] call life_fnc_handleInv)) then
     	{
-         	[] spawn bambusfarm_fnc_useHeroin;
+         	[] spawn life_fnc_useHeroin;
        	};
     };
     case (_item == "cocainep"):
     {
-     	if(([false,_item,1] call bambusfarm_fnc_handleInv)) then
+     	if(([false,_item,1] call life_fnc_handleInv)) then
      	{
-         	[] spawn bambusfarm_fnc_useKokain;
+         	[] spawn life_fnc_useKokain;
        	};
     };
     case (_item == "marijuana"):
     {
-    	if(bambusfarm_drugged_weed == 1) then {
+    	if(life_drugged_weed == 1) then {
     		hint "Du rauchst bereits ein Joint!";
     	} else {
-    		if(([false,_item,1] call bambusfarm_fnc_handleInv)) then
+    		if(([false,_item,1] call life_fnc_handleInv)) then
     		{
-    			[] spawn bambusfarm_fnc_useWeed;
+    			[] spawn life_fnc_useWeed;
     		};
     	};
     };
@@ -136,5 +136,5 @@ switch (true) do
 	};
 };
 	
-[] call bambusfarm_fnc_p_updateMenu;
-[] call bambusfarm_fnc_hudUpdate;
+[] call life_fnc_p_updateMenu;
+[] call life_fnc_hudUpdate;

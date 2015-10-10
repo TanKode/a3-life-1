@@ -20,14 +20,14 @@ for "_i" from 1 to _doors do {
 };
 if(_door == 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
 if((_building getVariable[format["bis_disabled_Door_%1",_door],0]) == 1) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
-bambusfarm_action_inUse = true;
+life_action_inUse = true;
 
 closeDialog 0;
 //Setup the progress bar
 disableSerialization;
 _title = localize "STR_Cop_RepairingDoor";
-5 cutRsc ["bambusfarm_progress","PLAIN"];
-_ui = uiNamespace getVariable "bambusfarm_progress";
+5 cutRsc ["life_progress","PLAIN"];
+_ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format["%2 (1%1)...","%",_title];
@@ -43,26 +43,26 @@ switch (typeOf _building) do {
 while {true} do
 {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"bambusfarm_fnc_animSync",true,false] spawn bambusfarm_fnc_MP;
+		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.26;
 	if(isNull _ui) then {
-		5 cutRsc ["bambusfarm_progress","PLAIN"];
-		_ui = uiNamespace getVariable "bambusfarm_progress";
+		5 cutRsc ["life_progress","PLAIN"];
+		_ui = uiNamespace getVariable "life_progress";
 	};
 	_cP = _cP + _cpRate;
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
 	if(_cP >= 1 OR !alive player) exitWith {};
-	if(bambusfarm_interrupted) exitWith {};
+	if(life_interrupted) exitWith {};
 };
 
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-if(!alive player) exitWith {bambusfarm_action_inUse = false;};
-if(bambusfarm_interrupted) exitWith {bambusfarm_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; bambusfarm_action_inUse = false;};
-bambusfarm_action_inUse = false;
+if(!alive player) exitWith {life_action_inUse = false;};
+if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
+life_action_inUse = false;
 _building animate [format["door_%1_rot",_door],0];
 _building setVariable[format["bis_disabled_Door_%1",_door],1,true]; //Unlock the door.

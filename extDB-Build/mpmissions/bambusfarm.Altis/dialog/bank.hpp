@@ -1,12 +1,12 @@
-class bambusfarm_atm_management {
+class life_atm_management {
 	idd = 2700;
-	name= "bambusfarm_atm_menu";
+	name= "life_atm_menu";
 	movingEnable = false;
 	enableSimulation = true;
 	
 	class controlsBackground {
 		
-		class MainBackground:bambusfarm_RscText {
+		class MainBackground:life_RscText {
 			idc = -1;
 	        x = 0.2;
 	        y = 0.24;
@@ -18,7 +18,7 @@ class bambusfarm_atm_management {
 	
 	class controls {
 
-		class CashTitle : bambusfarm_RscStructuredText
+		class CashTitle : life_RscStructuredText
 		{
 			idc = 2701;
 			text = "";
@@ -29,7 +29,7 @@ class bambusfarm_atm_management {
 			h = 0.08;
 		};
 
-		class TitleCash : bambusfarm_RscStructuredText
+		class TitleCash : life_RscStructuredText
         {
         	idc = 87895;
         	text = "";
@@ -40,11 +40,11 @@ class bambusfarm_atm_management {
         	h = 0.08;
         };
 		
-		class WithdrawButton : bambusfarm_RscButtonMenu
+		class WithdrawButton : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_ATM_Withdraw";
-			onButtonClick = "[] call bambusfarm_fnc_bankWithdraw";
+			onButtonClick = "[] call life_fnc_bankWithdraw";
 			
 			x = 0.5;
 			y = 0.48;
@@ -52,11 +52,11 @@ class bambusfarm_atm_management {
 			h = 0.08;
 		};
 		
-		class DepositButton : bambusfarm_RscButtonMenu
+		class DepositButton : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_ATM_Deposit";
-			onButtonClick = "[] call bambusfarm_fnc_bankDeposit";
+			onButtonClick = "[] call life_fnc_bankDeposit";
 			
 	        x = 0.225;
 	        y = 0.48;
@@ -64,7 +64,7 @@ class bambusfarm_atm_management {
 	        h = 0.08;
 		};
 		
-		class moneyEdit : bambusfarm_RscEdit {
+		class moneyEdit : life_RscEdit {
 		
 		idc = 2702;
 
@@ -77,7 +77,7 @@ class bambusfarm_atm_management {
 		
 		};
 		
-		class PlayerList : bambusfarm_RscCombo
+		class PlayerList : life_RscCombo
 		{
 			idc = 2703;
 			x = 0.225;
@@ -86,11 +86,11 @@ class bambusfarm_atm_management {
             h = 0.04;
 		};
 		
-		class TransferButton : bambusfarm_RscButtonMenu
+		class TransferButton : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_ATM_Transfer";
-			onButtonClick = "[] call bambusfarm_fnc_bankTransfer";
+			onButtonClick = "[] call life_fnc_bankTransfer";
 			
 			x = 0.5;
 			y = 0.6;
@@ -98,18 +98,18 @@ class bambusfarm_atm_management {
 			h = 0.08;
 		};
 		
-		class GangDeposit : bambusfarm_RscButtonMenu
+		class GangDeposit : life_RscButtonMenu
 		{
 			idc = 2705;
 			text = "$STR_pInAct_DepositToGang";
-			onButtonClick = "[] call bambusfarm_fnc_gangDeposit";
+			onButtonClick = "[] call life_fnc_gangDeposit";
 			x = 0.225;
             y = 0.6;
             w = 0.25;
             h = 0.08;
 		};
 		
-		class CloseButtonKey : bambusfarm_RscButtonMenu {
+		class CloseButtonKey : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";

@@ -5,11 +5,11 @@ Author : Mahony
 _price = 100000;
 _taxigerufen  = "<t color='#FFFF00' size='2' shadow='1' shadowColor='#000000' align='center'>Ein Taxi wurde gerufen !</t>";
 _taxiangekommen  = "<t color='#FFFF00' size='2' shadow='1' shadowColor='#000000' align='center'>Ihr Taxi sollte nun vorort sein (Sie müssen auch einsteigen) </t>";
-if ((bambusfarm_BANK) < _price + 25000) exitWith {
+if ((life_BANK) < _price + 25000) exitWith {
 hint "Du hast nicht genug geld !";
 closeDialog 0;
 };
-if ((bambusfarm_TASCHENGELD) == _price) exitWith {
+if ((life_TASCHENGELD) == _price) exitWith {
 hint "Wir nehmen nur Karte !";
 closeDialog 0;
 };
@@ -37,7 +37,7 @@ playSound "wiggle";
 deleteVehicle _taxiS;
 sleep 28;
 titleText ["Ihr seit angekommen nun noch bezahlen und dann können sie gehen", "BLACK FADED", 1];
-bambusfarm_BANK = bambusfarm_BANK - _price;
+life_BANK = life_BANK - _price;
 sleep 1;
 player setPos (getMarkerPos "civ_spawn_4");
 sleep 1;

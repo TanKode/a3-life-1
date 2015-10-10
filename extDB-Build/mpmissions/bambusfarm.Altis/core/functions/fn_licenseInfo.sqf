@@ -8,7 +8,7 @@ _buyables = ["air","swat","cg","driver","air","heroin","marijuana","gang","boat"
 
 if(!dialog) then
 {
-	if(!(createDialog "bambusfarm_lizenzen_menu")) exitWith {};
+	if(!(createDialog "life_lizenzen_menu")) exitWith {};
 };
 disableSerialization;
 
@@ -20,9 +20,9 @@ _listbox = _display displayCtrl 1500;
 {
 	_shortname = _x;
 
-	_longname = ([_shortname, 0] call bambusfarm_fnc_licenseType) select 0;
-	_displayname = ([_shortname, 0] call bambusfarm_fnc_licenseType) select 1;
-	_price = [_shortname] call bambusfarm_fnc_licensePrice;
+	_longname = ([_shortname, 0] call life_fnc_licenseType) select 0;
+	_displayname = ([_shortname, 0] call life_fnc_licenseType) select 1;
+	_price = [_shortname] call life_fnc_licensePrice;
 	_hasLicense = missionNamespace getVariable _longname;
 
 	if(!_hasLicense) then
@@ -40,8 +40,8 @@ foreach _buyables;
 
 
 {
-	_price = [_x] call bambusfarm_fnc_licensePrice;
-	_str = [_x select 0] call bambusfarm_fnc_varToStr;
+	_price = [_x] call life_fnc_licensePrice;
+	_str = [_x select 0] call life_fnc_varToStr;
 	_val = missionNamespace getVariable (_x select 0);
 	if(_val) then
 	{
@@ -49,7 +49,7 @@ foreach _buyables;
 	}else{
 		_struct = _struct + format["%1 %2<br/>",_str, _price];
 	};
-} foreach bambusfarm_licenses;
+} foreach life_licenses;
 
 _lic ctrlSetStructuredText parseText format["
 <t size='0.8px'>

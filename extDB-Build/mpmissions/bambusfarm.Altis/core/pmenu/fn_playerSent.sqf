@@ -36,17 +36,17 @@ if (_message == "" OR _message == (localize "STR_messaging_typein")) exitwith {}
 switch (_mode) do {
 	case 0: {
 		if (_reciever == -1 OR (lbText [2100,_reciever]) == "") exitwith {hint (localize "STR_messaging_helps_m4");};	
-		[[_mode, (lbText [2100,_reciever]),_message,_pos, profileName],"bambusfarm_fnc_recieveMessage",true,false] spawn bambusfarm_fnc_MP;
+		[[_mode, (lbText [2100,_reciever]),_message,_pos, profileName],"life_fnc_recieveMessage",true,false] spawn life_fnc_MP;
 		_sent = true;
 	};
 	case 1: {	
 		_reciever = (localize "STR_messaging_hpp_sendd2");		
-		[[_mode, _message,_pos, profileName],"bambusfarm_fnc_recieveMessage",true,false] spawn bambusfarm_fnc_MP;
+		[[_mode, _message,_pos, profileName],"life_fnc_recieveMessage",true,false] spawn life_fnc_MP;
 		_sent = true;
 	};
 	case 2: {	
 		_reciever = (localize "STR_messaging_hpp_sendd");
-		[[_mode, _message,_pos, profileName],"bambusfarm_fnc_recieveMessage",true,false] spawn bambusfarm_fnc_MP;
+		[[_mode, _message,_pos, profileName],"life_fnc_recieveMessage",true,false] spawn life_fnc_MP;
 		_sent = true;
 	};
 	default {

@@ -10,22 +10,22 @@ _mode = _this select 0;
 
 if(_mode == 0) exitWith {
 	disableSerialization;
-	[0,((finddisplay 44000) displayCtrl 1) lbData lbCurSel ((finddisplay 44000 displayCtrl 1))] spawn bambusfarm_fnc_repairADAC;
+	[0,((finddisplay 44000) displayCtrl 1) lbData lbCurSel ((finddisplay 44000 displayCtrl 1))] spawn life_fnc_repairADAC;
 };
 if(_mode == 1) exitWith {
-	[1] spawn bambusfarm_fnc_repairADAC;
+	[1] spawn life_fnc_repairADAC;
 };
 if(_mode == 2) exitWith {
 	disableSerialization;
-	[parseNumber(ctrlText((finddisplay 44000) displayCtrl 2))] spawn bambusfarm_fnc_refuelADAC
+	[parseNumber(ctrlText((finddisplay 44000) displayCtrl 2))] spawn life_fnc_refuelADAC
 };
 if(_mode == 3) exitWith {
 		if(((typeOf cursorTarget == "B_Truck_01_mover_F") || (typeOf cursorTarget == "C_Offroad_01_F")) && (count attachedObjects cursortarget >= 1)) then {
-			if(typeOf(attachedObjects cursorTarget select 0) == "Land_Pillar_Pier_F") exitWith {[4] spawn bambusfarm_fnc_ADACVehicleMenu};
-			[] spawn bambusfarm_fnc_unloadvehicle
+			if(typeOf(attachedObjects cursorTarget select 0) == "Land_Pillar_Pier_F") exitWith {[4] spawn life_fnc_ADACVehicleMenu};
+			[] spawn life_fnc_unloadvehicle
 		} else {
-			if(typeOf(attachedObjects cursorTarget select 0) == "Land_Pillar_Pier_F") exitWith {[4] spawn bambusfarm_fnc_ADACVehicleMenu};
-			[] spawn bambusfarm_fnc_loadvehicle
+			if(typeOf(attachedObjects cursorTarget select 0) == "Land_Pillar_Pier_F") exitWith {[4] spawn life_fnc_ADACVehicleMenu};
+			[] spawn life_fnc_loadvehicle
 		};
 };
 if(_mode == 4) exitWith {
@@ -37,7 +37,7 @@ if(_mode == 4) exitWith {
 	hint "Die Parksperre wurde erfolgreich angebracht, das Fahrzeug ist nun nicht mehr fahrbar";
 };
 if(_mode == 5) exitWith {
-	createDialog "bambusfarm_ADACVehicleMenu";
+	createDialog "life_ADACVehicleMenu";
 	if(cursorTarget isKindOf "Car" || cursorTarget isKindOf "Air" || cursorTarget isKindOf "Ship" || cursorTarget isKindOf "Tank") then {
 		disableSerialization;
 		_list = ((finddisplay 44000) displayCtrl 1);
@@ -156,12 +156,12 @@ if(_mode == 6) exitWith {
 	};
 };
 if(_mode == 7) exitWith {
-	[cursorTarget] spawn bambusfarm_fnc_impoundAction;
+	[cursorTarget] spawn life_fnc_impoundAction;
 };
 if(_mode == 8) exitWith {
 	cursorTarget setPos [getPos cursorTarget select 0, getPos cursorTarget select 1, (getPos cursorTarget select 2)+0.5]; 
 	closeDialog 0;
 };
 if(_mode == 9) exitWith {
-	[] spawn bambusfarm_fnc_searchVehAction;
+	[] spawn life_fnc_searchVehAction;
 };

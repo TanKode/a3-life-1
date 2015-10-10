@@ -9,63 +9,63 @@
 */
 private["_curTarget","_isWater","_FSAbfrage"];
 _curTarget = cursorTarget;
-if(bambusfarm_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
-if(bambusfarm_interrupted) exitWith {bambusfarm_interrupted = false;};
+if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
+if(life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (getPosASL player);
 if(isNull _curTarget) exitWith {
 	if(_isWater) then {
 		private["_fish"];
 		_fish = (nearestObjects[getPos player,["Fish_Base_F"],3]) select 0;
 		if(!isNil "_fish") then {
-			[_fish] call bambusfarm_fnc_catchFish;
+			[_fish] call life_fnc_catchFish;
 		};
 	} else {
-		if(playerSide == civilian && !bambusfarm_action_gathering) then {
-			_handle = [] spawn bambusfarm_fnc_gather;
+		if(playerSide == civilian && !life_action_gathering) then {
+			_handle = [] spawn life_fnc_gather;
 			waitUntil {scriptDone _handle};
-			bambusfarm_action_gathering = false;
+			life_action_gathering = false;
 		};
 
-		if(playerSide == civilian && !bambusfarm_action_gatheringPick) then {
+		if(playerSide == civilian && !life_action_gatheringPick) then {
             {
-                _str = [_x] call bambusfarm_fnc_varToStr;
+                _str = [_x] call life_fnc_varToStr;
                 _val = missionNameSpace getVariable _x;
                 if(_val > 0 ) then
                 {
                     if( _str == "Spitzhacke" || _str == "pickaxe" ) then
                     {
-                        _handleB = [] spawn bambusfarm_fnc_pickAxeUse;
+                        _handleB = [] spawn life_fnc_pickAxeUse;
                         waitUntil {scriptDone _handleB};
-                        bambusfarm_action_gatheringPick = false;
+                        life_action_gatheringPick = false;
                     };
                 };
-            } foreach bambusfarm_inv_items;
+            } foreach life_inv_items;
 		};
 	};
 };
 
 _FSAbfrage = nearestObjects [player,["Land_FuelStation_Feed_F","Land_fs_feed_F"], 3];
-if((count _FSAbfrage) > 0) exitWith {[] spawn bambusfarm_fnc_Tanke;};
+if((count _FSAbfrage) > 0) exitWith {[] spawn life_fnc_Tanke;};
 
 if(_curTarget isKindOf "House_F" && {player distance _curTarget < 12} OR ((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _curTarget OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _curTarget)) exitWith {
-	[_curTarget] call bambusfarm_fnc_houseMenu;
+	[_curTarget] call life_fnc_houseMenu;
 };
 
 if(dialog) exitWith {}; //Don't bother when a dialog is open.
 if(vehicle player != player) exitWith {}; //He's in a vehicle, cancel!
-bambusfarm_action_inUse = true;
+life_action_inUse = true;
 
 //Temp fail safe.
 [] spawn {
 	sleep 60;
-	bambusfarm_action_inUse = false;
+	life_action_inUse = false;
 };
 
 //Check if it's a dead body.
 if(_curTarget isKindOf "Man" && {!alive _curTarget} && {playerSide in [west,independent]}) exitWith {
 	//Hotfix code by ins0
-	if(((playerSide == blufor && {(call bambusfarm_revive_cops)}) || playerSide == independent) && {"Medikit" in (items player)}) then {
-		[_curTarget] call bambusfarm_fnc_revivePlayer;
+	if(((playerSide == blufor && {(call life_revive_cops)}) || playerSide == independent) && {"Medikit" in (items player)}) then {
+		[_curTarget] call life_fnc_revivePlayer;
 	};
 };
 
@@ -73,11 +73,11 @@ if(_curTarget isKindOf "Man" && {!alive _curTarget} && {playerSide in [west,inde
 if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 	if(!dialog && playerSide == west) then
 	{
-		[_curTarget] call bambusfarm_fnc_copInteractionMenu;
+		[_curTarget] call life_fnc_copInteractionMenu;
 	};
 	if(!dialog && playerSide == civilian) exitWith
 	{
-	    [_curTarget] call bambusfarm_fnc_civInteraction;
+	    [_curTarget] call life_fnc_civInteraction;
 	};
 } else {
 	//OK, it wasn't a player so what is it?
@@ -92,9 +92,9 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 		if(!dialog) then {
 			if(player distance _curTarget < (((boundingBox _curTarget select 1) select 0) + 2)) then {
 				if(side player == INDEPENDENT) then {
-					[5] call bambusfarm_fnc_ADACVehicleMenu;
+					[5] call life_fnc_ADACVehicleMenu;
 				};
-				[_curTarget] call bambusfarm_fnc_vInteractionMenu;
+				[_curTarget] call life_fnc_vInteractionMenu;
 			};
 		};
 	} else {
@@ -102,11 +102,11 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 		if((typeOf _curTarget) in _animalTypes) then {
 			if((typeOf _curTarget) == "Turtle_F" && !alive _curTarget) then {
 				private["_handle"];
-				_handle = [_curTarget] spawn bambusfarm_fnc_catchTurtle;
+				_handle = [_curTarget] spawn life_fnc_catchTurtle;
 				waitUntil {scriptDone _handle};
 			} else {
 				private["_handle"];
-				_handle = [_curTarget] spawn bambusfarm_fnc_catchFish;
+				_handle = [_curTarget] spawn life_fnc_catchFish;
 				waitUntil {scriptDone _handle};
 			};
 		} else {
@@ -114,14 +114,14 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 			if((typeOf _curTarget) in _miscItems) then {
 				//OK, it was a misc item (food,water,etc).
 				private["_handle"];
-				_handle = [_curTarget] spawn bambusfarm_fnc_pickupItem;
+				_handle = [_curTarget] spawn life_fnc_pickupItem;
 				waitUntil {scriptDone _handle};
 			} else {
 				//It wasn't a misc item so is it money?
 				if((typeOf _curTarget) == _money && {!(_curTarget getVariable["inUse",false])}) then {
 					private["_handle"];
 					_curTarget setVariable["inUse",TRUE,TRUE];
-					_handle = [_curTarget] spawn bambusfarm_fnc_pickupMoney;
+					_handle = [_curTarget] spawn life_fnc_pickupMoney;
 					waitUntil {scriptDone _handle};
 				};
 			};

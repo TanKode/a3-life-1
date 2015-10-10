@@ -14,6 +14,6 @@ _nearestVehicle = nearestObjects[getPosATL player,["Car","Ship","Submarine","Air
 if(isNil "_nearestVehicle") exitWith {hint localize "STR_NOTF_VehicleNear"};
 
 detach _unit;
-[[_nearestVehicle],"bambusfarm_fnc_moveIn",_unit,false] call bambusfarm_fnc_MP;
+[[_nearestVehicle],"life_fnc_moveIn",_unit,false] call life_fnc_MP;
 _unit setVariable["Escorting",FALSE,TRUE];
 _unit setVariable["transporting",TRUE,TRUE];

@@ -1,10 +1,10 @@
 #define BaseIconID 78000
 
-class bambusfarm_HUD_nameTags {
+class life_HUD_nameTags {
 	idd = -1;
 	duration = 1e+011;
-	name = "bambusfarm_HUD_nameTags";
-	onLoad = "uiNamespace setVariable['bambusfarm_HUD_nameTags',_this select 0]";
+	name = "life_HUD_nameTags";
+	onLoad = "uiNamespace setVariable['life_HUD_nameTags',_this select 0]";
 	objects[] = {};
 	
 	class controls

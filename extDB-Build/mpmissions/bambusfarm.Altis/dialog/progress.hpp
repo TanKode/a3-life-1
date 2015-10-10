@@ -1,17 +1,17 @@
-class bambusfarm_progress
+class life_progress
 {
-	name = "bambusfarm_progress";
+	name = "life_progress";
 	idd = 38200;
 	fadein=0;
 	duration = 99999999999;
 	fadeout=0;
 	movingEnable = 0;
-	onLoad="uiNamespace setVariable ['bambusfarm_progress',_this select 0]";
+	onLoad="uiNamespace setVariable ['life_progress',_this select 0]";
 	objects[]={};
 
 	class controlsBackground 
 	{
-		class background : bambusfarm_RscText
+		class background : life_RscText
 		{
 			idc = -1;
 			colorBackground[] = {0,0,0,0.7};
@@ -19,7 +19,7 @@ class bambusfarm_progress
 			y = 0.06 * safezoneH + safezoneY;
 			w = 0.65; h = 0.05;
 		};
-		class ProgressBar : bambusfarm_RscProgress
+		class ProgressBar : life_RscProgress
 		{
 			idc = 38201;
 			x = 0.38140 * safezoneW + safezoneX;
@@ -27,7 +27,7 @@ class bambusfarm_progress
 			w = 0.65; h = 0.05;
 		};
 		
-		class ProgressText : bambusfarm_RscText
+		class ProgressText : life_RscText
 		{
 			idc = 38202;
 			text = "Servicing Chopper (50%)...";
@@ -38,20 +38,20 @@ class bambusfarm_progress
 	};
 };
 
-class bambusfarm_timer
+class life_timer
 {
-	name = "bambusfarm_timer";
+	name = "life_timer";
 	idd = 38300;
 	fadeIn = 1;
 	duration = 99999999999;
 	fadeout = 1;
 	movingEnable = 0;
-	onLoad = "uiNamespace setVariable['bambusfarm_timer',_this select 0]";
+	onLoad = "uiNamespace setVariable['life_timer',_this select 0]";
 	objects[] = {};
 	
 	class controlsBackground
 	{
-		class TimerIcon : bambusfarm_RscPicture
+		class TimerIcon : life_RscPicture
 		{
 			idc = -1;
 			text = "\a3\ui_f\data\IGUI\RscTitles\MPProgress\timer_ca.paa";
@@ -61,7 +61,7 @@ class bambusfarm_timer
 			h = 0.045;
 		};
 
-		class TimerText : bambusfarm_RscText
+		class TimerText : life_RscText
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = 38301;

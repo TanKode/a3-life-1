@@ -24,24 +24,24 @@ hint parseText format
 <t color='#ff0000'><t size='1'>Kokain:</t></t> %16<br/>
 <t color='#ff0000'><t size='1'>Heroin:</t></t> %17<br/>
 ",
-bambusfarm_Karma,
-bambusfarm_skillApple,
-bambusfarm_skillPeach,
-bambusfarm_skillBauen,
-bambusfarm_skillKrabben,
-bambusfarm_skillEhemalsRock,
-bambusfarm_skillTon,
-bambusfarm_skillcoalu,
-bambusfarm_skillDiamond,
-bambusfarm_skillCopperore,
-bambusfarm_skillIronore,
-bambusfarm_skillSalt,
-bambusfarm_skillSand,
-bambusfarm_skillOilu,
-bambusfarm_skillCannabis,
-bambusfarm_skillCocaine,
-bambusfarm_skillHeroinu,
-bambusfarm_skillFischen
+life_Karma,
+life_skillApple,
+life_skillPeach,
+life_skillBauen,
+life_skillKrabben,
+life_skillEhemalsRock,
+life_skillTon,
+life_skillcoalu,
+life_skillDiamond,
+life_skillCopperore,
+life_skillIronore,
+life_skillSalt,
+life_skillSand,
+life_skillOilu,
+life_skillCannabis,
+life_skillCocaine,
+life_skillHeroinu,
+life_skillFischen
 ];
 /*
 <t color='#EC891D'><t size='1'>Krabben:</t></t> %5<br/><br/>

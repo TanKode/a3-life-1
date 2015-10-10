@@ -18,7 +18,7 @@ if(playerSide == civilian)then
 
     _message = format["<t size='1.5'>Personalausweis</t><br/>Name:<br/><t size='1.2'>%1</t><br/>Herkunft:<br/>Altis<br/><t size='1.2'>%2</t><br/>", name player, _rang];
 
-    [[player, _message],"bambusfarm_fnc_LicenseShown",_target,false] spawn bambusfarm_fnc_MP;
+    [[player, _message],"life_fnc_LicenseShown",_target,false] spawn life_fnc_MP;
 
 };
 
@@ -30,7 +30,7 @@ if(playerSide == west)then
 
     if( !(alive _target) ) then {_target = player;};
 
-    _coplevel = call bambusfarm_coplevel;
+    _coplevel = call life_coplevel;
 
     switch ( _coplevel ) do
     {
@@ -59,5 +59,5 @@ if(playerSide == west)then
 
     _message = format["<t size='1.5'>Polizeimarke</t><br/>Name:<br/><t size='1.2'>%1</t><br/>Rang:<br/><t size='1.2'>%2</t><br/>", name player, _rang];
 
-    [[player, _message],"bambusfarm_fnc_LicenseShown",_target,false] spawn bambusfarm_fnc_MP;
+    [[player, _message],"life_fnc_LicenseShown",_target,false] spawn life_fnc_MP;
 };

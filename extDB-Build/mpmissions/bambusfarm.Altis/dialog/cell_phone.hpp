@@ -1,12 +1,12 @@
-class bambusfarm_cell_phone {
+class life_cell_phone {
 	idd = 3000;
-	name= "bambusfarm_cell_phone";
+	name= "life_cell_phone";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "[] spawn bambusfarm_fnc_cellphone";
+	onLoad = "[] spawn life_fnc_cellphone";
 	
 	class controlsBackground {
-		class bambusfarm_RscTitleBackground:bambusfarm_RscText {
+		class life_RscTitleBackground:life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.1;
@@ -15,7 +15,7 @@ class bambusfarm_cell_phone {
 			h = (1 / 25);
 		};
 		
-		class MainBackground:bambusfarm_RscText {
+		class MainBackground:life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.1;
@@ -28,7 +28,7 @@ class bambusfarm_cell_phone {
 	class controls {
 
 		
-		class Title : bambusfarm_RscTitle {
+		class Title : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 3001;
 			text = "$STR_CELL_Title";
@@ -38,7 +38,7 @@ class bambusfarm_cell_phone {
 			h = (1 / 25);
 		};
 		
-		class TextToSend : bambusfarm_RscTitle {
+		class TextToSend : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 3002;
 			text = "$STR_CELL_TextToSend";
@@ -48,7 +48,7 @@ class bambusfarm_cell_phone {
 			h = (1 / 25);
 		};
 		
-		class textEdit : bambusfarm_RscEdit {
+		class textEdit : life_RscEdit {
 		
 		idc = 3003;
 		
@@ -59,7 +59,7 @@ class bambusfarm_cell_phone {
 		
 		};
 		
-		class TextMsgButton : bambusfarm_RscButtonMenu
+		class TextMsgButton : life_RscButtonMenu
 		{
 			idc = 3015;
 			text = "$STR_CELL_TextMSGBtn";
@@ -72,7 +72,7 @@ class bambusfarm_cell_phone {
 			h = (1 / 25);
 		};
 		
-		class PlayerList : bambusfarm_RscCombo
+		class PlayerList : life_RscCombo
 		{
 			idc = 3004;
 			
@@ -80,7 +80,7 @@ class bambusfarm_cell_phone {
 			w = 0.2; h = (1 / 25);
 		};
 
-		class TextCopButton : bambusfarm_RscButtonMenu
+		class TextCopButton : life_RscButtonMenu
 		{
 			idc = 3016;
 			text = "$STR_CELL_TextPolice";
@@ -93,7 +93,7 @@ class bambusfarm_cell_phone {
 			h = (1 / 25);
 		};
 		
-		class TextAdminButton : bambusfarm_RscButtonMenu
+		class TextAdminButton : life_RscButtonMenu
 		{
 			idc = 3017;
 			text = "$STR_CELL_TextAdmins";
@@ -106,7 +106,7 @@ class bambusfarm_cell_phone {
 			h = (1 / 25);
 		};
 		
-		class AdminMsgButton : bambusfarm_RscButtonMenu
+		class AdminMsgButton : life_RscButtonMenu
 		{
 			idc = 3020;
 			text = "$STR_CELL_AdminMsg";
@@ -119,7 +119,7 @@ class bambusfarm_cell_phone {
 			h = (1 / 25);
 		};
 		
-		class AdminMsgAllButton : bambusfarm_RscButtonMenu
+		class AdminMsgAllButton : life_RscButtonMenu
 		{
 			idc = 3021;
 			text = "$STR_CELL_AdminMSGAll";
@@ -132,7 +132,7 @@ class bambusfarm_cell_phone {
 			h = (1 / 25);
 		};
 		
-		class EMSRequest : bambusfarm_RscButtonMenu
+		class EMSRequest : life_RscButtonMenu
 		{
 			idc = 3022;
 			text = "$STR_CELL_EMSRequest";
@@ -145,7 +145,7 @@ class bambusfarm_cell_phone {
 			h = (1 / 25);
 		};
 		
-		class CloseButtonKey : bambusfarm_RscButtonMenu {
+		class CloseButtonKey : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";

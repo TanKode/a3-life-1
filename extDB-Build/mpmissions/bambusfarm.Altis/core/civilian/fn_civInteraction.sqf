@@ -49,13 +49,13 @@ _Btn13 = _display displayCtrl Btn13;
 _Btn14 = _display displayCtrl Btn14;
 _Btn15 = _display displayCtrl Btn15;
 _Btn16 = _display displayCtrl Btn16;
-bambusfarm_pInact_curTarget = _curTarget;
+life_pInact_curTarget = _curTarget;
 
 	//Set Unrestrain Button
 	_Btn1 ctrlSetText localize "STR_pInAct_Unrestrain";
-	_Btn1 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_unrestrain; closeDialog 0;";
+	_Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
 
-	if(bambusfarm_inv_Schere > 0) then
+	if(life_inv_Schere > 0) then
 	{
 	    _Btn1 ctrlEnable true;
 	} else {
@@ -65,36 +65,36 @@ bambusfarm_pInact_curTarget = _curTarget;
 	//Button 2 - Set Escort Button
 	if((_curTarget getVariable["Escorting",false])) then {
 	    _Btn2 ctrlSetText localize "STR_pInAct_StopEscort";
-	    _Btn2 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_stopEscorting; closeDialog 0;";
+	    _Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; closeDialog 0;";
 	} else {
 	    _Btn2 ctrlSetText localize "STR_pInAct_Escort";
-	    _Btn2 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_escortAction; closeDialog 0;";
+	    _Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
 	};
 
 	if(!(_curTarget getVariable["restrained",FALSE])) then {
 		_btn3 ctrlShow false;
 	}else{
 		_Btn3 ctrlSetText localize "STR_pInAct_PutInCar";
-		_Btn3 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_putInCar;";
+		_Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
 	};
 
 	_Btn4 ctrlSetText "Ausweis zeigen";
-	_Btn4 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_ShowLicense; closeDialog 0;";
+	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_ShowLicense; closeDialog 0;";
 	_Btn5 ctrlSetText "Führerschein zeigen";
-	_Btn5 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_lappen; closeDialog 0;";
+	_Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_lappen; closeDialog 0;";
 
 	if(!(_curTarget getVariable["restrained",FALSE])) then {
 		_btn6 ctrlShow false;
 	}else{
 		_Btn6 ctrlSetText "Ausrauben";
-		_Btn6 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_robAction; closeDialog 0;";
+		_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
 	};
 
 	if(!(_curTarget getVariable["restrained",FALSE])) then {
 		_btn7 ctrlShow false;
 	}else{
 		_Btn7 ctrlSetText "Handy abnehmen";
-		_Btn7 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_robHandy; closeDialog 0;";
+		_Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_robHandy; closeDialog 0;";
 	};
 	_Btn8 ctrlShow false;
 	_Btn9 ctrlShow false;

@@ -39,11 +39,11 @@ _upp = _itemInfo select 3;
 if(_vendor in [mari_processor,coke_processor,heroin_processor]) then {
 	_hasLicense = true;
 } else {
-	_hasLicense = missionNamespace getVariable (([_type,0] call bambusfarm_fnc_licenseType) select 0);
+	_hasLicense = missionNamespace getVariable (([_type,0] call life_fnc_licenseType) select 0);
 };
 
-_itemName = [([_newItem,0] call bambusfarm_fnc_varHandle)] call bambusfarm_fnc_varToStr;
-_oldVal = missionNamespace getVariable ([_oldItem,0] call bambusfarm_fnc_varHandle);
+_itemName = [([_newItem,0] call life_fnc_varHandle)] call life_fnc_varToStr;
+_oldVal = missionNamespace getVariable ([_oldItem,0] call life_fnc_varHandle);
 
 _cost = _cost * _oldVal;
 //Some more checks
@@ -51,15 +51,15 @@ if(_oldVal == 0) exitWith {};
 
 //Setup our progress bar.
 disableSerialization;
-5 cutRsc ["bambusfarm_progress","PLAIN"];
-_ui = uiNameSpace getVariable "bambusfarm_progress";
+5 cutRsc ["life_progress","PLAIN"];
+_ui = uiNameSpace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format["%2 (1%1)...","%",_upp];
 _progress progressSetPosition 0.01;
 _cP = 0.01;
 
-bambusfarm_is_processing = true;
+life_is_processing = true;
 
 if(_hasLicense) then
 {
@@ -73,16 +73,16 @@ if(_hasLicense) then
 		if(player distance _vendor > 10) exitWith {};
 	};
 	
-	if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; bambusfarm_is_processing = false;};
-	if(!([false,_oldItem,_oldVal] call bambusfarm_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; bambusfarm_is_processing = false;};
-	if(!([true,_newItem,_oldVal] call bambusfarm_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call bambusfarm_fnc_handleInv; bambusfarm_is_processing = false;};
+	if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;};
 	5 cutText ["","PLAIN"];
 	titleText[format[localize "STR_Process_Processed",_oldVal,_itemName],"PLAIN"];
-	bambusfarm_is_processing = false;
+	life_is_processing = false;
 }
 	else
 {
-	if(bambusfarm_TASCHENGELD < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call bambusfarm_fnc_numberText]; 5 cutText ["","PLAIN"]; bambusfarm_is_processing = false;};
+	if(life_TASCHENGELD < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 	
 	while{true} do
 	{
@@ -94,12 +94,12 @@ if(_hasLicense) then
 		if(player distance _vendor > 10) exitWith {};
 	};
 	
-	if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; bambusfarm_is_processing = false;};
-	if(bambusfarm_TASCHENGELD < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call bambusfarm_fnc_numberText]; 5 cutText ["","PLAIN"]; bambusfarm_is_processing = false;};
-	if(!([false,_oldItem,_oldVal] call bambusfarm_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; bambusfarm_is_processing = false;};
-	if(!([true,_newItem,_oldVal] call bambusfarm_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call bambusfarm_fnc_handleInv; bambusfarm_is_processing = false;};
+	if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(life_TASCHENGELD < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;};
 	5 cutText ["","PLAIN"];
-	titleText[format[localize "STR_Process_Processed2",_oldVal,_itemName,[_cost] call bambusfarm_fnc_numberText],"PLAIN"];
-	bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD - _cost;
-	bambusfarm_is_processing = false;
+	titleText[format[localize "STR_Process_Processed2",_oldVal,_itemName,[_cost] call life_fnc_numberText],"PLAIN"];
+	life_TASCHENGELD = life_TASCHENGELD - _cost;
+	life_is_processing = false;
 };	

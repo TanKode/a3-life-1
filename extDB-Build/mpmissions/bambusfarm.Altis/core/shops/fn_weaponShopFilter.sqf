@@ -22,9 +22,9 @@ switch (_index) do
 {
 	case 0:
 	{
-		_config = [_shop] call bambusfarm_fnc_weaponShopCfg;
+		_config = [_shop] call life_fnc_weaponShopCfg;
 		{
-			_itemInfo = [_x select 0] call bambusfarm_fnc_fetchCfgDetails;
+			_itemInfo = [_x select 0] call life_fnc_fetchCfgDetails;
 			_itemList lbAdd format["%1",if(isNil {_x select 1}) then {_itemInfo select 1} else {_x select 1}];
 			_itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
 			_itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
@@ -55,7 +55,7 @@ switch (_index) do
 		{
 			if(!(_x in _listedItems) && _x != "") then
 			{
-				_itemInfo = [_x] call bambusfarm_fnc_fetchCfgDetails;
+				_itemInfo = [_x] call life_fnc_fetchCfgDetails;
 				_listedItems pushBack _x;
 				
 				_itemCount = {_x == (_itemInfo select 0)} count _config;

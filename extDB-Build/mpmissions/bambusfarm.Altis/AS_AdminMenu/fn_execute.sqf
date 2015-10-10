@@ -128,7 +128,7 @@ switch (_listboxActions lbText (lbCurSel _listboxActions)) do
 	case "Get Keys of CursorTarget":
 	{
 		if (!isNull cursorTarget) then {
-			bambusfarm_vehicles set[count bambusfarm_vehicles,cursorTarget];
+			life_vehicles set[count life_vehicles,cursorTarget];
 		} else {hint "FAILED: Your cursortarget returned nothing.";};
 		hint "You now have the keys";
 	};
@@ -161,7 +161,7 @@ switch (_listboxActions lbText (lbCurSel _listboxActions)) do
 	case "Revive CursorTarget":
 	{
 		if (!isNull cursorTarget) then {
-			[[name player],"bambusfarm_fnc_revived", cursorTarget,false] spawn bambusfarm_fnc_MP;
+			[[name player],"life_fnc_revived", cursorTarget,false] spawn life_fnc_MP;
 			hint "Cursortarget has been revived";
 		} else {hint "FAILED: Your cursortarget returned nothing.";};
 	};
@@ -170,11 +170,11 @@ switch (_listboxActions lbText (lbCurSel _listboxActions)) do
 	{
 		if (vehicle player == player) then {
 			if (!isNull cursorTarget) then {
-				closeDialog 0;sleep 0.01;[cursorTarget] call bambusfarm_fnc_openInventory;
+				closeDialog 0;sleep 0.01;[cursorTarget] call life_fnc_openInventory;
 				hint "Force opened the inventory of the cursortarget vehicle";
 			} else {hint "FAILED: Your cursortarget returned nothing.";};
 		} else {
-			closeDialog 0;sleep 0.01;[vehicle player] call bambusfarm_fnc_openInventory;
+			closeDialog 0;sleep 0.01;[vehicle player] call life_fnc_openInventory;
 			hint "Force opened the inventory of your current vehicle";
 		};
 	};
@@ -190,7 +190,7 @@ switch (_listboxActions lbText (lbCurSel _listboxActions)) do
 		if (!isNull _veh) then {
 			if(_veh isKindOf "House_F" && playerSide == civilian) then {
 				if(player distance _veh < 8) then {
-					_door = [_veh] call bambusfarm_fnc_nearestDoor;
+					_door = [_veh] call life_fnc_nearestDoor;
 					if(_door == 0) exitWith {hint localize "STR_House_Door_NotNear"};
 					_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
 					if(_locked == 0) then {
@@ -210,14 +210,14 @@ switch (_listboxActions lbText (lbCurSel _listboxActions)) do
 						if(local _veh) then {
 							_veh lock 0;
 						} else {
-							[[_veh,0],"bambusfarm_fnc_lockVehicle",_veh,false] spawn bambusfarm_fnc_MP;
+							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};
 						systemChat localize "STR_MISC_VehUnlock";
 					} else {
 						if(local _veh) then {
 							_veh lock 2;
 						} else {
-							[[_veh,2],"bambusfarm_fnc_lockVehicle",_veh,false] spawn bambusfarm_fnc_MP;
+							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};
 						systemChat localize "STR_MISC_VehLock";
 					};
@@ -228,15 +228,15 @@ switch (_listboxActions lbText (lbCurSel _listboxActions)) do
 
 	case "Add €100.000":
 	{
-		bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD + 100000;
+		life_TASCHENGELD = life_TASCHENGELD + 100000;
 	};
 	case "Add €1.000.000":
 	{
-		bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD + 1000000;
+		life_TASCHENGELD = life_TASCHENGELD + 1000000;
 	};
 	case "Add €100.000.000":
 	{
-		bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD + 100000000;
+		life_TASCHENGELD = life_TASCHENGELD + 100000000;
 	};
 
 	case "Spawn Vehicle":
@@ -265,12 +265,12 @@ switch (_listboxActions lbText (lbCurSel _listboxActions)) do
 	case "REFRESH":
 	{
 		closeDialog 0;
-		[] spawn bambusfarm_fnc_openMenu;
+		[] spawn life_fnc_openMenu;
 	};
 
 	case "<< BACK":
 	{
 		closeDialog 0;
-		[] spawn bambusfarm_fnc_openMenu;
+		[] spawn life_fnc_openMenu;
 	};
 };

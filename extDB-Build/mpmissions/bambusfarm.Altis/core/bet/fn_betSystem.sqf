@@ -3,13 +3,13 @@
 //     Nur mit genehmigung von           
 //        ThirtySeven nutzbar           
 // **********  Disclaimer *********** //
-bambusfarm_bet = false;
+life_bet = false;
 sleep 2;
 _fac = 0.0;
 _score = "";
 _win = 0;
 _x=floor(random 12);
-switch (bambusfarm_bets) do
+switch (life_bets) do
 	{
 		case 1: 	{ _fac = 2.1; }; 	
 		case 2: 	{ _fac = 2.6; }; 	
@@ -51,16 +51,16 @@ switch (_x) do
 	};				
 				
 	
-hint format [" %1 gegen %2 hat %3 gespielt.",bambusfarm_club1,bambusfarm_club2,_score];
+hint format [" %1 gegen %2 hat %3 gespielt.",life_club1,life_club2,_score];
 sleep 2.5;
 
-if(!(_win == bambusfarm_bets)) exitWith {hint "Du hast leider Falsch gewettet"};
-if(_win == bambusfarm_bets) then {hint format["Du hast Richtig gewettet und €%1 gewonnen",(_fac*2500)];
-	bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD + (2500*_fac);
+if(!(_win == life_bets)) exitWith {hint "Du hast leider Falsch gewettet"};
+if(_win == life_bets) then {hint format["Du hast Richtig gewettet und €%1 gewonnen",(_fac*2500)];
+	life_TASCHENGELD = life_TASCHENGELD + (2500*_fac);
 };
 
-bambusfarm_club1 = "";
-bambusfarm_club2 = "";
+life_club1 = "";
+life_club2 = "";
 [] call SOCK_fnc_updateRequest;;
 
 

@@ -12,19 +12,19 @@ _inv = [];
 _robber = false;
 //Illegal items
 {
-	_var = [_x select 0,0] call bambusfarm_fnc_varHandle;
+	_var = [_x select 0,0] call life_fnc_varHandle;
 	_val = missionNamespace getVariable _var;
 	if(_val > 0) then
 	{
 		_inv pushBack [_x select 0,_val];
-		[false,(_x select 0),_val] call bambusfarm_fnc_handleInv;
+		[false,(_x select 0),_val] call life_fnc_handleInv;
 	};
-} foreach bambusfarm_illegal_items;
+} foreach life_illegal_items;
 
-if(!bambusfarm_use_atm) then
+if(!life_use_atm) then
 {
-	bambusfarm_TASCHENGELD = 0;
+	life_TASCHENGELD = 0;
 	_robber = true;
 };
 
-[[player,_inv,_robber],"bambusfarm_fnc_copSearch",_cop,false] spawn bambusfarm_fnc_MP;
+[[player,_inv,_robber],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;

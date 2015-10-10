@@ -13,7 +13,7 @@ _cWeight = [_this,2,-1,[0]] call BIS_fnc_param;
 _mWeight = [_this,3,-1,[0]] call BIS_fnc_param;
 
 if(_item == "" OR _value == -1 OR _cWeight == -1 OR _mWeight == -1) exitWith {};
-_weight = ([_item] call bambusfarm_fnc_itemWeight) * _value;
+_weight = ([_item] call life_fnc_itemWeight) * _value;
 _sum = _value;
 
 if((_cweight + _weight) > _mWeight) then
@@ -22,7 +22,7 @@ if((_cweight + _weight) > _mWeight) then
 	{
 		_sum = _sum - 1;
 		if(_sum < 1) exitWith {};
-		_weight = ([_item] call bambusfarm_fnc_itemweight) * _sum;
+		_weight = ([_item] call life_fnc_itemweight) * _sum;
 		if((_cWeight + _weight) <= _mWeight) exitWith {};
 	};
 };

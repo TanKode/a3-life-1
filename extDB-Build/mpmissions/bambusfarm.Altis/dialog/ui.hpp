@@ -11,7 +11,7 @@
 		
 		class controlsBackground 
 		{
-			class foodHIcon : bambusfarm_RscPicture
+			class foodHIcon : life_RscPicture
 			{
 			
 				idc = -1;
@@ -20,7 +20,7 @@
 				w = 0.03; h = 0.04;
 			};
 			
-			class waterHIcon : bambusfarm_RscPicture
+			class waterHIcon : life_RscPicture
 			{
 			
 				idc = -1;
@@ -29,7 +29,7 @@
 				w = 0.04; h = 0.04;
 			};
 			
-			class healthHIcon : bambusfarm_RscPicture
+			class healthHIcon : life_RscPicture
 			{
 				
 				idc = -1;

@@ -8,19 +8,19 @@
 private["_spCfg","_sp","_ctrl"];
 disableSerialization;
 
-if(bambusfarm_is_arrested) exitWith {
-	[] call bambusfarm_fnc_respawned;
+if(life_is_arrested) exitWith {
+	[] call life_fnc_respawned;
 };
 
-if(bambusfarm_respawned) then {
-	[] call bambusfarm_fnc_respawned;
+if(life_respawned) then {
+	[] call life_fnc_respawned;
 };
 cutText["","BLACK FADED"];
 0 cutFadeOut 9999999;
-if(!(createDialog "bambusfarm_spawn_selection")) exitWith {[] call bambusfarm_fnc_spawnMenu;};
-(findDisplay 38500) displaySetEventHandler ["keyDown","_this call bambusfarm_fnc_displayHandler"];
+if(!(createDialog "life_spawn_selection")) exitWith {[] call life_fnc_spawnMenu;};
+(findDisplay 38500) displaySetEventHandler ["keyDown","_this call life_fnc_displayHandler"];
 
-_spCfg = [playerSide] call bambusfarm_fnc_spawnPointCfg;
+_spCfg = [playerSide] call life_fnc_spawnPointCfg;
 
 _ctrl = ((findDisplay 38500) displayCtrl 38510);
 {
@@ -31,7 +31,7 @@ _ctrl = ((findDisplay 38500) displayCtrl 38510);
 
 _sp = _spCfg select 0; //First option is set by default
 
-[((findDisplay 38500) displayCtrl 38502),1,0.1,getMarkerPos (_sp select 0)] call bambusfarm_fnc_setMapPosition;
-bambusfarm_spawn_point = _sp;
+[((findDisplay 38500) displayCtrl 38502),1,0.1,getMarkerPos (_sp select 0)] call life_fnc_setMapPosition;
+life_spawn_point = _sp;
 
 ctrlSetText[38501,format["%2: %1",_sp select 1,localize "STR_Spawn_CSP"]];

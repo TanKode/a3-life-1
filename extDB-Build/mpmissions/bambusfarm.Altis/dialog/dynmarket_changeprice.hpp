@@ -1,6 +1,6 @@
-class bambusfarm_dynmarket_changeprice {
+class life_dynmarket_changeprice {
 	idd = 7000;
-	name= "bambusfarm_dynmarket_changeprice";
+	name= "life_dynmarket_changeprice";
 	movingEnable = false;
 	enableSimulation = true;
 	onLoad = "";
@@ -9,7 +9,7 @@ class bambusfarm_dynmarket_changeprice {
 	};
 	
 	class controls {
-		class RscFrame_1800: bambusfarm_RscText
+		class RscFrame_1800: life_RscText
 		{
 			colorBackground[] = {0,0,0,1};
 			idc = 7001;
@@ -18,7 +18,7 @@ class bambusfarm_dynmarket_changeprice {
 			w = 0.366667 * safezoneW;
 			h = 0.07697 * safezoneH;
 		};
-		class RscText_1000: bambusfarm_RscText
+		class RscText_1000: life_RscText
 		{
 			idc = 7002;
 			text = "SET ITEM"; //--- ToDo: Localize;
@@ -27,7 +27,7 @@ class bambusfarm_dynmarket_changeprice {
 			w = 0.0515625 * safezoneW;
 			h = 0.0219914 * safezoneH;
 		};
-		class RscText_1001: bambusfarm_RscText
+		class RscText_1001: life_RscText
 		{
 			idc = 7003;
 			text = "TO PRICE"; //--- ToDo: Localize;
@@ -36,7 +36,7 @@ class bambusfarm_dynmarket_changeprice {
 			w = 0.0515625 * safezoneW;
 			h = 0.0219914 * safezoneH;
 		};
-		class RscEdit_1400: bambusfarm_RscEdit
+		class RscEdit_1400: life_RscEdit
 		{
 			idc = 7004;
 			text = "";
@@ -46,7 +46,7 @@ class bambusfarm_dynmarket_changeprice {
 			w = 0.171875 * safezoneW;
 			h = 0.0219914 * safezoneH;
 		};
-		class RscEdit_1401: bambusfarm_RscEdit
+		class RscEdit_1401: life_RscEdit
 		{
 			idc = 7005;
 			text = "";
@@ -56,18 +56,18 @@ class bambusfarm_dynmarket_changeprice {
 			w = 0.06875 * safezoneW;
 			h = 0.0219914 * safezoneH;
 		};
-		class RscButton_1600: bambusfarm_RscButtonMenu
+		class RscButton_1600: life_RscButtonMenu
 		{
 			idc = 7006;
 			colorBackground[] = {0,0.59,0.04,1};
 			text = "SEND REQUEST TO THE SERVER"; //--- ToDo: Localize;
-			onButtonClick = "[] spawn {[] call bambusfarm_fnc_ForcePrice;};";
+			onButtonClick = "[] spawn {[] call life_fnc_ForcePrice;};";
 			x = 0.43698 * safezoneW + safezoneX;
 			y = 0.489004 * safezoneH + safezoneY;
 			w = 0.246354 * safezoneW;
 			h = 0.0219914 * safezoneH;
 		};
-		class RscButton_1601: bambusfarm_RscButtonMenu
+		class RscButton_1601: life_RscButtonMenu
 		{
 			idc = 7007;
 			colorBackground[] = {0.69,0.14,0,1};

@@ -13,14 +13,14 @@ if((lbCurSel 2703) == -1) exitWith {hint localize "STR_ATM_NoneSelected"};
 if(isNil "_unit") exitWith {hint localize "STR_ATM_DoesntExist"};
 if(_val > 999999) exitWith {hint localize "STR_ATM_TransferMax";};
 if(_val < 0) exitwith {};
-if(!([str(_val)] call bambusfarm_fnc_isnumeric)) exitWith {hint localize "STR_ATM_notnumeric"};
-if(_val > bambusfarm_BANK) exitWith {hint localize "STR_ATM_NotEnough"};
-_tax = [_val] call bambusfarm_fnc_taxRate;
-if((_val + _tax) > bambusfarm_BANK) exitWith {hint format[localize "STR_ATM_SentMoneyFail",_val,_tax]};
+if(!([str(_val)] call life_fnc_isnumeric)) exitWith {hint localize "STR_ATM_notnumeric"};
+if(_val > life_BANK) exitWith {hint localize "STR_ATM_NotEnough"};
+_tax = [_val] call life_fnc_taxRate;
+if((_val + _tax) > life_BANK) exitWith {hint format[localize "STR_ATM_SentMoneyFail",_val,_tax]};
 
-bambusfarm_BANK = bambusfarm_BANK - (_val + _tax);
+life_BANK = life_BANK - (_val + _tax);
 
-[[_val,profileName],"TON_fnc_clientWireTransfer",_unit,false] spawn bambusfarm_fnc_MP;
-[] call bambusfarm_fnc_atmMenu;
-hint format[localize "STR_ATM_SentMoneySuccess",[_val] call bambusfarm_fnc_numberText,_unit getVariable["realname",name _unit],[_tax] call bambusfarm_fnc_numberText];
+[[_val,profileName],"TON_fnc_clientWireTransfer",_unit,false] spawn life_fnc_MP;
+[] call life_fnc_atmMenu;
+hint format[localize "STR_ATM_SentMoneySuccess",[_val] call life_fnc_numberText,_unit getVariable["realname",name _unit],[_tax] call life_fnc_numberText];
 [1] call SOCK_fnc_updatePartial;

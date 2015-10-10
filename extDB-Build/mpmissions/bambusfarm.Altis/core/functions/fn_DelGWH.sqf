@@ -1,5 +1,5 @@
 //::::::::::::  ::::::::::::\\
-//	Filename: core/bambusfarm/fn_bambusfarm_DelGWH.sqf
+//	Filename: core/bambusfarm/fn_life_DelGWH.sqf
 //	Author: Distrikt41 - Dscha
 //
 //	Beschreibung: Wenn tot, dann alles ablegen und Lootkiste erzeugen. (Hfftl. Anti-Dupe)
@@ -31,4 +31,4 @@ private["_PrimWeapon","_SecWeapon","_WpnItems","_Magazines","_Items","_AssignedI
 	removeAllAssignedItems player;
 	
 	
-	[[_PrimWeapon,_SecWeapon,_WpnItems,_Magazines,_Items,_AssignedItems,_Uniform,_Goggles,_Headgear,_Backpack,_Vest,_Pos],"TON_fnc_GWH",false,false] spawn bambusfarm_fnc_MP;
+	[[_PrimWeapon,_SecWeapon,_WpnItems,_Magazines,_Items,_AssignedItems,_Uniform,_Goggles,_Headgear,_Backpack,_Vest,_Pos],"TON_fnc_GWH",false,false] spawn life_fnc_MP;

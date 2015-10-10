@@ -8,7 +8,7 @@ Description: Effekt on Cocaine use!
 closeDialog 0;
 
 player setVariable["drug_cocaine",true,true];
-[player,"Cocaine_sound", 54] call bambusfarm_fnc_globalSound;
+[player,"Cocaine_sound", 54] call life_fnc_globalSound;
 
 "dynamicBlur" ppEffectEnable true; // enables ppeffect
 "dynamicBlur" ppEffectAdjust [0]; // enables normal vision

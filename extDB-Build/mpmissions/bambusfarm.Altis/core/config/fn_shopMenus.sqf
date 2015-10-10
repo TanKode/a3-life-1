@@ -14,7 +14,7 @@ if(!dialog) then
 	if(!(createDialog "shop_menu")) exitWith {};
 };
 disableSerialization;
-ctrlSetText[601,format["Cash: €%1",[bambusfarm_TASCHENGELD] call bambusfarm_fnc_numberText]];
+ctrlSetText[601,format["Cash: €%1",[life_TASCHENGELD] call life_fnc_numberText]];
 
 switch (_shop) do
 {
@@ -86,4 +86,4 @@ switch (_shop) do
 	};
 };
 
-["guns"] call bambusfarm_fnc_shops_changeMenu;
+["guns"] call life_fnc_shops_changeMenu;

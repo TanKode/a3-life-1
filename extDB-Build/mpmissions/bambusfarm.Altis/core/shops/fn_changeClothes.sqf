@@ -13,16 +13,16 @@ _price = (findDisplay 3100) displayCtrl 3102;
 _total = (findDisplay 3100) displayCtrl 3106;
 if(_selection == -1) exitWith {hint localize "STR_Shop_NoSelection";};
 if(isNull _control) exitWith {hint localize "STR_Shop_NoDisplay"};
-if(bambusfarm_cMenu_lock) exitWith {};
-bambusfarm_cMenu_lock = true;
+if(life_cMenu_lock) exitWith {};
+life_cMenu_lock = true;
 
-bambusfarm_clothing_purchase set[bambusfarm_clothing_filter,(_control lbValue _selection)];
+life_clothing_purchase set[life_clothing_filter,(_control lbValue _selection)];
 
 _data = _control lbData _selection;
 
-[_data,true,nil,nil,nil,nil,nil,true] call bambusfarm_fnc_handleItem;
-bambusfarm_cMenu_lock = false;
-_price ctrlSetStructuredText parseText format [(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>€%1</t>",[(_control lbValue _selection)] call bambusfarm_fnc_numberText];
+[_data,true,nil,nil,nil,nil,nil,true] call life_fnc_handleItem;
+life_cMenu_lock = false;
+_price ctrlSetStructuredText parseText format [(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>€%1</t>",[(_control lbValue _selection)] call life_fnc_numberText];
 
 _totalPrice = 0;
 {
@@ -30,7 +30,7 @@ _totalPrice = 0;
 	{
 		_totalPrice = _totalPrice + _x;
 	};
-} foreach bambusfarm_clothing_purchase;
+} foreach life_clothing_purchase;
 
-_total ctrlSetStructuredText parseText format [(localize "STR_Shop_Total")+ " <t color='#8cff9b'>€%1</t>",[_totalPrice] call bambusfarm_fnc_numberText];
-[player, uniform player] call bambusfarm_fnc_equipGear;
+_total ctrlSetStructuredText parseText format [(localize "STR_Shop_Total")+ " <t color='#8cff9b'>€%1</t>",[_totalPrice] call life_fnc_numberText];
+[player, uniform player] call life_fnc_equipGear;

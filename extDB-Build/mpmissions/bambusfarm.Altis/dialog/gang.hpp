@@ -1,12 +1,12 @@
-class bambusfarm_My_Gang_Diag {
+class life_My_Gang_Diag {
 	idd = 2620;
-	name= "bambusfarm_my_gang_menu";
+	name= "life_my_gang_menu";
 	movingEnable = false;
 	enableSimulation = true;
 	onLoad = "";
 	
 	class controlsBackground {
-		class bambusfarm_RscTitleBackground:bambusfarm_RscText {
+		class life_RscTitleBackground:life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.1;
@@ -15,7 +15,7 @@ class bambusfarm_My_Gang_Diag {
 			h = (1 / 25);
 		};
 		
-		class MainBackground:bambusfarm_RscText {
+		class MainBackground:life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.1;
@@ -28,7 +28,7 @@ class bambusfarm_My_Gang_Diag {
 	class controls {
 
 		
-		class Title : bambusfarm_RscTitle {
+		class Title : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 2629;
 			text = "";
@@ -38,7 +38,7 @@ class bambusfarm_My_Gang_Diag {
 			h = (1 / 25);
 		};
 		
-		class GangMemberList : bambusfarm_RscListBox
+		class GangMemberList : life_RscListBox
 		{
 			idc = 2621;
 			text = "";
@@ -48,57 +48,57 @@ class bambusfarm_My_Gang_Diag {
 			w = 0.350; h = 0.370;
 		};
 
-		class CloseLoadMenu : bambusfarm_RscButtonMenu {
+		class CloseLoadMenu : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Close";
-			onButtonClick = "closeDialog 0;[] call bambusfarm_fnc_p_updateMenu";
+			onButtonClick = "closeDialog 0;[] call life_fnc_p_updateMenu";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class GangLeave : bambusfarm_RscButtonMenu {
+		class GangLeave : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Gang_Leave";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_gangLeave";
+			onButtonClick = "[] call life_fnc_gangLeave";
 			x = 0.47;
 			y = 0.26;
 			w = (9 / 40);
 			h = (1 / 25);
 		};
 		
-		class GangLock : bambusfarm_RscButtonMenu
+		class GangLock : life_RscButtonMenu
 		{
 			idc = 2622;
 			text = "$STR_Gang_UpgradeSlots";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn bambusfarm_fnc_gangUpgrade";
+			onButtonClick = "[] spawn life_fnc_gangUpgrade";
 			x = 0.47;
 			y = 0.31;
 			w = (9 / 40);
 			h = (1 / 25);
 		};
 		
-		class GangKick : bambusfarm_RscButtonMenu
+		class GangKick : life_RscButtonMenu
 		{
 			idc = 2624;
 			text = "$STR_Gang_Kick";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_gangKick";
+			onButtonClick = "[] call life_fnc_gangKick";
 			x = 0.47;
 			y = 0.36;
 			w = (9 / 40);
 			h = (1 / 25);
 		};
 		
-		class GangLeader : bambusfarm_RscButtonMenu
+		class GangLeader : life_RscButtonMenu
 		{
 			idc = 2625;
 			text = "$STR_Gang_SetLeader";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn bambusfarm_fnc_gangNewLeader";
+			onButtonClick = "[] spawn life_fnc_gangNewLeader";
 			x = 0.47;
 			y = 0.41;
 			w = (9 / 40);
@@ -110,7 +110,7 @@ class bambusfarm_My_Gang_Diag {
 			idc = 2630;
 			text = "$STR_Gang_Invite_Player";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn bambusfarm_fnc_gangInvitePlayer";
+			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = .51;
 		};
 		
@@ -119,11 +119,11 @@ class bambusfarm_My_Gang_Diag {
 			idc = 2631;
 			text = "$STR_Gang_Disband_Gang";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn bambusfarm_fnc_gangDisband";
+			onButtonClick = "[] spawn life_fnc_gangDisband";
 			y = .46;
 		};
 		
-		class ColorList : bambusfarm_RscCombo
+		class ColorList : life_RscCombo
 		{
 			idc = 2632;
 			x = 0.47; y = 0.56;
@@ -138,15 +138,15 @@ class bambusfarm_My_Gang_Diag {
 	};
 };
 
-class bambusfarm_Create_Gang_Diag {
+class life_Create_Gang_Diag {
 	idd = 2520;
-	name= "bambusfarm_my_gang_menu_create";
+	name= "life_my_gang_menu_create";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "[] spawn {waitUntil {!isNull (findDisplay 2520)}; ((findDisplay 2520) displayCtrl 2523) ctrlSetText format[localize ""STR_Gang_PriceTxt"",[(call bambusfarm_gangPrice)] call bambusfarm_fnc_numberText]};";
+	onLoad = "[] spawn {waitUntil {!isNull (findDisplay 2520)}; ((findDisplay 2520) displayCtrl 2523) ctrlSetText format[localize ""STR_Gang_PriceTxt"",[(call life_gangPrice)] call life_fnc_numberText]};";
 	
 	class controlsBackground {
-		class bambusfarm_RscTitleBackground:bambusfarm_RscText {
+		class life_RscTitleBackground:life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.1;
@@ -155,7 +155,7 @@ class bambusfarm_Create_Gang_Diag {
 			h = (1 / 25);
 		};
 		
-		class MainBackground:bambusfarm_RscText {
+		class MainBackground:life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.1;
@@ -167,7 +167,7 @@ class bambusfarm_Create_Gang_Diag {
 	
 	class controls {
 	
-		class InfoMsg : bambusfarm_RscStructuredText
+		class InfoMsg : life_RscStructuredText
 		{
 			idc = 2523;
 			sizeEx = 0.020;
@@ -177,7 +177,7 @@ class bambusfarm_Create_Gang_Diag {
 			w = 0.5; h = .11;
 		};
 		
-		class Title : bambusfarm_RscTitle {
+		class Title : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
 			text = "$STR_Gang_Title";
@@ -187,28 +187,28 @@ class bambusfarm_Create_Gang_Diag {
 			h = (1 / 25);
 		};
 
-		class CloseLoadMenu : bambusfarm_RscButtonMenu {
+		class CloseLoadMenu : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Close";
-			onButtonClick = "closeDialog 0;[] call bambusfarm_fnc_p_updateMenu;";
+			onButtonClick = "closeDialog 0;[] call life_fnc_p_updateMenu;";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.5 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class GangCreateField : bambusfarm_RscButtonMenu {
+		class GangCreateField : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Gang_Create";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_createGang";
+			onButtonClick = "[] call life_fnc_createGang";
 			x = 0.27;
 			y = 0.40;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class CreateGangText : bambusfarm_RscEdit
+		class CreateGangText : life_RscEdit
 		{
 			idc = 2522;
 			text = "$STR_Gang_YGN";

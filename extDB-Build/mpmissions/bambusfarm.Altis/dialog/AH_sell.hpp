@@ -8,7 +8,7 @@ class AH_sell
 	class controlsBackground {};
 	
 	class controls {
-		class RscText_1000: bambusfarm_RscText
+		class RscText_1000: life_RscText
 		{
 			idc = -1;
 			x = 0.311778 * safezoneW + safezoneX;
@@ -17,7 +17,7 @@ class AH_sell
 			h = 0.385065 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
-		class RscText_1001: bambusfarm_RscText
+		class RscText_1001: life_RscText
 		{
 			idc = -1;
 			text = "Your Inventory"; //--- ToDo: Localize;
@@ -26,7 +26,7 @@ class AH_sell
 			w = 0.127505 * safezoneW;
 			h = 0.0220037 * safezoneH;
 		};
-		class RscListbox_1500: bambusfarm_RscListbox
+		class RscListbox_1500: life_RscListbox
 		{
 			idc = 15001;
 			x = 0.31785 * safezoneW + safezoneX;
@@ -35,7 +35,7 @@ class AH_sell
 			h = 0.330055 * safezoneH;
 			sizeEx = 0.04;
 		};
-		class RscText_1002: bambusfarm_RscText
+		class RscText_1002: life_RscText
 		{
 			idc = -1;
 			text = "Sell the selected Item "; //--- ToDo: Localize;
@@ -44,7 +44,7 @@ class AH_sell
 			w = 0.127505 * safezoneW;
 			h = 0.0220037 * safezoneH;
 		};
-		class RscText_1003: bambusfarm_RscText
+		class RscText_1003: life_RscText
 		{
 			idc = -1;
 			text = "Price:  €"; //--- ToDo: Localize;
@@ -53,7 +53,7 @@ class AH_sell
 			w = 0.127505 * safezoneW;
 			h = 0.0220037 * safezoneH;
 		};
-		class RscEdit_1400: bambusfarm_RscEdit
+		class RscEdit_1400: life_RscEdit
 		{
 			idc = 15002;
 			x = 0.563145 * safezoneW + safezoneX;
@@ -62,7 +62,7 @@ class AH_sell
 			h = 0.0220037 * safezoneH;
 			text = "";
 		};
-		class RscButtonMenu_2400: bambusfarm_RscButtonMenu
+		class RscButtonMenu_2400: life_RscButtonMenu
 		{
 			idc = -1;
 			text = "Create Offer"; //--- ToDo: Localize;
@@ -70,9 +70,9 @@ class AH_sell
 			y = 0.422987 * safezoneH + safezoneY;
 			w = 0.176078 * safezoneW;
 			h = 0.0220037 * safezoneH;
-			onButtonClick = "[] spawn bambusfarm_fnc_CAH_Sell;";
+			onButtonClick = "[] spawn life_fnc_CAH_Sell;";
 		};
-		class RscButtonMenu_2401: bambusfarm_RscButtonMenu
+		class RscButtonMenu_2401: life_RscButtonMenu
 		{
 			idc = -1;
 			text = "View my current offers"; //--- ToDo: Localize;
@@ -82,7 +82,7 @@ class AH_sell
 			w = 0.176078 * safezoneW;
 			h = 0.0220037 * safezoneH;
 		};
-		class RscButtonMenu_2402: bambusfarm_RscButtonMenu
+		class RscButtonMenu_2402: life_RscButtonMenu
 		{
 			idc = -1;
 			text = "CANCEL"; //--- ToDo: Localize;

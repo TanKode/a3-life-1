@@ -16,7 +16,7 @@ _return pushBack backpack player;
 _return pushBack goggles player;
 _return pushBack headgear player;
 _return pushBack assignedITems player;
-if(playerSide == west || playerSide == civilian && {(call bambusfarm_save_civ)}) then {
+if(playerSide == west || playerSide == civilian && {(call life_save_civ)}) then {
     _return pushBack primaryWeapon player;
     _return pushBack handgunWeapon player;
 } else {
@@ -147,32 +147,32 @@ if(count (handGunItems player) > 0) then
         };
     };
 } forEach [
-    ["bambusfarm_inv_apple", bambusfarm_inv_apple],
-    ["bambusfarm_inv_rabbit", bambusfarm_inv_rabbit],
-    ["bambusfarm_inv_salema", bambusfarm_inv_salema],
-    ["bambusfarm_inv_ornate", bambusfarm_inv_ornate],
-    ["bambusfarm_inv_mackerel", bambusfarm_inv_mackerel],
-    ["bambusfarm_inv_tuna", bambusfarm_inv_tuna],
-    ["bambusfarm_inv_mullet", bambusfarm_inv_mullet],
-    ["bambusfarm_inv_catshark", bambusfarm_inv_catshark],
-    ["bambusfarm_inv_fishingpoles", bambusfarm_inv_fishingpoles],
-    ["bambusfarm_inv_water", bambusfarm_inv_water],
-    ["bambusfarm_inv_donuts", bambusfarm_inv_donuts],
-    ["bambusfarm_inv_turtlesoup", bambusfarm_inv_turtlesoup],
-    ["bambusfarm_inv_coffee", bambusfarm_inv_coffee],
-    ["bambusfarm_inv_fuelF", bambusfarm_inv_fuelF],
-    ["bambusfarm_inv_fuelE", bambusfarm_inv_fuelE],
-    ["bambusfarm_inv_pickaxe", bambusfarm_inv_pickaxe],
-    ["bambusfarm_inv_tbacon", bambusfarm_inv_tbacon],
-    ["bambusfarm_inv_lockpick", bambusfarm_inv_lockpick],
-    ["bambusfarm_inv_redgull", bambusfarm_inv_redgull],
-    ["bambusfarm_inv_peach", bambusfarm_inv_peach],
-    ["bambusfarm_inv_spikeStrip", bambusfarm_inv_spikeStrip],
-    ["bambusfarm_inv_defusekit", bambusfarm_inv_defusekit],
-    ["bambusfarm_inv_storagesmall", bambusfarm_inv_storagesmall],
-    ["bambusfarm_inv_storagebig", bambusfarm_inv_storagebig],
-    ["bambusfarm_inv_handcuffs", bambusfarm_inv_handcuffs],
-    ["bambusfarm_inv_Schere", bambusfarm_inv_Schere]
+    ["life_inv_apple", life_inv_apple],
+    ["life_inv_rabbit", life_inv_rabbit],
+    ["life_inv_salema", life_inv_salema],
+    ["life_inv_ornate", life_inv_ornate],
+    ["life_inv_mackerel", life_inv_mackerel],
+    ["life_inv_tuna", life_inv_tuna],
+    ["life_inv_mullet", life_inv_mullet],
+    ["life_inv_catshark", life_inv_catshark],
+    ["life_inv_fishingpoles", life_inv_fishingpoles],
+    ["life_inv_water", life_inv_water],
+    ["life_inv_donuts", life_inv_donuts],
+    ["life_inv_turtlesoup", life_inv_turtlesoup],
+    ["life_inv_coffee", life_inv_coffee],
+    ["life_inv_fuelF", life_inv_fuelF],
+    ["life_inv_fuelE", life_inv_fuelE],
+    ["life_inv_pickaxe", life_inv_pickaxe],
+    ["life_inv_tbacon", life_inv_tbacon],
+    ["life_inv_lockpick", life_inv_lockpick],
+    ["life_inv_redgull", life_inv_redgull],
+    ["life_inv_peach", life_inv_peach],
+    ["life_inv_spikeStrip", life_inv_spikeStrip],
+    ["life_inv_defusekit", life_inv_defusekit],
+    ["life_inv_storagesmall", life_inv_storagesmall],
+    ["life_inv_storagebig", life_inv_storagebig],
+    ["life_inv_handcuffs", life_inv_handcuffs],
+    ["life_inv_Schere", life_inv_Schere]
 ];
 
 _return pushBack _uItems;
@@ -183,10 +183,10 @@ _return pushBack _vItems;
 _return pushBack _vMags;
 _return pushBack _pItems;
 _return pushBack _hItems;
-if(call bambusfarm_save_yinv) then {
+if(call life_save_yinv) then {
     _return pushBack _yItems;
 } else {
     _return pushBack [];
 };
 
-bambusfarm_gear = _return;
+life_gear = _return;

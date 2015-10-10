@@ -6,7 +6,7 @@ class Chop_Shop
 	
 	class controlsBackground
 	{
-		class RscTitleBackground : bambusfarm_RscText
+		class RscTitleBackground : life_RscText
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
@@ -14,7 +14,7 @@ class Chop_Shop
 			w = 0.32; h = (1 / 25);
 		};
 		
-		class MainBackGround : bambusfarm_RscText
+		class MainBackGround : life_RscText
 		{
 			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
@@ -22,7 +22,7 @@ class Chop_Shop
 			w = 0.32; h = 0.6 - (22 / 250);
 		};
 		
-		class Title : bambusfarm_RscTitle
+		class Title : life_RscTitle
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = -1;
@@ -31,7 +31,7 @@ class Chop_Shop
 			w = 0.32; h = (1 / 25);
 		};
 		
-		class priceInfo : bambusfarm_RscStructuredText
+		class priceInfo : life_RscStructuredText
 		{
 			idc = 39401;
 			text = "";
@@ -43,27 +43,27 @@ class Chop_Shop
 	
 	class controls
 	{
-		class vehicleList : bambusfarm_RscListBox
+		class vehicleList : life_RscListBox
 		{
 			idc = 39402;
-			onLBSelChanged = "_this call bambusfarm_fnc_chopShopSelection";
+			onLBSelChanged = "_this call life_fnc_chopShopSelection";
 			sizeEx = 0.04;
 			x = 0.11; y = 0.25;
 			w = 0.3; h = 0.38;
 		};
 		
-		class BtnSell : bambusfarm_RscButtonMenu
+		class BtnSell : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Global_Sell";
-			onButtonclick = "[] call bambusfarm_fnc_chopShopSell;";
+			onButtonclick = "[] call life_fnc_chopShopSell;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class BtnClose : bambusfarm_RscButtonMenu
+		class BtnClose : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Global_Close";

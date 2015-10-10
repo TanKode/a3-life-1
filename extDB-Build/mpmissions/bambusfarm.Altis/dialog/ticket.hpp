@@ -1,12 +1,12 @@
-class bambusfarm_ticket_give
+class life_ticket_give
 {
 	idd = 2650;
-	name = "bambusfarm_ticket_give";
+	name = "life_ticket_give";
 	movingEnabled = false;
 	enableSimulation = true;
 	
 	class controlsBackground {
-		class bambusfarm_RscTitleBackground:bambusfarm_RscText {
+		class life_RscTitleBackground:life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.3;
@@ -15,7 +15,7 @@ class bambusfarm_ticket_give
 			h = (1 / 25);
 		};
 		
-		class MainBackground:bambusfarm_RscText {
+		class MainBackground:life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.3;
@@ -27,7 +27,7 @@ class bambusfarm_ticket_give
 	
 	class controls 
 	{
-		class Title : bambusfarm_RscTitle {
+		class Title : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 2651;
 			text = "";
@@ -37,7 +37,7 @@ class bambusfarm_ticket_give
 			h = (1 / 25);
 		};
 		
-		class moneyEdit : bambusfarm_RscEdit
+		class moneyEdit : life_RscEdit
 		{
 			idc = 2652;
 			
@@ -47,11 +47,11 @@ class bambusfarm_ticket_give
 			w = 0.25; h = 0.03;
 		};
 
-		class payTicket: bambusfarm_RscButtonMenu {
+		class payTicket: life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Ticket_GiveTicket";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_ticketGive";
+			onButtonClick = "[] call life_fnc_ticketGive";
 			x = 0.45;
 			y = 0.35;
 			w = (6.25 / 40);
@@ -60,15 +60,15 @@ class bambusfarm_ticket_give
 	};
 };
 
-class bambusfarm_ticket_pay
+class life_ticket_pay
 {
 	idd = 2600;
-	name = "bambusfarm_ticket_pay";
+	name = "life_ticket_pay";
 	movingEnabled = false;
 	enableSimulation = true;
 	
 	class controlsBackground {
-		class bambusfarm_RscTitleBackground:bambusfarm_RscText {
+		class life_RscTitleBackground:life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.3;
@@ -77,7 +77,7 @@ class bambusfarm_ticket_pay
 			h = (1 / 25);
 		};
 		
-		class MainBackground:bambusfarm_RscText {
+		class MainBackground:life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.3;
@@ -89,7 +89,7 @@ class bambusfarm_ticket_pay
 	
 	class controls 
 	{
-		class InfoMsg : bambusfarm_RscStructuredText
+		class InfoMsg : life_RscStructuredText
 		{
 			idc = 2601;
 			sizeEx = 0.020;
@@ -99,18 +99,18 @@ class bambusfarm_ticket_pay
 			w = 0.5; h = 0.12;
 		};
 
-		class payTicket: bambusfarm_RscButtonMenu {
+		class payTicket: life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Ticket_PayTicket";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_ticketPay;";
+			onButtonClick = "[] call life_fnc_ticketPay;";
 			x = 0.2 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.42 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class refuseTicket : bambusfarm_RscButtonMenu {
+		class refuseTicket : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Ticket_RefuseTicket";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};

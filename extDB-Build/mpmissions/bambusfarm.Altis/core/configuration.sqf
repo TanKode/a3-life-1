@@ -4,137 +4,137 @@
 ****** Backend Variables *****
 *****************************
 */
-bambusfarm_query_time = time;
-bambusfarm_action_delay = time;
-bambusfarm_trunk_vehicle = Objnull;
-bambusfarm_session_completed = false;
-bambusfarm_garage_store = false;
-bambusfarm_session_tries = 0;
-bambusfarm_net_dropped = false;
-bambusfarm_hit_explosive = false;
-bambusfarm_siren_active = false;
-bambusfarm_clothing_filter = 0;
-bambusfarm_clothing_uniform = -1;
-bambusfarm_Tswiftie = 5;
-bambusfarm_ShakeItOff = 17503;
-bambusfarm_sync = true;
-bambusfarm_hacker = false;
-bambusfarm_redgull_effect = time;
-bambusfarm_is_processing = false;
-bambusfarm_bail_paid = false;
-bambusfarm_impound_inuse = false;
-bambusfarm_diagWaiting = false;
-bambusfarm_action_inUse = false;
-bambusfarm_spikestrip = ObjNull;
-bambusfarm_theLappi = ObjNull;
-bambusfarm_bet = false;
-bambusfarm_knockout = false;
-bambusfarm_interrupted = false;
-bambusfarm_respawned = false;
-bambusfarm_removeWanted = false;
-bambusfarm_action_gathering = false;
-bambusfarm_action_gatheringPick = false;
+life_query_time = time;
+life_action_delay = time;
+life_trunk_vehicle = Objnull;
+life_session_completed = false;
+life_garage_store = false;
+life_session_tries = 0;
+life_net_dropped = false;
+life_hit_explosive = false;
+life_siren_active = false;
+life_clothing_filter = 0;
+life_clothing_uniform = -1;
+life_Tswiftie = 5;
+life_ShakeItOff = 17503;
+life_sync = true;
+life_hacker = false;
+life_redgull_effect = time;
+life_is_processing = false;
+life_bail_paid = false;
+life_impound_inuse = false;
+life_diagWaiting = false;
+life_action_inUse = false;
+life_spikestrip = ObjNull;
+life_theLappi = ObjNull;
+life_bet = false;
+life_knockout = false;
+life_interrupted = false;
+life_respawned = false;
+life_removeWanted = false;
+life_action_gathering = false;
+life_action_gatheringPick = false;
 SzoneXW = [safezoneX + safezoneW - 0.89,0.50];	//was tolles
 SzoneYH = [safezoneY + safezoneH - 1.28,0.7];	//nochwas tolles
 DonatorBuyChange = 1;
 DonatorBuyChangeCar = 1;
 Pay2Don = ceil(random 5000);
 Pay1Don = ceil(random 1500);
-bambusfarm_Tankt = false;
-bambusfarm_BenzinPreis = 150;
-bambusfarm_KerosinPreis = 150;
-bambusfarm_BuyAble = 0;			//Item auf Lager? 0 = Nein || 1 = Ja
-bambusfarm_IsBuying = 0;			//Bereits am kaufen? 0 = Nein ||1 = Ja
-bambusfarm_BenzinFuellen = 0;
-bambusfarm_Tage = 0;									//wann ist die Periode des Servers wieder f‰llig? (Miete - muﬂ gesetzt sein)
-bambusfarm_Karma = 0;								//... is a bitch! (Karma-sys - muﬂ gesetzt sein)
-bambusfarm_MieteAbfrage = 0;							//macht Mietabfrage/zahlt gerade?
-bambusfarm_messages = [];
-bambusfarm_positions = [];
-bambusfarm_names = [];
-bambusfarm_player = [];
+life_Tankt = false;
+life_BenzinPreis = 150;
+life_KerosinPreis = 150;
+life_BuyAble = 0;			//Item auf Lager? 0 = Nein || 1 = Ja
+life_IsBuying = 0;			//Bereits am kaufen? 0 = Nein ||1 = Ja
+life_BenzinFuellen = 0;
+life_Tage = 0;									//wann ist die Periode des Servers wieder f‰llig? (Miete - muﬂ gesetzt sein)
+life_Karma = 0;								//... is a bitch! (Karma-sys - muﬂ gesetzt sein)
+life_MieteAbfrage = 0;							//macht Mietabfrage/zahlt gerade?
+life_messages = [];
+life_positions = [];
+life_names = [];
+life_player = [];
 
 
 PayDynamicDonator = Pay1Don + Pay2Don + floor(random 300);
 
 //Persistent Saving
-__CONST__(bambusfarm_save_civ,true); //Save weapons for civs?
-__CONST__(bambusfarm_save_yinv,true); //Save Y-Inventory for players?
+__CONST__(life_save_civ,true); //Save weapons for civs?
+__CONST__(life_save_yinv,true); //Save Y-Inventory for players?
 
 //Revive constant variables.
-__CONST__(bambusfarm_revive_cops,false); //Set to false if you don't want cops to be able to revive downed players.
-__CONST__(bambusfarm_revive_fee,250); //Fee for players to pay when revived.
+__CONST__(life_revive_cops,false); //Set to false if you don't want cops to be able to revive downed players.
+__CONST__(life_revive_fee,250); //Fee for players to pay when revived.
 
 //House Limit
-__CONST__(bambusfarm_houseLimit,5); //Maximum amount of houses a player can buy
+__CONST__(life_houseLimit,5); //Maximum amount of houses a player can buy
 
 //Gang related stuff?
-__CONST__(bambusfarm_gangPrice,75000); //Price for creating a gang (They're all persistent so keep it high to avoid 345345345 gangs).
-__CONST__(bambusfarm_gangUpgradeBase,10000); //MASDASDASD
-__CONST__(bambusfarm_gangUpgradeMultipler,2.5); //BLAH
+__CONST__(life_gangPrice,75000); //Price for creating a gang (They're all persistent so keep it high to avoid 345345345 gangs).
+__CONST__(life_gangUpgradeBase,10000); //MASDASDASD
+__CONST__(life_gangUpgradeMultipler,2.5); //BLAH
 
-__CONST__(bambusfarm_enableFatigue,true); //Enable / Disable the ARMA 3 Fatigue System
+__CONST__(life_enableFatigue,true); //Enable / Disable the ARMA 3 Fatigue System
 
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
-bambusfarm_clothing_purchase = [-1,-1,-1,-1,-1];
+life_clothing_purchase = [-1,-1,-1,-1,-1];
 /*
 *****************************
 ****** Weight Variables *****
 *****************************
 */
-bambusfarm_maxWeight = 24; //Identifies the max carrying weight (gets adjusted throughout game when wearing different types of clothing).
-bambusfarm_maxWeightT = 24; //Static variable representing the players max carrying weight on start.
-bambusfarm_carryWeight = 0; //Represents the players current inventory weight (MUST START AT 0).
+life_maxWeight = 24; //Identifies the max carrying weight (gets adjusted throughout game when wearing different types of clothing).
+life_maxWeightT = 24; //Static variable representing the players max carrying weight on start.
+life_carryWeight = 0; //Represents the players current inventory weight (MUST START AT 0).
 
 /*
 *****************************
 ****** bambusfarm Variables *******
 *****************************
 */
-bambusfarm_net_dropped = false;
-bambusfarm_hit_explosive = false;
-bambusfarm_siren_active = false;
-bambusfarm_bank_fail = false;
-bambusfarm_use_atm = true;
-bambusfarm_is_arrested = false;
-bambusfarm_delivery_in_progress = false;
-bambusfarm_action_in_use = false;
-bambusfarm_thirst = 100;
-bambusfarm_hunger = 100;
+life_net_dropped = false;
+life_hit_explosive = false;
+life_siren_active = false;
+life_bank_fail = false;
+life_use_atm = true;
+life_is_arrested = false;
+life_delivery_in_progress = false;
+life_action_in_use = false;
+life_thirst = 100;
+life_hunger = 100;
 
-bambusfarm_drugged_weed = -1;
-bambusfarm_drugged_weed_duration = 3;
-__CONST__(bambusfarm_paycheck_period,5); //Five minutes
-__CONST__(bambusfarm_steuer_period,10); //Five minutes
-bambusfarm_TASCHENGELD = 0;
-__CONST__(bambusfarm_impound_car,350);
-__CONST__(bambusfarm_impound_boat,250);
-__CONST__(bambusfarm_impound_air,850);
-bambusfarm_istazed = false;
-bambusfarm_my_gang = ObjNull;
+life_drugged_weed = -1;
+life_drugged_weed_duration = 3;
+__CONST__(life_paycheck_period,5); //Five minutes
+__CONST__(life_steuer_period,10); //Five minutes
+life_TASCHENGELD = 0;
+__CONST__(life_impound_car,350);
+__CONST__(life_impound_boat,250);
+__CONST__(life_impound_air,850);
+life_istazed = false;
+life_my_gang = ObjNull;
 
-bambusfarm_vehicles = [];
+life_vehicles = [];
 bank_robber = [];
 switch (playerSide) do
 {
 	case west:
 	{
-		bambusfarm_BANK = 70000; //Starting Bank Money
-		bambusfarm_paycheck = 500; //Paycheck Amount
+		life_BANK = 70000; //Starting Bank Money
+		life_paycheck = 500; //Paycheck Amount
 	};
 	case civilian:
 	{
-		bambusfarm_BANK = 30000; //Starting Bank Money
-		bambusfarm_paycheck = 350; //Paycheck Amount
+		life_BANK = 30000; //Starting Bank Money
+		life_paycheck = 350; //Paycheck Amount
 	};
 
 	case independent: {
-		bambusfarm_BANK = 65000;
-		bambusfarm_paycheck = 450;
+		life_BANK = 65000;
+		life_paycheck = 450;
 	};
 };
 
-bambusfarm_dp_points = [
+life_dp_points = [
     "dp_1",
     "dp_2",
     "dp_3",
@@ -163,7 +163,7 @@ bambusfarm_dp_points = [
     "dp_25"
 ];
 
-bambusfarm_MenuContent = [
+life_MenuContent = [
 	["Willkommen","Willkommen auf Bambusfarm Community","Herzlich willkommen mein Freund!<br/> Wir w¸nschen dir viel Spaﬂ auf unserem Server bitte halte dich immer an die Regeln, die anderen tun es schlieﬂlich auch<br/>! Desweitere, riskier bitte nicht zu oft dein Leben! Bei fragen bitte sofort im TS melden oder schreib uns eine E-Mail conntact@bambusfarm.net."],
 	["Kontakt","So kannst du uns erreichen","<a color='#D0E354' href='http://www.teamspeak.com/invite/ts.bambusfarm.net/'>Teamspeak</a><br/><br/><a color='#D0E354' href='http://bambusfarm.net'>Webseite</a><br/><br/><a color='#D0E354' href='http://bambusfarm.net/app/forum/4-changelog'>Changelog</a> <br/><br/><a color='#D0E354' href='http://bambusfarm.net/app/forum/10-ankundigungen/6-serverregeln'>Regeln</a>"],
 	//["Illegale Lizenzen","Illegale Lizenzen","F¸hrerschein -> 500<br/>Bootscheinw-> 1000<br/>Pilotenschein -> 25000<br/>Waffenschein -> 10000<br/>Tauschschein -> 2000<br/>÷lbohrungslizenz -> 10000<br/>Heroinlizenz -> 25000<br/>Cannabislizenz -> 19500<br/>Rebelenlizenz -> 75000<br/>LKW-F¸hrerschein -> 20000<br/>Diamantenlizenz ->35000<br/>Salzlizenz -> 12000<br/>Kokainlizenz -> 30000<br/>Sandlizenz -> 14500<br/>Eisenlizenz -> 9500<br/>Kupferlizenz -> 8000<br/>Zementlizenz -> 6500<br/>Hausbesitzeruhrkunde -> 75000"],
@@ -179,77 +179,77 @@ bambusfarm_MenuContent = [
 /*
 	Master Array of items?
 */
-bambusfarm_vShop_rentalOnly = ["B_MRAP_01_hmg_F","B_G_Offroad_01_armed_F"];
-__CONST__(bambusfarm_vShop_rentalOnly,bambusfarm_vShop_rentalOnly); //These vehicles can never be bought and only 'rented'. Used as a balancer & money sink. If you want your server to be chaotic then fine.. Remove it..
+life_vShop_rentalOnly = ["B_MRAP_01_hmg_F","B_G_Offroad_01_armed_F"];
+__CONST__(life_vShop_rentalOnly,life_vShop_rentalOnly); //These vehicles can never be bought and only 'rented'. Used as a balancer & money sink. If you want your server to be chaotic then fine.. Remove it..
 
-bambusfarm_inv_items =
+life_inv_items =
 [
-	"bambusfarm_inv_oilu",
-	"bambusfarm_inv_oilp",
-	"bambusfarm_inv_heroinu",
-	"bambusfarm_inv_heroinp",
-	"bambusfarm_inv_cannabis",
-	"bambusfarm_inv_marijuana",
-	"bambusfarm_inv_apple",
-	"bambusfarm_inv_rabbit",
-	"bambusfarm_inv_salema",
-	"bambusfarm_inv_ornate",
-	"bambusfarm_inv_mackerel",
-	"bambusfarm_inv_tuna",
-	"bambusfarm_inv_mullet",
-	"bambusfarm_inv_catshark",
-	"bambusfarm_inv_turtle",
-	"bambusfarm_inv_fishingpoles",
-	"bambusfarm_inv_water",
-	"bambusfarm_inv_donuts",
-	"bambusfarm_inv_turtlesoup",
-	"bambusfarm_inv_coffee",
-	"bambusfarm_inv_fuelF",
-	"bambusfarm_inv_fuelE",
-	"bambusfarm_inv_pickaxe",
-	"bambusfarm_inv_copperore",
-	"bambusfarm_inv_ironore",
-	"bambusfarm_inv_ironr",
-	"bambusfarm_inv_copperr",
-	"bambusfarm_inv_sand",
-	"bambusfarm_inv_salt",
-	"bambusfarm_inv_saltr",
-	"bambusfarm_inv_glass",
-	"bambusfarm_inv_tbacon",
-	"bambusfarm_inv_lockpick",
-	"bambusfarm_inv_redgull",
-	"bambusfarm_inv_peach",
-	"bambusfarm_inv_diamond",
-	"bambusfarm_inv_coke",
-	"bambusfarm_inv_cokep",
-	"bambusfarm_inv_diamondr",
-	"bambusfarm_inv_spikeStrip",
-	"bambusfarm_inv_rock",
-	"bambusfarm_inv_cement",
-	"bambusfarm_inv_goldbar",
-	"bambusfarm_inv_blastingcharge",
-	"bambusfarm_inv_boltcutter",
-	"bambusfarm_inv_defusekit",
-	"bambusfarm_inv_storagesmall",
-	"bambusfarm_inv_storagebig",
-	"bambusfarm_inv_aktie_FUX",
-	"bambusfarm_inv_aktie_windoof",
-	"bambusfarm_inv_aktie_doller",
-	"bambusfarm_inv_aktie_oel",
-	"bambusfarm_inv_aktie_linux",
-	"bambusfarm_inv_aktie_gold",
-	"bambusfarm_inv_aktie_kupfer",
-	"bambusfarm_inv_aktie_facebak",
-	"bambusfarm_inv_aktie_altis",
-	"bambusfarm_inv_aktie_stratis",
-	"bambusfarm_inv_Platzhalter",
-	"bambusfarm_inv_handcuffs",
-	"bambusfarm_inv_Schere",
-	"bambusfarm_inv_laptop"
+	"life_inv_oilu",
+	"life_inv_oilp",
+	"life_inv_heroinu",
+	"life_inv_heroinp",
+	"life_inv_cannabis",
+	"life_inv_marijuana",
+	"life_inv_apple",
+	"life_inv_rabbit",
+	"life_inv_salema",
+	"life_inv_ornate",
+	"life_inv_mackerel",
+	"life_inv_tuna",
+	"life_inv_mullet",
+	"life_inv_catshark",
+	"life_inv_turtle",
+	"life_inv_fishingpoles",
+	"life_inv_water",
+	"life_inv_donuts",
+	"life_inv_turtlesoup",
+	"life_inv_coffee",
+	"life_inv_fuelF",
+	"life_inv_fuelE",
+	"life_inv_pickaxe",
+	"life_inv_copperore",
+	"life_inv_ironore",
+	"life_inv_ironr",
+	"life_inv_copperr",
+	"life_inv_sand",
+	"life_inv_salt",
+	"life_inv_saltr",
+	"life_inv_glass",
+	"life_inv_tbacon",
+	"life_inv_lockpick",
+	"life_inv_redgull",
+	"life_inv_peach",
+	"life_inv_diamond",
+	"life_inv_coke",
+	"life_inv_cokep",
+	"life_inv_diamondr",
+	"life_inv_spikeStrip",
+	"life_inv_rock",
+	"life_inv_cement",
+	"life_inv_goldbar",
+	"life_inv_blastingcharge",
+	"life_inv_boltcutter",
+	"life_inv_defusekit",
+	"life_inv_storagesmall",
+	"life_inv_storagebig",
+	"life_inv_aktie_FUX",
+	"life_inv_aktie_windoof",
+	"life_inv_aktie_doller",
+	"life_inv_aktie_oel",
+	"life_inv_aktie_linux",
+	"life_inv_aktie_gold",
+	"life_inv_aktie_kupfer",
+	"life_inv_aktie_facebak",
+	"life_inv_aktie_altis",
+	"life_inv_aktie_stratis",
+	"life_inv_Platzhalter",
+	"life_inv_handcuffs",
+	"life_inv_Schere",
+	"life_inv_laptop"
 ];
 
 //[shortVar,reward]
-bambusfarm_illegal_items = [["heroinu",1200],["handcuffs",200],["heroinp",2500],["cocaine",1500],["cocainep",3500],["marijuana",2000],["turtle",3000],["blastingcharge",10000],["boltcutter",500]];
+life_illegal_items = [["heroinu",1200],["handcuffs",200],["heroinp",2500],["cocaine",1500],["cocainep",3500],["marijuana",2000],["turtle",3000],["blastingcharge",10000],["boltcutter",500]];
 
 
 /*
@@ -349,7 +349,7 @@ buy_array =
 ];
 __CONST__(buy_array,buy_array);
 
-bambusfarm_weapon_shop_array =
+life_weapon_shop_array =
 [
 	["arifle_sdar_F",0],
 	["hgun_P07_snds_F",0],
@@ -393,8 +393,8 @@ bambusfarm_weapon_shop_array =
 	["30Rnd_45ACP_Mag_SMG_01",0],
 	["30Rnd_9x21_Mag",0]
 ];
-__CONST__(bambusfarm_weapon_shop_array,bambusfarm_weapon_shop_array);
-bambusfarm_garage_prices =
+__CONST__(life_weapon_shop_array,life_weapon_shop_array);
+life_garage_prices =
 [
 	["B_Quadbike_01_F",50],
 	["C_Hatchback_01_F",175],
@@ -434,9 +434,9 @@ bambusfarm_garage_prices =
 	["B_Truck_01_mover_F",1750],
 	["O_Truck_03_device_F",1750]
 ];
-__CONST__(bambusfarm_garage_prices,bambusfarm_garage_prices);
+__CONST__(life_garage_prices,life_garage_prices);
 
-bambusfarm_garage_sell =
+life_garage_sell =
 [
 	["B_Quadbike_01_F",500],
 	["C_Hatchback_01_F",2000],
@@ -476,12 +476,12 @@ bambusfarm_garage_sell =
 	["B_Truck_01_mover_F",15000],
 	["O_Truck_03_device_F",1750]
 ];
-__CONST__(bambusfarm_garage_sell,bambusfarm_garage_sell);
+__CONST__(life_garage_sell,life_garage_sell);
 
 //Setup variable inv vars.
-{missionNamespace setVariable[_x,0];} foreach bambusfarm_inv_items;
+{missionNamespace setVariable[_x,0];} foreach life_inv_items;
 //Licenses [license var, civ/cop]
-bambusfarm_licenses =
+life_licenses =
 [
 	["license_cop_air","cop"],
 	["license_cop_swat","cop"],
@@ -510,4 +510,4 @@ bambusfarm_licenses =
   ];
 
 //Setup License Variables
-{missionNamespace setVariable[(_x select 0),false];} foreach bambusfarm_licenses;
+{missionNamespace setVariable[(_x select 0),false];} foreach life_licenses;

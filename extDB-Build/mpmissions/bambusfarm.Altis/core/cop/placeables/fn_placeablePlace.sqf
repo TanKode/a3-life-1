@@ -7,15 +7,15 @@ Disclaimer: Don't be a asshole and pass this off as your own or become a KAI and
 P.S. - Don't be a faggot like i know some of you all will be.
 */
 disableSerialization;
-if (count bambusfarm_bar_placey >= bambusfarm_bar_limit) exitWith { hint "You've reached the limit of objects you can place."; };
+if (count life_bar_placey >= life_bar_limit) exitWith { hint "You've reached the limit of objects you can place."; };
 _display = findDisplay 20000;
 _placeables = _display displayCtrl 20001;
 _className = lbData[20001, lbCurSel (20001)];
 closeDialog 0;
-bambusfarm_barrier_active = true;
+life_barrier_active = true;
 _allowMoveDistance = 50;
 _object = _className createVehicle (position player);
-bambusfarm_barrier_activeObj = _object;
+life_barrier_activeObj = _object;
 _attachPos = [0, 3, 0.5];
 _object attachTo[player, _attachPos];
 _object enableSimulationGlobal false;
@@ -23,9 +23,9 @@ _originalPos = position _object;
 _playerOriginalPos = position player;
 waitUntil
 {
-    if (bambusfarm_barrier_activeObj distance _originalPos > _allowMoveDistance || player distance _playerOriginalPos > _allowMoveDistance) then {
-        [true] call bambusfarm_fnc_placeableCancel;
+    if (life_barrier_activeObj distance _originalPos > _allowMoveDistance || player distance _playerOriginalPos > _allowMoveDistance) then {
+        [true] call life_fnc_placeableCancel;
     };
     sleep 1;
-    !bambusfarm_barrier_active;
+    !life_barrier_active;
 };

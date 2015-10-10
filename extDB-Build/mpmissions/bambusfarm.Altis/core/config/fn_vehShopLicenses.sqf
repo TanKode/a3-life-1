@@ -15,7 +15,7 @@ _ret = false;
 
 if(_veh == "B_Quadbike_01_F") exitWith {true}; //ATV's don't need to require a license anymore.
 
-switch (bambusfarm_veh_shop select 0) do
+switch (life_veh_shop select 0) do
 {
 	case "med_shop": {_ret = true;};
 	case "kart_shop": {_ret = license_civ_driver;};

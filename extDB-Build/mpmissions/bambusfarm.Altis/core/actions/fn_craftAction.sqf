@@ -15,14 +15,14 @@ if((lbCurSel 669) == -1) exitWith {hint "Du musst erst etwas auswählen!";};
 _item = lbData[669,(lbCurSel 669)];
 _allMaterial = true;
 _itemFilter = lbData[673,(lbCurSel 673)];
-_weight = ([_item] call bambusfarm_fnc_itemWeight);
+_weight = ([_item] call life_fnc_itemWeight);
 _craftingzones = ["crafting_spawn_1","crafting_spawn_2"];
 _spawnPoint = "";
 _craftPoints = getPos player nearestObject "Land_HelipadSquare_F";
 
 _matsNeed = 0;
 
-_config = [_itemFilter] call bambusfarm_fnc_craftCfg;
+_config = [_itemFilter] call life_fnc_craftCfg;
 {
 
 	if(_item == _x select 0)then
@@ -31,7 +31,7 @@ _config = [_itemFilter] call bambusfarm_fnc_craftCfg;
 		_invSize = count _matsNeed;
 		for [{_i=0},{_i<_invSize-1},{_i=_i+2}] do {
 
-			_str = [_matsNeed select _i] call bambusfarm_fnc_varToStr;
+			_str = [_matsNeed select _i] call life_fnc_varToStr;
 			_matsNum = _matsNeed select _i+1;
 
 			if((missionNamespace getVariable (_matsNeed select _i)) < _matsNum) exitWith {_allMaterial = false;};
@@ -66,7 +66,7 @@ if(_itemFilter == "uniform" && uniform player != "") exitWith{
 		hint "Du hast bereits was an! Mach dich nackt und versuche es nochmal.";
 };
 
-if(_itemFilter == "item" && (bambusfarm_carryWeight + _weight) > bambusfarm_maxWeight) exitWith {
+if(_itemFilter == "item" && (life_carryWeight + _weight) > life_maxWeight) exitWith {
 	hint "Du kannst das so nicht bauen! Vielleicht bist du schon voll, oder hast eine Waffe in der Hand.";
 };
 
@@ -98,9 +98,9 @@ _oldItem = _matsNeed;
 _newItem = _item;
 
 if(_itemFilter == "item") then{
-	_itemName = [_newItem] call bambusfarm_fnc_varToStr;
+	_itemName = [_newItem] call life_fnc_varToStr;
 } else {
-	_itemInfo = [_newItem] call bambusfarm_fnc_fetchCfgDetails;
+	_itemInfo = [_newItem] call life_fnc_fetchCfgDetails;
 	_itemName = _itemInfo select 1;
 };
 
@@ -108,8 +108,8 @@ _upp = format["Stelle %1 her...",_itemName];
 closeDialog 0;
 
 //Setup our progress bar.
-5 cutRsc ["bambusfarm_progress","PLAIN"];
-_ui = uiNameSpace getVariable "bambusfarm_progress";
+5 cutRsc ["life_progress","PLAIN"];
+_ui = uiNameSpace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format["%2 (1%1)...","%",_upp];
@@ -133,20 +133,20 @@ while{true} do
 	if(_cP >= 1) exitWith {};
 	if(!alive player) exitWith {};
 	if(player != vehicle player) exitWith {};
-	if(bambusfarm_interrupted) exitWith {};
+	if(life_interrupted) exitWith {};
 };
 
 _removeItemSuccess = true;
 _invSize = count _oldItem;
 for [{_i=0},{_i<_invSize-1},{_i=_i+2}] do {
 
-	_handledItem = [_oldItem select _i,1] call bambusfarm_fnc_varHandle;
-	if(!([false,_handledItem,_oldItem select _i+1] call bambusfarm_fnc_handleInv)) exitWith {_removeItemSuccess = false;};
+	_handledItem = [_oldItem select _i,1] call life_fnc_varHandle;
+	if(!([false,_handledItem,_oldItem select _i+1] call life_fnc_handleInv)) exitWith {_removeItemSuccess = false;};
 };
-if(!_removeItemSuccess) exitWith {5 cutText ["","PLAIN"]; bambusfarm_is_processing = false;};
-[] call bambusfarm_fnc_p_updateMenu;
+if(!_removeItemSuccess) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
+[] call life_fnc_p_updateMenu;
 
-bambusfarm_is_processing = true;
+life_is_processing = true;
 
 while{true} do
 {
@@ -162,13 +162,13 @@ if(_itemFilter == "backpack") then{
 		player addBackpack _newItem;
 	}else{
 		hint "Du hast bereit einen Rucksack! Pack den alten erstmal weg.";
-		bambusfarm_is_processing = false;
+		life_is_processing = false;
 	};
 };
 
 if(_itemFilter == "item") then{
-	_handledItem = [_newItem,1] call bambusfarm_fnc_varHandle;
-	[true,_handledItem,1] call bambusfarm_fnc_handleInv;
+	_handledItem = [_newItem,1] call life_fnc_varHandle;
+	[true,_handledItem,1] call life_fnc_handleInv;
 };
 
 if(_itemFilter == "uniform") then{
@@ -176,7 +176,7 @@ if(_itemFilter == "uniform") then{
 		player addUniform _newItem;
 	}else{
 		hint "Du hast bereits was an! Mach dich nackt und versuch es nochmal.";
-		bambusfarm_is_processing = false;
+		life_is_processing = false;
 	};
 };
 
@@ -185,7 +185,7 @@ if(_itemFilter == "veste") then{
 		player addVest _newItem;
 	}else{
 		hint "Du hast bereits was an! Mach dich nackt und versuch es nochmal.";
-		bambusfarm_is_processing = false;
+		life_is_processing = false;
 	};
 };
 
@@ -199,10 +199,10 @@ if(_itemFilter == "weapon") then{
 		}else{
 			5 cutText ["","PLAIN"];
 			for [{_i=0},{_i<_invSize-1},{_i=_i+2}] do {
-				_handledItem = [_oldItem select _i,1] call bambusfarm_fnc_varHandle;
-				[true,_handledItem,_oldItem select _i+1] call bambusfarm_fnc_handleInv;
+				_handledItem = [_oldItem select _i,1] call life_fnc_varHandle;
+				[true,_handledItem,_oldItem select _i+1] call life_fnc_handleInv;
 			};
-			bambusfarm_is_processing = false;
+			life_is_processing = false;
 		};
 	};
 };
@@ -216,10 +216,10 @@ if(_itemFilter == "magazine") then{
 		}else{
 			5 cutText ["","PLAIN"];
 			for [{_i=0},{_i<_invSize-1},{_i=_i+2}] do {
-				_handledItem = [_oldItem select _i,1] call bambusfarm_fnc_varHandle;
-				[true,_handledItem,_oldItem select _i+1] call bambusfarm_fnc_handleInv;
+				_handledItem = [_oldItem select _i,1] call life_fnc_varHandle;
+				[true,_handledItem,_oldItem select _i+1] call life_fnc_handleInv;
 			};
-			bambusfarm_is_processing = false;
+			life_is_processing = false;
 		};
 	};
 };
@@ -233,10 +233,10 @@ if(_itemFilter == "attachments") then{
 		}else{
 			5 cutText ["","PLAIN"];
 			for [{_i=0},{_i<_invSize-1},{_i=_i+2}] do {
-				_handledItem = [_oldItem select _i,1] call bambusfarm_fnc_varHandle;
-				[true,_handledItem,_oldItem select _i+1] call bambusfarm_fnc_handleInv;
+				_handledItem = [_oldItem select _i,1] call life_fnc_varHandle;
+				[true,_handledItem,_oldItem select _i+1] call life_fnc_handleInv;
 			};
-			bambusfarm_is_processing = false;
+			life_is_processing = false;
 		};
 	};
 };
@@ -250,10 +250,10 @@ if(_itemFilter == "zubehoer") then{
 		}else{
 			5 cutText ["","PLAIN"];
 			for [{_i=0},{_i<_invSize-1},{_i=_i+2}] do {
-				_handledItem = [_oldItem select _i,1] call bambusfarm_fnc_varHandle;
-				[true,_handledItem,_oldItem select _i+1] call bambusfarm_fnc_handleInv;
+				_handledItem = [_oldItem select _i,1] call life_fnc_varHandle;
+				[true,_handledItem,_oldItem select _i+1] call life_fnc_handleInv;
 			};
-			bambusfarm_is_processing = false;
+			life_is_processing = false;
 		};
 	};
 };
@@ -263,16 +263,16 @@ if(_itemFilter == "vehicle") then
     _vehicle = createVehicle [_newItem, (_craftPoints), [], 0, "NONE"];
 	_vehicle setFuel 0;
 	_vehicle lock 2;
-	//_colorIndex = [_newItem] call bambusfarm_fnc_vehicleColorCraftCfg;
+	//_colorIndex = [_newItem] call life_fnc_vehicleColorCraftCfg;
 	_vehicle setVectorUp (surfaceNormal (getMarkerPos _spawnPoint));
 	_vehicle setDir (markerDir _spawnPoint);
 	_vehicle setPos (getMarkerPos _spawnPoint);
-	[[(getPlayerUID player),playerSide,_vehicle],"TON_fnc_vehicleCreate",false,false] spawn bambusfarm_fnc_mp;
-	[[_vehicle],"bambusfarm_fnc_colorVehicle",true,false] call bambusfarm_fnc_mp;
+	[[(getPlayerUID player),playerSide,_vehicle],"TON_fnc_vehicleCreate",false,false] spawn life_fnc_mp;
+	[[_vehicle],"life_fnc_colorVehicle",true,false] call life_fnc_mp;
 	_vehicle setVariable["trunk_in_use",false,true];
 	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
-	bambusfarm_vehicles pushBack _vehicle;
-	[[getPlayerUID player,playerSide,_vehicle,1],"TON_fnc_keyManagement",false,false] spawn bambusfarm_fnc_MP;
+	life_vehicles pushBack _vehicle;
+	[[getPlayerUID player,playerSide,_vehicle,1],"TON_fnc_keyManagement",false,false] spawn life_fnc_MP;
 
 	_vehicle setHitPointDamage ["HitLFWheel", 1];   _vehicle setHitPointDamage ["HitRFWheel", 1];
 	_vehicle setHitPointDamage ["HitLF2Wheel", 1];	_vehicle setHitPointDamage ["HitRF2Wheel", 1];
@@ -285,9 +285,9 @@ if(_itemFilter == "vehicle") then
 
 5 cutText ["","PLAIN"];
 //titleText[format["Du hast folgendes hergestellt: %1",_itemName],"PLAIN"];
-[ format ["<t color='#EC891D'><t size='1'>Skillstufe %1</t></t><br/> (%2)<br/>Hergestellt: %2", bambusfarm_SkillBauen+1, _itemName], SzoneXW, SzoneYH, 5, 0.25 ] spawn BIS_fnc_dynamicText;
-bambusfarm_is_processing = false;
-bambusfarm_SkillBauen = bambusfarm_SkillBauen +1;
+[ format ["<t color='#EC891D'><t size='1'>Skillstufe %1</t></t><br/> (%2)<br/>Hergestellt: %2", life_SkillBauen+1, _itemName], SzoneXW, SzoneYH, 5, 0.25 ] spawn BIS_fnc_dynamicText;
+life_is_processing = false;
+life_SkillBauen = life_SkillBauen +1;
 [] call SOCK_fnc_updateRequest;
 [9] call SOCK_fnc_updatePartial;
 [10] call SOCK_fnc_updatePartial;

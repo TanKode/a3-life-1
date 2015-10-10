@@ -1,6 +1,6 @@
 closeDialog 0;
 AS_received = false;
-[[player],"TON_fnc_getActions",false,false] spawn bambusfarm_fnc_mp;
+[[player],"TON_fnc_getActions",false,false] spawn life_fnc_mp;
 waitUntil {AS_received};
 if (AS_level < 1) exitWith {hint "You have not been whitelisted for the Admin-Panel";};
 

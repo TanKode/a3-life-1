@@ -14,5 +14,5 @@ if(player != _unit) exitWith {};
 if(!([_val] call TON_fnc_isnumber)) exitWith {};
 if(_unit == _from) exitWith {}; //Bad boy, trying to exploit his way to riches.
 
-hint format[localize "STR_NOTF_GivenMoney",_from getVariable["realname",name _from],[(parseNumber (_val))] call bambusfarm_fnc_numberText];
-bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD + (parseNumber(_val));
+hint format[localize "STR_NOTF_GivenMoney",_from getVariable["realname",name _from],[(parseNumber (_val))] call life_fnc_numberText];
+life_TASCHENGELD = life_TASCHENGELD + (parseNumber(_val));

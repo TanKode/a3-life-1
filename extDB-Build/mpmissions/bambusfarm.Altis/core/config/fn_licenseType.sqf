@@ -79,5 +79,5 @@ switch (_mode) do
 	};
 };
 
-_ret = [_var,(if(_var != "") then {([_var] call bambusfarm_fnc_varToStr)})];
+_ret = [_var,(if(_var != "") then {([_var] call life_fnc_varToStr)})];
 _ret;

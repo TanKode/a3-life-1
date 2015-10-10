@@ -6,9 +6,9 @@
 */
 private["_Base","_BaseType","_CargoType","_Compatible","_AnimationType"];
 
-if(call (bambusfarm_mediclevel) <= 0) exitWith {};
+if(call (life_mediclevel) <= 0) exitWith {};
 if(side player != INDEPENDENT) exitWith {};
-bambusfarm_ADAC_vehicle = cursorTarget;
+life_ADAC_vehicle = cursorTarget;
 
 BaseLevel2 = ["C_Offroad_01_F"]; 
 BaseLevel3 = [];
@@ -36,21 +36,21 @@ nearestsupported = [];
 	if(format["%1%2%3",_p1,_p2,_p3] == "truetruetrue") then {nearestsupported pushBack _x};
 }
 forEach entities "Car";
-if(!(alive bambusfarm_ADAC_vehicle) || !(player distance bambusfarm_ADAC_vehicle <= 4)) exitWith {};
+if(!(alive life_ADAC_vehicle) || !(player distance life_ADAC_vehicle <= 4)) exitWith {};
 if(format["%1",nearestsupported] == "[]") exitWith {hint "Es wurde kein geeignetes Transportfahrzeug in der Nähe gefunden"};
-if(count crew bambusfarm_ADAC_vehicle > 0) exitWith {hint "Um ein Fahrzeug zu transportieren, dürfen sich keine Personen in diesem befinden"};
+if(count crew life_ADAC_vehicle > 0) exitWith {hint "Um ein Fahrzeug zu transportieren, dürfen sich keine Personen in diesem befinden"};
 _Base = (nearestsupported select 0);
 
 if((typeOf _Base) in BaseLevel2) then {_BaseType = 2};
 if((typeOf _Base) in BaseLevel3) then {_BaseType = 3};	
 if((typeOf _Base) in BaseLevel4) then {_BaseType = 4};
 
-if((typeOf bambusfarm_ADAC_vehicle) in CargoKarts) then {_CargoType = 1};
-if((typeOf bambusfarm_ADAC_vehicle) in CargoQuads) then {_CargoType = 2};
-if((typeOf bambusfarm_ADAC_vehicle) in CargoOffroad) then {_CargoType = 3};
-if((typeOf bambusfarm_ADAC_vehicle) in CargoLimo) then {_CargoType = 4};
-if((typeOf bambusfarm_ADAC_vehicle) in CargoSUV) then {_CargoType = 5};
-if((typeOf bambusfarm_ADAC_vehicle) in CargoBoxer) then {_CargoType = 6};
+if((typeOf life_ADAC_vehicle) in CargoKarts) then {_CargoType = 1};
+if((typeOf life_ADAC_vehicle) in CargoQuads) then {_CargoType = 2};
+if((typeOf life_ADAC_vehicle) in CargoOffroad) then {_CargoType = 3};
+if((typeOf life_ADAC_vehicle) in CargoLimo) then {_CargoType = 4};
+if((typeOf life_ADAC_vehicle) in CargoSUV) then {_CargoType = 5};
+if((typeOf life_ADAC_vehicle) in CargoBoxer) then {_CargoType = 6};
 
 _Compatible = false;
 
@@ -66,8 +66,8 @@ if(!_Compatible) exitWith {};
 
 _oldPos = position player;
 _oldDir = getDir player;
-bambusfarm_ADAC_vehicle = bambusfarm_ADAC_vehicle;
-player moveinDriver bambusfarm_ADAC_vehicle;
+life_ADAC_vehicle = life_ADAC_vehicle;
+player moveinDriver life_ADAC_vehicle;
 moveout player;
 player setPos _oldPos;
 player setDir _oldDir;
@@ -302,9 +302,9 @@ _UnLoad4 = {
 	detach _limo;
 };
 
-if(_AnimationType == 0) exitWith {[(nearestsupported select 0),bambusfarm_ADAC_vehicle]spawn _Load0};
-if(_AnimationType == 1) exitWith {[(nearestsupported select 0),bambusfarm_ADAC_vehicle]spawn _Load1};
-if(_AnimationType == 2) exitWith {[(nearestsupported select 0),bambusfarm_ADAC_vehicle]spawn _Load2};
-if(_AnimationType == 3) exitWith {[(nearestsupported select 0),bambusfarm_ADAC_vehicle]spawn _Load3};
-if(_AnimationType == 4) exitWith {[(nearestsupported select 0),bambusfarm_ADAC_vehicle]spawn _Load3};
-if(_AnimationType == 5) exitWith {[(nearestsupported select 0),bambusfarm_ADAC_vehicle]spawn _Load4};
+if(_AnimationType == 0) exitWith {[(nearestsupported select 0),life_ADAC_vehicle]spawn _Load0};
+if(_AnimationType == 1) exitWith {[(nearestsupported select 0),life_ADAC_vehicle]spawn _Load1};
+if(_AnimationType == 2) exitWith {[(nearestsupported select 0),life_ADAC_vehicle]spawn _Load2};
+if(_AnimationType == 3) exitWith {[(nearestsupported select 0),life_ADAC_vehicle]spawn _Load3};
+if(_AnimationType == 4) exitWith {[(nearestsupported select 0),life_ADAC_vehicle]spawn _Load3};
+if(_AnimationType == 5) exitWith {[(nearestsupported select 0),life_ADAC_vehicle]spawn _Load4};

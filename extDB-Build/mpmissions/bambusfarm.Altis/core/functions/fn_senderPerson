@@ -2,13 +2,13 @@ private["_unit"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _unit) exitWith {};
 if(player distance _unit > 7) exitWith {hint "Du musst dich näher an die Person stellen!"};
-//if(!([false,"sender",1] call bambusfarm_fnc_handleInv)) exitWith {};
+//if(!([false,"sender",1] call life_fnc_handleInv)) exitWith {};
 closeDialog 0;
 if(!(_unit isKindOf "Man")) exitWith {hint "Was willst du hier?"}; 
 
-bambusfarm_action_inUse = true;
+life_action_inUse = true;
 sleep 4;
-bambusfarm_action_inUse = false;
+life_action_inUse = false;
 titleText["Du hast einen Sender an den gesuchten angebracht.","PLAIN"];
 
 [_unit] spawn {

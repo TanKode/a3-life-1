@@ -14,8 +14,8 @@ _version = _display displayCtrl 1000;
 2 cutRsc ["playerHUD","PLAIN"];
 3 cutRsc ["crewListing","PLAIN"];
 _version ctrlSetText format["BETA: 0.%1.%2",(productVersion select 2),(productVersion select 3)];
-[] call bambusfarm_fnc_hudUpdate;
-[] spawn bambusfarm_fnc_crewListing;
+[] call life_fnc_hudUpdate;
+[] spawn life_fnc_crewListing;
 
 [] spawn
 {
@@ -24,6 +24,6 @@ _version ctrlSetText format["BETA: 0.%1.%2",(productVersion select 2),(productVe
 	{
 		_dam = damage player;
 		waitUntil {(damage player) != _dam};
-		[] call bambusfarm_fnc_hudUpdate;
+		[] call life_fnc_hudUpdate;
 	};
 };

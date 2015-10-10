@@ -17,5 +17,5 @@ if(isNull _spikeStrip) exitWith {}; //It was picked up?
 _vehicle = _nearVehicles select 0;
 
 if(isNil "_vehicle") exitWith {deleteVehicle _spikeStrip;};
-[[_vehicle],"bambusfarm_fnc_spikeStripEffect",_vehicle,false] spawn bambusfarm_fnc_MP;
+[[_vehicle],"life_fnc_spikeStripEffect",_vehicle,false] spawn life_fnc_MP;
 deleteVehicle _spikeStrip;

@@ -6,7 +6,7 @@ Disclaimer: Don't be a asshole and pass this off as your own or become a KAI and
 
 P.S. - Don't be a faggot like i know some of you all will be.
 */
-if (!bambusfarm_barrier_active) exitWith {}; //bad check?
-deleteVehicle bambusfarm_barrier_activeObj;
-bambusfarm_barrier_active = false;
-bambusfarm_barrier_activeObj = ObjNull;
+if (!life_barrier_active) exitWith {}; //bad check?
+deleteVehicle life_barrier_activeObj;
+life_barrier_active = false;
+life_barrier_activeObj = ObjNull;

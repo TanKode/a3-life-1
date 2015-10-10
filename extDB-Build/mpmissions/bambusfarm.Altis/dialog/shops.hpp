@@ -1,4 +1,4 @@
-class bambusfarm_weapon_shop
+class life_weapon_shop
 {
 	idd = 38400;
 	movingEnabled = false;
@@ -6,7 +6,7 @@ class bambusfarm_weapon_shop
 	
 	class controlsBackground
 	{
-		class RscTitleBackground : bambusfarm_RscText
+		class RscTitleBackground : life_RscText
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
@@ -14,7 +14,7 @@ class bambusfarm_weapon_shop
 			w = 0.32; h = (1 / 25);
 		};
 		
-		class Mainbackground : bambusfarm_RscText
+		class Mainbackground : life_RscText
 		{
 			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
@@ -22,7 +22,7 @@ class bambusfarm_weapon_shop
 			w = 0.32; h = 0.6 - (22 / 250);
 		};
 		
-		class Title : bambusfarm_RscTitle
+		class Title : life_RscTitle
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = 38401;
@@ -31,7 +31,7 @@ class bambusfarm_weapon_shop
 			w = 0.32; h = (1 / 25);
 		};
 		
-		class itemInfo : bambusfarm_RscStructuredText
+		class itemInfo : life_RscStructuredText
 		{
 			idc = 38404;
 			text = "";
@@ -40,10 +40,10 @@ class bambusfarm_weapon_shop
 			w = 0.2; h = 0.2;
 		};
 		
-		class FilterList : bambusfarm_RscCombo
+		class FilterList : life_RscCombo
 		{
 			idc = 38402;
-			onLBSelChanged = "_this call bambusfarm_fnc_weaponShopFilter";
+			onLBSelChanged = "_this call life_fnc_weaponShopFilter";
 			x = 0.11; y = 0.64;
 			w = 0.3; h = 0.035;
 		};
@@ -51,27 +51,27 @@ class bambusfarm_weapon_shop
 	
 	class controls
 	{
-		class itemList : bambusfarm_RscListBox
+		class itemList : life_RscListBox
 		{
 			idc = 38403;
-			onLBSelChanged = "_this call bambusfarm_fnc_weaponShopSelection";
+			onLBSelChanged = "_this call life_fnc_weaponShopSelection";
 			sizeEx = 0.035;
 			x = 0.11; y = 0.25;
 			w = 0.3; h = 0.38;
 		};
 		
-		class ButtonBuySell : bambusfarm_RscButtonMenu
+		class ButtonBuySell : life_RscButtonMenu
 		{
 			idc = 38405;
 			text = "$STR_Global_Buy";
-			onButtonClick = "[] spawn bambusfarm_fnc_weaponShopBuySell; true";
+			onButtonClick = "[] spawn life_fnc_weaponShopBuySell; true";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class ButtonClose : bambusfarm_RscButtonMenu
+		class ButtonClose : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Global_Close";

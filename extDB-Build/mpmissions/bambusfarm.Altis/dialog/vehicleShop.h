@@ -1,14 +1,14 @@
-class bambusfarm_Vehicle_Shop_v2
+class life_Vehicle_Shop_v2
 {
 	idd = 2300;
-	name="bambusfarm_vehicle_shop";
+	name="life_vehicle_shop";
 	movingEnabled = 0;
 	enableSimulation = 1;
 	onLoad = "ctrlShow [2330,false];";
 	
 	class controlsBackground
 	{
-		class bambusfarm_RscTitleBackground : bambusfarm_RscText
+		class life_RscTitleBackground : life_RscText
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
@@ -18,7 +18,7 @@ class bambusfarm_Vehicle_Shop_v2
 			h = (1 / 25);
 		};
 		
-		class MainBackground : bambusfarm_RscText
+		class MainBackground : life_RscText
 		{
 			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
@@ -28,7 +28,7 @@ class bambusfarm_Vehicle_Shop_v2
 			h = 0.7 - (22 / 250);
 		};
 		
-		class Title : bambusfarm_RscTitle
+		class Title : life_RscTitle
 		{
 			idc = 2301;
 			text = "";
@@ -38,7 +38,7 @@ class bambusfarm_Vehicle_Shop_v2
 			h = (1 / 25);
 		};
 		
-		class VehicleTitleBox : bambusfarm_RscText
+		class VehicleTitleBox : life_RscText
 		{
 			idc = -1;
 			text = "$STR_GUI_ShopStock";
@@ -48,7 +48,7 @@ class bambusfarm_Vehicle_Shop_v2
 			h = (1 / 25);
 		};
 		
-		class VehicleInfoHeader : bambusfarm_RscText
+		class VehicleInfoHeader : life_RscText
 		{
 			idc = 2330;
 			text = "$STR_GUI_VehInfo";
@@ -58,7 +58,7 @@ class bambusfarm_Vehicle_Shop_v2
 			h = (1 / 25);
 		};
 		
-		class CloseBtn : bambusfarm_RscButtonMenu
+		class CloseBtn : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Global_Close";
@@ -69,22 +69,22 @@ class bambusfarm_Vehicle_Shop_v2
 			h = (1 / 25);
 		};
 		
-		class RentCar : bambusfarm_RscButtonMenu
+		class RentCar : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Global_RentVeh";
-			onButtonClick = "[false] spawn bambusfarm_fnc_vehicleShopBuy;";
+			onButtonClick = "[false] spawn life_fnc_vehicleShopBuy;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 		
-		class BuyCar : bambusfarm_RscButtonMenu
+		class BuyCar : life_RscButtonMenu
 		{
 			idc = 2309;
 			text = "$STR_Global_Buy";
-			onButtonClick = "[true] spawn bambusfarm_fnc_vehicleShopBuy;";
+			onButtonClick = "[true] spawn life_fnc_vehicleShopBuy;";
 			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);
 			w = (6.25 / 40);
@@ -94,27 +94,27 @@ class bambusfarm_Vehicle_Shop_v2
 	
 	class controls
 	{
-		class VehicleList : bambusfarm_RscListBox
+		class VehicleList : life_RscListBox
 		{
 			idc = 2302;
 			text = "";
 			sizeEx = 0.04;
 			colorBackground[] = {0.1,0.1,0.1,0.9};
-			onLBSelChanged = "_this call bambusfarm_fnc_vehicleShopLBChange";
+			onLBSelChanged = "_this call life_fnc_vehicleShopLBChange";
 			
 			//Position & height
 			x = 0.11; y = 0.302;
 			w = 0.303; h = 0.49;
 		};
 		
-		class ColorList : bambusfarm_RscCombo
+		class ColorList : life_RscCombo
 		{
 			idc = 2304;
 			x = 0.11; y = 0.8;
 			w = 0.303; h = 0.03;
 		};
 		
-		class vehicleInfomationList : bambusfarm_RscStructuredText
+		class vehicleInfomationList : life_RscStructuredText
 		{
 			idc = 2303;
 			text = "";

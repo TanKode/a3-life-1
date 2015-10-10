@@ -30,12 +30,12 @@ if(!isNull _source) then {
 				
 				_damage = false;
 				if(_unit distance _source < _distance) then {
-					if(!bambusfarm_istazed && !(_unit getVariable["restrained",false])) then {
+					if(!life_istazed && !(_unit getVariable["restrained",false])) then {
 						if(_isVehicle && _isQuad) then {
 							player action ["Eject",vehicle player];
-							[_unit,_source] spawn bambusfarm_fnc_tazed;
+							[_unit,_source] spawn life_fnc_tazed;
 						} else {
-							[_unit,_source] spawn bambusfarm_fnc_tazed;
+							[_unit,_source] spawn life_fnc_tazed;
 						};
 					};
 				};
@@ -49,5 +49,5 @@ if(!isNull _source) then {
 	};
 };
 
-[] call bambusfarm_fnc_hudUpdate;
+[] call life_fnc_hudUpdate;
 _damage;

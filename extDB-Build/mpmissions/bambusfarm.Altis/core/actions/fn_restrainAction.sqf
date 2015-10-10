@@ -15,14 +15,14 @@ if(player == _unit) exitWith {};
 if(!isPlayer _unit) exitWith {};
 //Broadcast!
 
-if(bambusfarm_inv_handcuffs < 1) then
+if(life_inv_handcuffs < 1) then
 {
     hint "Du hast keine Handfesseln";
 } else {
-    bambusfarm_inv_handcuffs = bambusfarm_inv_handcuffs - 1;
+    life_inv_handcuffs = life_inv_handcuffs - 1;
     _unit say3D "handcuffs";
     _unit setVariable["restrained",true,true];
     hint "Du hast deinem Ziel Handfesseln angelegt";
-    [[player], "bambusfarm_fnc_restrain", _unit, false] spawn bambusfarm_fnc_MP;
-    [[0,"STR_NOTF_Restrained",true,[_unit getVariable["realname", name _unit], profileName]],"bambusfarm_fnc_broadcast",west,false] spawn bambusfarm_fnc_MP;
+    [[player], "life_fnc_restrain", _unit, false] spawn life_fnc_MP;
+    [[0,"STR_NOTF_Restrained",true,[_unit getVariable["realname", name _unit], profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 };

@@ -12,7 +12,7 @@ disableSerialization;
 if((lbCurSel 3502) == -1) exitWith {hint localize "STR_Civ_SelectItem";};
 _ctrl = ctrlSelData(3502);
 _num = ctrlText 3505;
-_safeInfo = bambusfarm_safeObj getVariable["safe",0];
+_safeInfo = life_safeObj getVariable["safe",0];
 
 //Error checks
 if(!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumFormat";};
@@ -22,11 +22,11 @@ if(_ctrl != "goldbar") exitWith {hint localize "STR_Cop_OnlyGold"};
 if(_num > _safeInfo) exitWith {hint format[localize "STR_Civ_IsntEnoughGold",_num];};
 
 //Secondary checks
-_num = [_ctrl,_num,bambusfarm_carryWeight,bambusfarm_maxWeight] call bambusfarm_fnc_calWeightDiff;
+_num = [_ctrl,_num,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_num == 0) exitWith {hint localize "STR_NOTF_InvFull"};
 
 
 //Take it
-if(!([true,_ctrl,_num] call bambusfarm_fnc_handleInv)) exitWith {hint localize "STR_NOTF_CouldntAdd";};
-bambusfarm_safeObj setVariable["safe",_safeInfo - _num,TRUE];
-[bambusfarm_safeObj] call bambusfarm_fnc_safeInventory;
+if(!([true,_ctrl,_num] call life_fnc_handleInv)) exitWith {hint localize "STR_NOTF_CouldntAdd";};
+life_safeObj setVariable["safe",_safeInfo - _num,TRUE];
+[life_safeObj] call life_fnc_safeInventory;

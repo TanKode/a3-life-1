@@ -18,11 +18,11 @@ switch (_side) do
 	{
 		if(_bool) then
 		{
-			bambusfarm_radio_west radioChannelAdd [_unit];
+			life_radio_west radioChannelAdd [_unit];
 		}
 			else
 		{
-			bambusfarm_radio_west radioChannelRemove [_unit];
+			life_radio_west radioChannelRemove [_unit];
 		};
 	};
 	
@@ -30,11 +30,11 @@ switch (_side) do
 	{
 		if(_bool) then
 		{
-			bambusfarm_radio_civ radioChannelAdd [_unit];
+			life_radio_civ radioChannelAdd [_unit];
 		}
 			else
 		{
-			bambusfarm_radio_civ radioChannelRemove [_unit];
+			life_radio_civ radioChannelRemove [_unit];
 		};
 	};
 	
@@ -42,11 +42,11 @@ switch (_side) do
 	{
 		if(_bool) then
 		{
-			bambusfarm_radio_indep radioChannelAdd [_unit];
+			life_radio_indep radioChannelAdd [_unit];
 		}
 			else
 		{
-			bambusfarm_radio_indep radioChannelRemove [_unit];
+			life_radio_indep radioChannelRemove [_unit];
 		};
 	};
 };

@@ -7,11 +7,11 @@
 */
 private["_dialog","_inv","_itemInfo","_filter"]; //Declare all private variables
 if(!dialog) then { //Verify if the window is open
-	createDialog "bambusfarm_craft";
+	createDialog "life_craft";
 };
 disableSerialization; //Disable Serialization
 
-if(bambusfarm_is_processing) exitWith{
+if(life_is_processing) exitWith{
 	closeDialog 2001;
 	closeDialog 0;
 };

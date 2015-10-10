@@ -9,11 +9,11 @@ private["_uid"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 if(_uid == "") exitWith {};
 
-_index = [_uid,bambusfarm_wanted_list] call TON_fnc_index;
+_index = [_uid,life_wanted_list] call TON_fnc_index;
 
 if(_index != -1) then
 {
-	bambusfarm_wanted_list set[_index,-1];
-	bambusfarm_wanted_list = bambusfarm_wanted_list - [-1];
-	//publicVariable "bambusfarm_wanted_list";
+	life_wanted_list set[_index,-1];
+	life_wanted_list = life_wanted_list - [-1];
+	//publicVariable "life_wanted_list";
 };

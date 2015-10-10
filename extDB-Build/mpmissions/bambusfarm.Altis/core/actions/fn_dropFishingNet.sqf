@@ -8,11 +8,11 @@
 private["_fish","_type","_typeName"];
 if(!(vehicle player isKindOf "Ship")) exitWith {};
 _fish = (nearestObjects[getPos vehicle player,["Fish_Base_F"],20]);
-bambusfarm_net_dropped = true;
+life_net_dropped = true;
 titleText[localize "STR_NOTF_NetDrop","PLAIN"];
 sleep 5;
-if(bambusfarm_skillFischen < 99) exitWith {hint format ["Um das Fischernetz auswerfen zu können, benötigst du 100 Punkte in der Fischkunst. (derzeit: %1/100)", bambusfarm_skillFischen];};
-if(count _fish == 0) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLAIN"]; bambusfarm_net_dropped = false;};
+if(life_skillFischen < 99) exitWith {hint format ["Um das Fischernetz auswerfen zu können, benötigst du 100 Punkte in der Fischkunst. (derzeit: %1/100)", life_skillFischen];};
+if(count _fish == 0) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLAIN"]; life_net_dropped = false;};
 {
 	if(_x isKindOf "Fish_Base_F") then
 	{
@@ -29,15 +29,15 @@ if(count _fish == 0) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLAIN"
 		
 		sleep 3;
 		
-		if(([true,_type,1] call bambusfarm_fnc_handleInv)) then
+		if(([true,_type,1] call life_fnc_handleInv)) then
 		{
 			deleteVehicle _x;
 			titleText[format[(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
-			bambusfarm_skillFischen = bambusfarm_skillFischen + 1;
+			life_skillFischen = life_skillFischen + 1;
 		};
 	};
 } foreach (_fish);
 
 sleep 1.5;
 titleText[localize "STR_NOTF_NetUp","PLAIN"];
-bambusfarm_net_dropped = false;
+life_net_dropped = false;

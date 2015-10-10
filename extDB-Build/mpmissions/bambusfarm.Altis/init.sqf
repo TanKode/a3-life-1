@@ -8,7 +8,7 @@ StartProgress = false;
 if(!isDedicated) then { X_Client = true;};
 enableSaving[false,false];
 
-bambusfarm_versionInfo = "Altis life RPG v3.1.4.8";
+life_versionInfo = "Altis life RPG v3.1.4.8";
 [] execVM "briefing.sqf"; //Load Briefing
 [] execVM "KRON_Strings.sqf";
 [] execVM "bambusfarm\init.sqf";
@@ -50,9 +50,9 @@ setTerrainGrid 45;
 setViewDistance 1500;
 setObjectViewDistance [800,50];
 
-if(isDedicated && isNil("bambusfarm_ATMhacked")) then
+if(isDedicated && isNil("life_ATMhacked")) then
 {
-	bambusfarm_ATMhacked = 0;
-	publicVariable "bambusfarm_ATMhacked";
-	diag_log format["bambusfarm_ATMhacked: %1",bambusfarm_ATMhacked];
+	life_ATMhacked = 0;
+	publicVariable "life_ATMhacked";
+	diag_log format["life_ATMhacked: %1",life_ATMhacked];
 };

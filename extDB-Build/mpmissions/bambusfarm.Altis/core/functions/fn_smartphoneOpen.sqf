@@ -24,15 +24,15 @@ if("ItemRadio" in assignedItems player) then
 {
 	if(!(player getVariable "restrained") && !(animationState player in ["Incapacitated","amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon"])) then
 	{
-		createDialog "bambusfarm_cell_phone";
+		createDialog "life_cell_phone";
 	}
 	else
 	{
-		if (__GETC__(bambusfarm_adminlevel)>0) then
+		if (__GETC__(life_adminlevel)>0) then
 		{
 			hint parseText format ["<t size='1.30' font='puristaMedium' align='center' color='#0D82DF'>Smartphone</t><br/><br/>
 			<t size='0.90 'font='puristaLight' align='left'>Du kannst dein Handy nur benutzen weil Du Supporter oder Admin bist. Bitte nur im Ernstfall benutzen!</t><br/>"];
-			createDialog "bambusfarm_cell_phone";
+			createDialog "life_cell_phone";
 		}
 		else
 		{
@@ -43,11 +43,11 @@ if("ItemRadio" in assignedItems player) then
 }
 else
 {
-	if (__GETC__(bambusfarm_adminlevel)>0) then
+	if (__GETC__(life_adminlevel)>0) then
 	{
 		hint parseText format ["<t size='1.30' font='puristaMedium' align='center' color='#0D82DF'>Smartphone</t><br/><br/>
 		<t size='0.90 'font='puristaLight' align='left'>Du kannst dein Handy nur benutzen weil Du Supporter oder Admin bist. Bitte nur im Ernstfall benutzen!</t><br/>"];
-		createDialog "bambusfarm_cell_phone";
+		createDialog "life_cell_phone";
 	}
 	else
 	{

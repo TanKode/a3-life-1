@@ -8,13 +8,13 @@
 
 private ["_point"];
 disableSerialization;
-_point = bambusfarm_capture_list select (bambusfarm_capture_zone - 1);
+_point = life_capture_list select (life_capture_zone - 1);
 
 
 // Progress bar update
 _upp = format["%2 Eigentuemer - %1", _point select 0, _point select 1];
 _cP = _point select 2;
-_ui = uiNameSpace getVariable "bambusfarm_progress";
+_ui = uiNameSpace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
 _progress progressSetPosition _cP;

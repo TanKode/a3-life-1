@@ -7,18 +7,18 @@
 */
 lbClear 2100;
 lbClear 1500;
-bambusfarm_player = [];
+life_player = [];
 {
 	if (_x != player) then {
 		lbAdd [2100, (_x getVariable["realname",name _x])];	
-		bambusfarm_player pushback _x;
+		life_player pushback _x;
 	};
 } foreach playableUnits;
 
-if ((count bambusfarm_names ) >0) then {
+if ((count life_names ) >0) then {
 	{
 		lbAdd [1500, _x];	
-	} foreach bambusfarm_names;
+	} foreach life_names;
 } else {
 	_text = (localize "STR_messaging_none");
 	lbAdd [1500, _text];	

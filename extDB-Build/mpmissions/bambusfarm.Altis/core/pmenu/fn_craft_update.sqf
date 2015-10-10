@@ -17,7 +17,7 @@ _itemFilter = lbData[673,(lbCurSel 673)];
 
 
 
-_config = [_itemFilter] call bambusfarm_fnc_craftCfg;
+_config = [_itemFilter] call life_fnc_craftCfg;
 {
 
 	if(_item == _x select 0)then
@@ -25,7 +25,7 @@ _config = [_itemFilter] call bambusfarm_fnc_craftCfg;
 		_matsNeed = _x select 1;
 		_invSize = count _matsNeed;
 		for [{_i = 0},{_i < _invSize - 1},{_i = _i + 2}] do {
-			_str = [_matsNeed select _i] call bambusfarm_fnc_varToStr;
+			_str = [_matsNeed select _i] call life_fnc_varToStr;
 			_matsNum = _matsNeed select _i+1;
 			_struct = _struct + format["%1x %2<br/>",_matsNum,_str];
 

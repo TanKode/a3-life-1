@@ -8,7 +8,7 @@
 private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl"];
 disableSerialization;
 if(isNull (findDisplay 2620)) then {
-	if(!(createDialog "bambusfarm_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
+	if(!(createDialog "life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
 };
 
 _ownerID = grpPlayer getVariable["gang_owner",""];
@@ -26,7 +26,7 @@ if(_ownerID != steamid) then {
 };
 
 (getControl(2620,2629)) ctrlSetText _gangName;
-(getControl(2620,601)) ctrlSetText format[(localize "STR_GNOTF_Funds")+ " €%1",[_gangBank] call bambusfarm_fnc_numberText];
+(getControl(2620,601)) ctrlSetText format[(localize "STR_GNOTF_Funds")+ " €%1",[_gangBank] call life_fnc_numberText];
 
 //Loop through the players.
 _members = getControl(2620,2621);

@@ -6,7 +6,7 @@
 	Loads the civs out with the default gear, with randomized clothing.
 */
 private["_handle"];
-_handle = [] spawn bambusfarm_fnc_stripDownPlayer;
+_handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
 _clothings = ["U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_Poloshirt_salmon","U_C_Poloshirt_redwhite","U_C_Commoner1_1"];
@@ -25,5 +25,5 @@ player addItem "ItemRadio";
 player assignItem "ItemRadio";
 
 
-[] call bambusfarm_fnc_saveGear;
-[player, uniform player] call bambusfarm_fnc_equipGear;
+[] call life_fnc_saveGear;
+[player, uniform player] call life_fnc_equipGear;

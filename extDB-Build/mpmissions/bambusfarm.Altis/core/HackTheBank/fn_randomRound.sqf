@@ -13,9 +13,9 @@
 	
 	This script returns a random value, selected of 2 Values
 	
-	_randomValue = [_var1,_var2] call bambusfarm_fnc_randomRound;
+	_randomValue = [_var1,_var2] call life_fnc_randomRound;
 	example:
-	_randomValue = [10,100] call bambusfarm_fnc_randomRoundM;
+	_randomValue = [10,100] call life_fnc_randomRoundM;
 	
 	Returns a value between 10 and 100
 	

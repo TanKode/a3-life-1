@@ -8,4 +8,4 @@
 */
 
 if(!isServer) exitWith {};
-"bambusfarm_fnc_MP_packet" addPublicVariableEventHandler {[_this select 0,_this select 1] call bambusfarm_fnc_MPexec;};
+"life_fnc_MP_packet" addPublicVariableEventHandler {[_this select 0,_this select 1] call life_fnc_MPexec;};

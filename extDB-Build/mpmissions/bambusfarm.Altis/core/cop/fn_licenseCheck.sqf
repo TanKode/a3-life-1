@@ -14,10 +14,10 @@ _licenses = "";
 {
 	if(missionNamespace getVariable (_x select 0) && _x select 1 == "civ") then
 	{
-		_licenses = _licenses + ([_x select 0] call bambusfarm_fnc_varToStr) + "<br/>";
+		_licenses = _licenses + ([_x select 0] call life_fnc_varToStr) + "<br/>";
 	};
-} foreach bambusfarm_licenses;
+} foreach life_licenses;
 
 if(_licenses == "") then {_licenses = (localize "STR_Cop_NoLicensesFound");};
 
-[[profileName,_licenses],"bambusfarm_fnc_licensesRead",_cop,FALSE] spawn bambusfarm_fnc_MP;
+[[profileName,_licenses],"life_fnc_licensesRead",_cop,FALSE] spawn life_fnc_MP;

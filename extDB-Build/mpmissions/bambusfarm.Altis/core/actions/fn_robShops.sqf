@@ -110,8 +110,8 @@ _marker setMarkerColor "ColorRed";
 
 //Sets up the Progress Bar
 disableSerialization;
-5 cutRsc ["bambusfarm_progress","PLAIN"];
-_ui = uiNameSpace getVariable "bambusfarm_progress";
+5 cutRsc ["life_progress","PLAIN"];
+_ui = uiNameSpace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format["%2...  (1%1)","%",(localize "STR_pAct_RobProgress")];
@@ -142,8 +142,8 @@ if (_rip) then {
 
 			//Triggering the alarm + adding player to wanted system
 			if (_chance > 9800) then {
-				[[1,format["ALARM! - Raub im Gange bei %1!", _shopName]], "bambusfarm_fnc_broadcast",west,false] spawn bambusfarm_fnc_MP;
-				[[getPlayerUID _robber,name _robber,"211"],"bambusfarm_fnc_wantedAdd",false,false] spawn bambusfarm_fnc_MP;
+				[[1,format["ALARM! - Raub im Gange bei %1!", _shopName]], "life_fnc_broadcast",west,false] spawn life_fnc_MP;
+				[[getPlayerUID _robber,name _robber,"211"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 				_alarm = true;
 			};
 		};
@@ -167,21 +167,21 @@ if (_rip) then {
 	5 cutText ["","PLAIN"];
 
 	//Exit code
-	titleText[format["Du hast %1 geklaut!",[_loot] call bambusfarm_fnc_numberText],"PLAIN"];
-	[[1,format["Jemand laeuft mit der Beute von %1 weg!", _shopName]], "bambusfarm_fnc_broadcast",civilian,false] spawn bambusfarm_fnc_MP;
+	titleText[format["Du hast %1 geklaut!",[_loot] call life_fnc_numberText],"PLAIN"];
+	[[1,format["Jemand laeuft mit der Beute von %1 weg!", _shopName]], "life_fnc_broadcast",civilian,false] spawn life_fnc_MP;
 	_loot = _shop getVariable "_funds";
-	bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD + _loot;
+	life_TASCHENGELD = life_TASCHENGELD + _loot;
 	_loot = 0;
 	_shop setVariable ["_funds",_loot,true];
 	_rip = false;
 	_shop setVariable ["_status",_rip,true];
-	bambusfarm_use_atm = false;
+	life_use_atm = false;
 	
 	//Reset script for shops (global)
 	[[[_shop,_marker,_pause],"core\functions\fn_robShopReset.sqf"],"BIS_fnc_execVM",false,false] call bis_fnc_MP;
 
 	//Client-side reset
 	sleep _pause;
-	bambusfarm_use_atm = true;
+	life_use_atm = true;
 	_loot = _shop getVariable "_funds";
 };

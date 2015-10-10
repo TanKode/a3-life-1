@@ -50,13 +50,13 @@ if(_curTarget isKindOf "House_F") exitWith {
     		_Btn14 = _display displayCtrl Btn14;
     		_Btn15 = _display displayCtrl Btn15;
     		_Btn16 = _display displayCtrl Btn16;
-    		bambusfarm_pInact_curTarget = _curTarget;
+    		life_pInact_curTarget = _curTarget;
 
     		_Btn1 ctrlSetText localize "STR_pInAct_Repair";
-    		_Btn1 buttonSetAction "[bambusfarm_pInact_curTarget] spawn bambusfarm_fnc_repairDoor;";
+    		_Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_repairDoor;";
 
     		_Btn2 ctrlSetText localize "STR_pInAct_CloseOpen";
-    		_Btn2 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_doorAnimate;";
+    		_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_doorAnimate;";
     		_Btn3 ctrlShow false;
     		_Btn4 ctrlShow false;
     		_Btn5 ctrlShow false;
@@ -94,46 +94,46 @@ if(_curTarget isKindOf "House_F") exitWith {
     _Btn14 = _display displayCtrl Btn14;
     _Btn15 = _display displayCtrl Btn15;
     _Btn16 = _display displayCtrl Btn16;
-    bambusfarm_pInact_curTarget = _curTarget;
+    life_pInact_curTarget = _curTarget;
 
     //Set Unrestrain Button
     _Btn1 ctrlSetText localize "STR_pInAct_Unrestrain";
-    _Btn1 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_unrestrain; closeDialog 0;";
+    _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
 
     //Set Check Licenses Button
     _Btn2 ctrlSetText localize "STR_pInAct_checkLicenses";
-    _Btn2 buttonSetAction "[[player],""bambusfarm_fnc_licenseCheck"",bambusfarm_pInact_curTarget,FALSE] spawn bambusfarm_fnc_MP";
+    _Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,FALSE] spawn life_fnc_MP";
 
     //Set Search Button
     _Btn3 ctrlSetText localize "STR_pInAct_SearchPlayer";
-    _Btn3 buttonSetAction "[bambusfarm_pInact_curTarget] spawn bambusfarm_fnc_searchAction; closeDialog 0;";
+    _Btn3 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_searchAction; closeDialog 0;";
 
     //Set Escort Button
     if((_curTarget getVariable["Escorting",false])) then {
     	_Btn4 ctrlSetText localize "STR_pInAct_StopEscort";
-    	_Btn4 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_stopEscorting; [bambusfarm_pInact_curTarget] call bambusfarm_fnc_copInteractionMenu;";
+    	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; [life_pInact_curTarget] call life_fnc_copInteractionMenu;";
     } else {
     	_Btn4 ctrlSetText localize "STR_pInAct_Escort";
-    	_Btn4 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_escortAction; closeDialog 0;";
+    	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
     };
 
     //Set Ticket Button
     _Btn5 ctrlSetText localize "STR_pInAct_TicketBtn";
-    _Btn5 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_ticketAction;";
+    _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
     _Btn6 ctrlSetText localize "STR_pInAct_Arrest";
-    _Btn6 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_arrestAction;";
+    _Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 
     _Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
-    _Btn7 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_putInCar;";
+    _Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
 
     _Btn8 ctrlSetText "Ausweis zeigen";
-    _Btn8 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_ShowLicense; closeDialog 0;";
+    _Btn8 buttonSetAction "[life_pInact_curTarget] call life_fnc_ShowLicense; closeDialog 0;";
     _Btn9 ctrlSetText "Alkoholtest";
     _Btn10 ctrlSetText "Drogentest";
-    _Btn10 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_DrogenTest; closeDialog 0;";
+    _Btn10 buttonSetAction "[life_pInact_curTarget] call life_fnc_DrogenTest; closeDialog 0;";
     _Btn11 ctrlSetText "Entwaffnen";
-    _Btn11 buttonSetAction "[bambusfarm_pInact_curTarget] call bambusfarm_fnc_entwaffnenAction; closeDialog 0;";
+    _Btn11 buttonSetAction "[life_pInact_curTarget] call life_fnc_entwaffnenAction; closeDialog 0;";
     _Btn12 ctrlSetText "Lizenzen abnehmen";
     _Btn13 ctrlSetText "Sender Person";
     _Btn14 ctrlSetText "Sender Fahrzeug";

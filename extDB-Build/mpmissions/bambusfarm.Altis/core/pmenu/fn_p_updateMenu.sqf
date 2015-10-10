@@ -9,7 +9,7 @@
 private["_dialog","_inv","_lic","_licenses","_near","_near_units","_mstatus","_shrt","_side"];
 disableSerialization;
 
-if(__GETC__(bambusfarm_adminlevel) < 1) then
+if(__GETC__(life_adminlevel) < 1) then
 {
 	ctrlShow[2020,false];
 	ctrlShow[2021,false];
@@ -41,29 +41,29 @@ _near_units = [];
 	};
 } foreach _near_units;
 
-_mstatus ctrlSetStructuredText parseText format["<img size='1.3' image='icons\bank.paa'/> <t size='0.8px'>€%1</t><br/><img size='1.2' image='icons\money.paa'/> <t size='0.8'>€%2</t>",[bambusfarm_BANK] call bambusfarm_fnc_numberText,[bambusfarm_TASCHENGELD] call bambusfarm_fnc_numberText];
-ctrlSetText[2009,format["Weight: %1 / %2", bambusfarm_carryWeight, bambusfarm_maxWeight]];
+_mstatus ctrlSetStructuredText parseText format["<img size='1.3' image='icons\bank.paa'/> <t size='0.8px'>€%1</t><br/><img size='1.2' image='icons\money.paa'/> <t size='0.8'>€%2</t>",[life_BANK] call life_fnc_numberText,[life_TASCHENGELD] call life_fnc_numberText];
+ctrlSetText[2009,format["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
 {
-	_str = [_x] call bambusfarm_fnc_varToStr;
-	_shrt = [_x,1] call bambusfarm_fnc_varHandle;
+	_str = [_x] call life_fnc_varToStr;
+	_shrt = [_x,1] call life_fnc_varHandle;
 	_val = missionNameSpace getVariable _x;
 	if(_val > 0) then
 	{
 		_inv lbAdd format["%1x - %2",_val,_str];
 		_inv lbSetData [(lbSize _inv)-1,_shrt];
 	};
-} foreach bambusfarm_inv_items;
+} foreach life_inv_items;
 {
 	if((_x select 1) == _side) then
 	{
-		_str = [_x select 0] call bambusfarm_fnc_varToStr;
+		_str = [_x select 0] call life_fnc_varToStr;
 		_val = missionNamespace getVariable (_x select 0);
 		if(_val) then
 		{
 			_struct = _struct + format["%1<br/>",_str];
 		};
 	};
-} foreach bambusfarm_licenses;
+} foreach life_licenses;
 
 if(_struct == "") then
 {

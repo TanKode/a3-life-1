@@ -6,8 +6,8 @@
 	Execute received remote execution
 
 	Parameter(s):
-	_this select 0: STRING - Packet variable name (always "bambusfarm_fnc_MP_packet")
-	_this select 1: ARRAY - Packet value (sent by bambusfarm_fnc_MP function; see it's description for more details)
+	_this select 0: STRING - Packet variable name (always "life_fnc_MP_packet")
+	_this select 1: ARRAY - Packet value (sent by life_fnc_MP function; see it's description for more details)
 	
 	Returns:
 	BOOL - true if function was executed successfully
@@ -46,7 +46,7 @@ if (ismultiplayer && _mode == 0) then {
 
 			//--- Multi execution
 			{
-				[_varName,[_mode,_params,_functionName,_x,_isPersistent,_isCall,_callerName,_callerUID]] call bambusfarm_fnc_MPexec;
+				[_varName,[_mode,_params,_functionName,_x,_isPersistent,_isCall,_callerName,_callerUID]] call life_fnc_MPexec;
 			} foreach _target;
 		} else {
 
@@ -73,22 +73,22 @@ if (ismultiplayer && _mode == 0) then {
 					_ownerID = -1;
 				};
 			};
-			bambusfarm_fnc_MP_packet = [1,_params,_functionName,_target,_isPersistent,_isCall,"__SERVER__","__SERVER__"];
+			life_fnc_MP_packet = [1,_params,_functionName,_target,_isPersistent,_isCall,"__SERVER__","__SERVER__"];
 
 			//--- Send to clients
 			if (_ownerID < 0) then {
 				//--- Everyone
-				publicvariable "bambusfarm_fnc_MP_packet";
+				publicvariable "life_fnc_MP_packet";
 			} else {
 				if (_ownerID != _serverID) then {
 					//--- Client
-					_ownerID publicvariableclient "bambusfarm_fnc_MP_packet";
+					_ownerID publicvariableclient "life_fnc_MP_packet";
 				};
 			};
 
 			//--- Server execution (for all or server only)
 			if (_ownerID < 0 || _ownerID == _serverID) then {
-				["bambusfarm_fnc_MP_packet",bambusfarm_fnc_MP_packet] spawn bambusfarm_fnc_MPexec;
+				["life_fnc_MP_packet",life_fnc_MP_packet] spawn life_fnc_MPexec;
 			};
 
 			//--- Persistent call (for all or clients)
@@ -99,7 +99,7 @@ if (ismultiplayer && _mode == 0) then {
 					_queue = _logic getvariable ["BIS_fnc_MP_queue",[]];
 					_queue set [
 						count _queue,
-						+bambusfarm_fnc_MP_packet
+						+life_fnc_MP_packet
 					];
 					_logic setvariable ["BIS_fnc_MP_queue",_queue,true];
 				} else {

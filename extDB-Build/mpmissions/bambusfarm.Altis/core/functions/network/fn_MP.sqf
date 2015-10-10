@@ -31,16 +31,16 @@ with missionnamespace do {
 
 	//--- Send to server
 	if(isServer && isDedicated) then {
-		bambusfarm_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall,"__SERVER__","__SERVER__"];
+		life_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall,"__SERVER__","__SERVER__"];
 	} else {
-		bambusfarm_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall,profileName,getPlayerUID player];
+		life_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall,profileName,getPlayerUID player];
 	};
-	publicvariableserver "bambusfarm_fnc_MP_packet";
+	publicvariableserver "life_fnc_MP_packet";
 
 	//--- Local execution
 	if !(ismultiplayer) then {
-		["bambusfarm_fnc_MP_packet",bambusfarm_fnc_MP_packet] spawn bambusfarm_fnc_MPexec;
+		["life_fnc_MP_packet",life_fnc_MP_packet] spawn life_fnc_MPexec;
 	};
 
-	bambusfarm_fnc_MP_packet
+	life_fnc_MP_packet
 };

@@ -7,7 +7,7 @@
 	Loads the cops out with the default gear.
 */
 private["_handle"];
-_handle = [] spawn bambusfarm_fnc_stripDownPlayer;
+_handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
 //Load player with default cop gear.
@@ -37,8 +37,8 @@ player assignItem "ItemGPS";
 player addItem "ItemRadio";
 player assignItem "ItemRadio";
 
-bambusfarm_inv_handcuffs = bambusfarm_inv_handcuffs + 2;
-bambusfarm_inv_Schere = bambusfarm_inv_Schere + 2;
+life_inv_handcuffs = life_inv_handcuffs + 2;
+life_inv_Schere = life_inv_Schere + 2;
 
-[] call bambusfarm_fnc_saveGear;
-[player, uniform player] call bambusfarm_fnc_equipGear;
+[] call life_fnc_saveGear;
+[player, uniform player] call life_fnc_equipGear;

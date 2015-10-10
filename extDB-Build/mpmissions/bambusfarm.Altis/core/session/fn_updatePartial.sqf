@@ -5,7 +5,7 @@
 	Description:
 	Sends specific information to the server to update on the player,
 	meant to keep the network traffic down with large sums of data flowing
-	through bambusfarm_fnc_MP
+	through life_fnc_MP
 */
 private["_mode","_packet","_array","_flag"];
 _mode = [_this,0,0,[0]] call BIS_fnc_param;
@@ -18,20 +18,20 @@ if(playerside in [west,independent] && (_mode == 10)) exitWith {};
 
 if(_mode == 10)exitWith
 	{
-		_bambusfarm_Skills = [getPlayerUID player, bambusfarm_skillApple, bambusfarm_skillPeach, bambusfarm_skillSalt, bambusfarm_skillSand, bambusfarm_skillIronore, bambusfarm_skillCopperore, bambusfarm_skillDiamond, bambusfarm_skillCannabis, bambusfarm_skillCocaine, bambusfarm_skillHeroinu, bambusfarm_skillOilu, bambusfarm_skillBauen, bambusfarm_skillcoalu, bambusfarm_skillBruchstein, bambusfarm_skillTon, bambusfarm_skillKrabben, bambusfarm_skillFischen];
-		[_bambusfarm_Skills,"TON_fnc_insertSkillSys",false,false] spawn bambusfarm_fnc_MP;
+		_life_Skills = [getPlayerUID player, life_skillApple, life_skillPeach, life_skillSalt, life_skillSand, life_skillIronore, life_skillCopperore, life_skillDiamond, life_skillCannabis, life_skillCocaine, life_skillHeroinu, life_skillOilu, life_skillBauen, life_skillcoalu, life_skillBruchstein, life_skillTon, life_skillKrabben, life_skillFischen];
+		[_life_Skills,"TON_fnc_insertSkillSys",false,false] spawn life_fnc_MP;
 	};
 
 switch(_mode) do
 {
 	case 0:
 	{
-		_packet set[2,bambusfarm_TASCHENGELD];
+		_packet set[2,life_TASCHENGELD];
 	};
 	
 	case 1:
 	{
-		_packet set[2,bambusfarm_BANK];
+		_packet set[2,life_BANK];
 	};
 	
 	case 2:
@@ -41,15 +41,15 @@ switch(_mode) do
 			{
 				_array pushBack [_x select 0,(missionNamespace getVariable (_x select 0))];
 			};
-		} foreach bambusfarm_licenses;
+		} foreach life_licenses;
 		
 		_packet set[2,_array];
 	};
 	
 	case 3:
 	{
-		[] call bambusfarm_fnc_saveGear;
-		_packet set[2,bambusfarm_gear];
+		[] call life_fnc_saveGear;
+		_packet set[2,life_gear];
 	};
 	
 	case 4:
@@ -59,13 +59,13 @@ switch(_mode) do
 	
 	case 5:
 	{
-		_packet set[2,bambusfarm_is_arrested];
+		_packet set[2,life_is_arrested];
 	};
 	
 	case 6:
 	{
-		_packet set[2,bambusfarm_TASCHENGELD];
-		_packet set[4,bambusfarm_BANK];
+		_packet set[2,life_TASCHENGELD];
+		_packet set[4,life_BANK];
 	};
 	case 8:
 	{
@@ -73,8 +73,8 @@ switch(_mode) do
 	};
 	case 9:
 	{
-		_packet set[2,bambusfarm_Karma];
+		_packet set[2,life_Karma];
 	};
 };
 
-[_packet,"DB_fnc_updatePartial",false,false] call bambusfarm_fnc_MP;
+[_packet,"DB_fnc_updatePartial",false,false] call life_fnc_MP;

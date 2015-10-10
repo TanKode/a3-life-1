@@ -7,22 +7,22 @@
 */
 private["_mine","_itemWeight","_diff","_itemName","_val","_karmaA","_skillCopper","_skill","_count","_lcap","_uip","_progress","_pgText","_cP","_upp","_lvl","_skill","_karma","_skilLRock","_skillSand","_skillSalt","_skillIron"];
 
-_skillCopper = bambusfarm_skillCopperore;
-_skilLRock = bambusfarm_skillEhemalsRock;
-_skillSand = bambusfarm_skillSand;
-_skillSalt = bambusfarm_skillSalt;
-_skillIron = bambusfarm_skillIronore;
+_skillCopper = life_skillCopperore;
+_skilLRock = life_skillEhemalsRock;
+_skillSand = life_skillSand;
+_skillSalt = life_skillSalt;
+_skillIron = life_skillIronore;
 
 switch (true) do
 {
-	case (player distance (getMarkerPos "lead_1") < 30): {_mine = "copperore"; _skill = bambusfarm_skillCopperore;_karmaA = bambusfarm_Karma;};
-	case (player distance (getMarkerPos "iron_1") < 30): {_mine = "ironore"; _skill = bambusfarm_skillIronore;_karmaA = bambusfarm_Karma;};
-	case (player distance (getMarkerPos "salt_1") < 120) : {_mine = "salt"; _skill = bambusfarm_skillSalt;_karmaA = bambusfarm_Karma;};
-	case (player distance (getMarkerPos "sand_1") < 75) : {_mine = "sand"; _skill = bambusfarm_skillSand;_karmaA = bambusfarm_Karma;};
-	case (player distance (getMarkerPos "diamond_1") < 50): {_mine = "diamond"; _skill = bambusfarm_skillDiamond; _karmaA = bambusfarm_Karma;};
-	case (player distance (getMarkerPos "oil_1") < 40) : {_mine = "oilu"; _skill = bambusfarm_skillOilu;_karmaA = bambusfarm_Karma;};
-	case (player distance (getMarkerPos "oil_2") < 40) : {_mine = "oilu"; _skill = bambusfarm_skillOilu;_karmaA = bambusfarm_Karma;};
-	case (player distance (getMarkerPos "rock_1") < 50): {_mine = "rock"; _skill = bambusfarm_skillEhemalsRock;_karmaA = bambusfarm_Karma;};
+	case (player distance (getMarkerPos "lead_1") < 30): {_mine = "copperore"; _skill = life_skillCopperore;_karmaA = life_Karma;};
+	case (player distance (getMarkerPos "iron_1") < 30): {_mine = "ironore"; _skill = life_skillIronore;_karmaA = life_Karma;};
+	case (player distance (getMarkerPos "salt_1") < 120) : {_mine = "salt"; _skill = life_skillSalt;_karmaA = life_Karma;};
+	case (player distance (getMarkerPos "sand_1") < 75) : {_mine = "sand"; _skill = life_skillSand;_karmaA = life_Karma;};
+	case (player distance (getMarkerPos "diamond_1") < 50): {_mine = "diamond"; _skill = life_skillDiamond; _karmaA = life_Karma;};
+	case (player distance (getMarkerPos "oil_1") < 40) : {_mine = "oilu"; _skill = life_skillOilu;_karmaA = life_Karma;};
+	case (player distance (getMarkerPos "oil_2") < 40) : {_mine = "oilu"; _skill = life_skillOilu;_karmaA = life_Karma;};
+	case (player distance (getMarkerPos "rock_1") < 50): {_mine = "rock"; _skill = life_skillEhemalsRock;_karmaA = life_Karma;};
 	default {_mine = "";};
 };
 //Mine check
@@ -36,8 +36,8 @@ _timeB = 0.50;
 _val = 1;
 if(_mine == "copperore") then
 {
-	bambusfarm_skillCopperore = bambusfarm_skillCopperore + 1;
-	if(bambusfarm_skillCopperore < 49)then
+	life_skillCopperore = life_skillCopperore + 1;
+	if(life_skillCopperore < 49)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -46,7 +46,7 @@ if(_mine == "copperore") then
 		_karma = 1;
 		_timeB = 0.15;
 	};
-	if(bambusfarm_skillCopperore >= 49 && bambusfarm_skillCopperore <= 249)then
+	if(life_skillCopperore >= 49 && life_skillCopperore <= 249)then
 	{
     	_val = [2,3] call BIS_fnc_selectRandom;
     	_count = "2-3";
@@ -55,7 +55,7 @@ if(_mine == "copperore") then
     	_karma = 2;
     	_timeB = 0.12;
     };
-    if(bambusfarm_skillCopperore >= 249 && bambusfarm_skillCopperore <= 499) then
+    if(life_skillCopperore >= 249 && life_skillCopperore <= 499) then
     {
        	_val = [2,3] call BIS_fnc_selectRandom;
        	_count = "2-3";
@@ -64,7 +64,7 @@ if(_mine == "copperore") then
        	_karma = 3;
        	_timeB = 0.12;
     };
-    if(bambusfarm_skillCopperore >= 499 && bambusfarm_skillCopperore <= 849) then
+    if(life_skillCopperore >= 499 && life_skillCopperore <= 849) then
     {
        	_val = [3,4,5] call BIS_fnc_selectRandom;
        	_count = "3-5";
@@ -73,7 +73,7 @@ if(_mine == "copperore") then
        	_karma = 3;
        	_timeB = 0.10;
     };
-    if(bambusfarm_skillCopperore > 1249) then
+    if(life_skillCopperore > 1249) then
     {
        	_val = [5,6] call BIS_fnc_selectRandom;
        	_count = "5-6";
@@ -86,8 +86,8 @@ if(_mine == "copperore") then
 
 if(_mine == "ironore") then
 {
-	bambusfarm_skillIronore = bambusfarm_skillIronore + 1;
-	if(bambusfarm_skillIronore < 49)then
+	life_skillIronore = life_skillIronore + 1;
+	if(life_skillIronore < 49)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -96,7 +96,7 @@ if(_mine == "ironore") then
 		_karma = 1;
 		_timeB = 0.20;
 	};
-	if(bambusfarm_skillIronore >= 49 && bambusfarm_skillIronore <= 249)then
+	if(life_skillIronore >= 49 && life_skillIronore <= 249)then
 	{
     	_val = [2,3] call BIS_fnc_selectRandom;
     	_count = "2-3";
@@ -105,7 +105,7 @@ if(_mine == "ironore") then
     	_karma = 2;
     	_timeB = 0.17;
     };
-    if(bambusfarm_skillIronore >= 249 && bambusfarm_skillIronore <= 499) then
+    if(life_skillIronore >= 249 && life_skillIronore <= 499) then
     {
        	_val = [2,3] call BIS_fnc_selectRandom;
        	_count = "2-3";
@@ -114,7 +114,7 @@ if(_mine == "ironore") then
        	_karma = 3;
        	_timeB = 0.15;
     };
-    if(bambusfarm_skillIronore >= 499 && bambusfarm_skillIronore <= 849) then
+    if(life_skillIronore >= 499 && life_skillIronore <= 849) then
     {
        	_val = [3,4,5] call BIS_fnc_selectRandom;
        	_count = "3-5";
@@ -123,7 +123,7 @@ if(_mine == "ironore") then
        	_karma = 3;
        	_timeB = 0.15;
     };
-    if(bambusfarm_skillIronore > 1249) then
+    if(life_skillIronore > 1249) then
     {
        	_val = [5,6] call BIS_fnc_selectRandom;
        	_count = "5-6";
@@ -136,8 +136,8 @@ if(_mine == "ironore") then
 
 if(_mine == "salt") then
 {
-	bambusfarm_skillSalt = bambusfarm_skillSalt + 1;
-	if(bambusfarm_skillSalt < 49)then
+	life_skillSalt = life_skillSalt + 1;
+	if(life_skillSalt < 49)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -146,7 +146,7 @@ if(_mine == "salt") then
 		_karma = 1;
 		_timeB = 0.15;
 	};
-	if(bambusfarm_skillSalt >= 49 && bambusfarm_skillSalt <= 249)then
+	if(life_skillSalt >= 49 && life_skillSalt <= 249)then
 	{
     	_val = [2,3] call BIS_fnc_selectRandom;
     	_count = "2-3";
@@ -155,7 +155,7 @@ if(_mine == "salt") then
     	_karma = 2;
     	_timeB = 0.15;
     };
-    if(bambusfarm_skillSalt >= 249 && bambusfarm_skillSalt <= 499) then
+    if(life_skillSalt >= 249 && life_skillSalt <= 499) then
     {
        	_val = [2,3] call BIS_fnc_selectRandom;
        	_count = "2-3";
@@ -164,7 +164,7 @@ if(_mine == "salt") then
        	_karma = 3;
        	_timeB = 0.12;
     };
-    if(bambusfarm_skillSalt >= 499 && bambusfarm_skillSalt <= 849) then
+    if(life_skillSalt >= 499 && life_skillSalt <= 849) then
     {
        	_val = [3,4,5] call BIS_fnc_selectRandom;
        	_count = "3-5";
@@ -173,7 +173,7 @@ if(_mine == "salt") then
        	_karma = 3;
        	_timeB = 0.11;
     };
-    if(bambusfarm_skillSalt > 1249) then
+    if(life_skillSalt > 1249) then
     {
        	_val = [5,6] call BIS_fnc_selectRandom;
        	_count = "5-6";
@@ -186,8 +186,8 @@ if(_mine == "salt") then
 
 if(_mine == "sand") then
 {
-	bambusfarm_skillSand = bambusfarm_skillSand + 1;
-	if(bambusfarm_skillSand < 49)then
+	life_skillSand = life_skillSand + 1;
+	if(life_skillSand < 49)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -196,7 +196,7 @@ if(_mine == "sand") then
 		_karma = 1;
 		_timeB = 0.13;
 	};
-	if(bambusfarm_skillSand >= 49 && bambusfarm_skillSand <= 249)then
+	if(life_skillSand >= 49 && life_skillSand <= 249)then
 	{
     	_val = [2,3] call BIS_fnc_selectRandom;
     	_count = "2-3";
@@ -205,7 +205,7 @@ if(_mine == "sand") then
     	_karma = 2;
     	_timeB = 0.11;
     };
-    if(bambusfarm_skillSand >= 249 && bambusfarm_skillSand <= 499) then
+    if(life_skillSand >= 249 && life_skillSand <= 499) then
     {
        	_val = [2,3] call BIS_fnc_selectRandom;
        	_count = "2-3";
@@ -214,7 +214,7 @@ if(_mine == "sand") then
        	_karma = 3;
        	_timeB = 0.10;
     };
-    if(bambusfarm_skillSand >= 499 && bambusfarm_skillSand <= 849) then
+    if(life_skillSand >= 499 && life_skillSand <= 849) then
     {
        	_val = [3,4,5] call BIS_fnc_selectRandom;
        	_count = "3-5";
@@ -223,7 +223,7 @@ if(_mine == "sand") then
        	_karma = 3;
        	_timeB = 0.09;
     };
-    if(bambusfarm_skillSand > 1249) then
+    if(life_skillSand > 1249) then
     {
        	_val = [5,6] call BIS_fnc_selectRandom;
        	_count = "5-6";
@@ -236,8 +236,8 @@ if(_mine == "sand") then
 
 if(_mine == "diamond") then
 {
-	bambusfarm_skillDiamond = bambusfarm_skillDiamond + 1;
-	if(bambusfarm_skillDiamond < 49)then
+	life_skillDiamond = life_skillDiamond + 1;
+	if(life_skillDiamond < 49)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -246,7 +246,7 @@ if(_mine == "diamond") then
 		_karma = 1;
 		_timeB = 0.25;
 	};
-	if(bambusfarm_skillDiamond >= 49 && bambusfarm_skillDiamond <= 249)then
+	if(life_skillDiamond >= 49 && life_skillDiamond <= 249)then
 	{
     	_val = [2,3] call BIS_fnc_selectRandom;
     	_count = "2-3";
@@ -255,7 +255,7 @@ if(_mine == "diamond") then
     	_karma = 2;
     	_timeB = 0.25;
     };
-    if(bambusfarm_skillDiamond >= 249 && bambusfarm_skillDiamond <= 499) then
+    if(life_skillDiamond >= 249 && life_skillDiamond <= 499) then
     {
        	_val = [2,3] call BIS_fnc_selectRandom;
        	_count = "2-3";
@@ -264,7 +264,7 @@ if(_mine == "diamond") then
        	_karma = 3;
        	_timeB = 0.20;
     };
-    if(bambusfarm_skillDiamond >= 499 && bambusfarm_skillDiamond <= 849) then
+    if(life_skillDiamond >= 499 && life_skillDiamond <= 849) then
     {
        	_val = [3,4,5] call BIS_fnc_selectRandom;
        	_count = "3-5";
@@ -273,7 +273,7 @@ if(_mine == "diamond") then
        	_karma = 3;
        	_timeB = 0.18;
     };
-    if(bambusfarm_skillDiamond > 1249) then
+    if(life_skillDiamond > 1249) then
     {
        	_val = [5,6] call BIS_fnc_selectRandom;
        	_count = "5-6";
@@ -286,8 +286,8 @@ if(_mine == "diamond") then
 
 if(_mine == "oilu") then
 {
-	bambusfarm_skillOilu = bambusfarm_skillOilu + 1;
-	if(bambusfarm_skillOilu < 49)then
+	life_skillOilu = life_skillOilu + 1;
+	if(life_skillOilu < 49)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -296,7 +296,7 @@ if(_mine == "oilu") then
 		_karma = 1;
 		_timeB = 0.25;
 	};
-	if(bambusfarm_skillOilu >= 49 && bambusfarm_skillOilu <= 249)then
+	if(life_skillOilu >= 49 && life_skillOilu <= 249)then
 	{
     	_val = [2,3] call BIS_fnc_selectRandom;
     	_count = "2-3";
@@ -305,7 +305,7 @@ if(_mine == "oilu") then
     	_karma = 2;
     	_timeB = 0.25;
     };
-    if(bambusfarm_skillOilu >= 249 && bambusfarm_skillOilu <= 499) then
+    if(life_skillOilu >= 249 && life_skillOilu <= 499) then
     {
        	_val = [2,3] call BIS_fnc_selectRandom;
        	_count = "2-3";
@@ -314,7 +314,7 @@ if(_mine == "oilu") then
        	_karma = 3;
        	_timeB = 0.20;
     };
-    if(bambusfarm_skillOilu >= 499 && bambusfarm_skillOilu <= 849) then
+    if(life_skillOilu >= 499 && life_skillOilu <= 849) then
     {
        	_val = [3,4,5] call BIS_fnc_selectRandom;
        	_count = "3-5";
@@ -323,7 +323,7 @@ if(_mine == "oilu") then
        	_karma = 3;
        	_timeB = 0.17;
     };
-    if(bambusfarm_skillOilu > 1249) then
+    if(life_skillOilu > 1249) then
     {
        	_val = [5,6] call BIS_fnc_selectRandom;
        	_count = "5-6";
@@ -336,8 +336,8 @@ if(_mine == "oilu") then
 
 if(_mine == "rock") then
 {
-	bambusfarm_skillEhemalsRock = bambusfarm_skillEhemalsRock + 1;
-	if(bambusfarm_skillEhemalsRock < 49)then
+	life_skillEhemalsRock = life_skillEhemalsRock + 1;
+	if(life_skillEhemalsRock < 49)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -346,7 +346,7 @@ if(_mine == "rock") then
 		_karma = 1;
 		_timeB = 0.15;
 	};
-	if(bambusfarm_skillEhemalsRock >= 49 && bambusfarm_skillEhemalsRock <= 249)then
+	if(life_skillEhemalsRock >= 49 && life_skillEhemalsRock <= 249)then
 	{
     	_val = [2,3] call BIS_fnc_selectRandom;
     	_count = "2-3";
@@ -355,7 +355,7 @@ if(_mine == "rock") then
     	_karma = 2;
     	_timeB = 0.13;
     };
-    if(bambusfarm_skillEhemalsRock >= 249 && bambusfarm_skillEhemalsRock <= 499) then
+    if(life_skillEhemalsRock >= 249 && life_skillEhemalsRock <= 499) then
     {
        	_val = [2,3] call BIS_fnc_selectRandom;
        	_count = "2-3";
@@ -364,7 +364,7 @@ if(_mine == "rock") then
        	_karma = 3;
        	_timeB = 0.11;
     };
-    if(bambusfarm_skillEhemalsRock >= 499 && bambusfarm_skillEhemalsRock <= 849) then
+    if(life_skillEhemalsRock >= 499 && life_skillEhemalsRock <= 849) then
     {
        	_val = [3,4,5] call BIS_fnc_selectRandom;
        	_count = "3-5";
@@ -373,7 +373,7 @@ if(_mine == "rock") then
        	_karma = 3;
        	_timeB = 0.09;
     };
-    if(bambusfarm_skillEhemalsRock > 1249) then
+    if(life_skillEhemalsRock > 1249) then
     {
        	_val = [5,6] call BIS_fnc_selectRandom;
        	_count = "5-6";
@@ -388,8 +388,8 @@ if(_mine == "rock") then
 Gather_fnc_progress = {
 	disableSerialization;
 	_title = "Verpacke gesammeltes...";
-	5 cutRsc ["bambusfarm_progress","PLAIN"];
-	_ui = uiNamespace getVariable "bambusfarm_progress";
+	5 cutRsc ["life_progress","PLAIN"];
+	_ui = uiNamespace getVariable "life_progress";
 	_progressBar = _ui displayCtrl 38201;
 	_titleText = _ui displayCtrl 38202;
 	_titleText ctrlSetText format["%2 (1%1)...","%",_title];
@@ -400,8 +400,8 @@ Gather_fnc_progress = {
 	{
 		sleep _timeB;
 		if(isNull _ui) then {
-			5 cutRsc ["bambusfarm_progress","PLAIN"];
-			_ui = uiNamespace getVariable "bambusfarm_progress";
+			5 cutRsc ["life_progress","PLAIN"];
+			_ui = uiNamespace getVariable "life_progress";
 			_progressBar = _ui displayCtrl 38201;
 			_titleText = _ui displayCtrl 38202;
 		};
@@ -409,14 +409,14 @@ Gather_fnc_progress = {
 		_progressBar progressSetPosition _cP;
 		_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
 		if(_cP >= 1 OR !alive player) exitWith {};
-		if(bambusfarm_istazed) exitWith {}; //Tazed
+		if(life_istazed) exitWith {}; //Tazed
 	};
 };
 //// PROZESSBAR ENDE /////////////////
 
-_diff = [_mine,_val,bambusfarm_carryWeight,bambusfarm_maxWeight] call bambusfarm_fnc_calWeightDiff;
+_diff = [_mine,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_diff == 0) exitWith {hint localize "STR_NOTF_InvFull"};
-bambusfarm_action_inUse = true;
+life_action_inUse = true;
 for "_i" from 0 to 2 do
 {
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
@@ -429,15 +429,15 @@ for "_i" from 0 to 2 do
 waitUntil {gather_fnc_progress};
 5 cutText ["","PLAIN"];
 
-if(([true,_mine,_diff] call bambusfarm_fnc_handleInv)) then
+if(([true,_mine,_diff] call life_fnc_handleInv)) then
 {
-	_itemName = [([_mine,0] call bambusfarm_fnc_varHandle)] call bambusfarm_fnc_varToStr;
+	_itemName = [([_mine,0] call life_fnc_varHandle)] call life_fnc_varToStr;
 	titleText[format["Du hast %2 %1 gesammelt.",_itemName,_diff],"PLAIN"];
-	[_karma,0] call bambusfarm_fnc_KarmaNeg;
+	[_karma,0] call life_fnc_KarmaNeg;
     [ format ["<t color='#EC891D'><t size='1'>Skillstufe %1</t></t><br/> (%2): %3/%4<br/>Karma: %5/12500", _lvl, _count,_skill+1, _lCap, _KarmaA], SzoneXW, SzoneYH, 5, 0.25 ] spawn BIS_fnc_dynamicText;
 };
 
-bambusfarm_action_inUse = false;
+life_action_inUse = false;
 [] call SOCK_fnc_updateRequest;
 [9] call SOCK_fnc_updatePartial;
 [10] call SOCK_fnc_updatePartial;

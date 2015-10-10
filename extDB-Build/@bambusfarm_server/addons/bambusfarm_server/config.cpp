@@ -1,12 +1,12 @@
 class DefaultEventhandlers;
 class CfgPatches 
 {
-	class bambusfarm_server
+	class life_server
 	{
 		units[] = {"C_man_1"};
 		weapons[] = {};
 		requiredAddons[] = {"A3_Data_F","A3_Soft_F","A3_Soft_F_Offroad_01","A3_Characters_F"};
-		fileName = "bambusfarm_server.pbo";
+		fileName = "life_server.pbo";
 		author[]= {"TAW_Tonic"}; 
 	};
 };
@@ -18,7 +18,7 @@ class CfgFunctions
 		tag = "BIS";
 		class MP
 		{
-			file = "\bambusfarm_server\Functions\MP";
+			file = "\life_server\Functions\MP";
 			class initMultiplayer{};
 			class call{};
 			class spawn{};
@@ -38,7 +38,7 @@ class CfgFunctions
 		tag = "DB";
 		class MySQL
 		{
-			file = "\bambusfarm_server\Functions\MySQL";
+			file = "\life_server\Functions\MySQL";
 			class numberSafe {};
 			class mresArray {};
 			class queryRequest{};
@@ -53,12 +53,12 @@ class CfgFunctions
 		};
 	};
 	
-	class bambusfarm_System
+	class life_System
 	{
 		tag = "bambusfarm";
 		class Wanted_Sys
 		{
-			file = "\bambusfarm_server\Functions\WantedSystem";
+			file = "\life_server\Functions\WantedSystem";
 			class wantedFetch {};
 			class wantedPerson {};
 			class wantedBounty {};
@@ -71,13 +71,13 @@ class CfgFunctions
 		
 		class Jail_Sys
 		{
-			file = "\bambusfarm_server\Functions\Jail";
+			file = "\life_server\Functions\Jail";
 			class jailSys {};
 		};
 		
 		class Client_Code
 		{
-			file = "\bambusfarm_server\Functions\Client";
+			file = "\life_server\Functions\Client";
 		};
 	};
 	
@@ -86,7 +86,7 @@ class CfgFunctions
 		tag = "TON";
 		class Systems
 		{
-			file = "\bambusfarm_server\Functions\Systems";
+			file = "\life_server\Functions\Systems";
 			class managesc {};
 			class cleanup {};
 			class huntingZone {};
@@ -110,7 +110,7 @@ class CfgFunctions
 		
 		class Housing
 		{
-			file = "\bambusfarm_server\Functions\Housing";
+			file = "\life_server\Functions\Housing";
 			class addHouse {};
 			class fetchPlayerHouses {};
 			class initHouses {};
@@ -122,7 +122,7 @@ class CfgFunctions
 		
 		class Gangs
 		{
-			file = "\bambusfarm_server\Functions\Gangs";
+			file = "\life_server\Functions\Gangs";
 			class insertGang {};
 			class queryPlayerGang {};
 			class removeGang {};
@@ -131,7 +131,7 @@ class CfgFunctions
 
 	    class DynMarket
         {
-            file = "\bambusfarm_server\Functions\DynMarket";
+            file = "\life_server\Functions\DynMarket";
             class calculatePrices {};
             class config {};
             class getUpdate {};
@@ -144,7 +144,7 @@ class CfgFunctions
 
 		class Auktionshaus
 		{
-			file = "\bambusfarm_server\Functions\Auktionshaus";
+			file = "\life_server\Functions\Auktionshaus";
 			class SAH_addOffer {};
 			class SAH_removeOffer {};
 			class SAH_checkPID {};
@@ -155,7 +155,7 @@ class CfgFunctions
 
         class bambusfarm
         {
-        	file = "\bambusfarm_server\Functions\bambusfarm";
+        	file = "\life_server\Functions\bambusfarm";
 				class insertSkillSys {};
 				class removeSkillSys {};
 				class insertKarma {};
@@ -164,7 +164,7 @@ class CfgFunctions
 		
 		class AS
 		{
-			file = "\bambusfarm_server\AS_AdminMenu";
+			file = "\life_server\AS_AdminMenu";
 			class receiver {};
 			class ASconfig {};
 			class getActions {};
@@ -186,7 +186,7 @@ class CfgVehicles
 	{
 		class EventHandlers: EventHandlers
 		{
-			init = "(_this select 0) execVM ""\bambusfarm_server\fix_headgear.sqf""";
+			init = "(_this select 0) execVM ""\life_server\fix_headgear.sqf""";
 		};
 	};
 };

@@ -6,7 +6,7 @@
 	Description:
 	Returns information on the search.
 */
-bambusfarm_action_inUse = false;
+life_action_inUse = false;
 private["_civ","_invs","_license","_robber","_guns","_gun"];
 _civ = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _invs = [_this,1,[],[[]]] call BIS_fnc_param;
@@ -18,7 +18,7 @@ _inv = "";
 if(count _invs > 0) then
 {
 	{
-		_inv = _inv + format["%1 %2<br/>",_x select 1,[([_x select 0,0] call bambusfarm_fnc_varHandle)] call bambusfarm_fnc_varToStr];
+		_inv = _inv + format["%1 %2<br/>",_x select 1,[([_x select 0,0] call life_fnc_varHandle)] call life_fnc_varToStr];
 		_index = [_x select 0,sell_array] call TON_fnc_index;
 		if(_index != -1) then
 		{
@@ -27,11 +27,11 @@ if(count _invs > 0) then
 	} foreach _invs;
 	if(_illegal > 6000) then
 	{
-		[[getPlayerUID _civ,_civ getVariable["realname",name _civ],"482"],"bambusfarm_fnc_wantedAdd",false,false] spawn bambusfarm_fnc_MP;
+		[[getPlayerUID _civ,_civ getVariable["realname",name _civ],"482"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	};
 	
-	[[getPlayerUID _civ,_civ getVariable["realname",name _civ],"481"],"bambusfarm_fnc_wantedAdd",false,false] spawn bambusfarm_fnc_MP;
-	[[0,"STR_Cop_Contraband",true,[(_civ getVariable["realname",name _civ]),[_illegal] call bambusfarm_fnc_numberText]],"bambusfarm_fnc_broadcast",west,false] spawn bambusfarm_fnc_MP;
+	[[getPlayerUID _civ,_civ getVariable["realname",name _civ],"481"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[[0,"STR_Cop_Contraband",true,[(_civ getVariable["realname",name _civ]),[_illegal] call life_fnc_numberText]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 }
 	else
 {
@@ -44,5 +44,5 @@ hint parseText format["<t color='#FF0000'><t size='2'>%1</t></t><br/><t color='#
 
 if(_robber) then
 {
-	[[0,"STR_Cop_Robber",true,[(_civ getVariable["realname",name _civ])]],"bambusfarm_fnc_broadcast",true,false] spawn bambusfarm_fnc_MP;
+	[[0,"STR_Cop_Robber",true,[(_civ getVariable["realname",name _civ])]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };

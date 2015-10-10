@@ -16,11 +16,11 @@ _jailedUnits = [];
 _list = [];
 {
 	_uid = _x select 1;
-	if([_uid] call bambusfarm_fnc_isUIDActive) then
+	if([_uid] call life_fnc_isUIDActive) then
 	{
 		if(!(_uid in _jailedUnits)) then {
 			_list pushBack _x;
 		};
 	};
-} foreach bambusfarm_wanted_list;
-[[_list],"bambusfarm_fnc_wantedList",_ret,false] spawn bambusfarm_fnc_MP;
+} foreach life_wanted_list;
+[[_list],"life_fnc_wantedList",_ret,false] spawn life_fnc_MP;

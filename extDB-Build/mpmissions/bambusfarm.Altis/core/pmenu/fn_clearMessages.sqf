@@ -5,12 +5,12 @@
 
 */
 
-bambusfarm_names = [];
-bambusfarm_messages = [];
-bambusfarm_positions = [];
+life_names = [];
+life_messages = [];
+life_positions = [];
 
 lbClear 2100;
 lbClear 1500;
 
-[] spawn bambusfarm_fnc_initMessages;
+[] spawn life_fnc_initMessages;
 

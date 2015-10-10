@@ -19,7 +19,7 @@ _value = 0;
 	_var = _x select 0;
 	_val = _x select 1;
 	
-	_index = [_var,bambusfarm_illegal_items] call TON_fnc_index;
+	_index = [_var,life_illegal_items] call TON_fnc_index;
 	if(_index != -1) then
 	{
 		_vIndex = [_var,sell_array] call TON_fnc_index;
@@ -32,8 +32,8 @@ _value = 0;
 
 if(_value > 0) then
 {
-	[[0,"STR_NOTF_VehContraband",true,[[_value] call bambusfarm_fnc_numberText]],"bambusfarm_fnc_broadcast",true,false] spawn bambusfarm_fnc_MP;
-	bambusfarm_BANK = bambusfarm_BANK + _value;
+	[[0,"STR_NOTF_VehContraband",true,[[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	life_BANK = life_BANK + _value;
 	_vehicle setVariable["Trunk",[],true];
 }
 	else

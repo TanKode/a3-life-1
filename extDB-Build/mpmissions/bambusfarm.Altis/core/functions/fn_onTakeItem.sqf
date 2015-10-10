@@ -18,9 +18,9 @@ switch(playerSide) do
 	case civilian: {
 		//Currently stoping the civilians from taking the indep clothing from medics.
 		if(_item in ["U_I_CombatUniform"]) then {
-			[_item,false,false,false,false] call bambusfarm_fnc_handleItem;
+			[_item,false,false,false,false] call life_fnc_handleItem;
 		};
 	};
 	case independent: {};
 };
-[player, uniform player] call bambusfarm_fnc_equipGear;
+[player, uniform player] call life_fnc_equipGear;

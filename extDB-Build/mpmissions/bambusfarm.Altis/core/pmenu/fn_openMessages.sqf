@@ -1,8 +1,8 @@
- _ok = createDialog "bambusfarm_messages";
+ _ok = createDialog "life_messages";
 disableSerialization;
 waitUntil {!isNull (findDisplay 10000)};
 _display = findDisplay 10000;
 
-[] call bambusfarm_fnc_initMessages;
+[] call life_fnc_initMessages;
 
 waitUntil { !dialog };

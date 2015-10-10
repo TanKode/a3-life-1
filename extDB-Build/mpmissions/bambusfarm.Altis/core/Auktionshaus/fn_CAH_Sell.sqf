@@ -20,7 +20,7 @@ profileNamespace setVariable ["listings",_currentListings];
 
 //systemChat format ["%1",[getPlayerUID player,_classname,_price]];
 
-[[[getPlayerUID player,_classname,_price]],"TON_fnc_SAH_addOffer",false,false] call bambusfarm_fnc_mp;
+[[[getPlayerUID player,_classname,_price]],"TON_fnc_SAH_addOffer",false,false] call life_fnc_mp;
 
 hint parseText format
 [	"Angebot erstellt:<br/><br/>
@@ -29,6 +29,6 @@ hint parseText format
 	([_classname] call VAS_fnc_fetchCfgDetails select 1),_price,"€"
 ];
 
-[_classname,false] spawn bambusfarm_fnc_handleItem;
+[_classname,false] spawn life_fnc_handleItem;
 
 closeDialog 0;

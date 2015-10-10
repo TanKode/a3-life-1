@@ -7,17 +7,17 @@
 */
 
 {
-	_index = _x getVariable "bambusfarm_VEH_color";
+	_index = _x getVariable "life_VEH_color";
 	if(!isNil "_index") then
 	{
-		[_x,_index] spawn bambusfarm_fnc_colorVehicle;
+		[_x,_index] spawn life_fnc_colorVehicle;
 	};
 } foreach (allMissionObjects "Car");
 
 {
-	_index = _x getVariable "bambusfarm_VEH_color";
+	_index = _x getVariable "life_VEH_color";
 	if(!isNil "_index") then
 	{
-		[_x,_index] spawn bambusfarm_fnc_colorVehicle;
+		[_x,_index] spawn life_fnc_colorVehicle;
 	};
 } foreach (allMissionObjects "Air");

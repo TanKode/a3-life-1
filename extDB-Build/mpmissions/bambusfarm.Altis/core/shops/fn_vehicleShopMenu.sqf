@@ -18,9 +18,9 @@ if(dialog) exitWith {};
 if(_shop == "") exitWith {};
 if(_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
 
-if(!createDialog "bambusfarm_Vehicle_Shop_v2") exitWith {};
+if(!createDialog "life_Vehicle_Shop_v2") exitWith {};
 
-bambusfarm_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
+life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
 
 ctrlSetText [2301,((_this select 3) select 4)];
 
@@ -30,7 +30,7 @@ if(_disableBuy) then {
 };
 
 //Fetch the shop config.
-_vehicleList = [_shop] call bambusfarm_fnc_vehicleListCfg;
+_vehicleList = [_shop] call life_fnc_vehicleListCfg;
 
 _control = ((findDisplay 2300) displayCtrl 2302);
 lbClear _control; //Flush the list.
@@ -42,7 +42,7 @@ ctrlShow [2304,false];
 	_className = _x select 0;
 	_basePrice = _x select 1;
 	
-	_vehicleInfo = [_className] call bambusfarm_fnc_fetchVehInfo;
+	_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 	_control lbAdd (_vehicleInfo select 3);
 	_control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
 	_control lbSetData [(lbSize _control)-1,_className];

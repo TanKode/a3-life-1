@@ -9,7 +9,7 @@ class revokeLicense_Menu
 	enableSimulation = true;
 
 	class controlsBackground {
-		class RscTitleBackground:bambusfarm_RscText
+		class RscTitleBackground:life_RscText
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
@@ -19,7 +19,7 @@ class revokeLicense_Menu
 			h = (1 / 25);
 		};
 
-		class MainBackground : bambusfarm_RscText
+		class MainBackground : life_RscText
 		{
 			idc = -1;
 			colorBackground[] = {0,0,0,0.7};
@@ -29,7 +29,7 @@ class revokeLicense_Menu
 			h = 0.6 - (22 / 250);
 		};
 
-		class Title : bambusfarm_RscTitle
+		class Title : life_RscTitle
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = 41001;
@@ -43,7 +43,7 @@ class revokeLicense_Menu
 
 	class controls {
 
-		class ButtonClose : bambusfarm_RscButtonMenu
+		class ButtonClose : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "Close";
@@ -54,7 +54,7 @@ class revokeLicense_Menu
 			h = (1 / 25);
 		};
 
-		class ButtonOne : bambusfarm_RscButtonMenu
+		class ButtonOne : life_RscButtonMenu
 		{
 			idc = 41002;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -66,7 +66,7 @@ class revokeLicense_Menu
 			h = 0.038;
 		};
 
-		class ButtonTwo : bambusfarm_RscButtonMenu
+		class ButtonTwo : life_RscButtonMenu
 		{
 			idc = 41003;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -78,7 +78,7 @@ class revokeLicense_Menu
 			h = 0.038;
 		};
 
-		class ButtonThree : bambusfarm_RscButtonMenu
+		class ButtonThree : life_RscButtonMenu
 		{
 			idc = 41004;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -90,7 +90,7 @@ class revokeLicense_Menu
 			h = 0.038;
 		};
 
-		class ButtonFour : bambusfarm_RscButtonMenu
+		class ButtonFour : life_RscButtonMenu
 		{
 			idc = 41005;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -102,7 +102,7 @@ class revokeLicense_Menu
 			h = 0.038;
 		};
 
-		class ButtonFive : bambusfarm_RscButtonMenu
+		class ButtonFive : life_RscButtonMenu
 		{
 			idc = 41006;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -114,7 +114,7 @@ class revokeLicense_Menu
 			h = 0.038;
 		};
 
-		class ButtonSix : bambusfarm_RscButtonMenu
+		class ButtonSix : life_RscButtonMenu
 		{
 			idc = 41007;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -126,7 +126,7 @@ class revokeLicense_Menu
 			h = 0.038;
 		};
 
-		class ButtonSeven : bambusfarm_RscButtonMenu
+		class ButtonSeven : life_RscButtonMenu
 		{
 			idc = 41008;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -138,7 +138,7 @@ class revokeLicense_Menu
 			h = 0.038;
 		};
 
-		class ButtonEight : bambusfarm_RscButtonMenu
+		class ButtonEight : life_RscButtonMenu
 		{
 			idc = 41009;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};

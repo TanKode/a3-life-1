@@ -6,7 +6,7 @@
 	Loads the medic out with the default gear.
 */
 private["_handle"];
-_handle = [] spawn bambusfarm_fnc_stripDownPlayer;
+_handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
 player addUniform "U_Rangemaster";
@@ -19,7 +19,7 @@ player assignItem "ItemCompass";
 player addItem "ItemWatch";
 player assignItem "ItemWatch";
 
-[[player,0,"textures\medic_uniform.jpg"],"bambusfarm_fnc_setTexture",true,false] spawn bambusfarm_fnc_MP;
+[[player,0,"textures\medic_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
 
-[] call bambusfarm_fnc_saveGear;
-[player, uniform player] call bambusfarm_fnc_equipGear;
+[] call life_fnc_saveGear;
+[player, uniform player] call life_fnc_equipGear;

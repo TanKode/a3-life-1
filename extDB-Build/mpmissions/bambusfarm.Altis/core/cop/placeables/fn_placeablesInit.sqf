@@ -6,9 +6,9 @@ Disclaimer: Don't be a asshole and pass this off as your own or become a KAI and
 
 P.S. - Don't be a faggot like i know some of you all will be.
 */
-bambusfarm_barrier_active = false;
-bambusfarm_barrier_activeObj = ObjNull;
-bambusfarm_placeables =
+life_barrier_active = false;
+life_barrier_activeObj = ObjNull;
+life_placeables =
 [
     [
         "Straﬂen-Kegel",
@@ -63,5 +63,5 @@ bambusfarm_placeables =
         "TapeSign_F"
     ]
 ];
-bambusfarm_bar_limit = 2500;
-bambusfarm_bar_placey = [];
+life_bar_limit = 2500;
+life_bar_placey = [];

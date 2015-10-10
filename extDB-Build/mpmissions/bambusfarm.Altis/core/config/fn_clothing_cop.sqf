@@ -32,7 +32,7 @@ switch (_filter) do
 	//Glasses
 	case 2:
 	{
-		if(__GETC__(bambusfarm_coplevel) > 4) then
+		if(__GETC__(life_coplevel) > 4) then
 		{
 			_ret set[count _ret,["G_Aviator",nil,100 * DonatorBuyChange]];
 		};

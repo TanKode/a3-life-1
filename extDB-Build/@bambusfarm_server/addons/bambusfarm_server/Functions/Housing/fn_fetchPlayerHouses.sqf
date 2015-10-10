@@ -35,7 +35,7 @@ _return = [];
 		_backpacks = (_x select 1) select 3;
 		
 		//Setup the variables
-		_positions = [_house] call bambusfarm_fnc_getBuildingPositions;
+		_positions = [_house] call life_fnc_getBuildingPositions;
 		_pos = [0,0,0];
 		
 		{

@@ -1,12 +1,12 @@
-class bambusfarm_info
+class life_info
 {
 	idd = 989898;
-	name = "bambusfarm_info";
+	name = "life_info";
 	movingEnabled = false;
 	enableSimulation = true;
 
 	class controlsBackground {
-		class backgroundMain: bambusfarm_RscText
+		class backgroundMain: life_RscText
         {
         	idc = 1000;
         	x = 0.05;
@@ -16,7 +16,7 @@ class bambusfarm_info
         	colorBackground[] = {0,0,0,0.5};
         };
 
-		class titelInfo: bambusfarm_RscText
+		class titelInfo: life_RscText
         {
         	idc = 1616;
         	text = "Infos..."; //--- ToDo: Localize;
@@ -30,7 +30,7 @@ class bambusfarm_info
 
 	class controls
 	{
-		class RscStructuredText_1100: bambusfarm_RscStructuredText
+		class RscStructuredText_1100: life_RscStructuredText
         {
         	idc = 2400;
         	x = 0.4;
@@ -38,9 +38,9 @@ class bambusfarm_info
         	w = 0.525;
         	h = 0.76;
         };
-        class RscListbox_1500: bambusfarm_RscListbox
+        class RscListbox_1500: life_RscListbox
         {
-            onLBSelChanged = "[] call bambusfarm_fnc_infoMenu;";
+            onLBSelChanged = "[] call life_fnc_infoMenu;";
             sizeEx = 0.03;
         	idc = 1500;
         	x = 0.075;
@@ -48,7 +48,7 @@ class bambusfarm_info
         	w = 0.3;
         	h = 0.76;
         };
-        class buttonClose: bambusfarm_RscButtonMenu
+        class buttonClose: life_RscButtonMenu
         {
         	idc = 5354;
         	text = "Schliessen..."; //--- ToDo: Localize;

@@ -1,16 +1,16 @@
 //::::::::::::  ::::::::::::\\
-//	Filename: bambusfarm/Rep/fn_bambusfarm_RepCar.sqf
+//	Filename: bambusfarm/Rep/fn_life_RepCar.sqf
 //	Author: Distrikt41 - Dscha
 //
 //	Beschreibung: Neue Reperatur-GUI, mit einzeln zu reparierenden Teilen
 //::::::::::::  ::::::::::::\\
 
-private["_Veh","_CntWheels","_GetCfgProp","_HitPoints","_DmgList","_Dmg","_bambusfarm_RepScheiben","_Scheiben","_display","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8","_Btn9","_Btn10","_Btn11","_isKamaz"];
+private["_Veh","_CntWheels","_GetCfgProp","_HitPoints","_DmgList","_Dmg","_life_RepScheiben","_Scheiben","_display","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8","_Btn9","_Btn10","_Btn11","_isKamaz"];
 _Veh = cursorTarget;
 
 if(isNull _Veh)exitWith{hint format ["Da is was putt! - %1", _Veh];};
 if(!(_Veh isKindOf "Car"))exitWith{hint "Deine Blickrichtung + Kein Fahrzeug = Nix reparieren! Glotz ne Karre an."};
-bambusfarm_pInact_curTarget = _Veh;
+life_pInact_curTarget = _Veh;
 
 //Fahrzeug
 #define Btn1 3341
@@ -35,8 +35,8 @@ bambusfarm_pInact_curTarget = _Veh;
 
 _CntWheels = [];
 _GetCfgProp = configProperties [configFile >> "CfgVehicles" >> (typeOf _Veh) >> "Wheels", "_CntWheels pushBack configName _x; true", true];
-if(count(_CntWheels) == 4 && !dialog)then{if(!dialog) then {createDialog "bambusfarm_car_status";};};
-if(count(_CntWheels) > 4 && !dialog)then{createDialog "bambusfarm_Lkw_Status";};
+if(count(_CntWheels) == 4 && !dialog)then{if(!dialog) then {createDialog "life_car_status";};};
+if(count(_CntWheels) > 4 && !dialog)then{createDialog "life_Lkw_Status";};
 
 disableSerialization;
 _HitPoints = [];
@@ -52,7 +52,7 @@ _GetCfgProp = configProperties [configFile >> "CfgVehicles" >> (typeOf _Veh) >> 
 }forEach _HitPoints;
 
 
-/*_bambusfarm_RepPart =
+/*_life_RepPart =
 	{
 		_part = _this select 0;
 		_Veh setHitPointDamage [_part,0];
@@ -70,13 +70,13 @@ if(count(_CntWheels) == 4)then
 	_Btn7 = _display displayCtrl Btn7;
 	
 	
-	if(!("HitBody" in _DmgList))	then{_Btn1 ctrlShow false}								else {_Btn1 buttonSetAction "closeDialog 0; [_Veh,""HitBody""] spawn bambusfarm_fnc_repairTruck;";};
-	if(!("HitEngine" in _DmgList))	then{_Btn2 ctrlShow false; ctrlSetText [3339,""]}		else {_Btn2 buttonSetAction "closeDialog 0; [_Veh,""HitEngine""] spawn bambusfarm_fnc_repairTruck;";};
-	if(!("HitFuel" in _DmgList))	then{_Btn3 ctrlShow false; ctrlSetText [3340,""]}		else {_Btn3 buttonSetAction "closeDialog 0; [_Veh,""HitFuel""] spawn bambusfarm_fnc_repairTruck;";};
-	if(!("HitLFWheel" in _DmgList))	then{_Btn4 ctrlShow false; ctrlSetText [3335,""]}		else {_Btn4 buttonSetAction "closeDialog 0; [_Veh,""HitLFWheel""] spawn bambusfarm_fnc_repairTruck;";};
-	if(!("HitRFWheel" in _DmgList))	then{_Btn5 ctrlShow false; ctrlSetText [3337,""]}		else {_Btn5 buttonSetAction "closeDialog 0; [_Veh,""HitRFWheel""] spawn bambusfarm_fnc_repairTruck;";};
-	if(!("HitLF2Wheel" in _DmgList))then{_Btn6 ctrlShow false; ctrlSetText [3336,""]}		else {_Btn6 buttonSetAction "closeDialog 0; [_Veh,""HitLF2Wheel""] spawn bambusfarm_fnc_repairTruck;";};
-	if(!("HitRF2Wheel" in _DmgList))then{_Btn7 ctrlShow false; ctrlSetText [3338,""]}		else {_Btn7 buttonSetAction "closeDialog 0; [_Veh,""HitRF2Wheel""] spawn bambusfarm_fnc_repairTruck;";};
+	if(!("HitBody" in _DmgList))	then{_Btn1 ctrlShow false}								else {_Btn1 buttonSetAction "closeDialog 0; [_Veh,""HitBody""] spawn life_fnc_repairTruck;";};
+	if(!("HitEngine" in _DmgList))	then{_Btn2 ctrlShow false; ctrlSetText [3339,""]}		else {_Btn2 buttonSetAction "closeDialog 0; [_Veh,""HitEngine""] spawn life_fnc_repairTruck;";};
+	if(!("HitFuel" in _DmgList))	then{_Btn3 ctrlShow false; ctrlSetText [3340,""]}		else {_Btn3 buttonSetAction "closeDialog 0; [_Veh,""HitFuel""] spawn life_fnc_repairTruck;";};
+	if(!("HitLFWheel" in _DmgList))	then{_Btn4 ctrlShow false; ctrlSetText [3335,""]}		else {_Btn4 buttonSetAction "closeDialog 0; [_Veh,""HitLFWheel""] spawn life_fnc_repairTruck;";};
+	if(!("HitRFWheel" in _DmgList))	then{_Btn5 ctrlShow false; ctrlSetText [3337,""]}		else {_Btn5 buttonSetAction "closeDialog 0; [_Veh,""HitRFWheel""] spawn life_fnc_repairTruck;";};
+	if(!("HitLF2Wheel" in _DmgList))then{_Btn6 ctrlShow false; ctrlSetText [3336,""]}		else {_Btn6 buttonSetAction "closeDialog 0; [_Veh,""HitLF2Wheel""] spawn life_fnc_repairTruck;";};
+	if(!("HitRF2Wheel" in _DmgList))then{_Btn7 ctrlShow false; ctrlSetText [3338,""]}		else {_Btn7 buttonSetAction "closeDialog 0; [_Veh,""HitRF2Wheel""] spawn life_fnc_repairTruck;";};
 };
 
 if(count(_CntWheels) > 4)then
@@ -95,37 +95,37 @@ if(count(_CntWheels) > 4)then
 	_Btn11 = _display displayCtrl Btn18;
 	
 	
-	if(!("HitBody" in _DmgList))then	{_Btn1 ctrlShow false}	 							else {_Btn1 buttonSetAction "closeDialog 0; [_Veh,""HitBody""] spawn bambusfarm_fnc_repairTruck; [] spawn _bambusfarm_RepScheiben;";};
-	if(!("HitEngine" in _DmgList))then	{_Btn2 ctrlShow false; ctrlSetText [6675,""]}		else {_Btn2 buttonSetAction "closeDialog 0; [_Veh,""HitEngine""] spawn bambusfarm_fnc_repairTruck; [] spawn _bambusfarm_RepScheiben;";};
-	if(!("HitFuel" in _DmgList))then	{_Btn3 ctrlShow false; ctrlSetText [6676,""]}		else {_Btn3 buttonSetAction "closeDialog 0; [_Veh,""HitFuel""] spawn bambusfarm_fnc_repairTruck; [] spawn _bambusfarm_RepScheiben;";};
+	if(!("HitBody" in _DmgList))then	{_Btn1 ctrlShow false}	 							else {_Btn1 buttonSetAction "closeDialog 0; [_Veh,""HitBody""] spawn life_fnc_repairTruck; [] spawn _life_RepScheiben;";};
+	if(!("HitEngine" in _DmgList))then	{_Btn2 ctrlShow false; ctrlSetText [6675,""]}		else {_Btn2 buttonSetAction "closeDialog 0; [_Veh,""HitEngine""] spawn life_fnc_repairTruck; [] spawn _life_RepScheiben;";};
+	if(!("HitFuel" in _DmgList))then	{_Btn3 ctrlShow false; ctrlSetText [6676,""]}		else {_Btn3 buttonSetAction "closeDialog 0; [_Veh,""HitFuel""] spawn life_fnc_repairTruck; [] spawn _life_RepScheiben;";};
 	
 	_isKamaz = [(configFile >> "CfgVehicles" >> (typeOf _Veh)),true ] call BIS_fnc_returnParents;
 	if(!("Truck_02_base_F" in _isKamaz))then
 	{
-		if(!("HitLFWheel" in _DmgList))	then{_Btn4 ctrlShow false; ctrlSetText [6667,""]}	else {_Btn4 buttonSetAction "closeDialog 0; [_Veh,""HitLFWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitRFWheel" in _DmgList))	then{_Btn5 ctrlShow false; ctrlSetText [6671,""]}	else {_Btn5 buttonSetAction "closeDialog 0; [_Veh,""HitRFWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitLF2Wheel" in _DmgList))then{_Btn6 ctrlShow false; ctrlSetText [6668,""]}	else {_Btn6 buttonSetAction "closeDialog 0; [_Veh,""HitLF2Wheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitRF2Wheel" in _DmgList))then{_Btn7 ctrlShow false; ctrlSetText [6672,""]}	else {_Btn7 buttonSetAction "closeDialog 0; [_Veh,""HitRF2Wheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitLMWheel" in _DmgList))	then{_Btn8 ctrlShow false; ctrlSetText [6669,""]}	else {_Btn8 buttonSetAction "closeDialog 0; [_Veh,""HitLMWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitRMWheel" in _DmgList))	then{_Btn9 ctrlShow false; ctrlSetText [6673,""]}	else {_Btn9 buttonSetAction "closeDialog 0; [_Veh,""HitRMWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitLBWheel" in _DmgList))	then{_Btn10 ctrlShow false; ctrlSetText [6670,""]}	else {_Btn10 buttonSetAction "closeDialog 0; [_Veh,""HitLBWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitRBWheel" in _DmgList))	then{_Btn11 ctrlShow false; ctrlSetText [6674,""]}	else {_Btn11 buttonSetAction "closeDialog 0; [_Veh,""HitRBWheel""] spawn bambusfarm_fnc_repairTruck;";};
+		if(!("HitLFWheel" in _DmgList))	then{_Btn4 ctrlShow false; ctrlSetText [6667,""]}	else {_Btn4 buttonSetAction "closeDialog 0; [_Veh,""HitLFWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitRFWheel" in _DmgList))	then{_Btn5 ctrlShow false; ctrlSetText [6671,""]}	else {_Btn5 buttonSetAction "closeDialog 0; [_Veh,""HitRFWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitLF2Wheel" in _DmgList))then{_Btn6 ctrlShow false; ctrlSetText [6668,""]}	else {_Btn6 buttonSetAction "closeDialog 0; [_Veh,""HitLF2Wheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitRF2Wheel" in _DmgList))then{_Btn7 ctrlShow false; ctrlSetText [6672,""]}	else {_Btn7 buttonSetAction "closeDialog 0; [_Veh,""HitRF2Wheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitLMWheel" in _DmgList))	then{_Btn8 ctrlShow false; ctrlSetText [6669,""]}	else {_Btn8 buttonSetAction "closeDialog 0; [_Veh,""HitLMWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitRMWheel" in _DmgList))	then{_Btn9 ctrlShow false; ctrlSetText [6673,""]}	else {_Btn9 buttonSetAction "closeDialog 0; [_Veh,""HitRMWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitLBWheel" in _DmgList))	then{_Btn10 ctrlShow false; ctrlSetText [6670,""]}	else {_Btn10 buttonSetAction "closeDialog 0; [_Veh,""HitLBWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitRBWheel" in _DmgList))	then{_Btn11 ctrlShow false; ctrlSetText [6674,""]}	else {_Btn11 buttonSetAction "closeDialog 0; [_Veh,""HitRBWheel""] spawn life_fnc_repairTruck;";};
 	}
 	else
 	{
-		if(!("HitLFWheel" in _DmgList))	then{_Btn4 ctrlShow false; ctrlSetText [6667,""]}	else {_Btn4 buttonSetAction "closeDialog 0; [_Veh,""HitLFWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitRFWheel" in _DmgList))	then{_Btn5 ctrlShow false; ctrlSetText [6671,""]}	else {_Btn5 buttonSetAction "closeDialog 0; [_Veh,""HitRFWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitLF2Wheel" in _DmgList))then{_Btn10 ctrlShow false; ctrlSetText [6670,""]}	else {_Btn10 buttonSetAction "closeDialog 0; [_Veh,""HitLF2Wheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitRF2Wheel" in _DmgList))then{_Btn11 ctrlShow false; ctrlSetText [6674,""]}	else {_Btn11 buttonSetAction "closeDialog 0; [_Veh,""HitRF2Wheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitLMWheel" in _DmgList))	then{_Btn8 ctrlShow false; ctrlSetText [6669,""]}	else {_Btn8 buttonSetAction "closeDialog 0; [_Veh,""HitLMWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitRMWheel" in _DmgList))	then{_Btn9 ctrlShow false; ctrlSetText [6673,""]}	else {_Btn9 buttonSetAction "closeDialog 0; [_Veh,""HitRMWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitLBWheel" in _DmgList))	then{_Btn6 ctrlShow false; ctrlSetText [6668,""]}	else {_Btn6 buttonSetAction "closeDialog 0; [_Veh,""HitLBWheel""] spawn bambusfarm_fnc_repairTruck;";};
-		if(!("HitRBWheel" in _DmgList))	then{_Btn7 ctrlShow false; ctrlSetText [6672,""]}	else {_Btn7 buttonSetAction "closeDialog 0; [_Veh,""HitRBWheel""] spawn bambusfarm_fnc_repairTruck;";};
+		if(!("HitLFWheel" in _DmgList))	then{_Btn4 ctrlShow false; ctrlSetText [6667,""]}	else {_Btn4 buttonSetAction "closeDialog 0; [_Veh,""HitLFWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitRFWheel" in _DmgList))	then{_Btn5 ctrlShow false; ctrlSetText [6671,""]}	else {_Btn5 buttonSetAction "closeDialog 0; [_Veh,""HitRFWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitLF2Wheel" in _DmgList))then{_Btn10 ctrlShow false; ctrlSetText [6670,""]}	else {_Btn10 buttonSetAction "closeDialog 0; [_Veh,""HitLF2Wheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitRF2Wheel" in _DmgList))then{_Btn11 ctrlShow false; ctrlSetText [6674,""]}	else {_Btn11 buttonSetAction "closeDialog 0; [_Veh,""HitRF2Wheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitLMWheel" in _DmgList))	then{_Btn8 ctrlShow false; ctrlSetText [6669,""]}	else {_Btn8 buttonSetAction "closeDialog 0; [_Veh,""HitLMWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitRMWheel" in _DmgList))	then{_Btn9 ctrlShow false; ctrlSetText [6673,""]}	else {_Btn9 buttonSetAction "closeDialog 0; [_Veh,""HitRMWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitLBWheel" in _DmgList))	then{_Btn6 ctrlShow false; ctrlSetText [6668,""]}	else {_Btn6 buttonSetAction "closeDialog 0; [_Veh,""HitLBWheel""] spawn life_fnc_repairTruck;";};
+		if(!("HitRBWheel" in _DmgList))	then{_Btn7 ctrlShow false; ctrlSetText [6672,""]}	else {_Btn7 buttonSetAction "closeDialog 0; [_Veh,""HitRBWheel""] spawn life_fnc_repairTruck;";};
 	};
 	
 };
 
 //Ablage
 /*
-player addAction["AutoReparieren",{[cursorTarget] spawn bambusfarm_fnc_bambusfarm_RepCar;}];
+player addAction["AutoReparieren",{[cursorTarget] spawn life_fnc_life_RepCar;}];
 */

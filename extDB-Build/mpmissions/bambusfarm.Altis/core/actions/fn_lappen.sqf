@@ -12,4 +12,4 @@ if( !(alive _target) ) then {_target = player;};
 
 _message = format["<t size='1.5'>%1</t><br/><t size='1'>PKW-Fahrlizenz: %2</t><br/><t size='1'>LKW-Fahrlizenz: %3</t>", name player, _hatauto, _hatLKW];
 
-[[player, _message],"bambusfarm_fnc_LicenseShown",_target,false] spawn bambusfarm_fnc_MP;
+[[player, _message],"life_fnc_LicenseShown",_target,false] spawn life_fnc_MP;

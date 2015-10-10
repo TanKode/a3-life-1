@@ -18,10 +18,10 @@ lbClear _pInv;
 if(_veh isKindOf "House_F") then {
 	private["_mWeight"];
 	_mWeight = 0;
-	{_mWeight = _mWeight + ([(typeOf _x)] call bambusfarm_fnc_vehicleWeightCfg);} foreach (_veh getVariable["containers",[]]);
+	{_mWeight = _mWeight + ([(typeOf _x)] call life_fnc_vehicleWeightCfg);} foreach (_veh getVariable["containers",[]]);
 	_veh_data = [_mWeight,(_veh getVariable["Trunk",[[],0]]) select 1];
 } else {
-	_veh_data = [_veh] call bambusfarm_fnc_vehicleWeight;
+	_veh_data = [_veh] call life_fnc_vehicleWeight;
 };
 
 if(_veh_data select 0 == -1) exitWith {closeDialog 0};
@@ -32,10 +32,10 @@ if(count _data == 0) then {_veh setVariable["Trunk",[[],0],true]; _data = [];} e
 //Player Inventory Items
 {
 	//Money Handle
-	if(_x != "bambusfarm_TASCHENGELD") then
+	if(_x != "life_TASCHENGELD") then
 	{
-		_str = [_x] call bambusfarm_fnc_varToStr;
-		_shrt = [_x,1] call bambusfarm_fnc_varHandle;
+		_str = [_x] call life_fnc_varToStr;
+		_shrt = [_x,1] call life_fnc_varHandle;
 		_val = missionNameSpace getVariable _x;
 		if(_val > 0) then
 		{
@@ -45,20 +45,20 @@ if(count _data == 0) then {_veh setVariable["Trunk",[[],0],true]; _data = [];} e
 	}
 		else
 	{
-		if(bambusfarm_TASCHENGELD > 0) then
+		if(life_TASCHENGELD > 0) then
 		{
-			_pInv lbAdd format["€%1",[bambusfarm_TASCHENGELD] call bambusfarm_fnc_numberText];
+			_pInv lbAdd format["€%1",[life_TASCHENGELD] call life_fnc_numberText];
 			_pInv lbSetData [(lbSize _pInv)-1,"money"];
 		};
 	};
-} foreach bambusfarm_inv_items;
+} foreach life_inv_items;
 
 //Trunk Inventory Items
 {
 	if((_x select 0) != "money") then
 	{
-		_var = [_x select 0,0] call bambusfarm_fnc_varHandle;
-		_name = [_var] call bambusfarm_fnc_varToStr;
+		_var = [_x select 0,0] call life_fnc_varHandle;
+		_name = [_var] call life_fnc_varToStr;
 		_val = _x select 1;
 		if(_val > 0) then
 		{
@@ -71,7 +71,7 @@ if(count _data == 0) then {_veh setVariable["Trunk",[[],0],true]; _data = [];} e
 		_val = _x select 1;
 		if(_val > 0) then
 		{
-			_tInv lbAdd format["€%1",[_val] call bambusfarm_fnc_numberText];
+			_tInv lbAdd format["€%1",[_val] call life_fnc_numberText];
 			_tInv lbSetData [(lbSize _pInv)-1,"money"];
 		};
 	};

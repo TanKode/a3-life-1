@@ -8,7 +8,7 @@
 private["_markers","_cops","_level"];
 _markers = [];
 _cops = [];
-_coplevel = call bambusfarm_coplevel;
+_coplevel = call life_coplevel;
 
 switch ( _coplevel ) do
 {

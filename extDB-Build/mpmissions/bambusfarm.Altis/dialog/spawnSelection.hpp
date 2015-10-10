@@ -1,4 +1,4 @@
-class bambusfarm_spawn_selection
+class life_spawn_selection
 {
 	idd = 38500;
 	movingEnabled = false;
@@ -6,7 +6,7 @@ class bambusfarm_spawn_selection
 	
 	class controlsBackground
 	{
-		class bambusfarm_RscTitleBackground : bambusfarm_RscText
+		class life_RscTitleBackground : life_RscText
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
@@ -14,7 +14,7 @@ class bambusfarm_spawn_selection
 			w = 0.8; h = (1 / 25);
 		};
 		
-		class MainBackground : bambusfarm_RscText
+		class MainBackground : life_RscText
 		{
 			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
@@ -22,7 +22,7 @@ class bambusfarm_spawn_selection
 			w = 0.8; h = 0.6 - (22 / 250);
 		};
 		
-		class Title : bambusfarm_RscTitle
+		class Title : life_RscTitle
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = -1;
@@ -38,7 +38,7 @@ class bambusfarm_spawn_selection
 			text = "";
 		};
 		
-		class MapView : bambusfarm_RscMapControl
+		class MapView : life_RscMapControl
 		{
 			idc = 38502;
 			x = 0.328; y = 0.26;
@@ -52,7 +52,7 @@ class bambusfarm_spawn_selection
 	
 	class controls
 	{	
-		class SpawnPointList: bambusfarm_RscListNBox
+		class SpawnPointList: life_RscListNBox
 		{
 			idc = 38510;
 			text = "";
@@ -65,15 +65,15 @@ class bambusfarm_spawn_selection
 			x = 0.105; y = 0.26;
 			w = (8.8 / 40);
 			h = (10 / 25);
-			onLBSelChanged = "_this call bambusfarm_fnc_spawnPointSelected;";
+			onLBSelChanged = "_this call life_fnc_spawnPointSelected;";
 		};
 		
-		class spawnButton : bambusfarm_RscButtonMenu
+		class spawnButton : life_RscButtonMenu
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			text = "$STR_Spawn_Spawn";
-			onButtonClick = "[] call bambusfarm_fnc_spawnConfirm";
+			onButtonClick = "[] call life_fnc_spawnConfirm";
 			x = 0.11; y = 0.69;
 			w = (8 / 40);
 			h = (1 / 25);

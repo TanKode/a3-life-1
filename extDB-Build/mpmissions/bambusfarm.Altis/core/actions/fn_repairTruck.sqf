@@ -9,19 +9,19 @@
 private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_random"];
 _veh = cursorTarget;
 _random = round(random 2);
-bambusfarm_interrupted = false;
+life_interrupted = false;
 if(isNull _veh) exitwith {};
 if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) then
 {
 	if("ToolKit" in (items player)) then
 	{
-		bambusfarm_action_inUse = true;
-		[player,"reparatur"] call bambusfarm_fnc_globalSound;
+		life_action_inUse = true;
+		[player,"reparatur"] call life_fnc_globalSound;
 		_displayName = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_upp = format[localize "STR_NOTF_Repairing",_displayName];
 		disableSerialization;
-		5 cutRsc ["bambusfarm_progress","PLAIN"];
-		_ui = uiNameSpace getVariable "bambusfarm_progress";
+		5 cutRsc ["life_progress","PLAIN"];
+		_ui = uiNameSpace getVariable "life_progress";
 		_progress = _ui displayCtrl 38201;
 		_pgText = _ui displayCtrl 38202;
 		_pgText ctrlSetText format["%2 (1%1)...","%",_upp];
@@ -46,13 +46,13 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			if(_cP >= 1) exitWith {player playActionNow "stop";};
 			if(!alive player) exitWith {};
 			if(player != vehicle player) exitWith {};
-			if(bambusfarm_interrupted) exitWith {};
+			if(life_interrupted) exitWith {};
 		};
 		
-		bambusfarm_action_inUse = false;
+		life_action_inUse = false;
 		5 cutText ["","PLAIN"];
 		player playActionNow "stop";
-		if(bambusfarm_interrupted) exitWith {bambusfarm_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; bambusfarm_action_inUse = false;};
+		if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 		if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_RepairingInVehicle","PLAIN"];};
 		if (playerside != independent && independent countside playableUnits > 0) then {
 			player removeItem "ToolKit";

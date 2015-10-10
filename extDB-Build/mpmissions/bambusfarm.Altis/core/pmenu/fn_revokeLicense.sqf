@@ -21,28 +21,28 @@ _Btn5 = _display DisplayCtrl 41006;
 _Btn6 = _display DisplayCtrl 41007;
 _Btn7 = _display DisplayCtrl 41008;
 _Btn8 = _display DisplayCtrl 41009;
-bambusfarm_pInact_curTarget = _curTarget;
+life_pInact_curTarget = _curTarget;
 
 //Driver License
-_Btn1 buttonSetAction "[[10],""bambusfarm_fnc_removeLicenses"",bambusfarm_pInact_curTarget,FALSE] spawn bambusfarm_fnc_MP; closeDialog 0;";
+_Btn1 buttonSetAction "[[10],""life_fnc_removeLicenses"",life_pInact_curTarget,FALSE] spawn life_fnc_MP; closeDialog 0;";
 
 //Truck License
-_Btn2 buttonSetAction "[[11],""bambusfarm_fnc_removeLicenses"",bambusfarm_pInact_curTarget,FALSE] spawn bambusfarm_fnc_MP; closeDialog 0;";
+_Btn2 buttonSetAction "[[11],""life_fnc_removeLicenses"",life_pInact_curTarget,FALSE] spawn life_fnc_MP; closeDialog 0;";
 
 //Pilot License
-_Btn3 buttonSetAction "[[12],""bambusfarm_fnc_removeLicenses"",bambusfarm_pInact_curTarget,FALSE] spawn bambusfarm_fnc_MP; closeDialog 0;";
+_Btn3 buttonSetAction "[[12],""life_fnc_removeLicenses"",life_pInact_curTarget,FALSE] spawn life_fnc_MP; closeDialog 0;";
 
 //Boating License
-_Btn4 buttonSetAction "[[13],""bambusfarm_fnc_removeLicenses"",bambusfarm_pInact_curTarget,FALSE] spawn bambusfarm_fnc_MP; closeDialog 0;";
+_Btn4 buttonSetAction "[[13],""life_fnc_removeLicenses"",life_pInact_curTarget,FALSE] spawn life_fnc_MP; closeDialog 0;";
 
 //Diving License
-_Btn5 buttonSetAction "[[14],""bambusfarm_fnc_removeLicenses"",bambusfarm_pInact_curTarget,FALSE] spawn bambusfarm_fnc_MP; closeDialog 0;";
+_Btn5 buttonSetAction "[[14],""life_fnc_removeLicenses"",life_pInact_curTarget,FALSE] spawn life_fnc_MP; closeDialog 0;";
 
 //Taxi License
-_Btn6 buttonSetAction "[[15],""bambusfarm_fnc_removeLicenses"",bambusfarm_pInact_curTarget,FALSE] spawn bambusfarm_fnc_MP; closeDialog 0;";
+_Btn6 buttonSetAction "[[15],""life_fnc_removeLicenses"",life_pInact_curTarget,FALSE] spawn life_fnc_MP; closeDialog 0;";
 
 //All Motor Vehicle Licenses
-_Btn7 buttonSetAction "[[16],""bambusfarm_fnc_removeLicenses"",bambusfarm_pInact_curTarget,FALSE] spawn bambusfarm_fnc_MP; closeDialog 0;";
+_Btn7 buttonSetAction "[[16],""life_fnc_removeLicenses"",life_pInact_curTarget,FALSE] spawn life_fnc_MP; closeDialog 0;";
 
 //Firearm License
-_Btn8 buttonSetAction "[[17],""bambusfarm_fnc_removeLicenses"",bambusfarm_pInact_curTarget,FALSE] spawn bambusfarm_fnc_MP; closeDialog 0;";
+_Btn8 buttonSetAction "[[17],""life_fnc_removeLicenses"",life_pInact_curTarget,FALSE] spawn life_fnc_MP; closeDialog 0;";

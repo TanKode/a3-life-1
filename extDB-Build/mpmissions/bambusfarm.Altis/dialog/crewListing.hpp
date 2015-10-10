@@ -16,7 +16,7 @@ class crewListing
             crewListingText
     };
 
-	class crewListingText: bambusfarm_RscText
+	class crewListingText: life_RscText
 	{
 		idc = 1005;
 		x = 0.901042 * safezoneW + safezoneX;

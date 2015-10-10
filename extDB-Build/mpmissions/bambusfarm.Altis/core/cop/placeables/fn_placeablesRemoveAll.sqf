@@ -8,4 +8,4 @@ P.S. - Don't be a faggot like i know some of you all will be.
 */
 {
     deleteVehicle _x;
-} forEach (bambusfarm_bar_placey);
+} forEach (life_bar_placey);

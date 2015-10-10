@@ -6,10 +6,10 @@
     Loads saved civilian gear, this is limited for a reason and that's balance.
 */
 private["_itemArray","_uniform","_vest","_backpack","_goggles","_headgear","_items","_prim","_seco","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_bMags","_vMags","_handle"];
-_itemArray = bambusfarm_gear;
+_itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
-_handle = [] spawn bambusfarm_fnc_stripDownPlayer;
+_handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
 //Cleanup player
@@ -23,15 +23,15 @@ if(count _itemArray == 0) exitWith
 {
     switch(playerSide) do {
         case west: {
-            [] call bambusfarm_fnc_copLoadout;
+            [] call life_fnc_copLoadout;
         };
         
         case civilian: {
-            [] call bambusfarm_fnc_civLoadout;
+            [] call life_fnc_civLoadout;
         };
 
         case independent: {
-            [] call bambusfarm_fnc_medicLoadout;
+            [] call life_fnc_medicLoadout;
         };
     };
 };
@@ -54,12 +54,12 @@ _pItems = [_itemArray,14,[],[[]]] call BIS_fnc_param;
 _hItems = [_itemArray,15,[],[[]]] call BIS_fnc_param;
 _yItems = [_itemArray,16,[],[[]]] call BIS_fnc_param;
 
-if(_goggles != "") then {_handle = [_goggles,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_headgear != "") then {_handle = [_headgear,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_vest != "") then {_handle = [_vest,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
-{_handle = [_x,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
+if(_goggles != "") then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_headgear != "") then {_handle = [_headgear,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_vest != "") then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+{_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
 
 {player addItemToUniform _x;} foreach (_uItems);
 {(uniformContainer player) addItemCargoGlobal [_x,1];} foreach (_uMags);
@@ -67,16 +67,16 @@ if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn bam
 {(vestContainer player) addItemCargoGlobal [_x,1];} foreach (_vMags);
 {player addItemToBackpack _x;} foreach (_bItems);
 {(backpackContainer player) addItemCargoGlobal [_x,1];} foreach (_bMags);
-bambusfarm_maxWeight = 100;
+life_maxWeight = 100;
 {
-    _item = [_x,1] call bambusfarm_fnc_varHandle;
-    [true,_item,1] call bambusfarm_fnc_handleInv;
+    _item = [_x,1] call life_fnc_varHandle;
+    [true,_item,1] call life_fnc_handleInv;
 } foreach (_yItems);
-bambusfarm_maxWeight = 24;
+life_maxWeight = 24;
 
 //Primary & Secondary (Handgun) should be added last as magazines do not automatically load into the gun.
-if(_prim != "") then {_handle = [_prim,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_seco != "") then {_handle = [_seco,true,false,false,false] spawn bambusfarm_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_prim != "") then {_handle = [_prim,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_seco != "") then {_handle = [_seco,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 
 {
     if (_x != "") then {
@@ -90,5 +90,5 @@ if(_seco != "") then {_handle = [_seco,true,false,false,false] spawn bambusfarm_
 } foreach (_hItems);
 
 if(playerSide == independent && {uniform player == "U_Rangemaster"}) then {
-	[[player,0,"textures\medic_uniform.jpg"],"bambusfarm_fnc_setTexture",true,false] spawn bambusfarm_fnc_MP;
+	[[player,0,"textures\medic_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
 };

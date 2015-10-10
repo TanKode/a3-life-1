@@ -43,17 +43,17 @@ if(count _type == 0) exitWith {}; //Not our information being passed...
 //Is there a custom bounty being sent? Set that as the pricing.
 if(_customBounty != -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
-_index = [_uid,bambusfarm_wanted_list] call TON_fnc_index;
+_index = [_uid,life_wanted_list] call TON_fnc_index;
 
 if(_index != -1) then
 {
-	_data = bambusfarm_wanted_list select _index;
+	_data = life_wanted_list select _index;
 	_crimes = _data select 2;
 	_crimes pushBack (_type select 0);
 	_val = _data select 3;
-	bambusfarm_wanted_list set[_index,[_name,_uid,_crimes,(_type select 1) + _val]];
+	life_wanted_list set[_index,[_name,_uid,_crimes,(_type select 1) + _val]];
 }
 	else
 {
-	bambusfarm_wanted_list pushBack [_name,_uid,[(_type select 0)],(_type select 1)];
+	life_wanted_list pushBack [_name,_uid,[(_type select 0)],(_type select 1)];
 };

@@ -22,9 +22,9 @@ switch(true) do
 
 if(_type == "") exitWith {}; //Couldn't get a type
 
-if(([true,_type,1] call bambusfarm_fnc_handleInv)) then
+if(([true,_type,1] call life_fnc_handleInv)) then
 {
 	deleteVehicle _fish;
 	titleText[format[(localize "STR_NOTF_Fishing"),_type],"PLAIN"];
-	bambusfarm_skillFischen = bambusfarm_skillFischen + 1;
+	life_skillFischen = life_skillFischen + 1;
 };

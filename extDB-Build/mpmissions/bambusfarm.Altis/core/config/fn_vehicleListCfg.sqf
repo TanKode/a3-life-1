@@ -33,7 +33,7 @@ switch (_shop) do
 	
 	case "adac_air_hs": 
 	{
-		if(__GETC__(bambusfarm_adaclevel) > 1) then
+		if(__GETC__(life_adaclevel) > 1) then
 		{
 			_return set[count _return,
 			["B_Heli_Light_01_F",95000 * DonatorBuyChangeCar]];
@@ -54,7 +54,7 @@ switch (_shop) do
 	
 	case "med_air_hs": 
 	{
-		if(__GETC__(bambusfarm_mediclevel) > 1) then
+		if(__GETC__(life_mediclevel) > 1) then
 		{
 			_return set[count _return,
 			["B_Heli_Light_01_F",95000 * DonatorBuyChangeCar]];
@@ -129,26 +129,26 @@ switch (_shop) do
 	{
 		_return set[count _return,
 		["C_Offroad_01_F",13500 * DonatorBuyChangeCar]];
-		if(__GETC__(bambusfarm_coplevel) > 1) then
+		if(__GETC__(life_coplevel) > 1) then
 		{
 			_return set[count _return,
 			["C_SUV_01_F",29300 * DonatorBuyChangeCar]];
 		};
-		if(__GETC__(bambusfarm_coplevel) > 2) then
+		if(__GETC__(life_coplevel) > 2) then
 		{
 			_return set[count _return,
 			["C_Hatchback_01_sport_F",32500 * DonatorBuyChangeCar]];
 			//_return set [count _return,
 			//["O_Truck_02_covered_F",80000 * DonatorBuyChangeCar]];
 		};
-		if(__GETC__(bambusfarm_coplevel) > 4) then
+		if(__GETC__(life_coplevel) > 4) then
 		{
 			_return set[count _return,
 			["I_MRAP_03_F",75000 * DonatorBuyChangeCar]];
 			_return set[count _return,
 			["B_MRAP_01_F",75000 * DonatorBuyChangeCar]];
 		};
-		if(__GETC__(bambusfarm_coplevel) > 6) then
+		if(__GETC__(life_coplevel) > 6) then
 		{
 			_return set[count _return,
 			["O_MRAP_02_F",95000 * DonatorBuyChangeCar]];
@@ -167,12 +167,12 @@ switch (_shop) do
 	
 	case "cop_air":
 	{
-		if(__GETC__(bambusfarm_coplevel) > 1) then
+		if(__GETC__(life_coplevel) > 1) then
 		{
 			_return set[count _return,
 			["B_Heli_Light_01_F",120000 * DonatorBuyChangeCar]];
 		};
-		if(__GETC__(bambusfarm_coplevel) > 4) then
+		if(__GETC__(life_coplevel) > 4) then
 		{
 			_return set[count _return,
 			["I_Heli_light_03_unarmed_F",235000 * DonatorBuyChangeCar]];
@@ -195,12 +195,12 @@ switch (_shop) do
 	
 	case "cop_air_kv":
 	{
-		if(__GETC__(bambusfarm_coplevel) > 1) then
+		if(__GETC__(life_coplevel) > 1) then
 		{
 			_return set[count _return,
 			["B_Heli_Light_01_F",120000 * DonatorBuyChangeCar]];
 		};
-		if(__GETC__(bambusfarm_coplevel) > 4) then
+		if(__GETC__(life_coplevel) > 4) then
 		{
 			_return set[count _return,
 			["I_Heli_light_03_unarmed_F",235000 * DonatorBuyChangeCar]];
@@ -223,12 +223,12 @@ switch (_shop) do
 	
 	case "cop_airhq":
 	{
-		if(__GETC__(bambusfarm_coplevel) > 1) then
+		if(__GETC__(life_coplevel) > 1) then
 		{
 			_return set[count _return,
 			["B_Heli_Light_01_F",120000 * DonatorBuyChangeCar]];
 		};
-		if(__GETC__(bambusfarm_coplevel) > 4) then
+		if(__GETC__(life_coplevel) > 4) then
 		{
 			_return set[count _return,
 			["I_Heli_light_03_unarmed_F",235000 * DonatorBuyChangeCar]];
@@ -251,12 +251,12 @@ switch (_shop) do
 	
 	case "donator_car":
 	{
-		if(__GETC__(bambusfarm_donator) == 4) then
+		if(__GETC__(life_donator) == 4) then
 		{
 			_return set[count _return,
 			["O_Truck_03_device_F",320000 * DonatorBuyChangeCar]];
 		};
-		if(__GETC__(bambusfarm_donator) == 5) then
+		if(__GETC__(life_donator) == 5) then
 		{
 			_return set[count _return,
 			["O_Truck_03_device_F",235000 * DonatorBuyChangeCar]];

@@ -1,4 +1,4 @@
-class bambusfarm_RscScrollBar
+class life_RscScrollBar
 {
 	color[] = {1,1,1,0.6};
 	colorActive[] = {1,1,1,1};
@@ -17,7 +17,7 @@ class bambusfarm_RscScrollBar
 	autoScrollRewind = 0;
 };
 
-class bambusfarm_RscControlsGroup {
+class life_RscControlsGroup {
 	type = 15;
 	idc = -1;
 	x = 0;
@@ -27,13 +27,13 @@ class bambusfarm_RscControlsGroup {
 	shadow = 0;
 	style = 16;
 	
-	class VScrollBar : bambusfarm_RscScrollBar
+	class VScrollBar : life_RscScrollBar
 	{
 		width = 0.021;
 		autoScrollEnabled = 1;
 	};
 	
-	class HScrollBar : bambusfarm_RscScrollBar
+	class HScrollBar : life_RscScrollBar
 	{
 		height = 0.028;
 	};
@@ -41,7 +41,7 @@ class bambusfarm_RscControlsGroup {
 	class Controls {};
 };
 
-class bambusfarm_RscControlsGroupNoScrollbars : bambusfarm_RscControlsGroup {
+class life_RscControlsGroupNoScrollbars : life_RscControlsGroup {
 	class VScrollbar : VScrollbar {
 		width = 0;
 	};
@@ -51,7 +51,7 @@ class bambusfarm_RscControlsGroupNoScrollbars : bambusfarm_RscControlsGroup {
 	};
 };
 
-class bambusfarm_RscHud
+class life_RscHud
 {
 	idc = -1;
 	type = 0;
@@ -64,7 +64,7 @@ class bambusfarm_RscHud
 	text = "";
 };
 
-class bambusfarm_RscListNBox
+class life_RscListNBox
 {
 	style = 16;
 	type = 102;
@@ -87,12 +87,12 @@ class bambusfarm_RscListNBox
 	autoScrollSpeed = -1;
 	autoScrollDelay = 5;
 	autoScrollRewind = 0;
-	class ListScrollBar: bambusfarm_RscScrollBar{};
-	class ScrollBar: bambusfarm_RscScrollBar{};
+	class ListScrollBar: life_RscScrollBar{};
+	class ScrollBar: life_RscScrollBar{};
 };
 
 
-class bambusfarm_RscText {
+class life_RscText {
 	x = 0;
 	y = 0;
 	h = 0.037;
@@ -112,7 +112,7 @@ class bambusfarm_RscText {
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class bambusfarm_RscLine : bambusfarm_RscText {
+class life_RscLine : life_RscText {
 	idc = -1;
 	style = 176;
 	x = 0.17;
@@ -124,7 +124,7 @@ class bambusfarm_RscLine : bambusfarm_RscText {
 	colorText[] = {1, 1, 1, 1.0};
 };
 
-class bambusfarm_RscTree {
+class life_RscTree {
 	style = 2;
 	font = "PuristaMedium";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
@@ -139,13 +139,13 @@ class bambusfarm_RscTree {
 	borderSize = 0;
 };
 
-class bambusfarm_RscTitle : bambusfarm_RscText {
+class life_RscTitle : life_RscText {
 	style = 0;
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	colorText[] = {0.95, 0.95, 0.95, 1};
 };
 
-class bambusfarm_RscPicture {
+class life_RscPicture {
 	shadow = 0;
 	type = 0;
 	style = 48;
@@ -162,18 +162,18 @@ class bambusfarm_RscPicture {
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class bambusfarm_RscTextMulti : bambusfarm_RscText
+class life_RscTextMulti : life_RscText
 {
 	linespacing = 1;
 	style = 0 + 16 + 0x200;
 };
 
-class bambusfarm_RscPictureKeepAspect : bambusfarm_RscPicture
+class life_RscPictureKeepAspect : life_RscPicture
 {
 	style = 0x30 + 0x800;
 };
 
-class bambusfarm_RscStructuredText {
+class life_RscStructuredText {
 	type = 13;
 	style = 0;
 	x = 0;
@@ -193,7 +193,7 @@ class bambusfarm_RscStructuredText {
 	};
 };
 
-class bambusfarm_RscActiveText {
+class life_RscActiveText {
 idc = -1;
     type = 11;
     style = 0;
@@ -216,7 +216,7 @@ idc = -1;
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class bambusfarm_RscButton
+class life_RscButton
 {
 	style = 2;
 	x = 0;
@@ -245,7 +245,7 @@ class bambusfarm_RscButton
 	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 };
 
-class bambusfarm_RscButtonTextOnly : bambusfarm_RscButton {
+class life_RscButtonTextOnly : life_RscButton {
 	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 	colorBackground[] = {1, 1, 1, 0};
 	colorBackgroundActive[] = {1, 1, 1, 0};
@@ -255,7 +255,7 @@ class bambusfarm_RscButtonTextOnly : bambusfarm_RscButton {
 	borderSize = 0.0;
 };
 
-class bambusfarm_RscShortcutButton {
+class life_RscShortcutButton {
 	idc = -1;
 	style = 0;
 	default = 0;
@@ -323,7 +323,7 @@ class bambusfarm_RscShortcutButton {
 	};
 };
 
-class bambusfarm_RscButtonMenu : bambusfarm_RscShortcutButton {
+class life_RscButtonMenu : life_RscShortcutButton {
 	idc = -1;
 	type = 16;
 	style = "0x02 + 0xC0";
@@ -383,7 +383,7 @@ class bambusfarm_RscButtonMenu : bambusfarm_RscShortcutButton {
 	textureNoShortcut = "";
 };
 
-class bambusfarm_RscShortcutButtonMain : bambusfarm_RscShortcutButton {
+class life_RscShortcutButtonMain : life_RscShortcutButton {
 	idc = -1;
 	style = 0;
 	default = 0;
@@ -443,7 +443,7 @@ class bambusfarm_RscShortcutButtonMain : bambusfarm_RscShortcutButton {
 	};
 };
 
-class bambusfarm_RscCheckbox {
+class life_RscCheckbox {
 	idc = -1;
 	type = 7;
 	style = 0;
@@ -468,7 +468,7 @@ class bambusfarm_RscCheckbox {
 	checked_strings[] = {CHECKED};
 };
 
-class bambusfarm_RscProgress
+class life_RscProgress
 {
 	type = 8;
 	style = 0;
@@ -483,7 +483,7 @@ class bambusfarm_RscProgress
 	colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 };
 
-class bambusfarm_RscListBox
+class life_RscListBox
 {
 	style = 16;
 	idc = -1;
@@ -516,14 +516,14 @@ class bambusfarm_RscListBox
 	tooltipColorText[] = {1,1,1,1};
 	tooltipColorBox[] = {1,1,1,1};
 	tooltipColorShade[] = {0,0,0,0.65};
-	class ListScrollBar: bambusfarm_RscScrollBar
+	class ListScrollBar: life_RscScrollBar
 	{
 		color[] = {1,1,1,1};
 		autoScrollEnabled = 1;
 	};
 };
 
-class bambusfarm_RscEdit {
+class life_RscEdit {
 	type = 2;
 	style = 0x00 + 0x40;
 	font = "PuristaMedium";
@@ -539,13 +539,13 @@ class bambusfarm_RscEdit {
 	canModify = 1;
 };
 
-class bambusfarm_RscSlider {
+class life_RscSlider {
 	h = 0.025;
 	color[] = {1, 1, 1, 0.8};
 	colorActive[] = {1, 1, 1, 1};
 };
 
-class bambusfarm_RscXSliderH
+class life_RscXSliderH
 {
 	style = 1024;
 	type = 43;
@@ -569,7 +569,7 @@ class bambusfarm_RscXSliderH
 	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
 };
 
-class bambusfarm_RscFrame {
+class life_RscFrame {
 	type = 0;
 	idc = -1;
 	style = 64;
@@ -581,7 +581,7 @@ class bambusfarm_RscFrame {
 	text = "";
 };
 
-class bambusfarm_RscBackground : bambusfarm_RscText {
+class life_RscBackground : life_RscText {
 	type = 0;
 	IDC = -1;
 	style = 512;
@@ -597,7 +597,7 @@ class bambusfarm_RscBackground : bambusfarm_RscText {
 	SizeEx = 1;
 };
 
-class bambusfarm_RscHTML {
+class life_RscHTML {
 	colorText[] = {1, 1, 1, 1.0};
 	colorBold[] = {1, 1, 1, 1.0};
 	colorLink[] = {1, 1, 1, 0.75};
@@ -657,7 +657,7 @@ class bambusfarm_RscHTML {
 	};
 };
 
-class bambusfarm_RscHitZones {
+class life_RscHitZones {
 	x = 0;
 	y = 0;
 	w = 0.1;
@@ -668,7 +668,7 @@ class bambusfarm_RscHitZones {
 	ySpace = 0;
 };
 
-class bambusfarm_RscMapControl
+class life_RscMapControl
 {
 	access = 0;
 	type = 101;
@@ -1044,7 +1044,7 @@ class bambusfarm_RscMapControl
 	};
 };
 
-class bambusfarm_RscCombo {
+class life_RscCombo {
 	style = 16;
 	type = 4;
 	x = 0;
@@ -1072,10 +1072,10 @@ class bambusfarm_RscCombo {
 	font = "PuristaMedium";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	
-	class ComboScrollBar : bambusfarm_RscScrollBar {};
+	class ComboScrollBar : life_RscScrollBar {};
 };
 
-class bambusfarm_RscToolbox {
+class life_RscToolbox {
 	colorText[] = {0.95, 0.95, 0.95, 1};
 	color[] = {0.95, 0.95, 0.95, 1};
 	colorTextSelect[] = {0.95, 0.95, 0.95, 1};

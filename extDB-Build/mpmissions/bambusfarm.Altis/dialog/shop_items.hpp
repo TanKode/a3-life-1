@@ -6,7 +6,7 @@ class shops_menu {
 	//onLoad = "['guns'] execVM 'gear\switch.sqf'";
 	
 	class controlsBackground {
-		class bambusfarm_RscTitleBackground:bambusfarm_RscText {
+		class life_RscTitleBackground:life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.1;
@@ -15,7 +15,7 @@ class shops_menu {
 			h = (1 / 25);
 		};
 		
-		class MainBackground:bambusfarm_RscText {
+		class MainBackground:life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.1;
@@ -24,7 +24,7 @@ class shops_menu {
 			h = 0.6 - (22 / 250);
 		};
 		
-		class vasText : bambusfarm_RscText
+		class vasText : life_RscText
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -34,7 +34,7 @@ class shops_menu {
 			w = 0.275; h = 0.04;
 		};
 		
-		class vasgText : bambusfarm_RscText
+		class vasgText : life_RscText
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -48,7 +48,7 @@ class shops_menu {
 	
 	class controls {
 
-		class itemList : bambusfarm_RscListBox
+		class itemList : life_RscListBox
 		{
 			idc = 2401;
 			text = "";
@@ -59,7 +59,7 @@ class shops_menu {
 			w = 0.275; h = 0.340;
 		};
 		
-		class pItemlist : bambusfarm_RscListBox
+		class pItemlist : life_RscListBox
 		{
 			idc = 2402;
 			text = "";
@@ -70,7 +70,7 @@ class shops_menu {
 			w = 0.275; h = 0.340;
 		};
 			
-		class Title : bambusfarm_RscTitle {
+		class Title : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 2403;
 			text = "";
@@ -86,7 +86,7 @@ class shops_menu {
 			text = "";
 		};
 		
-		class buyEdit : bambusfarm_RscEdit
+		class buyEdit : life_RscEdit
 		{
 			idc = 2404;
 			
@@ -96,12 +96,12 @@ class shops_menu {
 			w = 0.27; h = 0.03;
 		};
 	
-		class ButtonAddG : bambusfarm_RscButtonMenu
+		class ButtonAddG : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_VS_BuyItem";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn bambusfarm_fnc_virt_buy;";
+			onButtonClick = "[] spawn life_fnc_virt_buy;";
 			
 			x = 0.16;
 			y = 0.70;
@@ -109,7 +109,7 @@ class shops_menu {
 			h = (1 / 25);
 		};
 		
-		class sellEdit : bambusfarm_RscEdit
+		class sellEdit : life_RscEdit
 		{
 			idc = 2405;
 			
@@ -118,12 +118,12 @@ class shops_menu {
 			x = 0.60; y = 0.66;
 			w = 0.27; h = 0.03;
 		};
-		class ButtonRemoveG : bambusfarm_RscButtonMenu
+		class ButtonRemoveG : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_VS_SellItem";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call bambusfarm_fnc_virt_sell";
+			onButtonClick = "[] call life_fnc_virt_sell";
 			
 			x = 0.67;
 			y = 0.70;
@@ -131,7 +131,7 @@ class shops_menu {
 			h = (1 / 25);
 		};
 		
-		class ButtonClose : bambusfarm_RscButtonMenu {
+		class ButtonClose : life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "$STR_Global_Close";

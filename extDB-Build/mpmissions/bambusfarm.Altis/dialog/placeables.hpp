@@ -1,12 +1,12 @@
-class bambusfarm_Cop_Placeables {
+class life_Cop_Placeables {
     idd = 20000;
-    name= "bambusfarm_cop_placeables";
+    name= "life_cop_placeables";
     movingEnable = false;
     enableSimulation = true;
     onLoad = "";
     
     class controlsBackground {
-        class bambusfarm_RscTitleBackground:bambusfarm_RscText {
+        class life_RscTitleBackground:life_RscText {
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
             idc = -1;
             x = 0.1;
@@ -15,7 +15,7 @@ class bambusfarm_Cop_Placeables {
             h = (1 / 25);
         };
         
-        class MainBackground:bambusfarm_RscText {
+        class MainBackground:life_RscText {
             colorBackground[] = {0, 0, 0, 0.7};
             idc = -1;
             x = 0.1;
@@ -28,7 +28,7 @@ class bambusfarm_Cop_Placeables {
     class controls {
 
         
-        class Title : bambusfarm_RscTitle {
+        class Title : life_RscTitle {
             colorBackground[] = {0, 0, 0, 0};
             idc = -1;
             text = "Available placeables";
@@ -38,7 +38,7 @@ class bambusfarm_Cop_Placeables {
             h = (1 / 25);
         };
         
-        class PlaceablesList : bambusfarm_RscListBox
+        class PlaceablesList : life_RscListBox
         {
             idc = 20001;
             text = "";
@@ -48,7 +48,7 @@ class bambusfarm_Cop_Placeables {
             w = 0.56; h = 0.370;
         };
 
-        class CloseButtonKey : bambusfarm_RscButtonMenu {
+        class CloseButtonKey : life_RscButtonMenu {
             idc = -1;
             text = "$STR_Global_Close";
             onButtonClick = "closeDialog 0;";
@@ -58,21 +58,21 @@ class bambusfarm_Cop_Placeables {
             h = (1 / 25);
         };
         
-        class RemoveAll : bambusfarm_RscButtonMenu {
+        class RemoveAll : life_RscButtonMenu {
             idc = -1;
             text = "Remove all";
-            onButtonClick = "[] call bambusfarm_fnc_placeablesRemoveAll";
+            onButtonClick = "[] call life_fnc_placeablesRemoveAll";
             x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
             y = 0.8 - (1 / 25);
             w = (6.25 / 40);
             h = (1 / 25);
         };
         
-        class Place : bambusfarm_RscButtonMenu {
+        class Place : life_RscButtonMenu {
             idc = -1;
             text = "Place";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-            onButtonClick = "[] spawn bambusfarm_fnc_placeablePlace;";
+            onButtonClick = "[] spawn life_fnc_placeablePlace;";
             x = 0.32;
             y = 0.69;
             w = (6.25 / 40);

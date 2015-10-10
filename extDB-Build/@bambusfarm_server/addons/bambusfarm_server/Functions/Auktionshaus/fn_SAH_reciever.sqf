@@ -7,7 +7,7 @@ switch (_mode) do
 {
 	case 0:
 	{
-		[[2,SAH_offers],"bambusfarm_fnc_CAH_reciever",_info,false] spawn bambusfarm_fnc_mp;
+		[[2,SAH_offers],"life_fnc_CAH_reciever",_info,false] spawn life_fnc_mp;
 	};
 	case 1:
 	{

@@ -8,16 +8,16 @@
 */
 private["_display","_text","_units","_type"];
 
-if(!bambusfarm_use_atm) exitWith
+if(!life_use_atm) exitWith
 {
 	hint localize "STR_Shop_ATMRobbed";
 };
 
 if(!dialog) then
 {
-	if(!(createDialog "bambusfarm_atm_management")) exitWith {};
+	if(!(createDialog "life_atm_management")) exitWith {};
 };
-if(bambusfarm_ATMhacked == 1) exitWith { hint format["Da die Zentralbank gehakt wurde, steht dieser Service im Moment nicht zur Verfügung"]; };
+if(life_ATMhacked == 1) exitWith { hint format["Da die Zentralbank gehakt wurde, steht dieser Service im Moment nicht zur Verfügung"]; };
 
 disableSerialization;
 
@@ -27,8 +27,8 @@ _text2 = _display displayCtrl 87895;
 _units = _display displayCtrl 2703;
 
 lbClear _units;
-_text ctrlSetStructuredText parseText format["<img size='1.7' image='icons\bank.paa'/> €%1",[bambusfarm_BANK] call bambusfarm_fnc_numberText];
-_text2 ctrlSetStructuredText parseText format["<img size='1.6' image='icons\money.paa'/> €%1",[bambusfarm_TASCHENGELD] call bambusfarm_fnc_numberText];
+_text ctrlSetStructuredText parseText format["<img size='1.7' image='icons\bank.paa'/> €%1",[life_BANK] call life_fnc_numberText];
+_text2 ctrlSetStructuredText parseText format["<img size='1.6' image='icons\money.paa'/> €%1",[life_TASCHENGELD] call life_fnc_numberText];
 {
 	if(alive _x) then
 	{

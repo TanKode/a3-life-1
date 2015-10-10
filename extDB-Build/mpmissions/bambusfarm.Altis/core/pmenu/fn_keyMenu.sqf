@@ -19,12 +19,12 @@ _near_units = [];
 
 { if(player distance _x < 20) then {_near_units pushBack _x};} foreach playableUnits;
 
-for "_i" from 0 to (count bambusfarm_vehicles)-1 do
+for "_i" from 0 to (count life_vehicles)-1 do
 {
-	_veh = bambusfarm_vehicles select _i;
+	_veh = life_vehicles select _i;
 	if(!isNull _veh && alive _veh) then
 	{
-		_color = [(typeOf _veh),(_veh getVariable "bambusfarm_VEH_color")] call bambusfarm_fnc_vehicleColorStr;
+		_color = [(typeOf _veh),(_veh getVariable "life_VEH_color")] call life_fnc_vehicleColorStr;
 		_text = format["(%1)",_color];
 		if(_text == "()") then
 		{

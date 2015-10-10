@@ -58,6 +58,6 @@ sleep 2;
 
 
 
-bambusfarm_names pushback _name;
-bambusfarm_messages pushback _message;
-bambusfarm_positions pushback _pos;
+life_names pushback _name;
+life_messages pushback _message;
+life_positions pushback _pos;

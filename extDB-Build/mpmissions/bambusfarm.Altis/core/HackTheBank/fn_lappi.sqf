@@ -20,32 +20,32 @@ _Lappi setDir 180;
 _Lappi setVariable["LappiDragged","Dragged",true];
 
 
-bambusfarm_action_placeLappi = player addAction["Laptop platzieren",{if(!isNull bambusfarm_theLappi) then
+life_action_placeLappi = player addAction["Laptop platzieren",{if(!isNull life_theLappi) then
 		{ 
 		
 		
 			_table = nearestObject[player, "Land_TablePlastic_01_F"]; 			
-			detach bambusfarm_theLappi;
-			bambusfarm_theLappi attachTo[_table,[0,0.4,0.61]];
-			bambusfarm_theLappi setDir 180;
-			bambusfarm_theLappi = ObjNull;
+			detach life_theLappi;
+			life_theLappi attachTo[_table,[0,0.4,0.61]];
+			life_theLappi setDir 180;
+			life_theLappi = ObjNull;
 			
 		};	
-		player removeAction bambusfarm_action_placeLappi;
-		bambusfarm_action_placeLappi = nil;
-		},"",999,false,false,"",'!isNull bambusfarm_theLappi'];
+		player removeAction life_action_placeLappi;
+		life_action_placeLappi = nil;
+		},"",999,false,false,"",'!isNull life_theLappi'];
 		
-		bambusfarm_theLappi = _Lappi;
-		waitUntil {isNull bambusfarm_theLappi};
-		if(!isNil "bambusfarm_action_placeLappi") then {player removeAction bambusfarm_action_placeLappi;};
-		if(isNull _theLappi) exitWith {bambusfarm_theLappi = ObjNull;};
+		life_theLappi = _Lappi;
+		waitUntil {isNull life_theLappi};
+		if(!isNil "life_action_placeLappi") then {player removeAction life_action_placeLappi;};
+		if(isNull _theLappi) exitWith {life_theLappi = ObjNull;};
 	
 _Lappi enablesimulation false;
 _Lappi setDamage 0;
 
 
-	bambusfarm_action_pickupLappi = player addAction["<t color='#00FF00'>Laptop einpacken</t>",bambusfarm_fnc_packupLappi,"",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
-	bambusfarm_action_HTBNow = player addAction["<t color='#FF0000'>Hacke die Bank</t>",bambusfarm_fnc_hackthebank,"",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
+	life_action_pickupLappi = player addAction["<t color='#00FF00'>Laptop einpacken</t>",life_fnc_packupLappi,"",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
+	life_action_HTBNow = player addAction["<t color='#FF0000'>Hacke die Bank</t>",life_fnc_hackthebank,"",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
 			
 
 []spawn 
@@ -53,11 +53,11 @@ _Lappi setDamage 0;
 		waitUntil {HackBankCam == 1};
 		if(HackBankCam == 1)then
 		{
-			bambusfarm_action_BankCamHacked1 = player addAction["<t color='#c70099'>BankCam Haupteingang</t>",bambusfarm_fnc_fedCamHacked,"front",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
-			bambusfarm_action_BankCamHacked2 = player addAction["<t color='#c70099'>BankCam Seiteneingang</t>",bambusfarm_fnc_fedCamHacked,"side",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
-			bambusfarm_action_BankCamHacked3 = player addAction["<t color='#c70099'>BankCam Hintereingang</t>",bambusfarm_fnc_fedCamHacked,"back",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
-			bambusfarm_action_BankCamHacked4 = player addAction["<t color='#c70099'>BankCam Innen</t>",bambusfarm_fnc_fedCamHacked,"vault",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
-			bambusfarm_action_BankCamHacked5 = player addAction["<t color='#c70099'>BankCam Ausschalten</t>",bambusfarm_fnc_fedCamHacked,"off",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
+			life_action_BankCamHacked1 = player addAction["<t color='#c70099'>BankCam Haupteingang</t>",life_fnc_fedCamHacked,"front",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
+			life_action_BankCamHacked2 = player addAction["<t color='#c70099'>BankCam Seiteneingang</t>",life_fnc_fedCamHacked,"side",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
+			life_action_BankCamHacked3 = player addAction["<t color='#c70099'>BankCam Hintereingang</t>",life_fnc_fedCamHacked,"back",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
+			life_action_BankCamHacked4 = player addAction["<t color='#c70099'>BankCam Innen</t>",life_fnc_fedCamHacked,"vault",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
+			life_action_BankCamHacked5 = player addAction["<t color='#c70099'>BankCam Ausschalten</t>",life_fnc_fedCamHacked,"off",0,false,false,"",' _laptop = nearestObjects[getPos player,["Land_Laptop_unfolded_F"],8] select 0; !isNil "_laptop" && !isNil {(_laptop getVariable "LappiDragged")}'];
 		};
 };			
 			

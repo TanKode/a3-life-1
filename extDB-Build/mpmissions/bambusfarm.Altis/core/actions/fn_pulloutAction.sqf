@@ -12,6 +12,6 @@ _crew = crew cursorTarget;
 	{
 		_x setVariable ["transporting",false,true];
 		_x setVariable ["Escorting",false,true];
-		[[_x],"bambusfarm_fnc_pulloutVeh",_x,false] spawn bambusfarm_fnc_MP;
+		[[_x],"life_fnc_pulloutVeh",_x,false] spawn life_fnc_MP;
 	};
 } foreach _crew;

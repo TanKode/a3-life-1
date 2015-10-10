@@ -1,6 +1,6 @@
 private["_hndl_color","_hndl_chrom","_OBJ","_PS","_tStart","_count","_smoke_action"];
 
-bambusfarm_drugged_weed = 1;
+life_drugged_weed = 1;
 player setVariable ["smoke_weed", true, true];
 player setVariable ["drug_weed", true, true];
 _tStart = time;
@@ -11,7 +11,7 @@ _hndl_chrom = ppEffectCreate ["chromAberration",100];
 _OBJ = player;
 _PS = "#particlesource" createVehicle getpos _OBJ;
 
-[[_PS,_OBJ],"bambusfarm_fnc_smokeWeed",true] spawn bambusfarm_fnc_MP;
+[[_PS,_OBJ],"life_fnc_smokeWeed",true] spawn life_fnc_MP;
 
 _hndl_color ppEffectEnable true;
 _hndl_color ppEffectAdjust [1.175, 1.175, 0, [0, 0, 0.0, 0],[0, 0, 0, 1.0],[0, 0, 0, 0]];
@@ -21,10 +21,10 @@ _hndl_chrom ppEffectAdjust [0.027,0.027,true];
 _hndl_chrom ppEffectCommit 90;
 
 titleText["Du rauchst etwas Grass! Du könntest durstig werden!","PLAIN"];
-_smoke_action = player addAction["<t color='#FF0000'>Joint ausmachen</t>",bambusfarm_fnc_JointAusmachen,"",6, false, true, "", ' (player getVariable ["smoke_weed",false]) '];
+_smoke_action = player addAction["<t color='#FF0000'>Joint ausmachen</t>",life_fnc_JointAusmachen,"",6, false, true, "", ' (player getVariable ["smoke_weed",false]) '];
 
 _count = 0;
-while{bambusfarm_drugged_weed == 1 && Alive player && player getVariable ["smoke_weed",false] && (time - _tStart) < bambusfarm_drugged_weed_duration * 60} do
+while{life_drugged_weed == 1 && Alive player && player getVariable ["smoke_weed",false] && (time - _tStart) < life_drugged_weed_duration * 60} do
 {
 	if(_count % 10 == 0) then
 	{
@@ -32,13 +32,13 @@ while{bambusfarm_drugged_weed == 1 && Alive player && player getVariable ["smoke
 		if(damage player > 0) then { player setDamage (damage player - 0.01);};
 	};
 
-	if(_count % 20 == 0) then { bambusfarm_thirst = bambusfarm_thirst - 5; [] spawn bambusfarm_fnc_hudUpdate;};
+	if(_count % 20 == 0) then { life_thirst = life_thirst - 5; [] spawn life_fnc_hudUpdate;};
 	sleep 1;
 	_count = _count + 1;
 };
 
 player setVariable ["smoke_weed", false, true];
-bambusfarm_drugged_weed = 0;
+life_drugged_weed = 0;
 player removeAction _smoke_action;
 
 deleteVehicle _PS;
@@ -51,7 +51,7 @@ _hndl_chrom ppEffectCommit 180;
 _tStart = time;
 waitUntil{sleep 5; (!Alive player || (time - _tStart) > 300 || player getVariable ["smoke_weed",false])};
 
-if(!(player getVariable ["smoke_weed",false]) || !Alive player) then { player setVariable ["drug_weed", false, true]; bambusfarm_drugged_weed = -1; };
+if(!(player getVariable ["smoke_weed",false]) || !Alive player) then { player setVariable ["drug_weed", false, true]; life_drugged_weed = -1; };
 
 ppEffectDestroy _hndl_color;
 ppEffectDestroy _hndl_chrom;

@@ -55,9 +55,9 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 // SKILLSYS
 _query2 = switch(_side) do {
-	case west: {_returnCount = 17; format["SELECT bambusfarm_Apfel, bambusfarm_Pfirsich, bambusfarm_Kalkstein, bambusfarm_Salz, bambusfarm_Sand, bambusfarm_EisenRoh, bambusfarm_KupferRoh, bambusfarm_DiamantenRoh, bambusfarm_CannabisRoh, bambusfarm_KokainRoh, bambusfarm_HeroinRoh, bambusfarm_OelRoh, bambusfarm_Bauen, bambusfarm_KohleRoh, bambusfarm_Bruchstein, bambusfarm_TonRoh, bambusfarm_Krabben, bambusfarm_Fischen FROM skillsys WHERE playerid='%1'",_uid];};
-	case civilian: {_returnCount = 17; format["SELECT bambusfarm_Apfel, bambusfarm_Pfirsich, bambusfarm_Kalkstein, bambusfarm_Salz, bambusfarm_Sand, bambusfarm_EisenRoh, bambusfarm_KupferRoh, bambusfarm_DiamantenRoh, bambusfarm_CannabisRoh, bambusfarm_KokainRoh, bambusfarm_HeroinRoh, bambusfarm_OelRoh, bambusfarm_Bauen, bambusfarm_KohleRoh, bambusfarm_Bruchstein, bambusfarm_TonRoh, bambusfarm_Krabben, bambusfarm_Fischen FROM skillsys WHERE playerid='%1'",_uid];};
-	case independent: {_returnCount = 17; format["SELECT bambusfarm_Apfel, bambusfarm_Pfirsich, bambusfarm_Kalkstein, bambusfarm_Salz, bambusfarm_Sand, bambusfarm_EisenRoh, bambusfarm_KupferRoh, bambusfarm_DiamantenRoh, bambusfarm_CannabisRoh, bambusfarm_KokainRoh, bambusfarm_HeroinRoh, bambusfarm_OelRoh, bambusfarm_Bauen, bambusfarm_KohleRoh, bambusfarm_Bruchstein, bambusfarm_TonRoh, bambusfarm_Krabben, bambusfarm_Fischen FROM skillsys WHERE playerid='%1'",_uid];};
+	case west: {_returnCount = 17; format["SELECT life_Apfel, life_Pfirsich, life_Kalkstein, life_Salz, life_Sand, life_EisenRoh, life_KupferRoh, life_DiamantenRoh, life_CannabisRoh, life_KokainRoh, life_HeroinRoh, life_OelRoh, life_Bauen, life_KohleRoh, life_Bruchstein, life_TonRoh, life_Krabben, life_Fischen FROM skillsys WHERE playerid='%1'",_uid];};
+	case civilian: {_returnCount = 17; format["SELECT life_Apfel, life_Pfirsich, life_Kalkstein, life_Salz, life_Sand, life_EisenRoh, life_KupferRoh, life_DiamantenRoh, life_CannabisRoh, life_KokainRoh, life_HeroinRoh, life_OelRoh, life_Bauen, life_KohleRoh, life_Bruchstein, life_TonRoh, life_Krabben, life_Fischen FROM skillsys WHERE playerid='%1'",_uid];};
+	case independent: {_returnCount = 17; format["SELECT life_Apfel, life_Pfirsich, life_Kalkstein, life_Salz, life_Sand, life_EisenRoh, life_KupferRoh, life_DiamantenRoh, life_CannabisRoh, life_KokainRoh, life_HeroinRoh, life_OelRoh, life_Bauen, life_KohleRoh, life_Bruchstein, life_TonRoh, life_Krabben, life_Fischen FROM skillsys WHERE playerid='%1'",_uid];};
 };
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _queryResult2 = [_query2,2] call DB_fnc_asyncCall;
@@ -80,11 +80,11 @@ diag_log format["::::::::::::: _queryResult4 (Level): %1",_queryResult4];
 
 
 if(typeName _queryResult == "STRING") exitWith {
-	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn bambusfarm_fnc_MP;
+	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
 
 if(count _queryResult == 0) exitWith {
-	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn bambusfarm_fnc_MP;
+	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
 
 //Blah conversion thing from a2net->extdb
@@ -183,4 +183,4 @@ _queryResult set[31,[_tmp] call DB_fnc_numberSafe];
 _tmp = _queryResult4 select 0;
 _queryResult set[32,[_tmp] call DB_fnc_numberSafe];
 
-[_queryResult,"SOCK_fnc_requestReceived",_ownerID,false] call bambusfarm_fnc_MP;
+[_queryResult,"SOCK_fnc_requestReceived",_ownerID,false] call life_fnc_MP;

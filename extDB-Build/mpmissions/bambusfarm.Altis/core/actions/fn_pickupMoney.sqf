@@ -5,7 +5,7 @@
 	Description:
 	Picks up money
 */
-if((time - bambusfarm_action_delay) < 1.5) exitWith {
+if((time - life_action_delay) < 1.5) exitWith {
 	hint "You can't rapidly use action keys!";
 	if(!isNil {(_this select 0) getVariable "inUse"}) then {
 		_this select 0 setVariable["inUse",false,true];
@@ -32,7 +32,7 @@ if(!isNil {_val}) then
 	};
 	
 	player playmove "AinvPknlMstpSlayWrflDnon";
-	titleText[format[localize "STR_NOTF_PickedMoney",[_val] call bambusfarm_fnc_numberText],"PLAIN"];
-	bambusfarm_TASCHENGELD = bambusfarm_TASCHENGELD + _val;
-	bambusfarm_action_delay = time;
+	titleText[format[localize "STR_NOTF_PickedMoney",[_val] call life_fnc_numberText],"PLAIN"];
+	life_TASCHENGELD = life_TASCHENGELD + _val;
+	life_action_delay = time;
 };

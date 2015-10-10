@@ -6,10 +6,10 @@
 */
 private ["_new","_search","_got_it"];
 
-_in = bambusfarm_player;
+_in = life_player;
 _message = ctrlText 1401;
 
-if (_message == "") exitWith { [] spawn bambusfarm_fnc_initMessages; };
+if (_message == "") exitWith { [] spawn life_fnc_initMessages; };
 
 lbClear 2100;
 lbClear 1500;
