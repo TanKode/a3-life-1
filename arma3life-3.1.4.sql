@@ -33,11 +33,11 @@ DELETE FROM houses WHERE rentdate < 1
 DELIMITER ;
 
 -- -----------------------------
--- Procedure structure for `resetbambusfarmVehicles`
+-- Procedure structure for `resetlifeVehicles`
 -- -----------------------------
-DROP PROCEDURE IF EXISTS `resetbambusfarmVehicles`;
+DROP PROCEDURE IF EXISTS `resetlifeVehicles`;
 DELIMITER ;;
-CREATE DEFINER=`Arma3Server`@`localhost` PROCEDURE `resetbambusfarmVehicles`()
+CREATE DEFINER=`Arma3Server`@`localhost` PROCEDURE `resetlifeVehicles`()
 BEGIN
 	UPDATE vehicles SET `active`= 0;
 END
@@ -87,9 +87,9 @@ CREATE TABLE IF NOT EXISTS `player_stats` (
   `uid` int(12) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `playerid` varchar(50) NOT NULL,
-  `bambusfarm_Leben` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_thirst` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_hunger` int(100) NOT NULL DEFAULT '0',
+  `life_Leben` int(100) NOT NULL DEFAULT '0',
+  `life_thirst` int(100) NOT NULL DEFAULT '0',
+  `life_hunger` int(100) NOT NULL DEFAULT '0',
   PRIMARY Key (`uid`,`playerid`),
   UNIQUE KEY `playerid` (`playerid`),
   KEY `name` (`name`)
@@ -167,24 +167,24 @@ INSERT INTO `dynmarket` VALUES (1,'[]');
 DROP TABLE IF EXISTS `skillsys`;
 CREATE TABLE `skillsys` (
   `playerid` varchar(50) NOT NULL DEFAULT '0',
-  `bambusfarm_Apfel` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_Pfirsich` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_Kalkstein` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_Salz` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_Sand` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_EisenRoh` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_KupferRoh` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_DiamantenRoh` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_CannabisRoh` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_KokainRoh` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_HeroinRoh` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_OelRoh` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_Bauen` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_KohleRoh` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_Bruchstein` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_TonRoh` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_Krabben` int(100) NOT NULL DEFAULT '0',
-  `bambusfarm_Fischen` int(100) NOT NULL DEFAULT '0',
+  `life_Apfel` int(100) NOT NULL DEFAULT '0',
+  `life_Pfirsich` int(100) NOT NULL DEFAULT '0',
+  `life_Kalkstein` int(100) NOT NULL DEFAULT '0',
+  `life_Salz` int(100) NOT NULL DEFAULT '0',
+  `life_Sand` int(100) NOT NULL DEFAULT '0',
+  `life_EisenRoh` int(100) NOT NULL DEFAULT '0',
+  `life_KupferRoh` int(100) NOT NULL DEFAULT '0',
+  `life_DiamantenRoh` int(100) NOT NULL DEFAULT '0',
+  `life_CannabisRoh` int(100) NOT NULL DEFAULT '0',
+  `life_KokainRoh` int(100) NOT NULL DEFAULT '0',
+  `life_HeroinRoh` int(100) NOT NULL DEFAULT '0',
+  `life_OelRoh` int(100) NOT NULL DEFAULT '0',
+  `life_Bauen` int(100) NOT NULL DEFAULT '0',
+  `life_KohleRoh` int(100) NOT NULL DEFAULT '0',
+  `life_Bruchstein` int(100) NOT NULL DEFAULT '0',
+  `life_TonRoh` int(100) NOT NULL DEFAULT '0',
+  `life_Krabben` int(100) NOT NULL DEFAULT '0',
+  `life_Fischen` int(100) NOT NULL DEFAULT '0',
   PRIMARY KEY (`playerid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 

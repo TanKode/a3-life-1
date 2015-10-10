@@ -42,7 +42,7 @@ if (!_extDB) exitWith {
 */
 
 //Run procedures for SQL cleanup on mission start.
-["CALL resetbambusfarmVehicles",1] spawn DB_fnc_asyncCall;
+["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteOldHouses",1] spawn DB_fnc_asyncCall;
 ["CALL deleteOldGangs",1] spawn DB_fnc_asyncCall; //Maybe delete old gangs
