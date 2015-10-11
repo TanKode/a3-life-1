@@ -6,7 +6,7 @@
 	Main functionality for gathering.
 */
 if(isNil "life_action_gathering") then {life_action_gathering = false;};
-private["_gather","_itemWeight","_diff","_itemName","_val","_resourceZones","_zone","_uip","_progress","_pgText","_cP","_upp","_skillNeeded","_skillNeededa","_count","_lcap","_lvl","_skill","_karma","_karmaA"];
+private["_gather","_itemWeight","_diff","_itemName","_val","_resourceZones","_zone","_uip","_progress","_pgText","_cP","_upp","_skillNeeded","_skillNeededa","_count","_lcap","_lvl","_skill","_karma","_karmaA","_timeB"];
 _resourceZones = ["apple_1","apple_2","apple_3","apple_4","peaches_1","peaches_2","peaches_3","peaches_4","heroin_1","cocaine_1","weed_1"];
 _zone = "";
 _skillNeeded = life_skillCannabis;
@@ -347,11 +347,15 @@ for "_i" from 0 to 2 do
 	waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
 	sleep _time;
 };
-
+/*
 [] call gather_fnc_progress;
 
 waitUntil {gather_fnc_progress};
-//5 cutText ["","PLAIN"];
+*/
+
+_handleC = [] spawn gather_fnc_progress;
+waitUntil {scriptDone _handleC};
+5 cutText ["","PLAIN"];
 
 if(([true,_gather,_diff] call life_fnc_handleInv)) then
 {

@@ -169,36 +169,29 @@ switch (_code) do
 			};
 		};
 	};
-	//L Key?
-	case 38: 
-	{
-		_veh = vehicle player;
-        if (_shift && !_alt && !_ctrlKey) then
-        {
-            if(_veh != player && ((driver _veh) == player)) then
-            {
-                if(!isNil {_veh getVariable "lights"}) then
-                {
-                    if(playerSide == west) then
-                    {
-                        [_veh] call life_fnc_sirenLights;
-                    };
-                    if(playerSide == independent) then
-                    {
-                        [_veh] call life_fnc_medicSirenLights;
-                    };
-                    if(__GETC__(life_coplevel) == 12) then
-                    {
-                    	[_veh] call life_fnc_sirenLights;
-                    };
 
-                };
-            };
-            _handled = true;
-        };
-		
-		if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
-	};
+	//Shift + L Key = Emergency Lights - Radar
+    case 38:
+     {
+         _veh = vehicle player;
+         if (_shift && !_alt && !_ctrlKey) then
+         {
+             if(playerSide in [west,independent] && _veh != player && ((driver _veh) == player)) then
+             {
+                 if(!isNil {_veh getVariable "lights"}) then
+                 {
+                     if(playerSide == west) then
+                     {
+                         [_veh] call life_fnc_sirenLights;
+                     } else {
+                         [_veh] call life_fnc_medicSirenLights;
+                     };
+                 };
+             };
+             _handled = true;
+         };
+         if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
+     };
 	//Y Player Menu
 	case 21:
 	{
@@ -256,7 +249,7 @@ switch (_code) do
 	};
 
 	//surrender... shift + Q
-	case 16:
+	case 44:
 	{
 		if(_shift) then {_handled = true;};
 

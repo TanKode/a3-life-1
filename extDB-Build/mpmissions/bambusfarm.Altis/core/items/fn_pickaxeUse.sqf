@@ -5,7 +5,7 @@
 	Description:
 	Main functionality for pickaxe in mining.
 */
-private["_mine","_itemWeight","_diff","_itemName","_val","_karmaA","_skillCopper","_skill","_count","_lcap","_uip","_progress","_pgText","_cP","_upp","_lvl","_skill","_karma","_skilLRock","_skillSand","_skillSalt","_skillIron"];
+private["_mine","_itemWeight","_diff","_itemName","_val","_karmaA","_skillCopper","_skill","_count","_lcap","_uip","_progress","_pgText","_cP","_upp","_lvl","_skill","_karma","_skilLRock","_skillSand","_skillSalt","_skillIron","_timeB"];
 
 _skillCopper = life_skillCopperore;
 _skilLRock = life_skillEhemalsRock;
@@ -460,10 +460,14 @@ for "_i" from 0 to 2 do
 	sleep 2.5;
 };
 
-
+/*
 [] call gather_fnc_progress;
+
 waitUntil {gather_fnc_progress};
-//5 cutText ["","PLAIN"];
+*/
+_handleC = [] spawn gather_fnc_progress;
+waitUntil {scriptDone _handleC};
+5 cutText ["","PLAIN"];
 
 if(([true,_mine,_diff] call life_fnc_handleInv)) then
 {
