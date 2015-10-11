@@ -108,7 +108,7 @@ DYNMARKET_Items_ToTrack        =
     ["glass",1240],
 	["cement",1950],
 	["psaft",50],
-    ["asaft",50]
+    ["asaft",50],
 
 	["Platzhalter",0],
 
@@ -121,7 +121,7 @@ DYNMARKET_Items_ToTrack        =
     ["goldbar",95000],
     ["turtlesoup",1000],
     ["pschnapps",75],
-    ["aschnapps",75]
+    ["aschnapps",75],
 
 	["Platzhalter",0],
 

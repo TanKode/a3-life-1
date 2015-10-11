@@ -323,7 +323,7 @@ buy_array =
 	["mackerel",200],
 	["tuna",900],
 	["mullet",300],
-	["catshark",350],
+	["catshark",4000],
 	["water",10],
 	["turtle",4000],
 	["turtlesoup",2500],
