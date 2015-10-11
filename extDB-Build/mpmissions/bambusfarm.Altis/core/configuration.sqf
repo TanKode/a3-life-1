@@ -308,7 +308,6 @@ sell_array =
     ["handcuffs",200],
     ["Schere",500],
     ["lappi",1000],
-
     ["psaft",50],
     ["asaft",50],
     ["pschnapps",75],

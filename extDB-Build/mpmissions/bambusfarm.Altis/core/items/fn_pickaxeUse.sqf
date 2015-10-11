@@ -38,6 +38,7 @@ _timeB = 0.50;
 _val = 1;
 if(_mine == "copperore") then
 {
+	_timeB = 0.15;
 	life_skillCopperore = life_skillCopperore + 1;
 	if(life_skillCopperore < 49)then
 	{
@@ -92,6 +93,7 @@ if(_mine == "copperore") then
 
 if(_mine == "ironore") then
 {
+	_timeB = 0.20;
 	life_skillIronore = life_skillIronore + 1;
 	if(life_skillIronore < 49)then
 	{
@@ -146,6 +148,7 @@ if(_mine == "ironore") then
 
 if(_mine == "salt") then
 {
+	_timeB = 0.15;
 	life_skillSalt = life_skillSalt + 1;
 	if(life_skillSalt < 49)then
 	{
@@ -200,6 +203,7 @@ if(_mine == "salt") then
 
 if(_mine == "sand") then
 {
+	_timeB = 0.13;
 	life_skillSand = life_skillSand + 1;
 	if(life_skillSand < 49)then
 	{
@@ -254,6 +258,7 @@ if(_mine == "sand") then
 
 if(_mine == "diamond") then
 {
+	_timeB = 0.25;
 	life_skillDiamond = life_skillDiamond + 1;
 	if(life_skillDiamond < 49)then
 	{
@@ -308,6 +313,7 @@ if(_mine == "diamond") then
 
 if(_mine == "oilu") then
 {
+	_timeB = 0.25;
 	life_skillOilu = life_skillOilu + 1;
 	if(life_skillOilu < 49)then
 	{
@@ -362,6 +368,7 @@ if(_mine == "oilu") then
 
 if(_mine == "rock") then
 {
+	_timeB = 0.15;
 	life_skillEhemalsRock = life_skillEhemalsRock + 1;
 	if(life_skillEhemalsRock < 49)then
 	{
@@ -456,7 +463,7 @@ for "_i" from 0 to 2 do
 
 [] call gather_fnc_progress;
 waitUntil {gather_fnc_progress};
-5 cutText ["","PLAIN"];
+//5 cutText ["","PLAIN"];
 
 if(([true,_mine,_diff] call life_fnc_handleInv)) then
 {

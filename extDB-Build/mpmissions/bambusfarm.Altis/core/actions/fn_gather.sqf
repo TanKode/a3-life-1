@@ -39,6 +39,7 @@ if(_gather == "cocaine" && _skillNeededa < 249) exitWith {hint format ["Um Kokai
 if(_gather == "apple") then
 {
 	life_SkillApple = life_SkillApple + 1;
+	_timeB = 0.06;
 	if(life_SkillApple < 50)then
 	{
 		_val = [3,4,5] call BIS_fnc_selectRandom;
@@ -91,6 +92,7 @@ if(_gather == "apple") then
    	};
 if(_gather == "peach") then
 {
+	_timeB = 0.06;
 	life_skillPeach = life_skillPeach + 1;
 	if(life_skillPeach < 50)then
 	{
@@ -144,6 +146,7 @@ if(_gather == "peach") then
 };
 if(_gather == "heroinu") then
 {
+	_timeB = 0.075;
 	life_skillHeroinu = life_skillHeroinu + 1;
 	if(life_skillHeroinu < 50)then
 	{
@@ -197,6 +200,7 @@ if(_gather == "heroinu") then
 };
 if(_gather == "cocaine") then
 {
+	_timeB = 0.125;
 	life_skillCocaine = life_skillCocaine + 1;
 	if(life_skillCocaine < 50)then
 	{
@@ -250,6 +254,7 @@ if(_gather == "cocaine") then
 };
 if(_gather == "cannabis") then
 {
+	_timeB = 0.075;
 	life_skillCannabis = life_skillCannabis + 1;
 	if(life_skillCannabis < 50)then
 	{
@@ -346,7 +351,7 @@ for "_i" from 0 to 2 do
 [] call gather_fnc_progress;
 
 waitUntil {gather_fnc_progress};
-5 cutText ["","PLAIN"];
+//5 cutText ["","PLAIN"];
 
 if(([true,_gather,_diff] call life_fnc_handleInv)) then
 {
