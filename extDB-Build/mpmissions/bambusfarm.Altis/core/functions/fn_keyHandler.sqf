@@ -254,12 +254,14 @@ switch (_code) do
 	{
 		closeDialog 0;[] spawn life_fnc_openMenu;
 	};
-	
-	//surrender... shift + g
-	case 34:
+
+	//surrender... shift + Q
+	case 16:
 	{
-		if(_alt) then {_handled = true;};
-		if (!_shift && _alt && !_ctrlKey) then {
+		if(_shift) then {_handled = true;};
+
+		if (_shift) then
+		{
 			if (vehicle player == player && !(player getVariable ["restrained", false]) && (animationState player) != "Incapacitated" && !life_istazed) then
 			{
 				if (player getVariable ["surrender", false]) then
@@ -271,29 +273,7 @@ switch (_code) do
 				};
 			};
 		};
-	};	
-
-    //Q Key
-
-    case 16:
-
-    {
-        if((!life_action_inUse) && (vehicle player == player) ) then
-        {
-            {
-                _str = [_x] call life_fnc_varToStr;
-                _val = missionNameSpace getVariable _x;
-                if(_val > 0 ) then
-                {
-                    if( _str == "Spitzhacke" || _str == "pickaxe" ) then
-                    {
-                        [] call life_fnc_pickAxeUse;
-                        waitUntil {life_fnc_pickAxeUse};
-                    };
-                };
-            } foreach life_inv_items;
-        }
-    };
+	};
 
 	//U Key
 	case 22:

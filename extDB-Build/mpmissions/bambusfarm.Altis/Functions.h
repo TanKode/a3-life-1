@@ -106,6 +106,7 @@ class life_Client_Core
 		class abortAction {};
 		class surrender {};
 		class robShops {};
+		class dynprocess {};
 	};
 	
 	class Housing

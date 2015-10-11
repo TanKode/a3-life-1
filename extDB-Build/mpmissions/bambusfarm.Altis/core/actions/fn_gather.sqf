@@ -33,11 +33,10 @@ switch(true) do {
 	default {""};
 };
 //gather check??
+if((player getVariable["sammeln",false])) exitWith { hint "Du sammelst schon";};
 if(vehicle player != player) exitWith {};
 if(_gather == "heroinu" && _skillNeeded < 249) exitWith {hint format ["Um Schlafmohn sammeln zu können, benötigst du 250 Punkte in Cannabis. (derzeit: %1/250)", _skillNeeded];};
 if(_gather == "cocaine" && _skillNeededa < 249) exitWith {hint format ["Um Kokain sammeln zu können, benötigst du 250 Punkte in Heroin. (derzeit: %1/250)", _skillNeededa];};
-_timeB = 0.50;
-_val = 1;
 if(_gather == "apple") then
 {
 	life_SkillApple = life_SkillApple + 1;
@@ -284,6 +283,7 @@ if(_gather == "cannabis") then
        	_timeB = 0.075;
     };
 };
+player setVariable["sammeln",true,true];
 //// PROZESSBAR START /////////////////
 Gather_fnc_progress = {
 	disableSerialization;
@@ -340,6 +340,7 @@ if(([true,_gather,_diff] call life_fnc_handleInv)) then
 };
 
 life_action_inUse = false;
+life_action_gathering = false;
 
 [] call SOCK_fnc_updateRequest;
 [9] call SOCK_fnc_updatePartial;

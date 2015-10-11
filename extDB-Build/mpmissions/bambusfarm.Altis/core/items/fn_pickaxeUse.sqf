@@ -26,6 +26,7 @@ switch (true) do
 	default {_mine = "";};
 };
 //Mine check
+if((player getVariable["sammeln",false])) exitWith { hint "Du sammelst schon";};
 if(_mine == "") exitWith {hint localize "STR_ISTR_Pick_NotNear"};
 if(vehicle player != player) exitWith {hint localize "STR_ISTR_Pick_MineVeh";};
 
@@ -384,6 +385,7 @@ if(_mine == "rock") then
     };
 };
 
+player setVariable["sammeln",true,true];
 //// PROZESSBAR START /////////////////
 Gather_fnc_progress = {
 	disableSerialization;
