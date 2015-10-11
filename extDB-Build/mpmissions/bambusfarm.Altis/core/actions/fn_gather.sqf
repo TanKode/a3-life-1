@@ -39,7 +39,7 @@ if(_gather == "cocaine" && _skillNeededa < 249) exitWith {hint format ["Um Kokai
 if(_gather == "apple") then
 {
 	life_SkillApple = life_SkillApple + 1;
-	if(life_SkillApple < 49)then
+	if(life_SkillApple < 50)then
 	{
 		_val = [3,4,5] call BIS_fnc_selectRandom;
 		_count = "3-5";
@@ -47,48 +47,52 @@ if(_gather == "apple") then
 		_lcap = 50;
 		_karma = 1;
 		_timeB = 0.06;
-	};
-	if(life_SkillApple >= 49 && life_SkillApple <= 249)then
-	{
-    	_val = [3,4,5] call BIS_fnc_selectRandom;
-    	_count = "3-5";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = 2;
-    	_timeB = 0.06;
-    };
-    if(life_SkillApple >= 249 && life_SkillApple <= 499) then
-    {
-       	_val = [4,5,6] call BIS_fnc_selectRandom;
-       	_count = "4-6";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = 3;
-       	_timeB = 0.05;
-    };
-    if(life_SkillApple >= 499 && life_SkillApple <= 849) then
-    {
-       	_val = [4,5,6] call BIS_fnc_selectRandom;
-       	_count = "4-6";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = 3;
-       	_timeB = 0.04;
-    };
-    if(life_SkillApple > 1249) then
-    {
-       	_val = [6,7] call BIS_fnc_selectRandom;
-       	_count = "6-7";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = 5;
-       	_timeB = 0.04;
-    };
-};
+	}else{
+		if(life_SkillApple < 250)then
+		{
+   			_val = [3,4,5] call BIS_fnc_selectRandom;
+   			_count = "3-5";
+   			_lvl = 2;
+   			_lcap = 250;
+   			_karma = 2;
+   			_timeB = 0.06;
+   		}else{
+   		    	if(life_SkillApple < 500) then
+   	        	{
+   	        	   	_val = [4,5,6] call BIS_fnc_selectRandom;
+   	        	   	_count = "4-6";
+   	        	   	_lvl = 3;
+   	        	   	_lcap = 500;
+   	        	   	_karma = 3;
+   	        	   	_timeB = 0.05;
+   	        	}else{
+   	        		if(life_SkillApple < 850) then
+   	        		{
+   	        		   	_val = [4,5,6] call BIS_fnc_selectRandom;
+   	        		   	_count = "4-6";
+   	        		   	_lvl = 4;
+   	        		   	_lcap = 850;
+   	        		   	_karma = 3;
+   	        		   	_timeB = 0.04;
+   	        		}else{
+   	        			if(life_SkillApple < 1250) then
+   	                	{
+   	                	   	_val = [6,7] call BIS_fnc_selectRandom;
+   	                	   	_count = "6-7";
+   	                	   	_lvl = 5;
+   	                	   	_lcap = 1250;
+   	                	   	_karma = 5;
+   	                	   	_timeB = 0.04;
+   	                	};
+   	        		};
+   	        	};
+   	        };
+   		};
+   	};
 if(_gather == "peach") then
 {
 	life_skillPeach = life_skillPeach + 1;
-	if(life_skillPeach < 49)then
+	if(life_skillPeach < 50)then
 	{
 		_val = [3,4,5] call BIS_fnc_selectRandom;
 		_count = "3-5";
@@ -96,48 +100,52 @@ if(_gather == "peach") then
 		_lcap = 50;
 		_karma = 1;
 		_timeB = 0.06;
-	};
-	if(life_skillPeach >= 49 && life_skillPeach <= 249)then
-	{
-    	_val = [3,4,5] call BIS_fnc_selectRandom;
-    	_count = "3-5";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = 2;
-    	_timeB = 0.06;
-    };
-    if(life_skillPeach >= 249 && life_skillPeach <= 499) then
-    {
-       	_val = [4,5,6] call BIS_fnc_selectRandom;
-       	_count = "4-6";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = 3;
-       	_timeB = 0.05;
-    };
-    if(life_skillPeach >= 499 && life_skillPeach <= 849) then
-    {
-       	_val = [4,5,6] call BIS_fnc_selectRandom;
-       	_count = "4-6";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = 3;
-       	_timeB = 0.04;
-    };
-    if(life_skillPeach > 1249) then
-    {
-       	_val = [5,6,7,8] call BIS_fnc_selectRandom;
-       	_count = "5-8";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = 5;
-       	_timeB = 0.04;
-    };
+	}else{
+		if(life_skillPeach < 250)then
+		{
+    		_val = [3,4,5] call BIS_fnc_selectRandom;
+    		_count = "3-5";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = 2;
+    		_timeB = 0.06;
+    	}else{
+    		if(life_skillPeach < 500) then
+    		{
+    		   	_val = [4,5,6] call BIS_fnc_selectRandom;
+    		   	_count = "4-6";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = 3;
+    		   	_timeB = 0.05;
+    		}else{
+    			if(life_skillPeach < 850) then
+    			{
+    			   	_val = [4,5,6] call BIS_fnc_selectRandom;
+    			   	_count = "4-6";
+    			   	_lvl = 4;
+    			   	_lcap = 850;
+    			   	_karma = 3;
+    			   	_timeB = 0.04;
+    			}else{
+    				if(life_skillPeach < 1250) then
+    				{
+    				   	_val = [5,6,7,8] call BIS_fnc_selectRandom;
+    				   	_count = "5-8";
+    				   	_lvl = 5;
+    				   	_lcap = 1250;
+    				   	_karma = 5;
+    				   	_timeB = 0.04;
+   	        		};
+   	        	};
+   	        };
+   		};
+   	};
 };
 if(_gather == "heroinu") then
 {
 	life_skillHeroinu = life_skillHeroinu + 1;
-	if(life_skillHeroinu < 49)then
+	if(life_skillHeroinu < 50)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -145,48 +153,52 @@ if(_gather == "heroinu") then
 		_lcap = 50;
 		_karma = -1;
 		_timeB = 0.075;
-	};
-	if(life_skillHeroinu >= 49 && life_skillHeroinu <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = -2;
-    	_timeB = 0.075;
-    };
-    if(life_skillHeroinu >= 249 && life_skillHeroinu <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = -3;
-       	_timeB = 0.075;
-    };
-    if(life_skillHeroinu >= 499 && life_skillHeroinu <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = -3;
-       	_timeB = 0.075;
-    };
-    if(life_skillHeroinu > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = -5;
-       	_timeB = 0.075;
-    };
+	}else{
+		if(life_skillHeroinu < 250)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = -2;
+    		_timeB = 0.075;
+    	}else{
+    		if(life_skillHeroinu < 500) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = -3;
+    		   	_timeB = 0.075;
+    		}else{
+    			if(life_skillHeroinu < 850) then
+    			{
+    			   	_val = [3,4,5] call BIS_fnc_selectRandom;
+    			   	_count = "3-5";
+    			   	_lvl = 4;
+    			   	_lcap = 850;
+    			   	_karma = -3;
+    			   	_timeB = 0.075;
+    			}else{
+    				if(life_skillHeroinu < 1250) then
+    				{
+    				   	_val = [5,6] call BIS_fnc_selectRandom;
+    				   	_count = "5-6";
+    				   	_lvl = 5;
+    				   	_lcap = 1250;
+    				   	_karma = -5;
+    				   	_timeB = 0.075;
+   	        		};
+   	        	};
+   	        };
+   		};
+   	};
 };
 if(_gather == "cocaine") then
 {
 	life_skillCocaine = life_skillCocaine + 1;
-	if(life_skillCocaine < 49)then
+	if(life_skillCocaine < 50)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -194,49 +206,52 @@ if(_gather == "cocaine") then
 		_lcap = 50;
 		_karma = -1;
 		_timeB = 0.125;
-	};
-	if(life_skillCocaine >= 49 && life_skillCocaine <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = -2;
-    	_timeB = 0.125;
-    };
-    if(life_skillCocaine >= 249 && life_skillCocaine <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = -3;
-       	_timeB = 0.125;
-    };
-    if(life_skillCocaine >= 499 && life_skillCocaine <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = -3;
-       	_timeB = 0.125;
-
-    };
-    if(life_skillCocaine > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = -5;
-       	_timeB = 0.125;
-    };
+	}else{
+		if(life_skillCocaine < 250)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = -2;
+    		_timeB = 0.125;
+    	}else{
+    		if(life_skillCocaine < 500) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = -3;
+    		   	_timeB = 0.125;
+    		}else{
+    			if(life_skillCocaine < 850) then
+    			{
+    			   	_val = [3,4,5] call BIS_fnc_selectRandom;
+    			   	_count = "3-5";
+    			   	_lvl = 4;
+    			   	_lcap = 850;
+    			   	_karma = -3;
+    			   	_timeB = 0.125;
+    			}else{
+    				if(life_skillCocaine > 1250) then
+    				{
+    				   	_val = [5,6] call BIS_fnc_selectRandom;
+    				   	_count = "5-6";
+    				   	_lvl = 5;
+    				   	_lcap = 1250;
+    				   	_karma = -5;
+    				   	_timeB = 0.125;
+   	        		};
+   	        	};
+   	        };
+   		};
+   	};
 };
 if(_gather == "cannabis") then
 {
 	life_skillCannabis = life_skillCannabis + 1;
-	if(life_skillCannabis < 49)then
+	if(life_skillCannabis < 50)then
 	{
 		_val = [1,2] call BIS_fnc_selectRandom;
 		_count = "1-2";
@@ -244,43 +259,47 @@ if(_gather == "cannabis") then
 		_lcap = 50;
 		_karma = -1;
 		_timeB = 0.075;
-	};
-	if(life_skillCannabis >= 49 && life_skillCannabis <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = -2;
-    	_timeB = 0.075;
-    };
-    if(life_skillCannabis >= 249 && life_skillCannabis <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = -3;
-       	_timeB = 0.075;
-    };
-    if(life_skillCannabis >= 499 && life_skillCannabis <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = -3;
-       	_timeB = 0.075;
-    };
-    if(life_skillCannabis > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = -5;
-       	_timeB = 0.075;
-    };
+	}else{
+		if(life_skillCannabis < 250)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = -2;
+    		_timeB = 0.075;
+    	}else{
+    		if(life_skillCannabis < 500) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = -3;
+    		   	_timeB = 0.075;
+    		}else{
+    			if(life_skillCannabis < 850) then
+    			{
+    			   	_val = [3,4,5] call BIS_fnc_selectRandom;
+    			   	_count = "3-5";
+    			   	_lvl = -4;
+    			   	_lcap = 850;
+    			   	_karma = -3;
+    			   	_timeB = 0.075;
+    			}else{
+    				if(life_skillCannabis < 1250) then
+    				{
+    				   	_val = [5,6] call BIS_fnc_selectRandom;
+    				   	_count = "5-6";
+    				   	_lvl = 5;
+    				   	_lcap = 1250;
+    				   	_karma = -5;
+    				   	_timeB = 0.075;
+   	        		};
+   	        	};
+   	        };
+   		};
+   	};
 };
 //// PROZESSBAR START /////////////////
 Gather_fnc_progress = {

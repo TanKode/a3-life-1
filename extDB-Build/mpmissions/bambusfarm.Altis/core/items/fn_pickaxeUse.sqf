@@ -47,43 +47,47 @@ if(_mine == "copperore") then
 		_lcap = 50;
 		_karma = 1;
 		_timeB = 0.15;
-	};
-	if(life_skillCopperore >= 49 && life_skillCopperore <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = 2;
-    	_timeB = 0.12;
-    };
-    if(life_skillCopperore >= 249 && life_skillCopperore <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = 3;
-       	_timeB = 0.12;
-    };
-    if(life_skillCopperore >= 499 && life_skillCopperore <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = 3;
-       	_timeB = 0.10;
-    };
-    if(life_skillCopperore > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = 5;
-       	_timeB = 0.10;
-    };
+	}else{
+		if(life_skillCopperore >= 49 && life_skillCopperore <= 249)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = 2;
+    		_timeB = 0.12;
+    	}else{
+    		if(life_skillCopperore >= 249 && life_skillCopperore <= 499) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = 3;
+    		   	_timeB = 0.12;
+    		}else{
+    			if(life_skillCopperore >= 499 && life_skillCopperore <= 849) then
+    			{
+    			   	_val = [3,4,5] call BIS_fnc_selectRandom;
+    			   	_count = "3-5";
+    			   	_lvl = 4;
+    			   	_lcap = 850;
+    			   	_karma = 3;
+    			   	_timeB = 0.10;
+    			}else{
+    				if(life_skillCopperore > 1249) then
+    				{
+    				   	_val = [5,6] call BIS_fnc_selectRandom;
+    				   	_count = "5-6";
+    				   	_lvl = 5;
+    				   	_lcap = 1250;
+    				   	_karma = 5;
+    				   	_timeB = 0.10;
+    				};
+    			};
+    		};
+    	};
+   	};
 };
 
 if(_mine == "ironore") then
@@ -97,43 +101,47 @@ if(_mine == "ironore") then
 		_lcap = 50;
 		_karma = 1;
 		_timeB = 0.20;
-	};
-	if(life_skillIronore >= 49 && life_skillIronore <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = 2;
-    	_timeB = 0.17;
-    };
-    if(life_skillIronore >= 249 && life_skillIronore <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = 3;
-       	_timeB = 0.15;
-    };
-    if(life_skillIronore >= 499 && life_skillIronore <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = 3;
-       	_timeB = 0.15;
-    };
-    if(life_skillIronore > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = 5;
-       	_timeB = 0.13;
-    };
+	}else{
+		if(life_skillIronore >= 49 && life_skillIronore <= 249)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = 2;
+    		_timeB = 0.17;
+    	}else{
+    		if(life_skillIronore >= 249 && life_skillIronore <= 499) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = 3;
+    		   	_timeB = 0.15;
+    		}else{
+   				if(life_skillIronore >= 499 && life_skillIronore <= 849) then
+   				{
+   				   	_val = [3,4,5] call BIS_fnc_selectRandom;
+   				   	_count = "3-5";
+   				   	_lvl = 4;
+   				   	_lcap = 850;
+   				   	_karma = 3;
+   				   	_timeB = 0.15;
+   				}else{
+    			if(life_skillIronore > 1249) then
+    			{
+    			   	_val = [5,6] call BIS_fnc_selectRandom;
+    			   	_count = "5-6";
+    			   	_lvl = 5;
+    			   	_lcap = 1250;
+    			   	_karma = 5;
+    			   	_timeB = 0.13;
+    				};
+    			};
+    		};
+    	};
+   	};
 };
 
 if(_mine == "salt") then
@@ -147,43 +155,47 @@ if(_mine == "salt") then
 		_lcap = 50;
 		_karma = 1;
 		_timeB = 0.15;
-	};
-	if(life_skillSalt >= 49 && life_skillSalt <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = 2;
-    	_timeB = 0.15;
-    };
-    if(life_skillSalt >= 249 && life_skillSalt <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = 3;
-       	_timeB = 0.12;
-    };
-    if(life_skillSalt >= 499 && life_skillSalt <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = 3;
-       	_timeB = 0.11;
-    };
-    if(life_skillSalt > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = 5;
-       	_timeB = 0.10;
-    };
+	}else{
+		if(life_skillSalt >= 49 && life_skillSalt <= 249)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = 2;
+    		_timeB = 0.15;
+    	}else{
+    		if(life_skillSalt >= 249 && life_skillSalt <= 499) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = 3;
+    		   	_timeB = 0.12;
+    		}else{
+   				if(life_skillSalt >= 499 && life_skillSalt <= 849) then
+   				{
+   				   	_val = [3,4,5] call BIS_fnc_selectRandom;
+   				   	_count = "3-5";
+   				   	_lvl = 4;
+   				   	_lcap = 850;
+   				   	_karma = 3;
+   				   	_timeB = 0.11;
+   				}else{
+    				if(life_skillSalt > 1249) then
+    				{
+    				   	_val = [5,6] call BIS_fnc_selectRandom;
+    				   	_count = "5-6";
+    				   	_lvl = 5;
+    				   	_lcap = 1250;
+    				   	_karma = 5;
+    				   	_timeB = 0.10;
+    				};
+    			};
+    		};
+    	};
+   	};
 };
 
 if(_mine == "sand") then
@@ -197,43 +209,47 @@ if(_mine == "sand") then
 		_lcap = 50;
 		_karma = 1;
 		_timeB = 0.13;
-	};
-	if(life_skillSand >= 49 && life_skillSand <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = 2;
-    	_timeB = 0.11;
-    };
-    if(life_skillSand >= 249 && life_skillSand <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = 3;
-       	_timeB = 0.10;
-    };
-    if(life_skillSand >= 499 && life_skillSand <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = 3;
-       	_timeB = 0.09;
-    };
-    if(life_skillSand > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = 5;
-       	_timeB = 0.08;
-    };
+	}else{
+		if(life_skillSand >= 49 && life_skillSand <= 249)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = 2;
+    		_timeB = 0.11;
+    	}else{
+    		if(life_skillSand >= 249 && life_skillSand <= 499) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = 3;
+    		   	_timeB = 0.10;
+    		}else{
+    		if(life_skillSand >= 499 && life_skillSand <= 849) then
+    		{
+    		   	_val = [3,4,5] call BIS_fnc_selectRandom;
+    		   	_count = "3-5";
+    		   	_lvl = 4;
+    		   	_lcap = 850;
+    		   	_karma = 3;
+    		   	_timeB = 0.09;
+    		}else{
+    			if(life_skillSand > 1249) then
+    			{
+    			   	_val = [5,6] call BIS_fnc_selectRandom;
+    			   	_count = "5-6";
+    			   	_lvl = 5;
+    			   	_lcap = 1250;
+    			   	_karma = 5;
+    			   	_timeB = 0.08;
+    				};
+    			};
+    		};
+    	};
+   	};
 };
 
 if(_mine == "diamond") then
@@ -247,43 +263,47 @@ if(_mine == "diamond") then
 		_lcap = 50;
 		_karma = 1;
 		_timeB = 0.25;
-	};
-	if(life_skillDiamond >= 49 && life_skillDiamond <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = 2;
-    	_timeB = 0.25;
-    };
-    if(life_skillDiamond >= 249 && life_skillDiamond <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = 3;
-       	_timeB = 0.20;
-    };
-    if(life_skillDiamond >= 499 && life_skillDiamond <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = 3;
-       	_timeB = 0.18;
-    };
-    if(life_skillDiamond > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = 5;
-       	_timeB = 0.18;
-    };
+	}else{
+		if(life_skillDiamond >= 49 && life_skillDiamond <= 249)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = 2;
+    		_timeB = 0.25;
+    	}else{
+    		if(life_skillDiamond >= 249 && life_skillDiamond <= 499) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = 3;
+    		   	_timeB = 0.20;
+    		}else{
+    			if(life_skillDiamond >= 499 && life_skillDiamond <= 849) then
+    			{
+    			   	_val = [3,4,5] call BIS_fnc_selectRandom;
+    			   	_count = "3-5";
+    			   	_lvl = 4;
+    			   	_lcap = 850;
+    			   	_karma = 3;
+    			   	_timeB = 0.18;
+    			}else{
+    				if(life_skillDiamond > 1249) then
+    				{
+    				   	_val = [5,6] call BIS_fnc_selectRandom;
+    				   	_count = "5-6";
+    				   	_lvl = 5;
+    				   	_lcap = 1250;
+    				   	_karma = 5;
+    				   	_timeB = 0.18;
+    				};
+    			};
+    		};
+    	};
+   	};
 };
 
 if(_mine == "oilu") then
@@ -297,43 +317,47 @@ if(_mine == "oilu") then
 		_lcap = 50;
 		_karma = 1;
 		_timeB = 0.25;
-	};
-	if(life_skillOilu >= 49 && life_skillOilu <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = 2;
-    	_timeB = 0.25;
-    };
-    if(life_skillOilu >= 249 && life_skillOilu <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = 3;
-       	_timeB = 0.20;
-    };
-    if(life_skillOilu >= 499 && life_skillOilu <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = 3;
-       	_timeB = 0.17;
-    };
-    if(life_skillOilu > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = 5;
-       	_timeB = 0.17;
-    };
+	}else{
+		if(life_skillOilu >= 49 && life_skillOilu <= 249)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = 2;
+    		_timeB = 0.25;
+    	}else{
+    		if(life_skillOilu >= 249 && life_skillOilu <= 499) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = 3;
+    		   	_timeB = 0.20;
+    		}else{
+    			if(life_skillOilu >= 499 && life_skillOilu <= 849) then
+    			{
+    			   	_val = [3,4,5] call BIS_fnc_selectRandom;
+    			   	_count = "3-5";
+    			   	_lvl = 4;
+    			   	_lcap = 850;
+    			   	_karma = 3;
+    			   	_timeB = 0.17;
+    			}else{
+    				if(life_skillOilu > 1249) then
+    				{
+    				   	_val = [5,6] call BIS_fnc_selectRandom;
+    				   	_count = "5-6";
+    				   	_lvl = 5;
+    				   	_lcap = 1250;
+    				   	_karma = 5;
+    				   	_timeB = 0.17;
+    				};
+    			};
+    		};
+    	};
+   	};
 };
 
 if(_mine == "rock") then
@@ -347,43 +371,47 @@ if(_mine == "rock") then
 		_lcap = 50;
 		_karma = 1;
 		_timeB = 0.15;
-	};
-	if(life_skillEhemalsRock >= 49 && life_skillEhemalsRock <= 249)then
-	{
-    	_val = [2,3] call BIS_fnc_selectRandom;
-    	_count = "2-3";
-    	_lvl = 2;
-    	_lcap = 250;
-    	_karma = 2;
-    	_timeB = 0.13;
-    };
-    if(life_skillEhemalsRock >= 249 && life_skillEhemalsRock <= 499) then
-    {
-       	_val = [2,3] call BIS_fnc_selectRandom;
-       	_count = "2-3";
-       	_lvl = 3;
-       	_lcap = 500;
-       	_karma = 3;
-       	_timeB = 0.11;
-    };
-    if(life_skillEhemalsRock >= 499 && life_skillEhemalsRock <= 849) then
-    {
-       	_val = [3,4,5] call BIS_fnc_selectRandom;
-       	_count = "3-5";
-       	_lvl = 4;
-       	_lcap = 850;
-       	_karma = 3;
-       	_timeB = 0.09;
-    };
-    if(life_skillEhemalsRock > 1249) then
-    {
-       	_val = [5,6] call BIS_fnc_selectRandom;
-       	_count = "5-6";
-       	_lvl = 5;
-       	_lcap = 1250;
-       	_karma = 5;
-       	_timeB = 0.08;
-    };
+	}else{
+		if(life_skillEhemalsRock >= 49 && life_skillEhemalsRock <= 249)then
+		{
+    		_val = [2,3] call BIS_fnc_selectRandom;
+    		_count = "2-3";
+    		_lvl = 2;
+    		_lcap = 250;
+    		_karma = 2;
+    		_timeB = 0.13;
+    	}else{
+    		if(life_skillEhemalsRock >= 249 && life_skillEhemalsRock <= 499) then
+    		{
+    		   	_val = [2,3] call BIS_fnc_selectRandom;
+    		   	_count = "2-3";
+    		   	_lvl = 3;
+    		   	_lcap = 500;
+    		   	_karma = 3;
+    		   	_timeB = 0.11;
+    		}else{
+				if(life_skillEhemalsRock >= 499 && life_skillEhemalsRock <= 849) then
+				{
+					_val = [3,4,5] call BIS_fnc_selectRandom;
+					_count = "3-5";
+					_lvl = 4;
+					_lcap = 850;
+					_karma = 3;
+					_timeB = 0.09;
+				}else{
+					if(life_skillEhemalsRock > 1249) then
+					{
+						_val = [5,6] call BIS_fnc_selectRandom;
+						_count = "5-6";
+						_lvl = 5;
+						_lcap = 1250;
+						_karma = 5;
+						_timeB = 0.08;
+    				};
+    			};
+    		};
+    	};
+   	};
 };
 //// PROZESSBAR START /////////////////
 Gather_fnc_progress = {
