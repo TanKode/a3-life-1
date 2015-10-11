@@ -13,6 +13,8 @@ _skillSand = life_skillSand;
 _skillSalt = life_skillSalt;
 _skillIron = life_skillIronore;
 
+if(life_action_gatheringPick) exitWith {}; //Action is in use, exit to prevent spamming.
+life_action_gatheringPick = true;
 switch (true) do
 {
 	case (player distance (getMarkerPos "lead_1") < 30): {_mine = "copperore"; _skill = life_skillCopperore;_karmaA = life_Karma;};
@@ -26,7 +28,6 @@ switch (true) do
 	default {_mine = "";};
 };
 //Mine check
-if((player getVariable["sammeln",false])) exitWith { hint "Du sammelst schon";};
 if(_mine == "") exitWith {hint localize "STR_ISTR_Pick_NotNear"};
 if(vehicle player != player) exitWith {hint localize "STR_ISTR_Pick_MineVeh";};
 
@@ -384,8 +385,6 @@ if(_mine == "rock") then
        	_timeB = 0.08;
     };
 };
-
-player setVariable["sammeln",true,true];
 //// PROZESSBAR START /////////////////
 Gather_fnc_progress = {
 	disableSerialization;
@@ -436,10 +435,11 @@ if(([true,_mine,_diff] call life_fnc_handleInv)) then
 	_itemName = [([_mine,0] call life_fnc_varHandle)] call life_fnc_varToStr;
 	titleText[format["Du hast %2 %1 gesammelt.",_itemName,_diff],"PLAIN"];
 	[_karma,0] call life_fnc_KarmaNeg;
-    [ format ["<t color='#EC891D'><t size='1'>Skillstufe %1</t></t><br/> (%2): %3/%4<br/>Karma: %5/12500", _lvl, _count,_skill+1, _lCap, _KarmaA], SzoneXW, SzoneYH, 5, 0.25 ] spawn BIS_fnc_dynamicText;
+    [ format ["<t color='#EC891D'><t size='1'>Skillstufe %1</t></t><br/> (%2): %3/%4<br/>", _lvl, _count,_skill+1, _lCap], SzoneXW, SzoneYH, 5, 0.25 ] spawn BIS_fnc_dynamicText;
 };
 
 life_action_inUse = false;
+life_action_gatheringPick = false;
 [] call SOCK_fnc_updateRequest;
 [9] call SOCK_fnc_updatePartial;
 [10] call SOCK_fnc_updatePartial;

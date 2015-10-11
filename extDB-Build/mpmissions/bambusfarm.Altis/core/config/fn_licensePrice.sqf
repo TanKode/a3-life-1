@@ -36,6 +36,9 @@ switch (_type) do
 	case "mair": {15000};
 	case "home": {500000};
 	case "ADAC": {500000};
+	case "apple": {500};
+	case "peach": {500};
+
 };
 
 

@@ -124,7 +124,7 @@ switch (playerSide) do
 	};
 	case civilian:
 	{
-		life_BANK = 30000; //Starting Bank Money
+		life_BANK = 10000; //Starting Bank Money
 		life_paycheck = 350; //Paycheck Amount
 	};
 
@@ -172,7 +172,7 @@ life_MenuContent = [
 	["Fahrzeuggewicht","Luft","WY-55 Hellcat (Green)  -> 185<br/>MH-9 Hummingbird  -> 250<br/>PO-30 Orca (Black)  -> 360<br/>CH-49 Mohawk  -> 410<br/>"],
 	["Fahrzeuggewicht","Wasser","Rescue Boat  -> 45<br/>Assault Boat  -> 45<br/>SDV  -> 70<br/>Motorboat -> 85"],
 	["Tastenkombinationen","Geile moves und so..","In Arbeit..."],
-	["Sichere Gebiete","Gebiete die Safezoens sind...","Alle ATM's,<br/>Alle Apfelgebiete,<br/>Alle Pfirsischgebiete,<br/>Alle Autohändler,<br/>Alle Flughändler,<br/>Alle Bootshändler"],
+	["Sichere Gebiete","Gebiete die Safezoens sind...","Alle ATM's,<br/>Alle Apfelgebiete,<br/>Alle Pfirsichgebiete,<br/>Alle Autohändler,<br/>Alle Flughändler,<br/>Alle Bootshändler"],
 	["Bussgeld","Bussgeld","In Arbeit..."]
 ];
 
@@ -245,7 +245,11 @@ life_inv_items =
 	"life_inv_Platzhalter",
 	"life_inv_handcuffs",
 	"life_inv_Schere",
-	"life_inv_laptop"
+	"life_inv_laptop",
+	"life_inv_psaft",
+	"life_inv_asaft",
+	"life_inv_pschnapps",
+	"life_inv_aschnapps"
 ];
 
 //[shortVar,reward]
@@ -303,7 +307,12 @@ sell_array =
     ["aktie_stratis",500],
     ["handcuffs",200],
     ["Schere",500],
-    ["lappi",1000]
+    ["lappi",1000],
+
+    ["psaft",50],
+    ["asaft",50],
+    ["pschnapps",75],
+    ["aschnapps",75]
 ];
 
 buy_array =
@@ -345,7 +354,11 @@ buy_array =
     ["aktie_stratis",500],
     ["handcuffs",200],
     ["Schere",500],
-    ["lappi",10000]
+    ["lappi",10000],
+    ["psaft",50],
+    ["asaft",50],
+    ["pschnapps",75],
+    ["aschnapps",75]
 ];
 __CONST__(buy_array,buy_array);
 

@@ -12,7 +12,7 @@ _zone = "";
 _skillNeeded = life_skillCannabis;
 _skillNeededa = life_skillHeroinu;
 
-if(life_action_gathering) exitWith {}; //Action is in use, exit to prevent spamming.
+if(life_action_gathering) exitWith { hint "Du sammelst schon";}; //Action is in use, exit to prevent spamming.
 life_action_gathering = true;
 //Find out what zone we're near
 {
@@ -33,7 +33,6 @@ switch(true) do {
 	default {""};
 };
 //gather check??
-if((player getVariable["sammeln",false])) exitWith { hint "Du sammelst schon";};
 if(vehicle player != player) exitWith {};
 if(_gather == "heroinu" && _skillNeeded < 249) exitWith {hint format ["Um Schlafmohn sammeln zu können, benötigst du 250 Punkte in Cannabis. (derzeit: %1/250)", _skillNeeded];};
 if(_gather == "cocaine" && _skillNeededa < 249) exitWith {hint format ["Um Kokain sammeln zu können, benötigst du 250 Punkte in Heroin. (derzeit: %1/250)", _skillNeededa];};
@@ -283,7 +282,6 @@ if(_gather == "cannabis") then
        	_timeB = 0.075;
     };
 };
-player setVariable["sammeln",true,true];
 //// PROZESSBAR START /////////////////
 Gather_fnc_progress = {
 	disableSerialization;

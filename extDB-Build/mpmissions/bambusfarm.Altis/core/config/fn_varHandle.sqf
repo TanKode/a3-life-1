@@ -80,6 +80,11 @@ switch (_mode) do
 			case "Platzhalter": {"life_inv_Platzhalter"};
 			case "Schere": {"life_inv_Schere"};
 			case "lappi":{"life_inv_laptop"};
+
+			case "psaft":{"life_inv_psaft"};
+			case "asaft":{"life_inv_asaft"};
+			case "pschnapps":{"life_inv_pschnapps"};
+			case "aschnapps":{"life_inv_aschnapps"};
 		};
 	};
 	
@@ -151,6 +156,11 @@ switch (_mode) do
 			case "life_inv_Platzhalter": {"Platzhalter"};
 			case "life_inv_Schere": {"Schere"};
 			case "life_inv_laptop":{"lappi"};
+
+			case "life_inv_psaft":{"psaft"};
+        	case "life_inv_asaft":{"asaft"};
+        	case "life_inv_pschnapps":{"pschnapps"};
+        	case "life_inv_aschnapps":{"aschnapps"};
 		};
 	};
 };

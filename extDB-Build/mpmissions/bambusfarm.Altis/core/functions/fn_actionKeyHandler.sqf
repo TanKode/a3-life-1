@@ -21,6 +21,7 @@ if(isNull _curTarget) exitWith {
 		};
 	} else {
 		if(playerSide == civilian && !life_action_gathering) then {
+			if(life_action_gathering) exitWith { hint "Du sammelst schon";}; //Action is in use, exit to prevent spamming.
 			_handle = [] spawn life_fnc_gather;
 			waitUntil {scriptDone _handle};
 			life_action_gathering = false;
@@ -34,7 +35,7 @@ if(isNull _curTarget) exitWith {
                 {
                     if( _str == "Spitzhacke" || _str == "pickaxe" ) then
                     {
-                        _handleB = [] spawn life_fnc_pickAxeUse;
+                    	if(life_action_gatheringPick) exitWith { hint "Du sammelst schon";}; //Action is in use, exit to prevent spamming.
                         waitUntil {scriptDone _handleB};
                         life_action_gatheringPick = false;
                     };

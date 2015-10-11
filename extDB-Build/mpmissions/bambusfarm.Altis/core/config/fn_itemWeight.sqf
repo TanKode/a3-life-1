@@ -1,7 +1,7 @@
 /*
 	File: fn_itemWeight.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Gets the items weight and returns it.
 */
@@ -68,5 +68,9 @@ switch (_item) do
 	case "aktie_altis": {0};
 	case "aktie_stratis": {0};
 	case "lappi": {15};
+	case "psaft": {1};
+    case "asaft": {1};
+    case "pschnapps": {1};
+    case "aschnapps": {1};
 	default {1};
 };

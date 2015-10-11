@@ -77,6 +77,12 @@ switch (_var) do
 	case "life_inv_Platzhalter": {"---Platzhalter---"};
 	case "life_inv_Schere": {"Schere"};
 	case "life_inv_laptop": {"Laptop"};
+
+	case "life_inv_psaft": {"Pfirsichsaft"};
+	case "life_inv_asaft": {"Apfelsaft"};
+	case "life_inv_pschnapps": {"Pfirsichschnapps"};
+	case "life_inv_aschnapps": {"Apfelschnapps"};
+
 	
 	//License Block
 	case "license_civ_driver": {(localize "STR_License_Driver")};
