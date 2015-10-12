@@ -41,8 +41,8 @@ switch (_mode) do
 			case "mair": {_var = "license_med_air"};
 			case "home": {_var = "license_civ_home"};
 			case "ADAC": {_var = "license_med_ADAC"};
-			case "apple": {_var = "license_med_apple"};
-			case "peach": {_var = "license_med_peach"};
+			case "apple": {_var = "license_civ_apple"};
+			case "peach": {_var = "license_civ_peach"};
 			default {_var = ""};
 		};
 	};
@@ -76,8 +76,8 @@ switch (_mode) do
 			case "license_med_air": {_var = "mair"};
 			case "license_civ_home": {_var = "home"};
 			case "license_med_ADAC": {_var = "ADAC"};
-			case "license_med_peach": {_var = "peach"};
-			case "license_med_apple": {_var = "apple"};
+			case "license_civ_peach": {_var = "peach"};
+			case "license_civ_apple": {_var = "apple"};
 			default {_var = ""};
 		};
 	};

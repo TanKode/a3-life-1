@@ -3470,7 +3470,7 @@ class Mission
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
 					text="h1_3_4_1_1";
-					init="this enableSimulation false;  this allowDamage false;  this setVariable[""realname"",""Fahrzeuge""];  this addAction[""Fahrzeug Laden"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_1"",""cop"",""APD - Kavala District""]];    this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Garage wird geoeffnet....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == west'];    this addAction[""Fahrzeug einparken"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; ";
+					init="this enableSimulation false;  this allowDamage false;  this setVariable[""realname"",""Fahrzeuge""];  this addAction[""Fahrzeug Laden"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_1"",""cop"",""APD - Kavala District""]]; this addAction[""Boot Laden"",life_fnc_vehicleShopMenu,[""cop_ship"",west,""cop_ship_1"",""cop"",""APD - Kavala District""]]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Garage wird geoeffnet....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == west'];    this addAction[""Fahrzeug einparken"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; ";
 				};
 				class Item10
 				{
@@ -4576,7 +4576,7 @@ class Mission
 					vehicle="C_man_1";
 					leader=1;
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction [ ""Pfirsich Saft herstellen"", { [[[""peach"",1]],""license_civ_peach"",500,[[""psaft"",1]]] spawn life_fnc_dynprocess; } ];  this addAction [ ""Apfel Saft herstellen"", { [[[""apple"",1]],""license_civ_apple"",500,[[""asaft"",1]]] spawn life_fnc_dynprocess; } ];  this addAction [ ""Pfirsich Schnapps herstellen"", { [[[""peach"",2]],""license_civ_peach"",500,[[""[schnapps"",1]]] spawn life_fnc_dynprocess; } ];  this addAction [ ""Apfel Schnapps herstellen"", { [[[""apple"",2]],""license_civ_apple"",500,[[""aschnapps"",1]]] spawn life_fnc_dynprocess; } ];";
+					init="this allowDamage false; this enableSimulation false; this addAction [ ""Pfirsisch Saft herstellen"", { [[[""peach"",1]],""license_civ_peach"",500,[[""psaft"",1]]] spawn life_fnc_dynprocess; } ];  this addAction [ ""Apfel Saft herstellen"", { [[[""apple"",1]],""license_civ_apple"",500,[[""asaft"",1]]] spawn life_fnc_dynprocess; } ];  this addAction [ ""Pfirsisch Schnapps herstellen"", { [[[""peach"",2]],""license_civ_peach"",2000,[[""[schnapps"",1]]] spawn life_fnc_dynprocess; } ];  this addAction [ ""Apfel Schnapps herstellen"", { [[[""apple"",2]],""license_civ_apple"",2000,[[""aschnapps"",1]]] spawn life_fnc_dynprocess; } ];";
 				};
 			};
 		};
@@ -5156,7 +5156,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_CashDesk_F";
 			skill=0.60000002;
-			init="this enableSimulation false;  this allowDamage false;  this addAction[""Boat Shop"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_1"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_1""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+			init="this enableSimulation false;  this allowDamage false;  this addAction[""Boat Shop"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_1"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_1""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Store vehicle in Garage"",  {   private[""_nearVehicle""];   _nearVehicle = nearestObjects[(getPos (_this select 0)),[""Car"",""Ship"",""Air""],100] select 0;   if(isNil ""_nearVehicle"") exitWith {hint ""There isn't a vehicle near this NPC."";};   [[_nearVehicle,false,(_this select 1)],""TON_fnc_vehicleStore"",false,false] spawn life_fnc_MP;   hint ""The server is trying to store the vehicle please wait...."";   life_garage_store = true;  },"""",0,false,false,"""",'!life_garage_store'];";
 		};
 		class Item56
 		{
@@ -46510,7 +46510,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=311;
+		items=312;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -46745,7 +46745,7 @@ class Mission
 		{
 			position[]={10800.928,32.462917,13238.061};
 			name="peaches_1";
-			text="Pfirsichfeld";
+			text="Pfirsischfeld";
 			type="b_unknown";
 			colorName="ColorBrown";
 		};
@@ -46769,7 +46769,7 @@ class Mission
 		{
 			position[]={13120.37,39.285686,19673.133};
 			name="peaches_3";
-			text="Pfirsichfeld";
+			text="Pfirsischfeld";
 			type="b_unknown";
 			colorName="ColorBrown";
 		};
@@ -49001,10 +49001,17 @@ class Mission
 		{
 			position[]={4882.4663,54.678696,12423.489};
 			name="OilP_1_1";
-			text="Kaelterei";
+			text="Kelterei";
 			type="mil_box";
 			colorName="ColorBrown";
-			angle=-41.057243;
+			angle=-41.057201;
+		};
+		class Item311
+		{
+			position[]={3050.5317,0.061334267,12768.21};
+			name="cop_ship_1";
+			type="Empty";
+			colorName="ColorOrange";
 		};
 	};
 	class Sensors

@@ -6,7 +6,7 @@
 	Main functionality for gathering.
 */
 if(isNil "life_action_gathering") then {life_action_gathering = false;};
-private["_gather","_itemWeight","_diff","_itemName","_val","_resourceZones","_zone","_uip","_progress","_pgText","_cP","_upp","_skillNeeded","_skillNeededa","_count","_lcap","_lvl","_skill","_karma","_karmaA","_timeB"];
+private["_gather","_itemWeight","_diff","_itemName","_val","_resourceZones","_zone","_uip","_progress","_pgText","_cP","_upp","_skillNeeded","_skillNeededa","_count","_lcap","_lvl","_skill","_karma","_karmaA"];
 _resourceZones = ["apple_1","apple_2","apple_3","apple_4","peaches_1","peaches_2","peaches_3","peaches_4","heroin_1","cocaine_1","weed_1"];
 _zone = "";
 _skillNeeded = life_skillCannabis;
@@ -39,7 +39,7 @@ if(_gather == "cocaine" && _skillNeededa < 249) exitWith {hint format ["Um Kokai
 if(_gather == "apple") then
 {
 	life_SkillApple = life_SkillApple + 1;
-	_timeB = 0.06;
+	_timeB = 6;
 	if(life_SkillApple < 50)then
 	{
 		_val = [3,4,5] call BIS_fnc_selectRandom;
@@ -47,7 +47,7 @@ if(_gather == "apple") then
 		_lvl = 1;
 		_lcap = 50;
 		_karma = 1;
-		_timeB = 0.06;
+		_timeB = 6;
 	}else{
 		if(life_SkillApple < 250)then
 		{
@@ -56,7 +56,7 @@ if(_gather == "apple") then
    			_lvl = 2;
    			_lcap = 250;
    			_karma = 2;
-   			_timeB = 0.06;
+   			_timeB = 6;
    		}else{
    		    	if(life_SkillApple < 500) then
    	        	{
@@ -65,7 +65,7 @@ if(_gather == "apple") then
    	        	   	_lvl = 3;
    	        	   	_lcap = 500;
    	        	   	_karma = 3;
-   	        	   	_timeB = 0.05;
+   	        	   	_timeB = 5;
    	        	}else{
    	        		if(life_SkillApple < 850) then
    	        		{
@@ -74,7 +74,7 @@ if(_gather == "apple") then
    	        		   	_lvl = 4;
    	        		   	_lcap = 850;
    	        		   	_karma = 3;
-   	        		   	_timeB = 0.04;
+   	        		   	_timeB = 4;
    	        		}else{
    	        			if(life_SkillApple < 1250) then
    	                	{
@@ -83,7 +83,7 @@ if(_gather == "apple") then
    	                	   	_lvl = 5;
    	                	   	_lcap = 1250;
    	                	   	_karma = 5;
-   	                	   	_timeB = 0.04;
+   	                	   	_timeB = 4;
    	                	};
    	        		};
    	        	};
@@ -92,7 +92,7 @@ if(_gather == "apple") then
    	};
 if(_gather == "peach") then
 {
-	_timeB = 0.06;
+	_timeB = 6;
 	life_skillPeach = life_skillPeach + 1;
 	if(life_skillPeach < 50)then
 	{
@@ -101,7 +101,7 @@ if(_gather == "peach") then
 		_lvl = 1;
 		_lcap = 50;
 		_karma = 1;
-		_timeB = 0.06;
+		_timeB = 6;
 	}else{
 		if(life_skillPeach < 250)then
 		{
@@ -110,7 +110,7 @@ if(_gather == "peach") then
     		_lvl = 2;
     		_lcap = 250;
     		_karma = 2;
-    		_timeB = 0.06;
+    		_timeB = 6;
     	}else{
     		if(life_skillPeach < 500) then
     		{
@@ -119,7 +119,7 @@ if(_gather == "peach") then
     		   	_lvl = 3;
     		   	_lcap = 500;
     		   	_karma = 3;
-    		   	_timeB = 0.05;
+    		   	_timeB = 5;
     		}else{
     			if(life_skillPeach < 850) then
     			{
@@ -128,7 +128,7 @@ if(_gather == "peach") then
     			   	_lvl = 4;
     			   	_lcap = 850;
     			   	_karma = 3;
-    			   	_timeB = 0.04;
+    			   	_timeB = 4;
     			}else{
     				if(life_skillPeach < 1250) then
     				{
@@ -137,7 +137,7 @@ if(_gather == "peach") then
     				   	_lvl = 5;
     				   	_lcap = 1250;
     				   	_karma = 5;
-    				   	_timeB = 0.04;
+    				   	_timeB = 4;
    	        		};
    	        	};
    	        };
@@ -146,7 +146,7 @@ if(_gather == "peach") then
 };
 if(_gather == "heroinu") then
 {
-	_timeB = 0.075;
+	_timeB = 7.5;
 	life_skillHeroinu = life_skillHeroinu + 1;
 	if(life_skillHeroinu < 50)then
 	{
@@ -155,7 +155,7 @@ if(_gather == "heroinu") then
 		_lvl = 1;
 		_lcap = 50;
 		_karma = -1;
-		_timeB = 0.075;
+		_timeB = 7.5;
 	}else{
 		if(life_skillHeroinu < 250)then
 		{
@@ -164,7 +164,7 @@ if(_gather == "heroinu") then
     		_lvl = 2;
     		_lcap = 250;
     		_karma = -2;
-    		_timeB = 0.075;
+    		_timeB = 7.5;
     	}else{
     		if(life_skillHeroinu < 500) then
     		{
@@ -173,7 +173,7 @@ if(_gather == "heroinu") then
     		   	_lvl = 3;
     		   	_lcap = 500;
     		   	_karma = -3;
-    		   	_timeB = 0.075;
+    		   	_timeB = 7.5;
     		}else{
     			if(life_skillHeroinu < 850) then
     			{
@@ -182,7 +182,7 @@ if(_gather == "heroinu") then
     			   	_lvl = 4;
     			   	_lcap = 850;
     			   	_karma = -3;
-    			   	_timeB = 0.075;
+    			   	_timeB = 7.5;
     			}else{
     				if(life_skillHeroinu < 1250) then
     				{
@@ -191,7 +191,7 @@ if(_gather == "heroinu") then
     				   	_lvl = 5;
     				   	_lcap = 1250;
     				   	_karma = -5;
-    				   	_timeB = 0.075;
+    				   	_timeB = 7.5;
    	        		};
    	        	};
    	        };
@@ -200,7 +200,7 @@ if(_gather == "heroinu") then
 };
 if(_gather == "cocaine") then
 {
-	_timeB = 0.125;
+	_timeB = 12.5;
 	life_skillCocaine = life_skillCocaine + 1;
 	if(life_skillCocaine < 50)then
 	{
@@ -209,7 +209,7 @@ if(_gather == "cocaine") then
 		_lvl = 1;
 		_lcap = 50;
 		_karma = -1;
-		_timeB = 0.125;
+		_timeB = 12.5;
 	}else{
 		if(life_skillCocaine < 250)then
 		{
@@ -218,7 +218,7 @@ if(_gather == "cocaine") then
     		_lvl = 2;
     		_lcap = 250;
     		_karma = -2;
-    		_timeB = 0.125;
+    		_timeB = 12.5;
     	}else{
     		if(life_skillCocaine < 500) then
     		{
@@ -227,7 +227,7 @@ if(_gather == "cocaine") then
     		   	_lvl = 3;
     		   	_lcap = 500;
     		   	_karma = -3;
-    		   	_timeB = 0.125;
+    		   	_timeB = 12.5;
     		}else{
     			if(life_skillCocaine < 850) then
     			{
@@ -236,7 +236,7 @@ if(_gather == "cocaine") then
     			   	_lvl = 4;
     			   	_lcap = 850;
     			   	_karma = -3;
-    			   	_timeB = 0.125;
+    			   	_timeB = 12.5;
     			}else{
     				if(life_skillCocaine > 1250) then
     				{
@@ -245,7 +245,7 @@ if(_gather == "cocaine") then
     				   	_lvl = 5;
     				   	_lcap = 1250;
     				   	_karma = -5;
-    				   	_timeB = 0.125;
+    				   	_timeB = 12.5;
    	        		};
    	        	};
    	        };
@@ -263,7 +263,7 @@ if(_gather == "cannabis") then
 		_lvl = 1;
 		_lcap = 50;
 		_karma = -1;
-		_timeB = 0.075;
+		_timeB = 7.5;
 	}else{
 		if(life_skillCannabis < 250)then
 		{
@@ -272,7 +272,7 @@ if(_gather == "cannabis") then
     		_lvl = 2;
     		_lcap = 250;
     		_karma = -2;
-    		_timeB = 0.075;
+    		_timeB = 7.5;
     	}else{
     		if(life_skillCannabis < 500) then
     		{
@@ -281,7 +281,7 @@ if(_gather == "cannabis") then
     		   	_lvl = 3;
     		   	_lcap = 500;
     		   	_karma = -3;
-    		   	_timeB = 0.075;
+    		   	_timeB = 7.5;
     		}else{
     			if(life_skillCannabis < 850) then
     			{
@@ -290,7 +290,7 @@ if(_gather == "cannabis") then
     			   	_lvl = -4;
     			   	_lcap = 850;
     			   	_karma = -3;
-    			   	_timeB = 0.075;
+    			   	_timeB = 7.5;
     			}else{
     				if(life_skillCannabis < 1250) then
     				{
@@ -299,13 +299,15 @@ if(_gather == "cannabis") then
     				   	_lvl = 5;
     				   	_lcap = 1250;
     				   	_karma = -5;
-    				   	_timeB = 0.075;
+    				   	_timeB = 7.5;
    	        		};
    	        	};
    	        };
    		};
    	};
 };
+
+/*
 //// PROZESSBAR START /////////////////
 Gather_fnc_progress = {
 	disableSerialization;
@@ -335,18 +337,15 @@ Gather_fnc_progress = {
 	};
 };
 //// PROZESSBAR ENDE /////////////////
-
-_time = 2.5;
+*/
 
 _diff = [_gather,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_diff == 0) exitWith {hint localize "STR_NOTF_InvFull"};
 life_action_inUse = true;
-for "_i" from 0 to 2 do
-{
-	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-	waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
-	sleep _time;
-};
+
+player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
+sleep _timeB;
+
 /*
 [] call gather_fnc_progress;
 

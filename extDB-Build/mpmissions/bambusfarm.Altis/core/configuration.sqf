@@ -253,7 +253,18 @@ life_inv_items =
 ];
 
 //[shortVar,reward]
-life_illegal_items = [["heroinu",1200],["handcuffs",200],["heroinp",2500],["cocaine",1500],["cocainep",3500],["marijuana",2000],["turtle",3000],["blastingcharge",10000],["boltcutter",500]];
+life_illegal_items = [
+["heroinu",1200],
+["handcuffs",200],
+["heroinp",2500],
+["cocaine",1500],
+["cocainep",3500],
+["marijuana",2000],
+["turtle",3000],
+["blastingcharge",10000],
+["boltcutter",500],
+["catshark",1500]
+];
 
 
 /*
@@ -269,7 +280,7 @@ sell_array =
 	["mackerel",175],
 	["tuna",700],
 	["mullet",250],
-	["catshark",300],
+	["catshark",3000],
 	["rabbit",65],
 	["oilp",2750],
 	["turtle",3000],
@@ -518,7 +529,9 @@ life_licenses =
   	["license_civ_cement","civ"],
   	["license_med_air","med"],
   	["license_civ_home","civ"],
-  	["license_med_ADAC","civ"]
+  	["license_med_ADAC","civ"],
+  	["license_civ_peach","civ"],
+  	["license_civ_apple","civ"]
   ];
 
 //Setup License Variables
