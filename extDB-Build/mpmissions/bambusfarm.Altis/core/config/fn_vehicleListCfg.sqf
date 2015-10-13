@@ -45,10 +45,10 @@ switch (_shop) do
 	case "med_shop":
 	{
 		_return = [
-			["C_Offroad_01_F",20000 * DonatorBuyChangeCar],
-			["C_SUV_01_F",32500 * DonatorBuyChangeCar],
-			["C_Van_01_box_F",45650 * DonatorBuyChangeCar],
-			["B_Truck_01_mover_F", 70000 * DonatorBuyChangeCar]
+			["C_Offroad_01_F",10000 * DonatorBuyChangeCar],
+			["C_SUV_01_F",12500 * DonatorBuyChangeCar],
+			["C_Van_01_box_F",25650 * DonatorBuyChangeCar],
+			["B_Truck_01_mover_F", 30000 * DonatorBuyChangeCar]
 		];
 	};
 	
@@ -57,9 +57,9 @@ switch (_shop) do
 		if(__GETC__(life_mediclevel) > 1) then
 		{
 			_return set[count _return,
-			["B_Heli_Light_01_F",95000 * DonatorBuyChangeCar]];
+			["B_Heli_Light_01_F",50000 * DonatorBuyChangeCar]];
 			_return set[count _return,
-			["O_Heli_Light_02_unarmed_F",350000 * DonatorBuyChangeCar]];
+			["O_Heli_Light_02_unarmed_F",70000 * DonatorBuyChangeCar]];
 		};
 	};
 	

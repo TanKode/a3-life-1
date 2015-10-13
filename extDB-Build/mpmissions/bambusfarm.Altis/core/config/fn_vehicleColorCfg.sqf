@@ -82,7 +82,7 @@ switch (_vehicle) do
 			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE03_CO.paa","civ"],
 			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE04_CO.paa","civ"],
 			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE05_CO.paa","civ"],
-			["life\Texturen\Medic\Land\medic_offroad.png","med"],
+			["life\Texturen\Medic\Land\medic_offroad.paa","med"],
 			["life\Texturen\Zivilisten\monsterenergy_off.jpg","civ"],
 			["life\Texturen\Zivilisten\pokemon.jpg","civ"],
 			["life\Texturen\ADAC\Land\offroad_adac3.jpg","med"],
@@ -141,7 +141,7 @@ switch (_vehicle) do
 			["life\Texturen\Polizei\Land\suvpolizei.paa","cop"],
 			["life\Texturen\Polizei\Land\police_suv_autobahn.jpg","cop"],
 			["life\Texturen\Zivilisten\suv_pro.jpg","civ"],
-			["life\Texturen\Medic\Land\medic_suv.png","med"],
+			["life\Texturen\Medic\Land\medic_suv.paa","med"],
 			["life\Texturen\Zivilisten\ferrari_suv.jpg","civ"],
 			["life\Texturen\Zivilisten\suv_bmw.jpg","civ"],
 			["life\Texturen\Zivilisten\Bayern1.jpg","civ"],
@@ -214,7 +214,7 @@ switch (_vehicle) do
 			["#(argb,8,8,3)color(0.302,0.275,0,1)","med"],
 			["life\Texturen\ADAC\Luft\adac_Hummingbird.jpg","med"],
 			["life\Texturen\ziv_hummingbird_Voll_Getarnt.jpg","reb"],
-			["life\Texturen\Medic\Luft\Notarzt_Hummingbird.png","med"],
+			["life\Texturen\Medic\Luft\Notarzt_Hummingbird.paa","med"],
 			["life\Texturen\Polizei\Luft\cop2.jpg","cop"]
 		];
 	};
