@@ -130,10 +130,9 @@ switch (_vehicle) do
 			case 12: {_color = "Cabrio";};
 			case 13: {_color = "Makaveli";};
 			case 14: {_color = "Monster Energie";};
-			case 15: {_color = "Mediziner";};
-			case 16: {_color = "Security";};
-			case 17: {_color = "Sonder Einsatz Kommando";};
-			case 18: {_color = "Donator"};
+			case 15: {_color = "Security";};
+			case 16: {_color = "Sonder Einsatz Kommando";};
+			case 17: {_color = "Donator"};
 		};
 	};
 	
@@ -202,12 +201,11 @@ switch (_vehicle) do
 			case 13: {_color = "Vrana";};
 			case 14: {_color = "Waves Blau";};
 			case 15: {_color = "Rebel Digital";};
-			case 16: {_color = "Sani";};
-			case 17: {_color = "ADAC";};
-			case 18: {_color = "ADAC GELB";};
-			case 19: {_color = "Tarn";};
-			case 20: {_color = "Notarzt";};
-			case 21: {_color = "Cop"};
+			case 16: {_color = "ADAC";};
+			case 17: {_color = "ADAC GELB";};
+			case 18: {_color = "Tarn";};
+			case 19: {_color = "Notarzt";};
+			case 20: {_color = "Cop"};
 		};
 	};
 	
@@ -219,8 +217,7 @@ switch (_vehicle) do
 			case 1: {_color = "Weis / Blau";};
 			case 2: {_color = "Digi Gruen";};
 			case 3: {_color = "Desert Digi";};
-			case 4: {_color = "Sani";};
-			case 5: {_color = "Notarzt"};
+			case 4: {_color = "Notarzt"};
 		};
 	};
 	

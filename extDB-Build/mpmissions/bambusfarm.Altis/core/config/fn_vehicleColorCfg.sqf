@@ -82,7 +82,7 @@ switch (_vehicle) do
 			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE03_CO.paa","civ"],
 			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE04_CO.paa","civ"],
 			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE05_CO.paa","civ"],
-			["life\Texturen\Medic\Land\med_offroad.jpg","med"],
+			["life\Texturen\Medic\Land\medic_offroad.png","med"],
 			["life\Texturen\Zivilisten\monsterenergy_off.jpg","civ"],
 			["life\Texturen\Zivilisten\pokemon.jpg","civ"],
 			["life\Texturen\ADAC\Land\offroad_adac3.jpg","med"],
@@ -95,8 +95,7 @@ switch (_vehicle) do
 			["life\Texturen\Zivilisten\newoffroad.jpg","civ"],
 			["life\Texturen\Zivilisten\offroad_Black-white_stickerbomb.jpg","civ"],
 			["life\Texturen\Zivilisten\offroad_Rockstar_energy_rot_gelb.jpg","civ"],
-			["life\Texturen\Zivilisten\offroad_badmobil.jpg","civ"],
-			["life\Texturen\Medic\Land\offroad_notarzt.jpg","med"]
+			["life\Texturen\Zivilisten\offroad_badmobil.jpg","civ"]
 		];
 	};
 	
@@ -142,7 +141,7 @@ switch (_vehicle) do
 			["life\Texturen\Polizei\Land\suvpolizei.paa","cop"],
 			["life\Texturen\Polizei\Land\police_suv_autobahn.jpg","cop"],
 			["life\Texturen\Zivilisten\suv_pro.jpg","civ"],
-			["life\Texturen\Medic\Land\med_suv.jpg","med"],
+			["life\Texturen\Medic\Land\medic_suv.png","med"],
 			["life\Texturen\Zivilisten\ferrari_suv.jpg","civ"],
 			["life\Texturen\Zivilisten\suv_bmw.jpg","civ"],
 			["life\Texturen\Zivilisten\Bayern1.jpg","civ"],
@@ -150,7 +149,6 @@ switch (_vehicle) do
 			["life\Texturen\Zivilisten\carbon_suv_V3.jpg","civ"],
 			["life\Texturen\Zivilisten\suv_makaveli.jpg","civ"],
 			["life\Texturen\Zivilisten\suv_Monster_energy_block.jpg","civ"],
-			["life\Texturen\Medic\Land\suv_medik.jpg","med"],
 			["life\Texturen\Polizei\Land\suv_security.jpg","cop"],
 			["life\Texturen\Polizei\Land\suv_sek.jpg","cop"],
 			["life\Texturen\donator_suv.jpg","donator"]
@@ -213,11 +211,10 @@ switch (_vehicle) do
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_vrana_co.paa","civ"],
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_wave_co.paa","civ"],
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_digital_co.paa","reb"],
-			["life\Texturen\Medic\Luft\med_hummingbird.jpg","med"],
 			["#(argb,8,8,3)color(0.302,0.275,0,1)","med"],
 			["life\Texturen\ADAC\Luft\adac_Hummingbird.jpg","med"],
 			["life\Texturen\ziv_hummingbird_Voll_Getarnt.jpg","reb"],
-			["life\Texturen\Medic\Luft\Notarzt_Hummingbird.jpg","med"],
+			["life\Texturen\Medic\Luft\Notarzt_Hummingbird.png","med"],
 			["life\Texturen\Polizei\Luft\cop2.jpg","cop"]
 		];
 	};
@@ -230,7 +227,6 @@ switch (_vehicle) do
 			["\a3\air_f\Heli_Light_02\Data\heli_light_02_ext_civilian_co.paa","civ"],
 			["\a3\air_f\Heli_Light_02\Data\heli_light_02_ext_indp_co.paa","reb"],
 			["\a3\air_f\Heli_Light_02\Data\heli_light_02_ext_opfor_co.paa","reb"],
-			["life\Texturen\Medic\Luft\med_orca.jpg","med"],
 			["life\Texturen\Medic\Luft\orca_notarzt.jpg","med"]
 		];
 	};
