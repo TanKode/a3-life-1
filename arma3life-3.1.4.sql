@@ -132,7 +132,7 @@ CREATE TABLE `houses` (
   `containers` text,
   `owned` tinyint(4) DEFAULT '0',
   `security` TEXT  NOT NULL,
-  2.`kitchen` TEXT  NOT NULL,
+  `kitchen` TEXT  NOT NULL,
   PRIMARY KEY (`id`,`pid`,`gid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
