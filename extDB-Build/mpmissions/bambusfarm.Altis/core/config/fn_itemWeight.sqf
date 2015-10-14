@@ -72,5 +72,7 @@ switch (_item) do
     case "asaft": {1};
     case "pschnapps": {1};
     case "aschnapps": {1};
+    case "housealarm": {5};
+    case "kitchen": {5};
 	default {1};
 };

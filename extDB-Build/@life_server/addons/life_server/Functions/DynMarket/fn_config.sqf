@@ -145,22 +145,7 @@ DYNMARKET_Items_ToTrack        =
     ["aktie_altis",500],
     ["aktie_stratis",500],
 
-	["Platzhalter",0],
-
-	["rabbit",65],
-	["water",5],
-	["coffee",5],
-	["donuts",60],
-	["tbacon",25],
-	["lockpick",75],
-	["pickaxe",750],
-	["redgull",200],
-	["fuelF",500],
-	["spikeStrip",1200],
-
 	["Platzhalter",0]
-
-
 ];
 
 //███████████████████████████████████████████████████████████████████████

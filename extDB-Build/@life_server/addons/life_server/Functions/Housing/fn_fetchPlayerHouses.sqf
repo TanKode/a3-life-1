@@ -7,7 +7,8 @@
 private["_query","_houses"];
 if(_this == "") exitWith {};
 
-_query = format["SELECT pid, pos, inventory, containers FROM houses WHERE pid='%1' AND owned='1'",_this];
+_query = format["SELECT pid, pos, inventory, containers, security, kitchen FROM houses WHERE pid='%1' AND owned='1'",_this];
+waitUntil{!DB_Async_Active};
 _houses = [_query,2,true] call DB_fnc_asyncCall;
 
 _return = [];
@@ -86,7 +87,10 @@ _return = [];
 	} foreach _containerData;
 	
 	_house setVariable["containers",_containers,true];
+	_house setVariable["Secured",_x select 4,true];
+	_house setVariable["Kitchen",_x select 5,true];
 	_return pushBack [_x select 1,_containers];
+	
 } foreach _houses;
 
 missionNamespace setVariable[format["houses_%1",_this],_return];

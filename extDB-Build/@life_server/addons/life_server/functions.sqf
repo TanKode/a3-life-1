@@ -44,7 +44,7 @@ compileFinal "
 	if(!([str(_val)] call TON_fnc_isnumber)) exitWith {};
 	if(_from == """") exitWith {};
 	life_BANK = life_BANK + _val;
-	hint format[""%1 has wire transferred €%2 to you."",_from,[_val] call life_fnc_numberText];
+	hint format[""%1 has wire transferred $%2 to you."",_from,[_val] call life_fnc_numberText];
 	
 ";
 publicVariable "TON_fnc_clientWireTransfer";
@@ -230,6 +230,7 @@ publicVariable "TON_fnc_cell_emsrequest";
 	2 = message to admin
 	3 = message from admin
 	4 = admin message to all
+	7 = Alarm for houses
 */
 TON_fnc_clientMessage =
 compileFinal "
@@ -304,20 +305,37 @@ compileFinal "
 			
 			[""TextMessage"",[format[""EMS Request from %1"",_from]]] call bis_fnc_showNotification;
 		};
+		
+		case 7 :
+		{
+			private[""_message"", ""_marker""];
+			_message = format[""SMS Alarmanlage von: %1"",_msg];
+			hint parseText format [""<t color='#1E90FF'><t size='2'><t align='center'>SMS Alarmanlage<br/><br/><t color='#33CC33'><t align='left'><t size='1'>An: <t color='#ffffff'>Dich<br/><t color='#33CC33'>Von: <t color='#ffffff'>SMS Alarmanlage<br/><br/><t color='#33CC33'>Nachricht:<br/><t color='#ffffff'>In dein Haus bei: %1 wird eingebrochen"",_msg];
+			systemChat _message;
+			
+			_marker = createMarkerLocal [""HouseMarker"", _msg ];
+			_marker setMarkerColorLocal ""ColorRed"";
+			_marker setMarkerTypeLocal ""Mil_dot"";
+			_marker setMarkerTextLocal ""Hier wird eingebrochen"";
+			
+		};
+
+		case 8 :
+		{
+			if(side player != west) exitWith {};
+			private[""_message"", ""_marker""];
+			_message = format[""Drogenküche von: %1"",_msg];
+			hint parseText format [""<t color='#1E90FF'><t size='2'><t align='center'>Drogen Alarm<br/><br/><t color='#33CC33'><t align='left'><t size='1'>An: <t color='#ffffff'>Dich<br/><t color='#33CC33'>Von: <t color='#ffffff'>Drogenhaus<br/><br/><t color='#33CC33'>Nachricht:<br/><t color='#ffffff'>In dein Haus bei: %1 wird eingebrochen"",_msg];
+			systemChat _message;
+
+			_marker = createMarkerLocal [""HouseMarker"", _msg ];
+			_marker setMarkerColorLocal ""ColorRed"";
+			_marker setMarkerTypeLocal ""Mil_dot"";
+			_marker setMarkerTextLocal ""Hier werden Drogen gemacht!"";
+
+			[""Polizeinachricht"",[format[""Drogenalarm: %1"",_msg]]] call bis_fnc_showNotification;
+
+		};
 	};
 ";
 publicVariable "TON_fnc_clientMessage";
-
-TON_fnc_showMsg =
-compileFinal "
-	[
-		format[""<t size='1.3' color='#5600FF'>%1</t><br/>%2."",_this select 0, _this select 1],
-		0,
-		0.2,
-		99999999999999,
-		0,
-		0,
-		8
-	] spawn BIS_fnc_dynamicText;
-";
-publicVariable "TON_fnc_showMsg";

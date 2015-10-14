@@ -83,6 +83,8 @@ switch (_var) do
 	case "life_inv_pschnapps": {"Pfirsichschnapps"};
 	case "life_inv_aschnapps": {"Apfelschnapps"};
 
+	case "life_inv_housealarm": {"Haus Alarmanlage"};
+	case "life_inv_kitchen": {"Haus Drogenküche"};
 	
 	//License Block
 	case "license_civ_driver": {(localize "STR_License_Driver")};

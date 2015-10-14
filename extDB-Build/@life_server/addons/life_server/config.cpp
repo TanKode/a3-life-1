@@ -118,6 +118,10 @@ class CfgFunctions
 			class updateHouseContainers {};
 			class updateHouseTrunk {};
 			class houseCleanup {};
+			class houseAlarm {};
+			class housekitchen {};
+			class housekitchencop {};
+
 		};
 		
 		class Gangs

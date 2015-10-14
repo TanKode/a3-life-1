@@ -26,6 +26,16 @@ switch (true) do
 		closeDialog 0;
 	};
 
+	case (_item == "housealarm"):
+    {
+    	[cursorTarget] spawn life_fnc_housealarm;
+    	closeDialog 0;
+    };
+
+	case (_item == "kitchen"): {
+		[cursorTarget] spawn life_fnc_houseKitchenAdd;
+	};
+
 	case (_item == "lappi"):
 	{
 		_wlanZone = "";

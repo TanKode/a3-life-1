@@ -167,6 +167,26 @@ class life_Client_Core
 		class clothing_ems {};
 	};
 
+	class Queerhousing
+	{
+		file ="life\housing";
+		class creatdialogH {};
+		class houseAlarm {};
+		class HouseAlarmOff {};
+		class sleep {};
+		class vehicleGarage_housing {};
+		class vehicleGarage_housingeinparken {};
+
+		class houseKitchenAdd {};
+		class kitchenprocess {};
+		class processhousingcocaine {};
+		class processhousingheroin {};
+		class processhousingweed {};
+		class housecookfail {};
+		class openhousekitchendialog {};
+		class copsearchhouse {}; };
+	};
+
 	class Player_Menu
 	{
 		file = "core\pmenu";

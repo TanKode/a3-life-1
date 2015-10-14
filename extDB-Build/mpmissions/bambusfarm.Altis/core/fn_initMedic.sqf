@@ -16,7 +16,7 @@ if((__GETC__(life_medicLevel)) < 1) exitWith {
 };
 
 player setVariable["rank",(__GETC__(life_mediclevel)),true];
-[] call life_fnc_spawnMenu;
+[false] spawn life_fnc_spawnMenu;
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 [player, uniform player] call life_fnc_equipGear;

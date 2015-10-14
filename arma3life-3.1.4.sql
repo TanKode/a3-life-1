@@ -131,7 +131,8 @@ CREATE TABLE `houses` (
   `inventory` text,
   `containers` text,
   `owned` tinyint(4) DEFAULT '0',
-  `rentdate` int(4) NOT NULL DEFAULT '0',
+  `security` TEXT  NOT NULL,
+  2.`kitchen` TEXT  NOT NULL,
   PRIMARY KEY (`id`,`pid`,`gid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -193,3 +194,5 @@ CREATE TABLE IF NOT EXISTS `levelsys` (
 `donatorlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
 PRIMARY KEY (`playerid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+

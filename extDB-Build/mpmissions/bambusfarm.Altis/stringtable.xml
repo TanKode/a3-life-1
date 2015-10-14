@@ -92,6 +92,26 @@
 			<French>Acheteur de Sel</French>
 		</Key>
 	</Package>
+	<Package name="Housing Menu">
+		<Key ID="STR_HOUSING_VERKAUFEN">
+			<Original>Verkaufen</Original>
+		</Key>
+		<Key ID="STR_HOUSING_KISTE">
+			<Original>Kisten Öffnen/Schließen</Original>
+		</Key>
+		<Key ID="STR_HOUSING_LICHT">
+			<Original>Licht An/Aus</Original>
+		</Key>
+		<Key ID="STR_HOUSING_AUSPARKEN">
+			<Original>Fahrzeug Ausparken</Original>
+		</Key>
+		<Key ID="STR_HOUSING_EINPARKEN">
+			<Original>Fahrzeug Einparken</Original>
+		</Key>
+		<Key ID="STR_HOUSING_SCHLAFEN">
+			<Original>Ausruhen</Original>
+		</Key>
+	</Package>
 	<Package name="Craft">
 		<Key ID="STR_CRAFT_Title">
 			<Original>Crafting Menu</Original>

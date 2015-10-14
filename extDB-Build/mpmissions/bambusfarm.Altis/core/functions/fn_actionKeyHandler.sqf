@@ -7,7 +7,7 @@
 	Master action key handler, handles requests for picking up various items and
 	interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
-private["_curTarget","_isWater","_FSAbfrage"];
+private["_curTarget","_isWater"];
 _curTarget = cursorTarget;
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if(life_interrupted) exitWith {life_interrupted = false;};
@@ -43,9 +43,6 @@ if(isNull _curTarget) exitWith {
 		};
 	};
 };
-
-_FSAbfrage = nearestObjects [player,["Land_FuelStation_Feed_F","Land_fs_feed_F"], 3];
-if((count _FSAbfrage) > 0) exitWith {[] spawn life_fnc_Tanke;};
 
 if(_curTarget isKindOf "House_F" && {player distance _curTarget < 12} OR ((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _curTarget OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _curTarget)) exitWith {
 	[_curTarget] call life_fnc_houseMenu;

@@ -1,12 +1,30 @@
 /*
 	File: fn_spawnMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+	Modified by: Al Morise(Sink)
 	Description:
 	Initializes the spawn point selection menu.
 */
-private["_spCfg","_sp","_ctrl"];
+private["_spCfg","_sp","_ctrl","_action","_bool","_quit","_wait"];
 disableSerialization;
+_bool = [_this,0,false,[false]] call BIS_fnc_param;
+_quit = false;
+_wait = false;
+
+if(_bool) then {
+	_action = [format ["Bist du sicher?"],"Respawn Bestätigung","Nein","Ja"] call BIS_fnc_guiMessage;
+	if(_action) then {_quit = true;};
+	_wait = true;
+} else {_wait = true;};
+
+waitUntil {_wait};
+
+if(_quit) exitWith {};
+
+if(_bool) then {
+	closeDialog 0; 
+	life_respawned = true;
+};
 
 if(life_is_arrested) exitWith {
 	[] call life_fnc_respawned;
@@ -17,7 +35,7 @@ if(life_respawned) then {
 };
 cutText["","BLACK FADED"];
 0 cutFadeOut 9999999;
-if(!(createDialog "life_spawn_selection")) exitWith {[] call life_fnc_spawnMenu;};
+if(!(createDialog "life_spawn_selection")) exitWith {[false] spawn life_fnc_spawnMenu;};
 (findDisplay 38500) displaySetEventHandler ["keyDown","_this call life_fnc_displayHandler"];
 
 _spCfg = [playerSide] call life_fnc_spawnPointCfg;

@@ -23,7 +23,7 @@ if((__GETC__(life_coplevel) == 0)) then {
 
 
 player setVariable["rank",(__GETC__(life_coplevel)),true];
-[] call life_fnc_spawnMenu;
+[false] spawn life_fnc_spawnMenu;
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 [] spawn life_fnc_placeablesInit;

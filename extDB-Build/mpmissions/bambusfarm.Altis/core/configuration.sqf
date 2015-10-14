@@ -249,7 +249,9 @@ life_inv_items =
 	"life_inv_psaft",
 	"life_inv_asaft",
 	"life_inv_pschnapps",
-	"life_inv_aschnapps"
+	"life_inv_aschnapps",
+	"life_inv_housealarm",
+	"life_inv_kitchen"
 ];
 
 //[shortVar,reward]
@@ -263,7 +265,8 @@ life_illegal_items = [
 ["turtle",3000],
 ["blastingcharge",10000],
 ["boltcutter",500],
-["catshark",1500]
+["catshark",1500],
+["kitechen",7000]
 ];
 
 
@@ -322,7 +325,9 @@ sell_array =
     ["psaft",50],
     ["asaft",50],
     ["pschnapps",75],
-    ["aschnapps",75]
+    ["aschnapps",75],
+    ["housealarm",1000],
+    ["kitchen",500000]
 ];
 
 buy_array =
@@ -368,7 +373,9 @@ buy_array =
     ["psaft",50],
     ["asaft",50],
     ["pschnapps",75],
-    ["aschnapps",75]
+    ["aschnapps",75],
+    ["housealarm",75000],
+    ["kitchen",1000000]
 ];
 __CONST__(buy_array,buy_array);
 

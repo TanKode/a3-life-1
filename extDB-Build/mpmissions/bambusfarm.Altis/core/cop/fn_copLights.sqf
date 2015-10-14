@@ -70,36 +70,46 @@
 
  switch (_type) do
  {
-     case "C_Offroad_01_F":
-     {
-         [false, "red", [-0.44, 0, 0.525]] call _attach;
-         [true, "blue", [0.345, 0, 0.525]] call _attach;
-         [false, "red", [0.575, -2.95, -0.77]] call _attach;
-         [true, "blue", [-0.645, -2.95, -0.77]] call _attach;
-         [false, "white", [0.61, 2.2825, -0.355]] call _attach;
-         [true, "white", [-0.695, 2.2825, -0.355]] call _attach;
-     };
+    case "C_Offroad_01_F":
+    {
+        [false, "red", [-0.44, 0, 0.525]] call _attach;
+        [true, "blue", [0.345, 0, 0.525]] call _attach;
+        [false, "red", [0.575, -2.95, -0.77]] call _attach;
+        [true, "blue", [-0.645, -2.95, -0.77]] call _attach;
+        [false, "white", [0.61, 2.2825, -0.355]] call _attach;
+        [true, "white", [-0.695, 2.2825, -0.355]] call _attach;
+    };
 
-     case "C_SUV_01_F":
-     {
-         [false, "red", [-0.39, 2.28, -0.52]] call _attach;
-         [true, "blue", [0.38, 2.28, -0.52]] call _attach;
-         [false, "red", [-0.86, -2.75, -0.18]] call _attach;
-         [true, "blue", [0.86, -2.75, -0.18]] call _attach;
-         [false, "white", [0.8, 1.95, -0.48]] call _attach;
-         [true, "white", [-0.8, 1.95, -0.48]] call _attach;
+    case "C_SUV_01_F":
+    {
+        [false, "red", [-0.39, 2.28, -0.52]] call _attach;
+        [true, "blue", [0.38, 2.28, -0.52]] call _attach;
+        [false, "red", [-0.86, -2.75, -0.18]] call _attach;
+        [true, "blue", [0.86, -2.75, -0.18]] call _attach;
+        [false, "white", [0.8, 1.95, -0.48]] call _attach;
+        [true, "white", [-0.8, 1.95, -0.48]] call _attach;
 
-     };
+    };
 
-     case "C_Hatchback_01_sport_F":
-     {
-         [false, "red", [-0.03, -0, 0.2]] call _attach;
-         [true, "blue", [-0.03, -0, 0.2]] call _attach;
-         [false, "red", [-0.8, -2.25, -0.3]] call _attach;
-         [true, "blue", [0.78, -2.25, -0.3]] call _attach;
-         [false, "white", [0.75, 1.615, -0.52]] call _attach;
-         [true, "white", [-0.8, 1.615, -0.525]] call _attach;
-     };
+    case "C_Hatchback_01_sport_F":
+    {
+        [false, "red", [-0.03, -0, 0.2]] call _attach;
+        [true, "blue", [-0.03, -0, 0.2]] call _attach;
+        [false, "red", [-0.8, -2.25, -0.3]] call _attach;
+        [true, "blue", [0.78, -2.25, -0.3]] call _attach;
+        [false, "white", [0.75, 1.615, -0.52]] call _attach;
+        [true, "white", [-0.8, 1.615, -0.525]] call _attach;
+    };
+	
+    case "C_Hatchback_01_sport_F":
+    {
+        [false, "red", [-0.03, -0, 0.2]] call _attach;
+        [true, "blue", [-0.03, -0, 0.2]] call _attach;
+        [false, "red", [-0.8, -2.25, -0.3]] call _attach;
+        [true, "blue", [0.78, -2.25, -0.3]] call _attach;
+        [false, "white", [0.75, 1.615, -0.52]] call _attach;
+        [true, "white", [-0.8, 1.615, -0.525]] call _attach;
+     };	 
 
      case "B_MRAP_01_F":
      {

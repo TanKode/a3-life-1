@@ -85,6 +85,9 @@ switch (_mode) do
 			case "asaft":{"life_inv_asaft"};
 			case "pschnapps":{"life_inv_pschnapps"};
 			case "aschnapps":{"life_inv_aschnapps"};
+
+			case "housealarm": {"life_inv_housealarm"};
+			case "kitchen": {"life_inv_kitchen"};
 		};
 	};
 	
@@ -161,6 +164,9 @@ switch (_mode) do
         	case "life_inv_asaft":{"asaft"};
         	case "life_inv_pschnapps":{"pschnapps"};
         	case "life_inv_aschnapps":{"aschnapps"};
+
+        	case "life_inv_housealarm": {"housealarm"};
+            case "life_inv_kitchen": {"kitchen"};
 		};
 	};
 };
