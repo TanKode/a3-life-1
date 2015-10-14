@@ -121,7 +121,6 @@ class CfgFunctions
 			class houseAlarm {};
 			class housekitchen {};
 			class housekitchencop {};
-
 		};
 		
 		class Gangs

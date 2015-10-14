@@ -13,7 +13,7 @@ life_versionInfo = "Altis life RPG v3.1.4.8";
 [] execVM "KRON_Strings.sqf";
 [] execVM "life\init.sqf";
 //[] execVM "scripts\fn_robShopInit.sqf";
-//[] execVM "life\fuelstations\init_fuelstations.sqf";
+[] execVM "life\fuelstations\init_fuelstations.sqf";
 
 
 StartProgress = true;

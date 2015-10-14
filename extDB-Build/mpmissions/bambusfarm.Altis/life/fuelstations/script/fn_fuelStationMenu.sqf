@@ -67,8 +67,7 @@ if(_mode == "FUELTRUCK") then {
 };
 
 // Price per Litre
-_indFuel = ([(call sell_array),"oilp"] call BIS_fnc_findNestedElement) select 0;
-life_fuelstation_price = ([((((call sell_array) select _indFuel) select 1) / 200) * _pricemod, 2] call BIS_fnc_cutDecimals) max 3;
+life_fuelstation_price = round(random 700);
 
 _txtVeh ctrlShow false;
 _txtFit ctrlShow false;

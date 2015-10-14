@@ -184,7 +184,7 @@ class life_Client_Core
 		class processhousingweed {};
 		class housecookfail {};
 		class openhousekitchendialog {};
-		class copsearchhouse {}; };
+		class copsearchhouse {};
 	};
 
 	class Player_Menu
@@ -507,7 +507,7 @@ class life
 		file = "life";
 		class equipGear {};
 	};
-/*
+
 	class fuelstations
 	{
 		file = "life\fuelstations\script";
@@ -519,7 +519,7 @@ class life
 		class initFuelstations {};
 		class vehFuelCap {};
 	};
-*/
+
 	class AdminMenu
 	{
 		file = "AS_AdminMenu";
