@@ -47,7 +47,7 @@ if(_gather == "apple") then
 		_lvl = 1;
 		_lcap = 50;
 		_karma = 1;
-		_timeB = 0.06;
+		_timeB = 6;
 	}else{
 		if(life_SkillApple < 250)then
 		{
@@ -56,7 +56,7 @@ if(_gather == "apple") then
    			_lvl = 2;
    			_lcap = 250;
    			_karma = 2;
-   			_timeB = 0.06;
+   			_timeB = 6;
    		}else{
    		    	if(life_SkillApple < 500) then
    	        	{
@@ -65,7 +65,7 @@ if(_gather == "apple") then
    	        	   	_lvl = 3;
    	        	   	_lcap = 500;
    	        	   	_karma = 3;
-   	        	   	_timeB = 0.05;
+   	        	   	_timeB = 5;
    	        	}else{
    	        		if(life_SkillApple < 850) then
    	        		{
@@ -74,7 +74,7 @@ if(_gather == "apple") then
    	        		   	_lvl = 4;
    	        		   	_lcap = 850;
    	        		   	_karma = 3;
-   	        		   	_timeB = 0.04;
+   	        		   	_timeB = 4;
    	        		}else{
    	        			if(life_SkillApple < 1250) then
    	                	{
@@ -83,7 +83,7 @@ if(_gather == "apple") then
    	                	   	_lvl = 5;
    	                	   	_lcap = 1250;
    	                	   	_karma = 5;
-   	                	   	_timeB = 0.04;
+   	                	   	_timeB = 4;
    	                	};
    	        		};
    	        	};
@@ -342,13 +342,20 @@ _time = 2.5;
 _diff = [_gather,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_diff == 0) exitWith {hint localize "STR_NOTF_InvFull"};
 life_action_inUse = true;
+
+player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
+waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
+sleep _timeB;
+
+
+/*
 for "_i" from 0 to _timeB do
 {
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
 	sleep _time;
-};
-/*
+
+
 [] call gather_fnc_progress;
 
 waitUntil {gather_fnc_progress};
