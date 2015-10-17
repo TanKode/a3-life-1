@@ -11,7 +11,7 @@
 		
 		class controlsBackground 
 		{
-			class foodHIcon : life_RscPicture
+			class foodHIcon : life_RscPicture 
 			{
 			
 				idc = -1;
@@ -20,7 +20,7 @@
 				w = 0.03; h = 0.04;
 			};
 			
-			class waterHIcon : life_RscPicture
+			class waterHIcon : life_RscPicture 
 			{
 			
 				idc = -1;

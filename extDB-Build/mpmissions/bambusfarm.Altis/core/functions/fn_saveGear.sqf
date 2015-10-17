@@ -16,7 +16,7 @@ _return pushBack backpack player;
 _return pushBack goggles player;
 _return pushBack headgear player;
 _return pushBack assignedITems player;
-if(playerSide == west || playerSide == civilian && {(call life_save_civ)}) then {
+if(playerSide == west || playerSide == independent || playerSide == civilian && {(call life_save_civ)}) then {
     _return pushBack primaryWeapon player;
     _return pushBack handgunWeapon player;
 } else {
@@ -170,9 +170,7 @@ if(count (handGunItems player) > 0) then
     ["life_inv_spikeStrip", life_inv_spikeStrip],
     ["life_inv_defusekit", life_inv_defusekit],
     ["life_inv_storagesmall", life_inv_storagesmall],
-    ["life_inv_storagebig", life_inv_storagebig],
-    ["life_inv_handcuffs", life_inv_handcuffs],
-    ["life_inv_Schere", life_inv_Schere]
+    ["life_inv_storagebig", life_inv_storagebig]
 ];
 
 _return pushBack _uItems;

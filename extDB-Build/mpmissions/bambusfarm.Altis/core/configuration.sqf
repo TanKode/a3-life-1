@@ -40,13 +40,8 @@ DonatorBuyChange = 1;
 DonatorBuyChangeCar = 1;
 Pay2Don = ceil(random 5000);
 Pay1Don = ceil(random 1500);
+life_price = ceil(random 200);
 life_Tankt = false;
-life_BenzinPreis = 150;
-life_KerosinPreis = 150;
-life_BuyAble = 0;			//Item auf Lager? 0 = Nein || 1 = Ja
-life_IsBuying = 0;			//Bereits am kaufen? 0 = Nein ||1 = Ja
-life_BenzinFuellen = 0;
-life_Tage = 0;									//wann ist die Periode des Servers wieder f‰llig? (Miete - muﬂ gesetzt sein)
 life_Karma = 0;								//... is a bitch! (Karma-sys - muﬂ gesetzt sein)
 life_MieteAbfrage = 0;							//macht Mietabfrage/zahlt gerade?
 life_messages = [];

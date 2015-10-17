@@ -306,6 +306,7 @@ if(_gather == "cannabis") then
    		};
    	};
 };
+/*
 //// PROZESSBAR START /////////////////
 Gather_fnc_progress = {
 	disableSerialization;
@@ -335,13 +336,13 @@ Gather_fnc_progress = {
 	};
 };
 //// PROZESSBAR ENDE /////////////////
-
+*/
 _time = 2.5;
 
 _diff = [_gather,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_diff == 0) exitWith {hint localize "STR_NOTF_InvFull"};
 life_action_inUse = true;
-for "_i" from 0 to 2 do
+for "_i" from 0 to _timeB do
 {
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
@@ -351,11 +352,12 @@ for "_i" from 0 to 2 do
 [] call gather_fnc_progress;
 
 waitUntil {gather_fnc_progress};
-*/
+
 
 _handleC = [] spawn gather_fnc_progress;
 waitUntil {scriptDone _handleC};
 5 cutText ["","PLAIN"];
+*/
 
 if(([true,_gather,_diff] call life_fnc_handleInv)) then
 {

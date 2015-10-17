@@ -67,7 +67,7 @@ if(_mode == "FUELTRUCK") then {
 };
 
 // Price per Litre
-life_fuelstation_price = round(random 700);
+life_fuelstation_price = life_price;
 
 _txtVeh ctrlShow false;
 _txtFit ctrlShow false;
