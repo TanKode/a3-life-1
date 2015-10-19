@@ -17,29 +17,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Datenbank: `ni710803_2sql3`
+-- Datenbank: `arma3server`
 --
 
 DELIMITER $$
 --
 -- Prozeduren
 --
-CREATE DEFINER=`ni710803_2sql3`@`localhost` PROCEDURE `deleteDeadVehicles`()
+CREATE DEFINER=`arma3server`@`localhost` PROCEDURE `deleteDeadVehicles`()
 BEGIN
 	DELETE FROM `vehicles` WHERE `alive` = 0;
 END$$
 
-CREATE DEFINER=`ni710803_2sql3`@`localhost` PROCEDURE `deleteOldGangs`()
+CREATE DEFINER=`arma3server`@`localhost` PROCEDURE `deleteOldGangs`()
 BEGIN
 	DELETE FROM `gangs` WHERE `active` = 0;
 END$$
 
-CREATE DEFINER=`ni710803_2sql3`@`localhost` PROCEDURE `deleteOldHouses`()
+CREATE DEFINER=`arma3server`@`localhost` PROCEDURE `deleteOldHouses`()
 BEGIN
   DELETE FROM `houses` WHERE `owned` = 0;
 END$$
 
-CREATE DEFINER=`ni710803_2sql3`@`localhost` PROCEDURE `resetLifeVehicles`()
+CREATE DEFINER=`arma3server`@`localhost` PROCEDURE `resetLifeVehicles`()
 BEGIN
 	UPDATE `vehicles` SET `active`= 0 WHERE `active`= 1;
 END$$
