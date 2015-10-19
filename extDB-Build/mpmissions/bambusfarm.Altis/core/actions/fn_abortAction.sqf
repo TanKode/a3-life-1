@@ -60,6 +60,6 @@ sleep 6;
 showChat true;
 disableUserInput false;
 ["",0,0.2,10,0,0,8] spawn BIS_fnc_dynamicText;
-["Abort",true,false] spawn BIS_fnc_endMission;
+["Abort",false,true] call BIS_fnc_endMission;
 _introCam cameraEffect ["terminate","back"];
 camDestroy _introCam;

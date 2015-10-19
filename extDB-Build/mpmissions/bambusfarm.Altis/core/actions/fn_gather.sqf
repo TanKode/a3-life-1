@@ -343,18 +343,13 @@ _diff = [_gather,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDi
 if(_diff == 0) exitWith {hint localize "STR_NOTF_InvFull"};
 life_action_inUse = true;
 
-player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
-sleep _timeB;
 
-
-/*
 for "_i" from 0 to _timeB do
 {
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
 	sleep _time;
-
+/*
 
 [] call gather_fnc_progress;
 

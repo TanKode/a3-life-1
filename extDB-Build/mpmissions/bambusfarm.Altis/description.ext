@@ -158,6 +158,16 @@ class CfgDebriefing
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
 	};
+
+	class Blacklisted
+	{
+		title = "Mission Failed";
+		subtitle = "Erfolgreich ausgeloggt!";
+		description = "Wir hoffen du besuchst uns erneut!";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
 };
 
 class CfgNotifications

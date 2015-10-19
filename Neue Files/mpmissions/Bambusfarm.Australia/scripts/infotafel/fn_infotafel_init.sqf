@@ -1,0 +1,27 @@
+act1 = map_1 addaction ["Ballerbude Info",life_fnc_bild1,"",0,false,false,""];
+act1 = map_1 addaction ["Fahrzeug Info",life_fnc_bild2,"",0,false,false,""];
+act1 = map_1 addaction ["Boot Heli Info",life_fnc_bild3,"",0,false,false,""];
+act1 = map_1 addaction ["Waffen Info",life_fnc_bild4,"",0,false,false,""];
+act1 = map_1 addaction ["Lizenz Info",life_fnc_bild5,"",0,false,false,""];
+act1 = map_2 addaction ["Ballerbude Info",life_fnc_bild1,"",0,false,false,""];
+act1 = map_2 addaction ["Fahrzeug Info",life_fnc_bild2,"",0,false,false,""];
+act1 = map_2 addaction ["Boot Heli Info",life_fnc_bild3,"",0,false,false,""];
+act1 = map_2 addaction ["Waffen Info",life_fnc_bild4,"",0,false,false,""];
+act1 = map_2 addaction ["Lizenz Info",life_fnc_bild5,"",0,false,false,""];
+act1 = map_3 addaction ["Ballerbude Info",life_fnc_bild1,"",0,false,false,""];
+act1 = map_3 addaction ["Fahrzeug Info",life_fnc_bild2,"",0,false,false,""];
+act1 = map_3 addaction ["Boot Heli Info",life_fnc_bild3,"",0,false,false,""];
+act1 = map_3 addaction ["Waffen Info",life_fnc_bild4,"",0,false,false,""];
+act1 = map_3 addaction ["Lizenz Info",life_fnc_bild5,"",0,false,false,""];
+act1 = map_4 addaction ["Ballerbude Info",life_fnc_bild1,"",0,false,false,""];
+act1 = map_4 addaction ["Fahrzeug Info",life_fnc_bild2,"",0,false,false,""];
+act1 = map_4 addaction ["Boot Heli Info",life_fnc_bild3,"",0,false,false,""];
+act1 = map_4 addaction ["Waffen Info",life_fnc_bild4,"",0,false,false,""];
+act1 = map_4 addaction ["Lizenz Info",life_fnc_bild5,"",0,false,false,""];
+act1 = map_5 addaction ["Ballerbude Info",life_fnc_bild1,"",0,false,false,""];
+act1 = map_5 addaction ["Fahrzeug Info",life_fnc_bild2,"",0,false,false,""];
+act1 = map_5 addaction ["Boot Heli Info",life_fnc_bild3,"",0,false,false,""];
+act1 = map_5 addaction ["Waffen Info",life_fnc_bild4,"",0,false,false,""];
+act1 = map_5 addaction ["Lizenz Info",life_fnc_bild5,"",0,false,false,""];
+Sleep 1;
+
