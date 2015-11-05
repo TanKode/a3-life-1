@@ -1,0 +1,59 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Init_Taru_Pod_Mod">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Initialisation_de",0,4346,-188.422577,-347.332977,111.796432,-235.171127,0.000000,"Initialisation de la compilation du script."};
+item1[] = {"True",8,218,-82.505150,-159.149765,7.494576,-109.149742,0.000000,"True"};
+item2[] = {"Script_compiler",1,250,-143.023163,-65.260948,67.909431,95.499687,0.000000,"Script compiler, sortis du fsm."};
+link0[] = {0,1};
+link1[] = {1,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,16,6316128,1,-288.203888,206.828674,537.060364,-474.478699,438,895,1};
+window[] = {2,-1,-1,-32000,-32000,985,225,1517,225,3,456};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Init_Taru_Pod_Mod";
+  class States
+  {
+    /*%FSM<STATE "Initialisation_de">*/
+    class Initialisation_de
+    {
+      name = "Initialisation_de";
+      init = /*%FSM<STATEINIT""">*/"if (isplayer player) then " \n
+       "{		" \n
+       "[] spawn life_fnc_taru;		" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True">*/
+        class True
+        {
+          priority = 0.000000;
+          to="Script_compiler";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"True"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Script_compiler">*/
+    class Script_compiler
+    {
+      name = "Script_compiler";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Initialisation_de";
+  finalStates[] =
+  {
+    "Script_compiler",
+  };
+};
+/*%FSM</COMPILE>*/
