@@ -107,7 +107,7 @@ class CfgSounds
 	class welcome
 	{
 		name = "welcome";
-		sound[] = {"sounds\welcome.ogg", 1.0, 1};
+		sound[] = {"sounds\welcome.ogg", 0.5, 1};
 		titles[] = {};
 	};
 	class knockout
