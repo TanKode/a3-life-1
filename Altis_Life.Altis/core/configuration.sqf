@@ -46,6 +46,8 @@ life_firstSpawn = false;
 life_bootVerleihInUse = false;
 life_bootVerleihDone = false;
 life_price = ceil(random 100);
+DonatorBuyChange = 1;
+DonatorBuyChangeCar = 1;
 
 //Persistent Saving
 __CONST__(life_save_civ,TRUE); //Save weapons for civs?

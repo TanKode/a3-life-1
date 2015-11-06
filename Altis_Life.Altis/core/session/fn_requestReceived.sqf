@@ -41,6 +41,27 @@ if(count (_this select 6) > 0) then {
 	{missionNamespace setVariable [(_x select 0),(_x select 1)];} foreach (_this select 6);
 };
 
+switch(__GETC__(life_donator)) do
+{
+	case 1: {DonatorBuyChange = DonatorBuyChange - 0.05;};
+	case 2: {DonatorBuyChange = DonatorBuyChange - 0.10;};
+	case 3: {DonatorBuyChange = DonatorBuyChange - 0.15;};
+	case 4: {DonatorBuyChange = DonatorBuyChange - 0.15;};
+	case 5: {DonatorBuyChange = DonatorBuyChange - 0.15;};
+};
+
+switch(__GETC__(life_donator)) do
+{
+	case 1: {DonatorBuyChangeCar = DonatorBuyChangeCar - 0.05;};
+	case 2: {DonatorBuyChangeCar = DonatorBuyChangeCar - 0.10;};
+	case 3: {DonatorBuyChangeCar = DonatorBuyChangeCar - 0.15;};
+	case 4: {DonatorBuyChangeCar = DonatorBuyChangeCar - 0.15;};
+	case 5: {DonatorBuyChangeCar = DonatorBuyChangeCar - 0.15;};
+};
+
+if((__GETC__(life_donator)) > 0) then {
+systemChat format["Du bist Donatorlevel %1, danke für deine Hilfe!",__GETC__(life_donator)]; };
+
 life_gear = _this select 8;
 [] call life_fnc_loadGear;
 

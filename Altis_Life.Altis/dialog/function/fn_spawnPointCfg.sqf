@@ -39,7 +39,7 @@ switch (_side) do
 			["civ_spawn_training","Schießplatz","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
 		];
 		
-		if(__GETC__(life_donator) == 3) then 
+		if(__GETC__(life_donator) >= 3) then 
 		{
 			_return = _return + [
 				["so_spawn_1","Söldner HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
@@ -47,14 +47,7 @@ switch (_side) do
 			];
 		};
 		
-		if(__GETC__(life_donator) == 1) then
-		{
-			_return = _return + [
-				["don_spawn_1","Donator HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
-			];
-		};
-		
-		if(__GETC__(life_donator) == 2) then
+		if(__GETC__(life_donator) > 0) then
 		{
 			_return = _return + [
 				["don_spawn_1","Donator HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]

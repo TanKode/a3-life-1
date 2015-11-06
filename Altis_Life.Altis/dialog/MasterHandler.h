@@ -40,3 +40,4 @@
 #include "ADACVehicleMenu.hpp"
 #include "AH_sell.hpp"
 #include "AH_buy.hpp"
+#include "QG_housing.hpp"

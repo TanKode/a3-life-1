@@ -13,6 +13,6 @@ _grpMembers = grpPlayer getVariable "gang_members";
 _grpMembers = _grpMembers - [steamid];
 _grp setVariable["gang_members",_grpMembers,true];
 [player] joinSilent (createGroup civilian);
-
+["CALL deleteOldGangs",1] spawn DB_fnc_asyncCall;
 [[4,_grp],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 closeDialog 0;

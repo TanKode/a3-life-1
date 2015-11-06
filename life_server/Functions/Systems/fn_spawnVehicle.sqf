@@ -73,6 +73,7 @@ if(typeName _sp == "STRING") then {
 	_vehicle allowDamage false;
 	_hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
 	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
+	_unit moveInDriver _vehicle;
 	sleep 0.6;
 } else {
 	_vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
@@ -81,6 +82,7 @@ if(typeName _sp == "STRING") then {
 	_vehicle setPos _sp;
 	_vehicle setVectorUp (surfaceNormal _sp);
 	_vehicle setDir _dir;
+	_unit moveInDriver _vehicle;
 };
 _vehicle allowDamage true;
 //Send keys over the network.

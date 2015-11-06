@@ -163,8 +163,6 @@ class Life_Client_Core
 		class robShops {};
 		class craftAction {};
 		class switchMove {};
-		class pb_response {};
-		class ryn_message {};
 	};
 
 	class Special
@@ -308,6 +306,7 @@ class Life_Client_Core
 		class fatigueReset {};
 		class introCam {};
 		class fadeSound {};
+		class ryn_message {};
 	};
 
 	class Network
@@ -517,4 +516,20 @@ class Life_Client_Core
     	class CAH_fetchDetails {};
     	class CAH_loggedIn {};
     };
+
+	class Queerhousing
+	{
+		file ="Queer\housing";
+		class creatdialogH {};
+		class sleep {};
+		class vehicleGarage_housing {};
+		class vehicleGarage_housingeinparken {};
+	};
+	
+    class Paintball
+	{
+		file = "core\paintball";
+		class pb_response {};
+	};
+	
 };

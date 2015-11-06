@@ -460,14 +460,6 @@ if(isNull _curTarget) exitWith {
 
 		};
 	};
-	
-	case 59: // F1
-	{
-		if(__GETC__(life_adminlevel) > 1) exitWith {hint "AdminLogin erfolgreich"};
-		closeDialog 0;
-		hintc "Diese Taste wurde vom System blockiert";
-		_handled = false;
-	};
 
 	case 60: // F2
 	{

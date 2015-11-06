@@ -27,13 +27,14 @@ if (count pb_spieler>=2) then {
     _msg = "Das Spiel läuft noch eine Minute!";
     {
         [[1,_msg],"life_fnc_pb_response",_x,false] spawn life_fnc_MP;
+        [[4],"life_fnc_pb_response",_x,false] spawn life_fnc_MP;
     } forEach pb_spieler;
     sleep 60;
     {
         [[3],"life_fnc_pb_response",_x,false] spawn life_fnc_MP;
     } forEach pb_spieler;
     pb_spieler = [];
-    pb_spielstatus=0;
+    pb_spielstatus = 0;
     joinmode = 0;
     publicVariable "joinmode";
 

@@ -18,6 +18,7 @@ _action = [
 if(_action) then {
 	hint localize "STR_GNOTF_DisbandGangPro";
 	[[grpPlayer],"TON_fnc_removeGang",false,false] spawn life_fnc_MP;
+	["CALL deleteOldGangs",1] spawn DB_fnc_asyncCall;
 } else {
 	hint localize "STR_GNOTF_DisbandGangCanc";
 };
